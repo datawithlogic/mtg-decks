@@ -3,14 +3,19 @@
  * renders the full deck map: groups, chips, synergy clusters w/ deep-dives,
  * relationship highlighting, Scryfall card modal, builder/share views.
  *
+ * Color system: every cluster gets a stable color (palette below, assigned
+ * by cluster order). Legend entries carry their color on the left edge;
+ * when relationships light up, each related card's border takes the color
+ * of the cluster it shares with the selected card, so you can tell WHICH
+ * synergy connects them. Card modal + touch bar show colored cluster
+ * badges; tapping a badge in the modal jumps to that cluster's deep-dive.
+ *
  * Interaction model:
  *  - Pointer (desktop): hover = highlight related chips + tooltip;
  *    click = card modal.
  *  - Touch: first tap = highlight related chips + info bar at bottom;
  *    second tap on the same chip = card modal. Tap elsewhere clears.
- *  - Modal (both): shows the card's role in this deck and a tappable
- *    "related in this deck" chip row, so relationships stay explorable
- *    without leaving the popup.
+ *  - Cluster click = deep-dive panel, inserted DIRECTLY BELOW that cluster.
  *
  * Default view = share (friend-facing). ?view=builder shows diff markers.
  */
@@ -21,6 +26,18 @@
     String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
 
   document.title = data.name + " — Deck Map";
+
+  /* ---------- cluster colors ----------
+   * Okabe-Ito categorical palette (colorblind-safe), dark-bg adapted.
+   * Methodology: standards/deck-map-ux.md (local). Assigned by cluster
+   * order; a cluster may override via optional "color" field. Max 9. */
+  const PALETTE = ["#56B4E9", "#E69F00", "#CC79A7", "#009E73", "#F0E442",
+                   "#4A90D9", "#D55E00", "#9B7FE8", "#BDBDBD"];
+  const clusterColor = {};
+  data.clusters.forEach((c, i) => { clusterColor[c.k] = c.color || PALETTE[i % PALETTE.length]; });
+  const clusterMap = Object.fromEntries(data.clusters.map((c) => [c.k, c]));
+  const badge = (k, attrs = "") =>
+    `<span class="cbadge" ${attrs} style="border-color:${clusterColor[k]};color:${clusterColor[k]}">${esc(clusterMap[k].label)}</span>`;
 
   /* ---------- build DOM ---------- */
   const chipHtml = (c) => {
@@ -56,9 +73,10 @@
     <div class="layout">
       <aside class="legend">
         <h2>Synergy clusters</h2>
-        <div id="clusterDetail"></div>
         ${data.clusters.map((cl) =>
-          `<div class="cluster" data-k="${esc(cl.k)}"><b>${esc(cl.label)}</b><span>${esc(cl.blurb)}</span></div>`).join("")}
+          `<div class="cluster" data-k="${esc(cl.k)}" style="border-left:4px solid ${clusterColor[cl.k]}">
+             <b>${esc(cl.label)}</b><span>${esc(cl.blurb)}</span></div>`).join("")}
+        <div id="clusterDetail"></div>
         ${data.hint ? `<div class="hint">${esc(data.hint)}</div>` : ""}
       </aside>
       <main class="groups">
@@ -78,16 +96,20 @@
   let pinned = null;      // pinned cluster key
   let selected = null;    // touch: currently selected chip
 
+  /* light up chips sharing a tag with `keys`; border takes the color of
+     the shared cluster so you can tell which synergy is the link */
   function light(keys) {
     document.body.classList.add("filtering");
     chips.forEach((c) => {
       const k = (c.dataset.k || "").split(" ");
-      c.classList.toggle("lit", keys.some((x) => k.includes(x)));
+      const shared = keys.find((x) => k.includes(x));
+      c.classList.toggle("lit", !!shared);
+      c.style.borderColor = shared ? clusterColor[shared] : "";
     });
   }
   function clearLight() {
     document.body.classList.remove("filtering");
-    chips.forEach((c) => c.classList.remove("lit"));
+    chips.forEach((c) => { c.classList.remove("lit"); c.style.borderColor = ""; });
   }
   function clearSelection() {
     if (selected) selected.classList.remove("sel");
@@ -124,8 +146,11 @@
         selected = c;
         c.classList.add("sel");
         light(c.dataset.k.split(" "));
-        const more = c.dataset.name ? " — <i>tap again for card details</i>" : "";
-        touchbar.innerHTML = `<b>${esc(c.textContent)}</b>${c.dataset.tip ? " · " + esc(c.dataset.tip) : ""}${more}`;
+        const badges = c.dataset.k.split(" ").map((k) => badge(k)).join(" ");
+        const more = c.dataset.name ? " <i>· tap again for card details</i>" : "";
+        touchbar.innerHTML = `<div><b>${esc(c.textContent)}</b>${more}</div>
+          ${c.dataset.tip ? `<div class="tbtip">${esc(c.dataset.tip)}</div>` : ""}
+          <div class="tbbadges">${badges}</div>`;
         touchbar.classList.add("show");
         return;
       }
@@ -138,28 +163,33 @@
     if (TOUCH && !e.target.closest(".chip") && !e.target.closest("#overlay")) clearSelection();
   });
 
-  /* ---------- cluster deep-dive panel ---------- */
-  const clusterMap = Object.fromEntries(data.clusters.map((c) => [c.k, c]));
+  /* ---------- cluster deep-dive panel (inserted below clicked cluster) --- */
+  function openCluster(k, scroll) {
+    const cl = document.querySelector(`.cluster[data-k="${k}"]`);
+    if (!cl) return;
+    pinned = k;
+    clearSelection();
+    document.querySelectorAll(".cluster").forEach((x) => x.classList.toggle("active", x === cl));
+    light([k]);
+    const d = clusterMap[k];
+    const col = clusterColor[k];
+    detail.innerHTML = `<h4 style="color:${col}">${esc(d.label)}</h4>
+      <p><span class="lbl">How it works</span>${esc(d.how)}</p>
+      <p><span class="lbl">Example line</span>${esc(d.ex)}</p>
+      <p class="why"><span class="lbl">Deckbuilding principle</span>${esc(d.why)}</p>`;
+    detail.style.borderColor = col;
+    cl.insertAdjacentElement("afterend", detail);   // detail sits right under its cluster
+    detail.style.display = "block";
+    if (scroll) cl.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+  function closeCluster() {
+    pinned = null; clearLight(); detail.style.display = "none";
+    document.querySelectorAll(".cluster").forEach((x) => x.classList.remove("active"));
+  }
   document.querySelectorAll(".cluster").forEach((cl) => {
     cl.addEventListener("click", (e) => {
       e.stopPropagation();
-      const k = cl.dataset.k;
-      if (pinned === k) {
-        pinned = null; clearLight(); detail.style.display = "none";
-        document.querySelectorAll(".cluster").forEach((x) => x.classList.remove("active"));
-        return;
-      }
-      pinned = k;
-      clearSelection();
-      document.querySelectorAll(".cluster").forEach((x) => x.classList.toggle("active", x === cl));
-      light([k]);
-      const d = clusterMap[k];
-      detail.innerHTML = `<h4>${esc(d.label)}</h4>
-        <p><span class="lbl">How it works</span>${esc(d.how)}</p>
-        <p><span class="lbl">Example line</span>${esc(d.ex)}</p>
-        <p class="why"><span class="lbl">Deckbuilding principle</span>${esc(d.why)}</p>`;
-      detail.style.display = "block";
-      if (innerWidth <= 760) detail.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      pinned === cl.dataset.k ? closeCluster() : openCluster(cl.dataset.k, false);
     });
   });
 
@@ -172,7 +202,10 @@
       if (o === chip || !o.dataset.k || !o.dataset.name) return false;
       if (share && o.closest(".pulled")) return false;
       return o.dataset.k.split(" ").some((t) => mine.includes(t));
-    }).slice(0, 10);
+    }).slice(0, 10).map((o) => {
+      const shared = mine.find((t) => o.dataset.k.split(" ").includes(t));
+      return { el: o, color: clusterColor[shared] };
+    });
   }
 
   /* ---------- card modal ---------- */
@@ -217,21 +250,29 @@
         <a href="https://scryfall.com/search?q=${encodeURIComponent('!"' + name + '"')}" target="_blank" rel="noopener">Search on Scryfall ↗</a>
         <!--EXTRA--></div>`;
     }
-    // role-in-deck + related chips: relationships stay visible inside the modal
+    /* deck-context layers: role, cluster membership badges, related cards */
     let extra = "";
     if (srcChip && srcChip.dataset.tip) {
       extra += `<div class="roletip"><span class="relLbl">Role in this deck</span>${esc(srcChip.dataset.tip)}</div>`;
     }
+    if (srcChip && srcChip.dataset.k) {
+      extra += `<span class="relLbl">Synergy clusters</span><div class="tbbadges">${
+        srcChip.dataset.k.split(" ").map((k) => badge(k, `data-cluster="${esc(k)}"`)).join(" ")
+      }</div>`;
+    }
     const rel = relatedTo(srcChip);
     if (rel.length) {
-      extra += `<div class="relLbl">Related in this deck</div><div class="chips rel">${
-        rel.map((o) => `<span class="chip" data-rel="${esc(o.dataset.name)}">${esc(o.textContent)}</span>`).join("")
+      extra += `<span class="relLbl">Related in this deck</span><div class="chips rel">${
+        rel.map((r) => `<span class="chip" data-rel="${esc(r.el.dataset.name)}" style="border-color:${r.color}">${esc(r.el.textContent)}</span>`).join("")
       }</div>`;
     }
     cardBox.innerHTML = `<button class="close">✕</button>` + body.replace("<!--EXTRA-->", extra);
     cardBox.querySelector(".close").addEventListener("click", closeCard);
     cardBox.querySelectorAll("[data-rel]").forEach((o) =>
       o.addEventListener("click", () => openCard(o.dataset.rel)));
+    /* badge click → close modal, open that cluster's deep-dive in place */
+    cardBox.querySelectorAll("[data-cluster]").forEach((b) =>
+      b.addEventListener("click", () => { closeCard(); openCluster(b.dataset.cluster, true); }));
   }
 
   overlay.addEventListener("click", (e) => { if (e.target === overlay) closeCard(); });
