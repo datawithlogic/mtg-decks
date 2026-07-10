@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alania Otter Storm — Deck Map</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<script type="application/json" id="deck-data">
+{
+  "name": "Alania, Divergent Storm — Otter Spellslinger",
+  "slug": "alania-otter-storm",
+  "sub": "100 cards · 37 lands · avg MV ~2.8 · nominal Bracket 4 (~5 Game Changers)",
+  "revnote": "v2 proposed · updated 2026-07-10",
+  "accentLabel": "Otter (feeds Alania / Three Tree City)",
+  "hint": "Blue left-edge = Otter. Alania copies your first instant, first sorcery, AND first Otter spell each turn — an opponent draws per copy, which Narset caps.",
+  "clusters": [
+    {"k":"double","label":"Trigger multiplication","blurb":"Veyran + Throne double Alania; Staff adds copies",
+     "how":"Alania's copy is a TRIGGERED ability. Veyran doubles triggered abilities caused by casting instants/sorceries; Roaming Throne (naming Otter) doubles Alania's too. Doublers stack additively: base + Veyran + Throne = 3 triggers. Twinning Staff then upgrades each copy event: 1 copy becomes 2.",
+     "ex":"Alania + Veyran + Staff out. You cast Ponder → 2 Alania triggers → each makes 2 copies → you resolve 5 Ponders. Two opponents drew a card; you dug 15.",
+     "why":"Multiplicative engines: each piece looks modest alone — evaluate adds by what they multiply, not what they add."},
+    {"k":"mitigate","label":"Drawback mitigation","blurb":"Narset caps the cards Alania hands out",
+     "how":"Every Alania copy hands an opponent a card — that compounds across a game. Narset caps each opponent at one drawn card per turn, converting Alania's biggest cost into a rounding error. Also remember each trigger says MAY: skip the copy when the card you'd give up matters more.",
+     "ex":"Storm turn with Narset out: 6 copy triggers, opponents still see only 1 card each. Without her, that's 6 free cards distributed to your enemies.",
+     "why":"Play drawback commanders only if the mitigation card is independently strong — Narset is a house against greedy draw decks anyway."},
+    {"k":"niv","label":"Niv-Mizzet engine","blurb":"Curiosity turns Niv into a draw-kill loop",
+     "how":"Niv: whenever YOU DRAW, he pings any target. Curiosity: when he damages an opponent, you draw. Attach → every ping draws, every draw pings: the loop only stops when you choose (or run out of library). Cast-a-spell also draws off Niv, so every cantrip becomes ping+draw+ping…",
+     "ex":"Niv + Curiosity, opponent at 30: point pings at their face, draw 30 cards, they're dead. Pointed at multiple players, the loop chain-kills the table.",
+     "why":"A wincon that lives OUTSIDE the command zone: killing Alania doesn't stop it. Redundancy across zones = resilience."},
+    {"k":"untap","label":"Floodcaller untap loop","blurb":"every spell untaps Kitsa for repeat copies",
+     "how":"Valley Floodcaller untaps all your Otters (and Birds/Frogs/Rats) on EVERY noncreature spell. Kitsa taps to copy an instant/sorcery for 2 (needs power 4+ — prowess stacking gets her there mid-chain). Each spell = another untap = another copy activation.",
+     "ex":"Floodcaller + Kitsa + 3 cantrips + Storm-Kiln treasures: Opt (untap, pump) → tap Kitsa copy Ponder → Ponder untaps her again → repeat while mana lasts.",
+     "why":"Activated abilities that reset every cast turn small spells into engines — mana becomes your only real constraint, which is why Medallion/treasures matter."},
+    {"k":"myriad","label":"Muddle myriad blowout","blurb":"Muddle becomes Stormsplitter, attacks everyone",
+     "how":"Muddle copies a nonlegendary creature you control every time you cast an instant/sorcery, keeping myriad. Myriad: on attack, token copies attack EACH other opponent. Best masks: Stormsplitter (each copy spawns more per spell), Storm-Kiln, Guttersnipe.",
+     "ex":"3 opponents: Muddle-as-Stormsplitter attacks → 2 myriad tokens attack the others → cast Blow Off Steam mid-combat → each Stormsplitter spawns another. Hasty 1/4s hitting everyone at once.",
+     "why":"Combat as a spellslinger wincon diversifies your threat profile — counterspells don't stop an attack step."},
+    {"k":"ping","label":"Pinger storm","blurb":"each spell in a chain drains the table",
+     "how":"Guttersnipe (2), Electrostatic Field (1), Coruscation Mage (1) hit EACH opponent per qualifying cast = 4/spell to the table. KEY RULE: these trigger on CAST — Alania's copies are NOT cast, so they don't retrigger pingers. Magecraft cards (Archmage, Storm-Kiln) count casts AND copies.",
+     "ex":"All three pingers + a 6-spell turn = 24 to each opponent before any copies. Copies add Storm-Kiln treasures and Archmage draws on top.",
+     "why":"Read triggers precisely: 'whenever you cast' ≠ 'magecraft'. Deck evaluation lives in these details."},
+    {"k":"bigturn","label":"Storm turn","blurb":"ritual mana + TYS/Amulet into a chained finish",
+     "how":"Thousand-Year Storm copies every instant/sorcery once per prior spell that turn (1st ×1, 2nd ×2, 3rd ×3…). Fuel it with Jeska's Will / Mana Geyser burst mana and Medallion/Amulet discounts. Aetherflux gains 1 life per spell YOU cast — after ~15 casts, 50-life lasers start firing.",
+     "ex":"TYS in play: Jeska's Will → Geyser (10R) → chain 6 cantrips = ~21 resolutions, ~21 Storm-Kiln treasures, Aetherflux +21 life → laser two players.",
+     "why":"Storm decks count 'spells castable this turn', not cards in hand — mana bursts and cost reducers ARE card advantage here."},
+    {"k":"scepter","label":"Scepter package","blurb":"imprint a 2-drop instant, recast every turn",
+     "how":"Isochron Scepter exiles an instant ≤2 MV; pay 2 + tap to cast the copy every turn — it IS a cast, so it triggers Alania, pingers, magecraft, everything. Best imprints: Narset's Reversal (protect/copy), Swan Song, Pongify, Brainstorm. Ojer Pakpatiq gives hand-cast instants rebound = a free recast next upkeep.",
+     "ex":"Scepter w/ Narset's Reversal: every turn, bounce-counter a spell or duplicate your own bomb — while triggering Alania for a copy of the Reversal itself.",
+     "why":"Repeatable cheap casts are the most reliable fuel source — one card that casts every turn beats a one-shot draw spell."},
+    {"k":"gy","label":"Graveyard dividends","blurb":"looting fills the yard; Cruise cashes it out",
+     "how":"Faithless Looting, Ledger Shredder connive, Artist's Talent, and 14 cheap instants/sorceries naturally stuff the graveyard. Treasure Cruise delve exiles 7 of those to draw 3 for one mana. Harnesser/Pathmaker impulse-exile add velocity without card loss.",
+     "ex":"Turn 6: yard has 8 spells → Cruise for {U}, draw 3, keep chaining. Archmage saw the cast too — draw 4 total.",
+     "why":"Fuel-vs-payoff balance: refill effects prevent the classic spellslinger stall (board full of pingers, empty hand)."}
+  ],
+  "groups": [
+    {"title":"Command zone & amplifiers","desc":"Why the deck exists: every copy effect stacks multiplicatively","cards":[
+      {"n":"Alania, Divergent Storm","mv":5,"cmdr":true,"otter":true,"tags":"double mitigate","tip":"Copies first instant / sorcery / Otter spell each turn; target opponent draws per copy (optional per trigger)"},
+      {"n":"Veyran, Voice of Duality","mv":3,"tags":"double ping","tip":"Doubles magecraft + Alania's trigger → two copies"},
+      {"n":"Roaming Throne","mv":4,"tags":"double","tip":"Name Otter: doubles Alania AND Stormsplitter triggers; ward 2 body"},
+      {"n":"Twinning Staff","mv":3,"tags":"double scepter","tip":"Every copy event makes one extra copy"},
+      {"n":"Narset, Parter of Veils","mv":3,"tags":"mitigate","tip":"Opponents can't draw more than 1/turn — pays Alania's tax for you"}
+    ]},
+    {"title":"Cast-trigger payoffs","desc":"Reward every noncreature/instant/sorcery cast — the deck's engine room","cards":[
+      {"n":"Guttersnipe","mv":3,"tags":"ping niv","tip":"2 dmg to each opponent per instant/sorcery"},
+      {"n":"Electrostatic Field","mv":2,"tags":"ping niv","tip":"1 dmg each opponent per instant/sorcery; wall"},
+      {"n":"Coruscation Mage","mv":2,"otter":true,"tags":"ping niv","tip":"1 dmg each opponent per noncreature spell; Offspring 2"},
+      {"n":"Archmage Emeritus","mv":4,"tags":"gy","tip":"Magecraft: draw on every cast OR copy"},
+      {"n":"Storm-Kiln Artist","mv":4,"tags":"myriad bigturn","tip":"Magecraft: Treasure per cast/copy — pays for the next spell"},
+      {"n":"Stormsplitter","mv":4,"otter":true,"tags":"myriad","tip":"Token copy of itself per instant/sorcery; haste"},
+      {"n":"Valley Floodcaller","mv":3,"otter":true,"tags":"untap","tip":"Untaps your Otters + pumps per noncreature spell; flash enabler"},
+      {"n":"Kitsa, Otterball Elite","mv":2,"otter":true,"tags":"untap double","tip":"Tap: loot. Tap+2: copy instant/sorcery (needs power 4+)"},
+      {"n":"Muddle, the Ever-Changing","mv":4,"otter":true,"new":true,"tags":"myriad","tip":"NEW · becomes any nonlegendary creature you control + myriad, per instant/sorcery"},
+      {"n":"Bria, Riptide Rogue","mv":4,"otter":true,"tags":"ping","tip":"Prowess for the team + unblockable enabler"},
+      {"n":"Ledger Shredder","mv":2,"tags":"gy","tip":"Connive per 2nd spell each turn — fills yard"},
+      {"n":"Ral, Crackling Wit","mv":4,"tags":"ping","tip":"+1: Otter token · −3: draw 3 discard 2 · grows per noncreature cast"},
+      {"n":"Harnesser of Storms","mv":3,"otter":true,"tags":"gy","tip":"Impulse-draw off first noncreature/Otter spell each turn"},
+      {"n":"Frolicking Familiar","name":"Frolicking Familiar // Blow Off Steam","mv":3,"otter":true,"tags":"ping","tip":"Flier, grows per instant/sorcery; adventure ping"}
+    ]},
+    {"title":"Fuel — cheap spells & refills","desc":"What keeps the chain going; every one triggers the whole engine room","cards":[
+      {"n":"Brainstorm","mv":1,"tags":"untap ping scepter","tip":"Also puts wincons back on top"},
+      {"n":"Opt","mv":1,"tags":"untap ping scepter"},
+      {"n":"Ponder","mv":1,"tags":"untap ping"},
+      {"n":"Preordain","mv":1,"tags":"untap ping"},
+      {"n":"Faithless Looting","mv":1,"tags":"gy","tip":"Fills yard for Cruise; flashback = 2 casts"},
+      {"n":"Pearl of Wisdom","mv":3,"tags":"ping","tip":"1U draw 2 with an Otter out"},
+      {"n":"Otterball Antics","mv":2,"otter":true,"tags":"ping","tip":"Otter token; counts as Otter spell for Alania"},
+      {"n":"Treasure Cruise","mv":8,"new":true,"tags":"gy","tip":"NEW · Delve: often 1-2 mana draw 3 by midgame"},
+      {"n":"Wan Shi Tong, Librarian","mv":"2+X","tags":"gy niv","tip":"Draw half X; hoses opponent tutors"},
+      {"n":"Stormchaser's Talent","mv":1,"tags":"ping","tip":"Class: Otter token → spells cost less → big X payoff"},
+      {"n":"Artist's Talent","mv":2,"tags":"gy","tip":"Loot per noncreature spell; lvl 2 cost reduction"},
+      {"n":"Sorcerer Class","mv":2,"tags":"ping","tip":"Draw on your casts; lvl 3 makes pingers lethal"}
+    ]},
+    {"title":"Interaction","desc":"Counters protect the engine; removal answers resolved threats","cards":[
+      {"n":"Swan Song","mv":1,"tags":"scepter"},
+      {"n":"Flusterstorm","mv":1,"tags":"scepter"},
+      {"n":"Fierce Guardianship","mv":3,"tags":"double","tip":"Free with Alania out — protects the turn"},
+      {"n":"Mana Drain","mv":2,"tags":"bigturn"},
+      {"n":"Deflecting Swat","mv":3,"tags":"double","tip":"Free redirect; protects Alania/Niv"},
+      {"n":"Narset's Reversal","mv":2,"tags":"scepter","tip":"Bounce-counter OR copy your own spell; Scepter all-star"},
+      {"n":"Chaos Warp","mv":3,"new":true,"tags":"ping","tip":"NEW · answers any resolved permanent"},
+      {"n":"Abrade","mv":2,"new":true,"tags":"ping","tip":"NEW · kill a creature or artifact, instant speed"},
+      {"n":"Pongify","mv":1,"new":true,"tags":"ping scepter","tip":"NEW · 1-mana creature answer; Scepter-legal"},
+      {"n":"Cyclonic Rift","mv":2,"tags":"bigturn","tip":"One-sided reset; GC"},
+      {"n":"Blasphemous Act","mv":9,"tags":"ping","tip":"Board reset — note Alania (3/5) dies too; hold her or protect"},
+      {"n":"Propaganda","mv":3,"tip":"Pillow fort while the engine assembles"}
+    ]},
+    {"title":"Big turns & copy artillery","desc":"Mana bursts + mass-copy effects = the storm finish","cards":[
+      {"n":"Thousand-Year Storm","mv":6,"tags":"bigturn","tip":"Every spell echoes for the rest of the chain"},
+      {"n":"Primal Amulet","name":"Primal Amulet // Primal Wellspring","mv":4,"tags":"bigturn","tip":"Cost reducer → flips to double-mana + copy land"},
+      {"n":"Isochron Scepter","mv":2,"tags":"scepter","tip":"Imprint Narset's Reversal / Pongify / Swan Song"},
+      {"n":"Jeska's Will","mv":3,"tags":"bigturn"},
+      {"n":"Mana Geyser","mv":5,"tags":"bigturn"},
+      {"n":"Twincast","mv":2,"tags":"double","tip":"Copy anything on the stack — including opponents'"},
+      {"n":"Season of Weaving","mv":6,"tags":"bigturn","tip":"Pawprint modes: draw / clone / mass bounce"},
+      {"n":"Ojer Pakpatiq, Deepest Epoch","name":"Ojer Pakpatiq, Deepest Epoch // Temple of Cyclical Time","mv":4,"tags":"scepter","tip":"Hand-cast instants rebound = free second cast"},
+      {"n":"Alania's Pathmaker","mv":4,"otter":true,"tags":"gy","tip":"Impulse card on ETB"},
+      {"n":"Thundertrap Trainer","mv":2,"otter":true,"tags":"untap","tip":"Dig 4 on ETB; Offspring 4"},
+      {"n":"Rapid Augmenter","mv":3,"tags":"myriad","tip":"Hastes 1-power tokens (Stormsplitter/Otter tokens)"}
+    ]},
+    {"title":"Wincons","desc":"All survive commander removal — key resilience check","cards":[
+      {"n":"Niv-Mizzet, Parun","mv":6,"tags":"niv","tip":"6 dmg per draw-spell chain; wins with Curiosity attached"},
+      {"n":"Curiosity","mv":1,"new":true,"tags":"niv","tip":"NEW · on Niv: ping→draw→ping… table-kill. Also fine on Guttersnipe"},
+      {"n":"Aetherflux Reservoir","mv":4,"tags":"bigturn ping","tip":"50-life laser after a storm turn"},
+      {"n":"Stormsplitter + Muddle","name":null,"tags":"myriad","tip":"Copy army alpha-strike (see Muddle cluster)"},
+      {"n":"Pinger attrition","name":null,"tags":"ping","tip":"Guttersnipe + Field + Coruscation ticking 4/turn-cycle each"}
+    ]},
+    {"title":"Ramp & mana","desc":"7 pieces + Storm-Kiln treasures; Medallion is ramp that compounds in chains","cards":[
+      {"n":"Sol Ring","mv":1},
+      {"n":"Arcane Signet","mv":2},
+      {"n":"Izzet Signet","mv":2},
+      {"n":"Thought Vessel","mv":2,"tip":"No max hand size matters with Niv/Cruise"},
+      {"n":"Sapphire Medallion","mv":2,"new":true,"tags":"bigturn","tip":"NEW · your 40 blue spells cost 1 less"},
+      {"n":"Mystical Tutor","mv":1,"tags":"niv","tip":"Instant-speed tutor for Rift / Cruise / the right answer"},
+      {"n":"Lands ×37","name":null,"tip":"10 duals/utility + 18 Island + 9 Mountain"},
+      {"n":"Three Tree City","tags":"myriad","tip":"Big color-fixed burst for the chosen type (Otter/Wizard)"}
+    ]}
+  ],
+  "pulled": {"title":"Pulled this revision","desc":"Theme tax refunds + flood insurance","cards":[
+    {"n":"Thieving Otter","tip":"Vanilla value — pure theme tax"},
+    {"n":"Lightshell Duo","tip":"Draft filler; surveil 2 isn't a Commander card"},
+    {"n":"Tempest Angler","tip":"Counters with no payoff attached"},
+    {"n":"Kindlespark Duo","tip":"Cute untap, weakest of the untap package"},
+    {"n":"Daring Waverider","tip":"6 mana for a ≤4MV recast — too slow"},
+    {"n":"1 Island","name":null},
+    {"n":"1 Mountain","name":null}
+  ]}
+}
+</script>
+<script src="../viewer.js"></script>
+</body>
+</html>
