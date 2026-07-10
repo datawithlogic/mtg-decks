@@ -9,6 +9,9 @@ anything. This folder is the public copy of those rules.
 
 ## Contents
 
+- **[decklist-to-deck-map.md](decklist-to-deck-map.md)** — **start here**:
+  the pipeline. How the AI takes a raw decklist and produces one of these
+  pages, stage by stage, with a worked example.
 - **[deckbuilding-framework.md](deckbuilding-framework.md)** — how decks
   are evaluated: role quotas, theme tax, fuel vs. payoff, bracket targets.
 - **[deck-map-ux.md](deck-map-ux.md)** — the visual/UX standard: cluster
