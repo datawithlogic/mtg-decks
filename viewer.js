@@ -97,19 +97,36 @@
   let selected = null;    // touch: currently selected chip
 
   /* light up chips sharing a tag with `keys`; border takes the color of
-     the shared cluster so you can tell which synergy is the link */
+     the shared cluster(s). Multi-cluster: conic-gradient segments (equal
+     arcs, max 4) so a card in 2 clusters shows 50/50, etc. Lit borders are
+     2px — 1px segments are imperceptible. See standards/deck-map-ux.md. */
+  function unlitStyle(c) {
+    c.style.borderColor = ""; c.style.borderWidth = ""; c.style.background = "";
+  }
   function light(keys) {
     document.body.classList.add("filtering");
     chips.forEach((c) => {
       const k = (c.dataset.k || "").split(" ");
-      const shared = keys.find((x) => k.includes(x));
-      c.classList.toggle("lit", !!shared);
-      c.style.borderColor = shared ? clusterColor[shared] : "";
+      const shared = keys.filter((x) => k.includes(x)).slice(0, 4);
+      c.classList.toggle("lit", shared.length > 0);
+      if (!shared.length) { unlitStyle(c); return; }
+      c.style.borderWidth = "2px";
+      if (shared.length === 1) {
+        c.style.borderColor = clusterColor[shared[0]];
+        c.style.background = "";
+      } else {
+        const seg = 360 / shared.length;
+        const stops = shared.map((s, i) =>
+          `${clusterColor[s]} ${i * seg}deg ${(i + 1) * seg}deg`).join(",");
+        const inner = c.classList.contains("cmdr") ? "#2d2818" : "var(--panel2)";
+        c.style.borderColor = "transparent";
+        c.style.background = `linear-gradient(${inner},${inner}) padding-box, conic-gradient(from 45deg, ${stops}) border-box`;
+      }
     });
   }
   function clearLight() {
     document.body.classList.remove("filtering");
-    chips.forEach((c) => { c.classList.remove("lit"); c.style.borderColor = ""; });
+    chips.forEach((c) => { c.classList.remove("lit"); unlitStyle(c); });
   }
   function clearSelection() {
     if (selected) selected.classList.remove("sel");
@@ -118,12 +135,52 @@
     pinned ? light([pinned]) : clearLight();
   }
 
+  /* ---------- card identity (type line) prefetch ----------
+   * One batched Scryfall /cards/collection call per deck, cached in
+   * localStorage for 7 days, so hover/tap boxes can show what a card IS. */
+  const typeMap = {};
+  async function prefetchTypes() {
+    const names = [...new Set(chips.map((c) => c.dataset.name).filter(Boolean))];
+    const key = "deckTypes:" + (data.slug || location.pathname);
+    try {
+      const s = JSON.parse(localStorage.getItem(key) || "null");
+      if (s && Date.now() - s.ts < 6048e5 && s.map) { Object.assign(typeMap, s.map); return; }
+    } catch (e) {}
+    try {
+      const lookup = {};
+      for (let i = 0; i < names.length; i += 75) {
+        const r = await fetch("https://api.scryfall.com/cards/collection", {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ identifiers: names.slice(i, i + 75).map((n) => ({ name: n.split(" // ")[0] })) })
+        }).then((r) => r.json());
+        (r.data || []).forEach((c) => {
+          const entry = { t: c.type_line, m: c.mana_cost || (c.card_faces ? c.card_faces[0].mana_cost : "") };
+          lookup[c.name] = entry;
+          (c.card_faces || []).forEach((f) => { lookup[f.name] = entry; });
+        });
+      }
+      names.forEach((n) => { const e = lookup[n] || lookup[n.split(" // ")[0]]; if (e) typeMap[n] = e; });
+      localStorage.setItem(key, JSON.stringify({ ts: Date.now(), map: typeMap }));
+    } catch (e) { /* offline: boxes just omit the type line */ }
+  }
+  prefetchTypes();
+
+  /* hover/tap info box content: what it IS · role · which clusters */
+  function infoHtml(c) {
+    const t = typeMap[c.dataset.name];
+    const badges = c.dataset.k ? c.dataset.k.split(" ").map((k) => badge(k)).join(" ") : "";
+    return `${t ? `<div class="tiptype">${esc(t.t)}${t.m ? " · " + esc(t.m) : ""}</div>` : ""}` +
+      `${c.dataset.tip ? `<div>${esc(c.dataset.tip)}</div>` : ""}` +
+      `${badges ? `<div class="tbbadges">${badges}</div>` : ""}`;
+  }
+
   /* ---------- pointer (hover) interactions ---------- */
   if (!TOUCH) {
     chips.forEach((c) => {
       c.addEventListener("mouseenter", () => {
         if (c.dataset.k) light(c.dataset.k.split(" "));
-        if (c.dataset.tip) { tip.textContent = c.dataset.tip; tip.style.display = "block"; }
+        const html = infoHtml(c);
+        if (html) { tip.innerHTML = html; tip.style.display = "block"; }
       });
       c.addEventListener("mousemove", (e) => {
         tip.style.left = Math.min(e.clientX + 14, innerWidth - 320) + "px";
@@ -146,9 +203,10 @@
         selected = c;
         c.classList.add("sel");
         light(c.dataset.k.split(" "));
+        const t = typeMap[c.dataset.name];
         const badges = c.dataset.k.split(" ").map((k) => badge(k)).join(" ");
         const more = c.dataset.name ? " <i>· tap again for card details</i>" : "";
-        touchbar.innerHTML = `<div><b>${esc(c.textContent)}</b>${more}</div>
+        touchbar.innerHTML = `<div><b>${esc(c.textContent)}</b>${t ? ` <span class="tiptype" style="display:inline">${esc(t.t)}</span>` : ""}${more}</div>
           ${c.dataset.tip ? `<div class="tbtip">${esc(c.dataset.tip)}</div>` : ""}
           <div class="tbbadges">${badges}</div>`;
         touchbar.classList.add("show");
