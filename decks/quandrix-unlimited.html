@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quandrix Unlimited — Deck Map</title>
+<link rel="stylesheet" href="../style.css?v=20260710a">
+</head>
+<body>
+<script type="application/json" id="deck-data">
+{
+  "name": "Quandrix Unlimited — X Marks the Math",
+  "slug": "quandrix-unlimited",
+  "sub": "100 cards · 37 lands · stock Secrets of Strixhaven precon · Bracket ~2",
+  "revnote": "v1 · as printed · 2026-07-10",
+  "hint": "Zimone discounts your FIRST X spell each turn by {1} per counter on her, then grows +2 for casting it. Every counter multiplier compounds the discount — the deck is one big feedback loop.",
+  "clusters": [
+    {"k":"firstx","label":"X-spell cadence","blurb":"one discounted X spell per turn — make it count",
+     "how":"Zimone's discount and growth, Owlin Spiralmancer's copy, Nev's counters, Lattice Library's Fractal, and Brass Infiniscope's rider ALL key off 'your first spell with {X} in its mana cost each turn.' One cast, five payoffs — but only the first each turn.",
+     "ex":"Zimone at 6 counters: cast Hydroid Krasis for X=9, paying {3} less than the mana you spent — Owlin copies it (another 9/9 flier + trigger), Nev gets 9 counters, Zimone grows to 8+. Next turn's X spell is cheaper again.",
+     "why":"Cadence engines meter value per turn, not per card — instant-speed X spells and Alchemist's Refuge let you hit the cadence on opponents' turns too, doubling the engine."},
+    {"k":"scale","label":"Counter multiplication","blurb":"replacement effects stack: +2 becomes +6",
+     "how":"Hardened Scales, Ozolith the Shattered Spire, Kami of Whispered Hopes, and Benevolent Hydra are each a REPLACEMENT effect: 'if counters would be placed, place that many +1.' They all apply to the same event, one after another — additive, and you order them.",
+     "ex":"Zimone triggers for +2. Scales makes it 3, Ozolith 4, Kami 5, Benevolent Hydra 6. Every hydra, Fractal, and proliferate in the deck scales the same way.",
+     "why":"Evaluate engine pieces by what they multiply: a 1-mana enchantment that upgrades every counter event in a 40-counter game is worth more than a big one-shot."},
+    {"k":"xmana","label":"X-mana engine","blurb":"mana IS card text in an X deck",
+     "how":"Kami taps for mana equal to its own power (and it grows). Elementalist's Palette banks two charges per X spell and pays them all back. Troyan taps for {G}{U} restricted to X/5+ spells. Astral Cornucopia and Mana Bloom scale with what you pour in.",
+     "ex":"Turn 7: Palette at 6 charges + Kami at 5 power + 7 lands = X=14 Pull from Tomorrow. Every extra mana source re-sizes every X card still in your hand.",
+     "why":"X decks break the usual ramp quota on purpose — ramp isn't a means to cast your spells, it IS the size of your spells."},
+    {"k":"fractal","label":"Fractal factory","blurb":"0/0 BASE power is a feature, not a bug",
+     "how":"Fractal tokens are base 0/0 — counters make them huge but their BASE power stays 0. Primo triggers on 'creatures with base power 0 dealing combat damage': each hit creates a new Fractal sized by the damage. Deekah mints one per instant/sorcery, sized by mana value. Careful: Biomass Mutation SETS base power, turning Primo off.",
+     "ex":"A 12/12 Fractal (base 0/0) connects: Primo makes a new Fractal with 12 counters. Two Fractals hit next turn — the board doubles every combat.",
+     "why":"Rules precision opens synergies: 'base power' vs. 'power' looks like trivia until it's the difference between one token and an army."},
+    {"k":"payload","label":"X payloads","blurb":"hydras with riders — size plus card advantage",
+     "how":"Every X creature carries a rider so the mana buys more than stats: Goldvein leaves X Treasures when it dies, Lifeblood draws X, The Goose Mother banks Food for draws, Kinetic Ooze removes a permanent (and doubles counters at X≥10), Hangarback leaves Thopters. Stonecoil's protection makes it the safest counter home.",
+     "ex":"Goldvein Hydra X=8 attacks with haste; if they kill it, you bank 8 Treasures — which pay for the next X spell and trigger the cadence again.",
+     "why":"In big-mana decks, pick payoffs that convert size into CARDS when answered — that's how you lose a creature without losing a turn."},
+    {"k":"draw","label":"X-draw refills","blurb":"late-game mana becomes a fresh hand",
+     "how":"Pull from Tomorrow, Stroke of Genius, and Commander's Insight convert spare mana to cards at instant speed (all trigger the cadence cluster). Ingenious Prodigy and Lifeblood Hydra draw off their counters; Reliquary Tower and Study Hall keep the haul.",
+     "ex":"End of an opponent's turn: Pull from Tomorrow X=9 — nine cards, cadence triggered on their turn, your own turn's first-X discount still unused.",
+     "why":"Engine decks stall when the hand empties; X draw is the perfect refill because it scales with exactly the resource you've been hoarding."},
+    {"k":"protect","label":"Engine protection","blurb":"the counters live on permanents — guard them",
+     "how":"All the deck's value is stored in +1/+1 counters on the board, so wipes hurt double. Guardian Augmenter (flash) gives commanders hexproof; Silkguard grants hexproof to X targets AND feeds counters; Tyvar's Stand saves one target for {X}{G}; Decisive Denial is the lone true counterspell.",
+     "ex":"Opponent aims a kill spell at a 10-counter Zimone: flash in Guardian Augmenter — hexproof, +2/+2, and your discount engine survives.",
+     "why":"Counter decks bank value on the battlefield rather than in hand — budget protection slots the way spellslinger decks budget counterspells."}
+  ],
+  "groups": [
+    {"title":"Command zone & cadence","desc":"The once-per-turn X trigger web — the deck's heartbeat","cards":[
+      {"n":"Zimone, Infinite Analyst","mv":3,"cmdr":true,"tags":"firstx scale","tip":"First X spell each turn: {1} off per counter on her, then +2 counters. Compounding discount"},
+      {"n":"Owlin Spiralmancer","mv":4,"tags":"firstx","tip":"Copies your first X spell each turn — same X, new targets"},
+      {"n":"Nev, the Practical Dean","mv":3,"tags":"firstx scale","tip":"X counters on himself per first X spell; counter creatures get trample"},
+      {"n":"Lattice Library","mv":"X+2","tags":"firstx fractal","tip":"Fractal per first X spell, sized by its study counters"},
+      {"n":"Brass Infiniscope","mv":4,"tags":"firstx xmana","tip":"Taps for CC; next X spell this turn draws + gains half X life"},
+      {"n":"Unbound Flourishing","mv":3,"tags":"firstx payload","tip":"Doubles X on permanent spells; copies X instants/sorceries"},
+      {"n":"Troyan, Gutsy Explorer","mv":3,"tags":"xmana draw","tip":"Taps for GU (X/5+ spells only); loots for U"}
+    ]},
+    {"title":"Counter multipliers","desc":"Replacement effects that stack — every counter event gets bigger","cards":[
+      {"n":"Hardened Scales","mv":1,"tags":"scale","tip":"+1 per counter event on your creatures — 1 mana, all game"},
+      {"n":"Ozolith, the Shattered Spire","mv":2,"tags":"scale","tip":"+1 per counter event, artifacts too; activated counter placement"},
+      {"n":"Kami of Whispered Hopes","mv":3,"tags":"scale xmana","tip":"+1 per counter event AND taps for mana equal to its power"},
+      {"n":"Benevolent Hydra","mv":"X+2","tags":"scale payload","tip":"+1 per counter event on others; tap to move counters around"},
+      {"n":"Forgotten Ancient","mv":4,"tags":"scale","tip":"Counter per ANY spell cast; redistribute them each upkeep"},
+      {"n":"Tanazir Quandrix","mv":5,"tags":"scale fractal","tip":"ETB: double a creature's counters; attack: team becomes his base P/T"},
+      {"n":"Expansion Algorithm","mv":"X+2","tags":"scale firstx","tip":"Proliferate X times — every multiplier applies each time"},
+      {"n":"Fractal Harness","mv":"X+3","tags":"scale fractal","tip":"Makes an X-counter Fractal, doubles its counters each attack"},
+      {"n":"Elusive Otter","name":"Elusive Otter // Grove's Bounty","mv":1,"tags":"scale","tip":"Adventure: distribute X counters; body sneaks through small blockers"},
+      {"n":"Yavimaya Bloomsage","name":"Yavimaya Bloomsage // Channel","mv":3,"tags":"scale xmana","tip":"Counter per end step; Channel side untaps lands for a big X turn"}
+    ]},
+    {"title":"X payloads","desc":"Where the mana goes — bodies with riders","cards":[
+      {"n":"Primo, the Unbounded","mv":"X+3","tags":"fractal payload","tip":"Enters with 2X counters; base-0 creatures hitting players mint new Fractals"},
+      {"n":"Hydroid Krasis","mv":"X+2","tags":"payload draw","tip":"Cast trigger (uncounterable value): half X cards + half X life"},
+      {"n":"The Goose Mother","mv":"X+2","tags":"payload draw","tip":"Half X Food on ETB; sac Food on attack to draw"},
+      {"n":"Goldvein Hydra","mv":"X+1","tags":"payload","tip":"Vigilance/trample/haste; dies into X Treasures — answered ≠ tempo loss"},
+      {"n":"Lifeblood Hydra","mv":"X+3","tags":"payload draw","tip":"Dies into X cards + X life"},
+      {"n":"Primordial Hydra","mv":"X+2","tags":"payload scale","tip":"Doubles its own counters every upkeep; trample at 10+"},
+      {"n":"Steelbane Hydra","mv":"X+2","tags":"payload","tip":"Remove a counter: destroy artifact/enchantment — repeatable answer"},
+      {"n":"Stonecoil Serpent","mv":"X","tags":"payload","tip":"Reach/trample/pro-multicolor — safest home for moved counters"},
+      {"n":"Hangarback Walker","mv":"XX","tags":"payload fractal","tip":"Dies into X Thopters; fine early play, fine late"},
+      {"n":"Kinetic Ooze","mv":"X+1","tags":"payload","tip":"ETB removal scaled by X; at X≥10 doubles counters on other creatures"},
+      {"n":"Ingenious Prodigy","mv":"X+1","tags":"payload draw","tip":"Skulk body that pays counters back as cards each upkeep"},
+      {"n":"Altered Ego","mv":"X+4","tags":"payload","tip":"Uncounterable clone with X bonus counters"}
+    ]},
+    {"title":"Fractal factory","desc":"Token math: 0/0 base bodies that scale forever","cards":[
+      {"n":"Deekah, Fractal Theorist","mv":5,"tags":"fractal","tip":"Magecraft: Fractal sized by each instant/sorcery's mana value; unblockable enabler"},
+      {"n":"Zimone, All-Questioning","mv":3,"tags":"fractal","tip":"Prime number of lands at end step → Primo token sized to land count"},
+      {"n":"Striding Shotcaller","name":"Striding Shotcaller // Run the Play","mv":2,"tags":"fractal scale","tip":"Combat damage preps it; Run the Play: X counters on each of up to X creatures"},
+      {"n":"Oversimplify","mv":5,"tags":"fractal","tip":"Exile ALL creatures (yours too) → everyone gets one Fractal; yours rebuilds biggest"},
+      {"n":"Biomass Mutation","mv":"X+2","tags":"fractal","tip":"Team becomes X/X — wins on the spot, but SETS base power: turns Primo off"}
+    ]},
+    {"title":"X-draw refills","desc":"Spare mana becomes a fresh hand — all at the cadence","cards":[
+      {"n":"Pull from Tomorrow","mv":"X+2","tags":"draw firstx","tip":"Instant X draw — cast it on an opponent's turn to double the cadence"},
+      {"n":"Stroke of Genius","mv":"X+3","tags":"draw firstx","tip":"Instant X draw; can target opponents (politics or deck-out)"},
+      {"n":"Commander's Insight","mv":"X+3","tags":"draw firstx","tip":"X cards +1 per commander recast — scales with your own casualties"},
+      {"n":"Eureka Moment","mv":4,"tags":"draw xmana","tip":"Draw 2, drop a land tapped"},
+      {"n":"Quandrix Apprentice","mv":2,"tags":"draw xmana","tip":"Magecraft: dig 3 for a land per instant/sorcery"},
+      {"n":"Zimone, Quandrix Prodigy","mv":2,"tags":"draw xmana","tip":"Tap: extra land drop; late: draw 2 at 8+ lands"},
+      {"n":"Nexus Mentality","mv":4,"tags":"draw scale","tip":"Move ALL counters between permanents, or cash them out as cards"}
+    ]},
+    {"title":"Interaction","desc":"Mostly sorcery-speed and bounce-based — the precon's soft spot","cards":[
+      {"n":"Beast Within","mv":3,"tags":"protect","tip":"Any permanent → 3/3; the deck's best catch-all"},
+      {"n":"Rapid Hybridization","mv":1,"tags":"protect","tip":"1-mana creature answer; the 3/3 Frog Lizard is small here"},
+      {"n":"Primal Might","mv":"X+1","tags":"payload","tip":"X pump + fight — removal that scales with your mana"},
+      {"n":"Curse of the Swine","mv":"X+2","tags":"payload","tip":"Exile X creatures — hits indestructible, beats death triggers"},
+      {"n":"Entrancing Melody","mv":"X+2","tags":"payload","tip":"Steal a creature with MV X — permanently"},
+      {"n":"Perplexing Test","mv":5,"tags":"protect","tip":"Bounce all tokens OR all nontokens — your Fractals dodge one mode"},
+      {"n":"Zimone's Hypothesis","mv":5,"tags":"protect","tip":"Counter a creature first, then bounce every odd- or even-power creature"},
+      {"n":"Quandrix Command","mv":3,"tags":"protect scale","tip":"Two modes: bounce/counter-artifact-enchantment/scry+counters"},
+      {"n":"Quandrix Charm","mv":2,"tags":"protect scale","tip":"Counters+trample / tuck a spell / put a permanent on top"},
+      {"n":"Decisive Denial","mv":2,"tags":"protect","tip":"Fight OR counter noncreature — the deck's one real counterspell"},
+      {"n":"Silkguard","mv":"X+1","tags":"protect scale","tip":"Hexproof X targets AND a counter each — protection that feeds the engine"},
+      {"n":"Tyvar's Stand","mv":"X+1","tags":"protect","tip":"Hexproof/indestructible + X pump at instant speed"},
+      {"n":"Guardian Augmenter","mv":3,"tags":"protect","tip":"FLASH: commanders get hexproof +2/+2 — Zimone insurance"}
+    ]},
+    {"title":"Ramp & mana","desc":"Over quota on purpose — in an X deck, mana is spell size","cards":[
+      {"n":"Sol Ring","mv":1,"tags":"xmana"},
+      {"n":"Arcane Signet","mv":2,"tags":"xmana"},
+      {"n":"Nature's Lore","mv":2,"tags":"xmana","tip":"Forest to battlefield untapped (grabs the duals)"},
+      {"n":"Three Visits","mv":2,"tags":"xmana","tip":"Same as Nature's Lore — best ramp in the 99"},
+      {"n":"Animist's Awakening","mv":"X+1","tags":"xmana firstx","tip":"Top-X lands to battlefield; spell mastery untaps them"},
+      {"n":"Open the Way","mv":"X+2","tags":"xmana firstx","tip":"Dig to X lands (X ≤ player count), battlefield tapped"},
+      {"n":"Astral Cornucopia","mv":"XXX","tags":"xmana scale","tip":"Charge-counter rock — proliferate and Ozolith grow it"},
+      {"n":"Elementalist's Palette","mv":3,"tags":"xmana firstx","tip":"2 charges per X cast; taps for ALL charges toward X costs"},
+      {"n":"Mana Bloom","mv":"X+1","tags":"xmana","tip":"X charges, one mana per turn, returns to hand when empty"},
+      {"n":"Opal Palace","tags":"scale","tip":"Zimone re-enters with +1/+1 counters per prior cast — commander-tax insurance"},
+      {"n":"Study Hall","tags":"draw","tip":"Scry X on commander casts"},
+      {"n":"Alchemist's Refuge","tags":"firstx","tip":"Flash for everything — cast X spells on opponents' turns"},
+      {"n":"Rogue's Passage","tags":"payload","tip":"Unblockable 20/20 hydra = a kill"},
+      {"n":"Lands ×37","name":null,"tip":"24 nonbasic + 7 Island + 6 Forest; ~12 enter tapped — the precon's main tempo cost"}
+    ]},
+    {"title":"Wincons","desc":"None require the commander — she's the engine, not the payload","cards":[
+      {"n":"Tanazir attack pump","name":null,"tags":"fractal scale","tip":"Team's base P/T becomes Tanazir's — 1/1 tokens swing as 8/8s"},
+      {"n":"Primo fractal spiral","name":null,"tags":"fractal","tip":"Each base-0 hit mints a damage-sized Fractal — doubles every combat"},
+      {"n":"Biomass Mutation","name":null,"tags":"fractal","tip":"X=12 with a wide board ends games"},
+      {"n":"One giant hydra + Rogue's Passage","name":null,"tags":"payload","tip":"Commander damage isn't the plan — 21 generic trample damage is"}
+    ]}
+  ]
+}
+</script>
+<script src="../viewer.js?v=20260710a"></script>
+</body>
+</html>
