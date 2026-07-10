@@ -51,6 +51,18 @@ body.filtering .chip.lit{opacity:1;border-color:var(--gold)}
 #cardBox a{color:var(--u);font-size:13px}
 #cardBox .close{position:absolute;top:10px;right:14px;font-size:20px;color:var(--dim);cursor:pointer;background:none;border:none}
 .loading{color:var(--dim);padding:30px;font-size:14px}
+/* touch selection + bottom info bar */
+.chip.sel{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.chip.otter.sel{box-shadow:inset 3px 0 0 var(--u),0 0 0 1px var(--gold)}
+.touchbar{position:fixed;left:0;right:0;bottom:0;background:#0d1017;border-top:1px solid var(--gold);padding:10px 14px calc(10px + env(safe-area-inset-bottom));font-size:12.5px;z-index:8;display:none}
+.touchbar.show{display:block}
+.touchbar b{color:var(--gold)}
+.touchbar i{color:var(--dim)}
+/* modal: role + related chips */
+.relLbl{display:block;color:var(--gold);font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;margin:12px 0 5px}
+.roletip{font-size:12.5px;color:var(--text)}
+#cardBox .rel .chip{cursor:pointer}
+#cardBox .rel .chip:hover{border-color:var(--gold)}
 #viewToggle{position:absolute;top:24px;right:24px;background:var(--panel2);color:var(--text);border:1px solid #303a52;border-radius:8px;padding:6px 12px;font-size:12.5px;cursor:pointer}
 #viewToggle:hover{border-color:var(--gold)}
 /* share view: clean, no diff/revision noise */
