@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alania Otter Storm — Deck Map</title>
-<link rel="stylesheet" href="../style.css?v=20260710h">
+<link rel="stylesheet" href="../style.css?v=20260710j">
 </head>
 <body>
 <script type="application/json" id="deck-data">
@@ -12,7 +12,6 @@
   "name": "Alania, Divergent Storm — Otter Spellslinger",
   "slug": "alania-otter-storm",
   "sub": "100 cards · 37 lands · avg MV ~2.8 · nominal Bracket 4 (~5 Game Changers)",
-  "revnote": "v2 proposed · updated 2026-07-10",
   "accentLabel": "Otter (feeds Alania / Three Tree City)",
   "manaNote": "Blue-hungry deck — about 2 blue symbols for every red. Get Islands and blue duals on board first; most red costs need just one Mountain. The big exception: Niv-Mizzet, Parun wants UUURRR, so save your dual lands for the turn he comes down.",
   "hint": "Blue left-edge = Otter. Alania copies your first instant, first sorcery, AND first Otter spell each turn — an opponent draws per copy, which Narset caps.",
@@ -32,7 +31,7 @@
     {"k":"untap","label":"Floodcaller untap loop","blurb":"every spell untaps Kitsa for repeat copies",
      "how":"Valley Floodcaller untaps all your Otters (and Birds/Frogs/Rats) on EVERY noncreature spell. Kitsa taps to copy an instant/sorcery for 2 (needs power 4+ — prowess stacking gets her there mid-chain). Each spell = another untap = another copy activation.",
      "ex":"Floodcaller + Kitsa + 3 cantrips + Storm-Kiln treasures: Opt (untap, pump) → tap Kitsa copy Ponder → Ponder untaps her again → repeat while mana lasts.",
-     "why":"Activated abilities that reset every cast turn small spells into engines — mana becomes your only real constraint, which is why Medallion/treasures matter."},
+     "why":"Activated abilities that reset every cast turn small spells into engines — mana becomes your only real constraint, which is why Mentor's discount and Storm-Kiln treasures matter."},
     {"k":"myriad","label":"Muddle myriad blowout","blurb":"Muddle becomes Stormsplitter, attacks everyone",
      "how":"Muddle copies a nonlegendary creature you control every time you cast an instant/sorcery, keeping myriad. Myriad: on attack, token copies attack EACH other opponent. Best masks: Stormsplitter (each copy spawns more per spell), Storm-Kiln, Guttersnipe.",
      "ex":"3 opponents: Muddle-as-Stormsplitter attacks → 2 myriad tokens attack the others → cast Blow Off Steam mid-combat → each Stormsplitter spawns another. Hasty 1/4s hitting everyone at once.",
@@ -42,7 +41,7 @@
      "ex":"All three pingers + a 6-spell turn = 24 to each opponent before any copies. Copies add Storm-Kiln treasures and Archmage draws on top.",
      "why":"Read triggers precisely: 'whenever you cast' ≠ 'magecraft'. Deck evaluation lives in these details."},
     {"k":"bigturn","label":"Storm turn","blurb":"ritual mana + TYS/Amulet into a chained finish",
-     "how":"Thousand-Year Storm copies every instant/sorcery once per prior spell that turn (1st ×1, 2nd ×2, 3rd ×3…). Fuel it with Jeska's Will / Mana Geyser burst mana and Medallion/Amulet discounts. Aetherflux gains 1 life per spell YOU cast — after ~15 casts, 50-life lasers start firing.",
+     "how":"Thousand-Year Storm copies every instant/sorcery once per prior spell that turn (1st ×1, 2nd ×2, 3rd ×3…). Fuel it with Jeska's Will / Mana Geyser burst mana and Mentor/Amulet discounts. Aetherflux gains 1 life per spell YOU cast — after ~15 casts, 50-life lasers start firing.",
      "ex":"TYS in play: Jeska's Will → Geyser (10R) → chain 6 cantrips = ~21 resolutions, ~21 Storm-Kiln treasures, Aetherflux +21 life → laser two players.",
      "why":"Storm decks count 'spells castable this turn', not cards in hand — mana bursts and cost reducers ARE card advantage here."},
     {"k":"scepter","label":"Scepter package","blurb":"imprint a 2-drop instant, recast every turn",
@@ -71,7 +70,8 @@
       {"n":"Stormsplitter","mv":4,"otter":true,"tags":"myriad","tip":"Token copy of itself per instant/sorcery; haste"},
       {"n":"Valley Floodcaller","mv":3,"otter":true,"tags":"untap","tip":"Untaps your Otters + pumps per noncreature spell; flash enabler"},
       {"n":"Kitsa, Otterball Elite","mv":2,"otter":true,"tags":"untap double","tip":"Tap: loot. Tap+2: copy instant/sorcery (needs power 4+)"},
-      {"n":"Muddle, the Ever-Changing","mv":4,"otter":true,"new":true,"tags":"myriad","tip":"NEW · becomes any nonlegendary creature you control + myriad, per instant/sorcery"},
+      {"n":"Muddle, the Ever-Changing","mv":4,"otter":true,"tags":"myriad","tip":"Becomes any nonlegendary creature you control + myriad, per instant/sorcery"},
+      {"n":"Stormcatch Mentor","mv":2,"otter":true,"tags":"bigturn","tip":"Haste, prowess; your instants/sorceries cost {1} less — discounts the whole chain"},
       {"n":"Bria, Riptide Rogue","mv":4,"otter":true,"tags":"ping","tip":"Prowess for the team + unblockable enabler"},
       {"n":"Ledger Shredder","mv":2,"tags":"gy","tip":"Connive per 2nd spell each turn — fills yard"},
       {"n":"Ral, Crackling Wit","mv":4,"tags":"ping","tip":"+1: Otter token · −3: draw 3 discard 2 · grows per noncreature cast"},
@@ -86,7 +86,7 @@
       {"n":"Faithless Looting","mv":1,"tags":"gy","tip":"Fills yard for Cruise; flashback = 2 casts"},
       {"n":"Pearl of Wisdom","mv":3,"tags":"ping","tip":"1U draw 2 with an Otter out"},
       {"n":"Otterball Antics","mv":2,"otter":true,"tags":"ping","tip":"Otter token; counts as Otter spell for Alania"},
-      {"n":"Treasure Cruise","mv":8,"new":true,"tags":"gy","tip":"NEW · Delve: often 1-2 mana draw 3 by midgame"},
+      {"n":"Treasure Cruise","mv":8,"tags":"gy","tip":"Delve: often 1-2 mana draw 3 by midgame"},
       {"n":"Wan Shi Tong, Librarian","mv":"2+X","tags":"gy niv","tip":"Draw half X; hoses opponent tutors"},
       {"n":"Stormchaser's Talent","mv":1,"tags":"ping","tip":"Class: Otter token → spells cost less → big X payoff"},
       {"n":"Artist's Talent","mv":2,"tags":"gy","tip":"Loot per noncreature spell; lvl 2 cost reduction"},
@@ -99,9 +99,9 @@
       {"n":"Mana Drain","mv":2,"tags":"bigturn"},
       {"n":"Deflecting Swat","mv":3,"tags":"double","tip":"Free redirect; protects Alania/Niv"},
       {"n":"Narset's Reversal","mv":2,"tags":"scepter","tip":"Bounce-counter OR copy your own spell; Scepter all-star"},
-      {"n":"Chaos Warp","mv":3,"new":true,"tags":"ping","tip":"NEW · answers any resolved permanent"},
-      {"n":"Abrade","mv":2,"new":true,"tags":"ping","tip":"NEW · kill a creature or artifact, instant speed"},
-      {"n":"Pongify","mv":1,"new":true,"tags":"ping scepter","tip":"NEW · 1-mana creature answer; Scepter-legal"},
+      {"n":"Chaos Warp","mv":3,"tags":"ping","tip":"Answers any resolved permanent"},
+      {"n":"Abrade","mv":2,"tags":"ping","tip":"Kill a creature or artifact, instant speed"},
+      {"n":"Pongify","mv":1,"tags":"ping scepter","tip":"1-mana creature answer; Scepter-legal"},
       {"n":"Cyclonic Rift","mv":2,"tags":"bigturn","tip":"One-sided reset; GC"},
       {"n":"Blasphemous Act","mv":9,"tags":"ping","tip":"Board reset — note Alania (3/5) dies too; hold her or protect"},
       {"n":"Propaganda","mv":3,"tip":"Pillow fort while the engine assembles"}
@@ -121,22 +121,22 @@
     ]},
     {"title":"Wincons","desc":"All survive commander removal — key resilience check","cards":[
       {"n":"Niv-Mizzet, Parun","mv":6,"tags":"niv","tip":"6 dmg per draw-spell chain; wins with Curiosity attached"},
-      {"n":"Curiosity","mv":1,"new":true,"tags":"niv","tip":"NEW · on Niv: ping→draw→ping… table-kill. Also fine on Guttersnipe"},
+      {"n":"Curiosity","mv":1,"tags":"niv","tip":"On Niv: ping→draw→ping… table-kill. Also fine on Guttersnipe"},
       {"n":"Aetherflux Reservoir","mv":4,"tags":"bigturn ping","tip":"50-life laser after a storm turn"},
       {"n":"Stormsplitter + Muddle","name":null,"tags":"myriad","tip":"Copy army alpha-strike (see Muddle cluster)"},
       {"n":"Pinger attrition","name":null,"tags":"ping","tip":"Guttersnipe + Field + Coruscation ticking 4/turn-cycle each"}
     ]},
-    {"title":"Ramp & mana","desc":"7 pieces + Storm-Kiln treasures; Medallion is ramp that compounds in chains","cards":[
+    {"title":"Ramp & mana","desc":"Rocks + Storm-Kiln treasures; Stormcatch Mentor's discount (in payoffs) compounds in chains","cards":[
       {"n":"Sol Ring","mv":1},
       {"n":"Arcane Signet","mv":2},
       {"n":"Izzet Signet","mv":2},
       {"n":"Thought Vessel","mv":2,"tip":"No max hand size matters with Niv/Cruise"},
-      {"n":"Sapphire Medallion","mv":2,"new":true,"tags":"bigturn","tip":"NEW · your 40 blue spells cost 1 less"},
       {"n":"Mystical Tutor","mv":1,"tags":"niv","tip":"Instant-speed tutor for Rift / Cruise / the right answer"},
       {"n":"Three Tree City","tags":"myriad","tip":"Big color-fixed burst for the chosen type (Otter/Wizard)"}
     ]}
   ],
-  "lands": {"title":"Lands ×37","desc":"18 Island · 9 Mountain · 10 duals/utility (Three Tree City shown under Ramp for its synergy)","cards":[
+  "lands": {"title":"Lands ×37","desc":"17 Island · 9 Mountain · 11 duals/utility (Three Tree City shown under Ramp for its synergy)","cards":[
+    {"n":"Mystic Sanctuary","tags":"gy","tip":"Enters untapped with 3+ Islands: put an instant/sorcery from your graveyard on top — Rift or a counterspell, again"},
     {"n":"Cascade Bluffs","tip":"Filters into UU / RR / UR — feeds Niv-Mizzet's steep cost"},
     {"n":"Command Tower"},
     {"n":"Desolate Lighthouse","tip":"Repeatable looting — fills the yard for Treasure Cruise"},
@@ -146,20 +146,11 @@
     {"n":"Stormcarved Coast"},
     {"n":"Sulfur Falls"},
     {"n":"Training Center"},
-    {"n":"Island","count":18},
+    {"n":"Island","count":17},
     {"n":"Mountain","count":9}
-  ]},
-  "pulled": {"title":"Pulled this revision","desc":"Theme tax refunds + flood insurance","cards":[
-    {"n":"Thieving Otter","tip":"Vanilla value — pure theme tax"},
-    {"n":"Lightshell Duo","tip":"Draft filler; surveil 2 isn't a Commander card"},
-    {"n":"Tempest Angler","tip":"Counters with no payoff attached"},
-    {"n":"Kindlespark Duo","tip":"Cute untap, weakest of the untap package"},
-    {"n":"Daring Waverider","tip":"6 mana for a ≤4MV recast — too slow"},
-    {"n":"1 Island","name":null},
-    {"n":"1 Mountain","name":null}
   ]}
 }
 </script>
-<script src="../viewer.js?v=20260710h"></script>
+<script src="../viewer.js?v=20260710j"></script>
 </body>
 </html>

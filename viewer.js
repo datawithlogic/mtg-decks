@@ -492,4 +492,9 @@
   let builder = false;
   try { builder = new URL(location.href).searchParams.get("view") === "builder"; } catch (e) {}
   setView(!builder); /* default = share (QR/friend-facing); ?view=builder for James */
+  /* builder views are ephemeral: once a revision is accepted the deck JSON
+     carries no revnote/pulled/new flags — hide the toggle entirely then */
+  const hasDiffData = data.revnote || data.pulled ||
+    data.groups.some((g) => g.cards.some((c) => c.new));
+  if (!hasDiffData) { toggleBtn.style.display = "none"; setView(true); }
 })();
