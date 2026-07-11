@@ -113,8 +113,10 @@
      arcs, max 4) so a card in 2 clusters shows 50/50, etc. Lit borders are
      2px — 1px segments are imperceptible. See standards/deck-map-ux.md. */
   function unlitStyle(c) {
-    c.style.borderColor = ""; c.style.borderWidth = ""; c.style.background = "";
+    c.style.borderColor = ""; c.style.background = "";
   }
+  /* NOTE: border width is constant (2px, set in CSS) — only COLOR changes
+     on highlight. Width changes reflow the chip grid (layout shift). */
   function light(keys) {
     document.body.classList.add("filtering");
     chips.forEach((c) => {
@@ -122,7 +124,6 @@
       const shared = keys.filter((x) => k.includes(x)).slice(0, 4);
       c.classList.toggle("lit", shared.length > 0);
       if (!shared.length) { unlitStyle(c); return; }
-      c.style.borderWidth = "2px";
       if (shared.length === 1) {
         c.style.borderColor = clusterColor[shared[0]];
         c.style.background = "";
@@ -156,7 +157,11 @@
     const key = "deckTypes:" + (data.slug || location.pathname);
     try {
       const s = JSON.parse(localStorage.getItem(key) || "null");
-      if (s && Date.now() - s.ts < 6048e5 && s.map) { Object.assign(typeMap, s.map); return; }
+      /* cache must be fresh AND cover every card currently in the deck —
+         otherwise (deck edited since caching) refetch everything */
+      if (s && Date.now() - s.ts < 6048e5 && s.map && names.every((n) => s.map[n])) {
+        Object.assign(typeMap, s.map); return;
+      }
     } catch (e) {}
     try {
       const lookup = {};
@@ -260,7 +265,8 @@
             `<label class="clrow${state[it.name] ? " done" : ""}" data-cl="${esc(it.name)}">
                <input type="checkbox" ${state[it.name] ? "checked" : ""}>
                <span class="clcount">${it.count > 1 ? it.count + "×" : ""}</span>
-               <span>${esc(it.n)}</span></label>`).join("")
+               <span class="clname">${esc(it.n)}</span>
+               <button class="cleye" data-eye="${esc(it.name)}" title="Show card">🔍</button></label>`).join("")
         }</div></div>`;
       }).join("")}`;
     const prog = () => {
@@ -268,6 +274,10 @@
       document.getElementById("clprog").textContent = `${done} / ${total} cards sleeved`;
     };
     prog();
+    wrap.querySelectorAll(".cleye").forEach((b) => b.addEventListener("click", (e) => {
+      e.preventDefault(); e.stopPropagation();
+      openCard(b.dataset.eye);
+    }));
     wrap.querySelectorAll(".clrow").forEach((r) => r.addEventListener("click", (e) => {
       e.preventDefault();
       const nm = r.dataset.cl;

@@ -55,11 +55,13 @@ Principle: borders convey *state*, not decoration. At rest the map is
 near-monochrome; color appears only during active exploration. This is
 the busy-ness guard — salience is spent only where attention should go.
 
-- **1px neutral (#303a52)** — resting chip structure. Never colored at rest.
-- **Lit = 2px colored border + global dim** — relationship highlight. The
-  signal is hue + the 16%-opacity figure-ground drop. 2px because
-  multi-cluster segments (below) are imperceptible at 1px; box-sizing is
-  border-box so no layout shift.
+- **Constant 2px border width, always.** Chips size to their content, so
+  ANY width change reflows the whole grid — visible layout shift on every
+  hover (found the hard way, 2026-07-10). Resting state is 2px in a
+  low-contrast neutral (#2b3449); highlight changes ONLY the color.
+  2px also keeps multi-cluster segments (below) legible.
+- **Lit = colored border + global dim** — relationship highlight. The
+  signal is hue + the 16%-opacity figure-ground drop.
 - **Multi-cluster membership: segmented borders.** When a lit chip shares
   2+ clusters with the selection, its border is a conic-gradient of equal
   arcs (50/50 for two, thirds for three), capped at 4 segments for

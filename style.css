@@ -24,7 +24,7 @@ h1{font-size:20px;margin:0 0 2px}
 .group h3{margin:0 0 3px;font-size:14.5px}
 .group .desc{font-size:11.5px;color:var(--dim);margin-bottom:9px}
 .chips{display:flex;flex-wrap:wrap;gap:5px}
-.chip{background:var(--panel2);border:1px solid #303a52;border-radius:6px;padding:3px 8px;font-size:12.5px;cursor:default;transition:opacity .12s,border-color .12s;position:relative}
+.chip{background:var(--panel2);border:2px solid #2b3449;border-radius:6px;padding:3px 8px;font-size:12.5px;cursor:default;transition:opacity .12s,border-color .12s;position:relative}
 .chip[data-name]{cursor:pointer}
 .chip .mv{color:var(--dim);font-size:10.5px;margin-left:4px}
 .chip.cmdr{border-color:var(--gold);background:#2d2818}
@@ -86,7 +86,10 @@ body.draft #checklist{display:block}
 .clrow{display:flex;gap:9px;align-items:center;padding:8px 10px;background:var(--panel);border:1px solid #2a3346;border-radius:8px;cursor:pointer;font-size:13px}
 .clrow input{pointer-events:none;accent-color:var(--green)}
 .clrow.done{opacity:.45}
-.clrow.done span:last-child{text-decoration:line-through}
+.clrow.done .clname{text-decoration:line-through}
+.clname{flex:1}
+.cleye{background:none;border:none;font-size:14px;cursor:pointer;padding:2px 4px;opacity:.55}
+.cleye:hover{opacity:1}
 .clcount{color:var(--dim);min-width:24px;text-align:right}
 @media (max-width:760px){
   #draftToggle{position:static;display:inline-block;margin:0 0 10px 8px}
