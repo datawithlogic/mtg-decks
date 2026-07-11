@@ -163,7 +163,44 @@
       localStorage.setItem(key, JSON.stringify({ ts: Date.now(), map: typeMap }));
     } catch (e) { /* offline: boxes just omit the type line */ }
   }
-  prefetchTypes();
+  /* ---------- mana at a glance ----------
+   * Computed from verified casting costs (typeMap): colored pip demand,
+   * i.e. which colors your lands must produce and how badly. Hybrid pips
+   * split fractionally. Rendered with MTG's semantic WUBRG colors — a
+   * separate encoding domain from the cluster palette (see standards). */
+  function renderMana() {
+    const counts = { W: 0, U: 0, B: 0, R: 0, G: 0 };
+    chips.forEach((c) => {
+      if (!c.dataset.name || c.closest(".pulled")) return;
+      const m = (typeMap[c.dataset.name] || {}).m || "";
+      for (const tok of m.match(/{[^}]+}/g) || []) {
+        const inner = tok.slice(1, -1);
+        if (/^[WUBRG]$/.test(inner)) counts[inner] += 1;
+        else if (inner.includes("/")) {
+          const parts = inner.split("/").filter((p) => /^[WUBRG]$/.test(p));
+          parts.forEach((p) => { counts[p] += 1 / parts.length; });
+        }
+      }
+    });
+    const MC = { W: "#e8dfb8", U: "#4aa3df", B: "#9b7fb8", R: "#e05c4b", G: "#4fbf78" };
+    const NAMES = { W: "White", U: "Blue", B: "Black", R: "Red", G: "Green" };
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    if (!total) return;
+    const active = Object.entries(counts).filter(([, v]) => v > 0)
+      .sort((a, b) => b[1] - a[1]);
+    const bar = active.map(([k, v]) =>
+      `<i style="width:${(v / total * 100).toFixed(1)}%;background:${MC[k]}" title="${NAMES[k]}"></i>`).join("");
+    const txt = active.map(([k, v]) =>
+      `<span style="color:${MC[k]}">●</span> ${NAMES[k]} ${Math.round(v)} (${Math.round(v / total * 100)}%)`).join(" &nbsp;·&nbsp; ");
+    const sec = document.createElement("section");
+    sec.className = "group mana";
+    sec.innerHTML = `<h3>Mana at a glance</h3>
+      ${data.manaNote ? `<div class="desc">${esc(data.manaNote)}</div>` : ""}
+      <div class="manabar">${bar}</div>
+      <div class="manacounts">${txt}<span class="manahint"> — colored symbols in casting costs: what this deck needs its lands to produce</span></div>`;
+    document.querySelector(".groups").prepend(sec);
+  }
+  prefetchTypes().then(renderMana);
 
   /* hover/tap info box content: what it IS · role · which clusters */
   function infoHtml(c) {

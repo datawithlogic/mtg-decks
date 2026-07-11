@@ -79,6 +79,19 @@ the busy-ness guard — salience is spent only where attention should go.
   against its adjacent background (WCAG 1.4.11 non-text contrast). All
   palette entries clear this on #1C2230/#232B3D panels.
 
+## Mana at a glance (per deck, auto-rendered)
+
+A full-width card at the top of the groups grid: a stacked pip-demand bar
+(colored mana symbols across all maindeck casting costs, hybrids split
+fractionally, computed from the Scryfall prefetch — never hand-counted)
+plus per-color counts/percentages as redundant text, plus an authored
+`manaNote` in the deck JSON: 1–3 plain-language sentences telling a newer
+player which colors to prioritize getting on board and any exceptions
+(e.g., one steep multi-pip bomb). WUBRG segments use MTG's semantic card
+colors (dark-bg tuned: W #E8DFB8, U #4AA3DF, B #9B7FB8, R #E05C4B,
+G #4FBF78) — a separate encoding domain from the cluster palette; the two
+never mix meanings.
+
 ## Interaction budget (keep it actionable, not busy)
 
 - Any state reachable in ≤2 taps; any state escapable by tapping empty
