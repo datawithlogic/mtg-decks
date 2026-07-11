@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Goth Elves — Deck Map</title>
+<link rel="stylesheet" href="../style.css?v=20260711b">
+</head>
+<body>
+<script type="application/json" id="deck-data">
+{
+  "name": "Goth Elves — Lathril Golgari Elf Tribal",
+  "slug": "lathril-goth-elves",
+  "sub": "100 cards · 32 lands · avg MV ~3.4 · Bracket 3 (1 Game Changer)",
+  "revnote": "v2 proposed · ban-fix + Morcant · 2026-07-11",
+  "accentLabel": "Elf (counts for Lathril, lords, Priest, Shaman…)",
+  "manaNote": "Forests first — the deck is overwhelmingly green, and your mana elves are green too. Black is a small but real need (Lathril, Shaman of the Pack, removal): two black sources by turn 4 is plenty. Gilt-Leaf Palace and Undergrowth Stadium enter untapped basically always here.",
+  "hint": "Blue left-edge = Elf. Two ways to win: go wide and Craterhoof, or tap ten Elves to Lathril's drain — and the untap artifacts let her do it more than once per turn.",
+  "clusters": [
+    {"k":"mana","label":"Elfball mana","blurb":"elves that tap for more elves",
+     "how":"Priest of Titania, Elvish Archdruid, Circle of Dreams Druid, and Wirewood Channeler tap for mana equal to your ELF COUNT — they scale as the board grows. Marwyn grows with each elf that enters; Selvala with anything big; Elvish Guidance turns one land into a Gaea's Cradle.",
+     "ex":"Turn 4 with 6 elves: Priest taps for 6, Archdruid for 6 more — that's a Craterhoof turn two full turns ahead of schedule.",
+     "why":"Creature-based ramp is faster but fragile: it's also why this deck fears board wipes more than anything (see Protection)."},
+    {"k":"untap","label":"The Lathril engine","blurb":"tap ten, drain ten, untap, repeat",
+     "how":"Lathril taps ten untapped Elves: each opponent loses 10, you gain 10. Staff of Domination, Umbral Mantle, and Sword of the Paruns untap her (and the team) for mana — which Priest/Archdruid provide in excess. Seedborn Muse untaps everything on every turn; Wirewood Lodge and Quirion Ranger untap a key elf on the cheap.",
+     "ex":"Board of 12 elves + Umbral Mantle on nothing-special mana: tap ten (drain 10), pay 3 with Priest mana to untap via Mantle-equipped Marwyn... chains until the table is at zero. Rule zero note: this is a real combo finish.",
+     "why":"When your commander has a tap ability, every 'untap' effect in the format is secretly a copy of that ability."},
+    {"k":"swarm","label":"Token swarm","blurb":"elves make elves make elves",
+     "how":"Lathril mints an Elf per combat damage she deals (menace helps her connect); Lys Alana on every elf CAST; Elvish Warmaster on the first elf each turn (including opponents' turns); Elven Ambush at instant speed; Doubling Season doubles all of it. NEW: High Perfect Morcant turns every one of those elf-entries into board control — each opponent puts a -1/-1 counter on their own creature.",
+     "ex":"Lathril hits for 5 with Doubling Season out: 10 new elves — and with Morcant, opponents blight 10 times. Their board shrinks as yours explodes.",
+     "why":"Token engines compound; the strongest additions are cards that piggyback a SECOND effect onto each token (Morcant, Warden, Huntmaster)."},
+    {"k":"lords","label":"Lord stack","blurb":"every anthem multiplies the whole tribe",
+     "how":"Dwynen, Elvish Champion, Imperious Perfect, Canopy Tactician, Leaf-Crowned Visionary, Pride of the Perfect, and Joraga Warcaller (kicked) each pump every elf. Abomination of Llanowar and Crown of Skemfar scale with elf count instead. Five lords turn 1/1 tokens into 6/6s.",
+     "ex":"Ten tokens + three lords = 30 extra power from cards that cost 2–3 mana each. That's why tribal decks skip 'good stuff' — density IS the payoff.",
+     "why":"Theme tax in reverse: in a real tribal deck, on-tribe cards get a hidden discount because every lord multiplies them."},
+    {"k":"drain","label":"Death & drain","blurb":"win without attacking",
+     "how":"Shaman of the Pack drains on ETB for elf count; Skemfar Shadowsage does it again; Lathril's tap-ten is the big one; Poison-Tip Archer pings every death; Essence Warden banks life the whole game. NEW: Skemfar Avenger converts every dead elf into a card — wipes stop being game over.",
+     "ex":"Return Upon the Tide rebuys Shaman of the Pack with 8 elves out: 8 drain, plus two more token elves. No combat step needed.",
+     "why":"Wide decks need a non-combat win for the board-stall games — drain effects that scale with width reuse the same resource."},
+    {"k":"refill","label":"Refill engines","blurb":"the hand rebuilds as fast as the board",
+     "how":"Beast Whisperer draws on every creature cast; Shamanic Revelation and Last March of the Ents draw per body; Bounty of Skemfar and Harald dig; Realmwalker casts elves off the top; Vanquisher's Banner does both jobs at once.",
+     "ex":"Beast Whisperer + a hand of 1-drops: cast four elves, draw four cards, cast those too. Elfball turns are draw engines with bodies attached.",
+     "why":"Go-wide decks lose to their own empty hand more than to removal — draw quota matters MORE in cheap-creature decks, not less."},
+    {"k":"overrun","label":"Overrun finishers","blurb":"the board becomes lethal in one spell",
+     "how":"Craterhoof Behemoth (+X/+X and trample per creature), Overwhelming Stampede (scales off your biggest), Ezuri's repeatable overrun activation, and Freyalise's ultimate all convert width into a one-turn kill. Elvish Champion's forestwalk is a stealth wincon against green tables.",
+     "ex":"Twelve elves + Craterhoof: +13/+13 trample each. That's ~170 power — one attack ends three players.",
+     "why":"Count wincons that scale with your natural game plan; a finisher you can cast off Priest mana beats a bigger one you can't."},
+    {"k":"protect","label":"Protection & answers","blurb":"the counters to the counter — wipes",
+     "how":"Heroic Intervention and NEW Golgari Charm (regenerate mode) blank board wipes; Ezuri regenerates the team with mana up; Skemfar Avenger makes wipes card-neutral; Roaming Throne (naming Elf) doubles Lathril's triggers behind ward 2. NEW Deadly Rollick is FREE removal while Lathril's out. Casualties of War and Reclamation Sage answer everything else.",
+     "ex":"Opponent taps six for Damnation: Golgari Charm for 1G — the entire elf board regenerates. That's the whole game swinging on one mana held up.",
+     "why":"Ramp-on-creatures decks must budget wipe insurance like spellslinger budgets counterspells — it's the same slot, different shape."}
+  ],
+  "lands": {"title":"Lands ×32","desc":"11 Forest · 5 Swamp · 16 nonbasic (up from 29 in v2 — still lean, carried by 13 mana elves). Wirewood Lodge shown here feeds the untap cluster.","cards":[
+    {"n":"Blooming Marsh"},
+    {"n":"Command Tower"},
+    {"n":"Deathcap Glade"},
+    {"n":"Demolition Field","tip":"Answers Cradle/Coffers-style lands"},
+    {"n":"Evolving Wilds"},
+    {"n":"Gilt-Leaf Palace","tip":"Reveal an Elf: enters untapped. Always."},
+    {"n":"Hissing Quagmire"},
+    {"n":"Llanowar Wastes"},
+    {"n":"Myriad Landscape"},
+    {"n":"Necroblossom Snarl"},
+    {"n":"Path of Ancestry","tip":"Scry on every elf cast — Lathril too"},
+    {"n":"Terramorphic Expanse"},
+    {"n":"Undergrowth Stadium"},
+    {"n":"Wirewood Lodge","tags":"untap","tip":"Untap Lathril (second drain) or Priest (more mana)"},
+    {"n":"Woodland Cemetery"},
+    {"n":"Woodland Chasm"},
+    {"n":"Forest","count":11},
+    {"n":"Swamp","count":5}
+  ]},
+  "groups": [
+    {"title":"Command zone & drain engine","desc":"Lathril plus the artifacts that let her drain more than once","cards":[
+      {"n":"Lathril, Blade of the Elves","mv":4,"cmdr":true,"otter":true,"tags":"untap swarm drain","tip":"Menace; combat damage mints that many Elves; tap 10 Elves: drain 10 from each opponent"},
+      {"n":"Staff of Domination","mv":3,"tags":"untap","tip":"Untap Lathril/Priest; with 5+ elf mana it's a full engine (draw, life, untaps)"},
+      {"n":"Umbral Mantle","mv":3,"tags":"untap","tip":"Equip Lathril or a mana elf: 3 to untap — drains chain"},
+      {"n":"Sword of the Paruns","mv":4,"tags":"untap","tip":"Same job, third copy — redundancy is the plan"},
+      {"n":"Immaculate Magistrate","mv":4,"otter":true,"tags":"untap","tip":"Counters on Lathril = elf count; a 12/12 menace commander two-shots"},
+      {"n":"Crown of Skemfar","mv":4,"tags":"lords","tip":"+1/+1 per elf on Lathril + reach; rebuys itself from the yard"}
+    ]},
+    {"title":"Elfball mana","desc":"13 mana producers with pointy ears","cards":[
+      {"n":"Llanowar Elves","mv":1,"otter":true,"tags":"mana"},
+      {"n":"Fyndhorn Elves","mv":1,"otter":true,"tags":"mana"},
+      {"n":"Elves of Deep Shadow","mv":1,"otter":true,"tags":"mana","tip":"The black source that costs no land slot"},
+      {"n":"Priest of Titania","mv":2,"otter":true,"tags":"mana untap","tip":"G per Elf — the engine's heart"},
+      {"n":"Elvish Archdruid","mv":3,"otter":true,"tags":"mana lords","tip":"Lord AND Priest #2"},
+      {"n":"Marwyn, the Nurturer","mv":3,"otter":true,"tags":"mana untap","tip":"Grows per elf ETB; taps for her power"},
+      {"n":"Circle of Dreams Druid","mv":3,"otter":true,"tags":"mana","tip":"Gaea's Cradle on legs"},
+      {"n":"Wirewood Channeler","mv":4,"otter":true,"tags":"mana"},
+      {"n":"Canopy Tactician","mv":4,"otter":true,"tags":"mana lords","tip":"Lord + taps for GGG"},
+      {"n":"Selvala, Heart of the Wilds","mv":3,"otter":true,"tags":"mana refill","tip":"Draws off big ETBs; taps for huge mana post-lords"},
+      {"n":"Quirion Ranger","mv":1,"otter":true,"tags":"untap mana","tip":"Free untap every turn — Lathril or Priest"},
+      {"n":"Elvish Guidance","mv":3,"tags":"mana","tip":"Enchanted land taps for +G per elf"},
+      {"n":"Elvish Harbinger","mv":3,"otter":true,"tags":"mana refill","tip":"Tutors any Elf to the top; taps for any color"}
+    ]},
+    {"title":"Lord stack","desc":"Anthems that multiply every body","cards":[
+      {"n":"Dwynen, Gilt-Leaf Daen","mv":4,"otter":true,"tags":"lords drain","tip":"Lord + life per attacking elf"},
+      {"n":"Elvish Champion","mv":3,"otter":true,"tags":"lords overrun","tip":"Lord + forestwalk — unblockable vs. green tables"},
+      {"n":"Imperious Perfect","mv":3,"otter":true,"tags":"lords swarm","tip":"Lord + a token every turn"},
+      {"n":"Joraga Warcaller","mv":1,"otter":true,"tags":"lords swarm","tip":"Kicked: every counter is another team-wide +1/+1 (Morcant proliferates them!)"},
+      {"n":"Leaf-Crowned Visionary","mv":2,"otter":true,"tags":"lords refill","tip":"Lord + pay G: draw per elf cast"},
+      {"n":"Pride of the Perfect","mv":4,"tags":"lords","tip":"+2/+0 team-wide"},
+      {"n":"Abomination of Llanowar","mv":3,"otter":true,"tags":"lords","tip":"Sized by elves in play AND graveyard — grows through wipes"}
+    ]},
+    {"title":"Token swarm","desc":"Where the width comes from — now with a blight rider","cards":[
+      {"n":"Lys Alana Huntmaster","mv":4,"otter":true,"tags":"swarm","tip":"Token per elf CAST — half the deck triggers it"},
+      {"n":"Elvish Warmaster","mv":2,"otter":true,"tags":"swarm overrun","tip":"Token on first elf each turn (theirs too); mana-sink finisher"},
+      {"n":"Elven Ambush","mv":4,"tags":"swarm","tip":"Instant: double your elf count at their end step"},
+      {"n":"Doubling Season","mv":5,"tags":"swarm","tip":"Doubles tokens AND counters (Warcaller kicks, Magistrate piles)"},
+      {"n":"High Perfect Morcant","mv":4,"otter":true,"new":true,"tags":"swarm drain","tip":"Every elf ETB: each opponent puts -1/-1 on their own creature. Tap 3 elves: proliferate"},
+      {"n":"Galadhrim Brigade","mv":3,"otter":true,"tags":"swarm lords","tip":"Squad: pay extra for copies; all of them are lords"},
+      {"n":"Galadriel, Gift-Giver","mv":5,"otter":true,"tags":"swarm mana","tip":"Counter / Food / Treasure every combat"}
+    ]},
+    {"title":"Death & drain","desc":"The non-combat win","cards":[
+      {"n":"Shaman of the Pack","mv":3,"otter":true,"tags":"drain","tip":"ETB: opponents lose life = elf count. The classic"},
+      {"n":"Skemfar Shadowsage","mv":4,"otter":true,"tags":"drain","tip":"Shaman #2 (or lifegain mode when behind)"},
+      {"n":"Poison-Tip Archer","mv":4,"otter":true,"tags":"drain","tip":"Deathtouch reach + every death pings the table"},
+      {"n":"Essence Warden","mv":1,"otter":true,"tags":"drain","tip":"Life per ANY creature entering — buffer for Toxrill tables"},
+      {"n":"Rhys the Exiled","mv":3,"otter":true,"tags":"drain","tip":"Life per elf on attack; sac an elf to regenerate"},
+      {"n":"Ruthless Winnower","mv":5,"otter":true,"tags":"drain","tip":"Every player sacs a NON-ELF each upkeep — you barely have any"}
+    ]},
+    {"title":"Refill engines","desc":"Rebuild the hand as fast as the board","cards":[
+      {"n":"Beast Whisperer","mv":4,"otter":true,"tags":"refill","tip":"Draw per creature cast — the deck's best engine"},
+      {"n":"Shamanic Revelation","mv":5,"tags":"refill","tip":"Draw per creature; ferocious life bonus"},
+      {"n":"Bounty of Skemfar","mv":3,"tags":"refill","tip":"Land + elf to hand off the top 6"},
+      {"n":"Harald, King of Skemfar","mv":3,"otter":true,"tags":"refill","tip":"Menace body + dig 5 for elves/Tyvar"},
+      {"n":"Last March of the Ents","mv":8,"tags":"refill overrun","tip":"Uncounterable: draw per toughness, dump hand into play"},
+      {"n":"Elvish Visionary","mv":2,"otter":true,"tags":"refill"},
+      {"n":"Realm Seekers","mv":6,"otter":true,"tags":"refill mana","tip":"Huge counters pile; pays out land drops"},
+      {"n":"Realmwalker","mv":3,"otter":true,"tags":"refill","tip":"Cast elves off the top — virtual card advantage every turn"},
+      {"n":"Vanquisher's Banner","mv":5,"tags":"refill lords","tip":"Anthem + draw per elf cast"},
+      {"n":"Skemfar Avenger","mv":2,"otter":true,"new":true,"tags":"refill protect","tip":"Draw per dead elf — board wipes become card parity"},
+      {"n":"Return Upon the Tide","mv":5,"tags":"refill drain","tip":"Reanimate (Shaman of the Pack!) + two tokens; foretell to dodge discard"},
+      {"n":"Blossoming Tortoise","mv":4,"tags":"mana","tip":"Land recursion + cheaper land abilities (Lodge for free)"}
+    ]},
+    {"title":"Protection & interaction","desc":"Wipe insurance + the removal quota fix","cards":[
+      {"n":"Heroic Intervention","mv":2,"tags":"protect","tip":"Hexproof + indestructible — the 2-mana 'no'"},
+      {"n":"Golgari Charm","mv":2,"new":true,"tags":"protect","tip":"Regenerate the team (wipe insurance #2) / kill an enchantment / -1/-1 sweep"},
+      {"n":"Deadly Rollick","mv":4,"new":true,"tags":"protect","tip":"FREE exile removal with Lathril out — from James's binder"},
+      {"n":"Casualties of War","mv":6,"tags":"protect","tip":"Answer everything at once"},
+      {"n":"Reclamation Sage","mv":3,"otter":true,"tags":"protect","tip":"Removal ON an elf — theme and function overlap"},
+      {"n":"Archdruid's Charm","mv":3,"tags":"protect mana","tip":"Tutor elf/land / counter-ish fight / counter removal"},
+      {"n":"Roaming Throne","mv":4,"tags":"untap swarm","tip":"Name Elf: doubles Lathril's tokens AND her drain; ward 2"},
+      {"n":"Ezuri, Renegade Leader","mv":3,"otter":true,"tags":"protect overrun","tip":"Regenerate elves for G; overrun mana sink"},
+      {"n":"Swiftfoot Boots","mv":2,"tags":"protect","tip":"Lathril swings (and taps) the turn she lands"}
+    ]},
+    {"title":"Overrun wincons","desc":"Width → lethal in one card","cards":[
+      {"n":"Craterhoof Behemoth","mv":8,"tags":"overrun","tip":"+X/+X trample per creature — the elfball classic"},
+      {"n":"Overwhelming Stampede","mv":5,"tags":"overrun","tip":"Craterhoof #2, scaled by your biggest body"},
+      {"n":"Freyalise, Llanowar's Fury","mv":5,"tags":"mana overrun","tip":"Tokens, Rec Sage mode, ultimate draws ~10"},
+      {"n":"Tyvar Kell","mv":4,"otter":true,"tags":"mana overrun","tip":"All elves tap for B (Lathril drain mana!); haste emblem"}
+    ]},
+    {"title":"Rocks & tempo","desc":"The non-elf mana","cards":[
+      {"n":"Sol Ring","mv":1,"tags":"mana"},
+      {"n":"Thought Vessel","mv":2,"tags":"mana"},
+      {"n":"Harvest Season","mv":3,"tags":"mana","tip":"Tapped elves = lands fetched; cast after attacking"},
+      {"n":"Seedborn Muse","mv":5,"tags":"untap","tip":"Game Changer #1 — everything untaps every turn; Lathril drains each turn cycle"}
+    ]}
+  ],
+  "pulled": {"title":"Pulled this revision","desc":"Legality fix + non-Elf theme tax","cards":[
+    {"n":"Jeweled Lotus","tip":"BANNED (Sept 2024) — has to go regardless"},
+    {"n":"Elvish Piper","tip":"5 mana + tap + telegraphed, for 2 cheat-worthy targets — trap slot"},
+    {"n":"Primal Vigor","tip":"Symmetric Doubling Season — helps enemy token decks; Season already covers you"},
+    {"n":"Galadhrim Ambush","tip":"Defensive niche; Elven Ambush is the better half"},
+    {"n":"Mirkwood Elk","tip":"6-mana non-Elf value — tribal tax in reverse"}
+  ]}
+}
+</script>
+<script src="../viewer.js?v=20260711b"></script>
+</body>
+</html>

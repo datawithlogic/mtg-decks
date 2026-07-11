@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toxrill Slug Control — Deck Map</title>
+<link rel="stylesheet" href="../style.css?v=20260711b">
+</head>
+<body>
+<script type="application/json" id="deck-data">
+{
+  "name": "Gary the Strong — Toxrill Slug Control",
+  "slug": "toxrill-slug-control",
+  "sub": "100 cards · 39 lands · avg MV ~2.8 · Bracket 3 (2 Game Changers)",
+  "revnote": "v2 proposed · 2026-07-11",
+  "manaNote": "Both colors matter but on a schedule: blue early (counterspells and draw while you survive), double black by turn 7 for Toxrill and the drain finishers. Islands first, but never miss a Swamp drop.",
+  "hint": "Toxrill puts a slime counter on every enemy creature each end step, and they get -1/-1 for EACH counter. The board melts a little faster every turn — everything else here either speeds the melt or cashes in the corpses.",
+  "clusters": [
+    {"k":"slime","label":"The melt clock","blurb":"proliferate makes the -1/-1s arrive twice as fast",
+     "how":"Toxrill's counters accumulate: turn 1 under him everything has -1/-1, then -2/-2, then -3/-3. Proliferate (Thrummingbird, Tezzeret's Gambit, Deepglow Skate) adds a counter to everything that already has one — doubling the clock. Sludge Monster's counters are ALSO named 'slime', so they feed Toxrill's static and its own 2/2-downgrade.",
+     "ex":"End step: everyone's board gets counter #2. Untap, Deepglow Skate doubles all slime — suddenly it's -4/-4 and most of the table's creatures die at once, each one handing you a Slug.",
+     "why":"Counter NAMES are rules text: two cards using the same counter name secretly power each other up. Read the counter, not just the effect."},
+    {"k":"slugs","label":"Slug economy","blurb":"their dead board becomes your cards and mana",
+     "how":"Every enemy creature that dies with slime on it becomes a 1/1 Slug for you. Toxrill converts Slugs to cards ({U}{B}, sac: draw); Skullclamp turns each 1/1 into 'pay 1: draw 2'; Black Market banks a black mana for EVERY creature death, permanently.",
+     "ex":"A board wipe kills 8 slimed creatures: you get 8 Slugs, Black Market gains 8 counters (+8 black mana every turn now), and Skullclamp starts converting Slugs into 2 cards each.",
+     "why":"Control decks win by making opponents' losses your gains — every removal spell should leave residue on your side."},
+    {"k":"drain","label":"Death drain","blurb":"every creature death pings the table",
+     "how":"Syr Konrad damages each opponent whenever ANY other creature dies (verified — not just yours). Blood Artist drains on every death. Toxrill kills things every single turn, so these tick constantly — then Gray Merchant, Exsanguinate, and Torment of Hailfire finish big.",
+     "ex":"Damnation with Konrad + Blood Artist out: 10 creatures die, each opponent takes ~10 before you even untap. Follow-up Gray Merchant for devotion 6 ends someone.",
+     "why":"Passive damage engines turn your control pieces dual-purpose: the wipe IS the burn spell."},
+    {"k":"wipes","label":"Reset buttons","blurb":"wipes that break symmetric — your slugs regrow",
+     "how":"Damnation, Toxic Deluge, Evacuation, Whelming Wave reset the board. They're barely symmetric: your losses are 1/1 Slugs that Toxrill regenerates, theirs are real cards. Polymorphist's Jest is secretly a wipe here — their board becomes 1/1 Frogs, and one slime counter kills a 1/1. Massacre Wurm does the same to tokens.",
+     "ex":"Opponent goes wide: Jest their board at end of turn → Toxrill's trigger puts slime on the 1/1 Frogs → they all die → you get that many Slugs.",
+     "why":"Evaluate symmetric effects by what each side rebuilds with — symmetry on the card, asymmetry on the table."},
+    {"k":"protect","label":"Counter wall","blurb":"protect Toxrill and the key turn",
+     "how":"Six counterspells (Counterspell, Arcane Denial, Negate, Daze, Swan Song, An Offer You Can't Refuse) plus Sudden Spoiling (their creatures become 0/2s with no abilities — mid-combat blowout, and it turns off death triggers and hexproof for your removal).",
+     "ex":"You tap out for Toxrill on 7; they respond with a kill spell — Daze it by bouncing an Island. The free counters exist exactly for the tap-out turn.",
+     "why":"A 7-mana commander is a 7-mana question: budget interaction specifically for the turn you cast it."},
+    {"k":"value","label":"Card advantage taxes","blurb":"Rhystic + Remora punish everyone else's game plan",
+     "how":"Rhystic Study and Mystic Remora tax every opponent's spell; Baleful Strix and Night's Whisper keep the hand full; Grazilaxx rewards attacking with your Slug wall not being blocked — and lets you bounce attackers home.",
+     "ex":"Turn 2 Remora: three opponents developing their boards pay you 4–6 cards before the fish costs you anything real.",
+     "why":"In a slow control deck, the win condition of the early game is simply drawing more than everyone else."},
+    {"k":"steal","label":"Their stuff, your board","blurb":"the graveyards you filled are a toolbox",
+     "how":"All those wipes fill graveyards — Sepulchral Primordial reanimates the best creature from EACH opponent's yard; Puppeteer Clique borrows one with haste (twice, with persist); Inevitable Betrayal (suspend) steals straight from a library.",
+     "ex":"After two board wipes, Sepulchral Primordial enters and brings three of the table's best dead creatures with it — onto your side.",
+     "why":"Graveyards are a shared resource; decks that fill them should also be the decks that shop there."}
+  ],
+  "lands": {"title":"Lands ×39","desc":"13 Island · 8 Swamp · 18 nonbasic. Trimmed from 43 in v2 — draw density covers the drops.","cards":[
+    {"n":"Bojuka Bog","tip":"Graveyard hate on a land — but note it hits YOUR steal targets too"},
+    {"n":"Castle Vantress","tip":"Repeatable scry 2 — great in a long game"},
+    {"n":"Choked Estuary"},
+    {"n":"Command Tower"},
+    {"n":"Darkwater Catacombs"},
+    {"n":"Karn's Bastion","new":true,"tags":"slime","tip":"Proliferate on a LAND — the melt clock in your mana base"},
+    {"n":"Drowned Catacomb"},
+    {"n":"Exotic Orchard"},
+    {"n":"Fabled Passage"},
+    {"n":"Morphic Pool"},
+    {"n":"Polluted Delta"},
+    {"n":"Reliquary Tower","tip":"Rhystic hands get big"},
+    {"n":"Shipwreck Marsh"},
+    {"n":"Sunken Hollow"},
+    {"n":"Tainted Isle"},
+    {"n":"Temple of Deceit"},
+    {"n":"Underground River"},
+    {"n":"Watery Grave"},
+    {"n":"Island","count":13},
+    {"n":"Swamp","count":8}
+  ]},
+  "pulled": {"title":"Pulled this revision","desc":"Rate upgrades + land trim (43 → 39)","cards":[
+    {"n":"Aethersnipe","tip":"6 mana for a bounce — Go for the Throat kills for 2"},
+    {"n":"Ornithopter of Paradise","tip":"Any 2-rock is better; Midnight Clock is much better"},
+    {"n":"Dimir Aqueduct","tip":"Bounce-land tempo cost"},
+    {"n":"Myriad Landscape","tip":"Slow colorless ramp — Karn's Bastion takes the slot"},
+    {"n":"3 Island","name":null}
+  ]},
+  "groups": [
+    {"title":"Command zone & melt engine","desc":"The inevitability core: counters accumulate, boards dissolve","cards":[
+      {"n":"Toxrill, the Corrosive","mv":7,"cmdr":true,"tags":"slime slugs","tip":"Slime everything each end step; -1/-1 per counter; their deaths = your Slugs; sac Slugs to draw"},
+      {"n":"Sludge Monster","mv":5,"tags":"slime","tip":"Its slime counters feed Toxrill's static AND make the target a 2/2 vanilla"},
+      {"n":"Deepglow Skate","mv":5,"tags":"slime","tip":"Doubles every counter on any permanents — usually lethal to the whole table's boards"},
+      {"n":"Thrummingbird","mv":2,"tags":"slime","tip":"Proliferate every time it connects — the melt clock ticks twice"},
+      {"n":"Tezzeret's Gambit","mv":4,"tags":"slime value","tip":"Draw 2 + proliferate"},
+      {"n":"Flux Channeler","mv":2,"new":true,"tags":"slime","tip":"Proliferate on EVERY noncreature cast — 40 triggers in this deck"}
+    ]},
+    {"title":"Slug economy","desc":"Corpses in, resources out","cards":[
+      {"n":"Skullclamp","mv":1,"tags":"slugs value","tip":"1/1 Slugs become 'pay 1: draw 2' — the best card in the deck"},
+      {"n":"Blood Artist","mv":2,"tags":"slugs drain","tip":"Every death, anywhere: drain 1"},
+      {"n":"Syr Konrad, the Grim","mv":5,"tags":"slugs drain","tip":"ANY other creature dying pings each opponent; also mills to grow the theft targets"},
+      {"n":"Black Market","mv":5,"tags":"slugs","tip":"A black mana per creature death, forever — funds Torment/Exsanguinate"}
+    ]},
+    {"title":"Board control","desc":"Wipes and removal that leave residue on your side","cards":[
+      {"n":"Damnation","mv":4,"tags":"wipes drain"},
+      {"n":"Toxic Deluge","mv":3,"tags":"wipes drain","tip":"Scales to exactly what needs to die; pay life not mana"},
+      {"n":"Evacuation","mv":5,"tags":"wipes","tip":"Instant-speed reset — your Slugs are cheap to rebuy... they're tokens, they die. Time it as a blowout"},
+      {"n":"Whelming Wave","mv":4,"tags":"wipes","tip":"Bounces Toxrill too (Slug ≠ Kraken) — cast it BEFORE he lands"},
+      {"n":"Polymorphist's Jest","mv":3,"tags":"wipes","tip":"Their board = 1/1 Frogs; one slime counter finishes them. Secret wipe"},
+      {"n":"Massacre Wurm","mv":6,"tags":"wipes drain","tip":"-2/-2 wipes the small stuff, then drains 2 per death"},
+      {"n":"Reality Shift","mv":2,"tags":"protect","tip":"Exile — answers indestructible/recursion"},
+      {"n":"Feed the Swarm","mv":2,"tags":"protect","tip":"Black's rare enchantment answer"},
+      {"n":"Force of Despair","mv":3,"tags":"wipes","tip":"Free (pitch a black card) vs. token dumps on your turn off"},
+      {"n":"Sudden Spoiling","mv":3,"tags":"protect wipes","tip":"Split second: their board becomes ability-less 0/2s — combat blowout, combo breaker"},
+      {"n":"Plaguecrafter","mv":3,"tags":"wipes","tip":"Edict that dodges hexproof; hits planeswalkers"},
+      {"n":"Go for the Throat","mv":2,"new":true,"tags":"protect","tip":"Premium 2-mana kill spell"},
+      {"n":"Sheoldred's Edict","mv":2,"new":true,"tags":"wipes","tip":"Edict #2 — you choose token/nontoken/planeswalker"},
+      {"n":"Cyclonic Rift","mv":2,"tags":"wipes","tip":"One-sided reset; Game Changer #1"}
+    ]},
+    {"title":"Counter wall","desc":"Protection for the tap-out turns","cards":[
+      {"n":"Counterspell","mv":2,"tags":"protect"},
+      {"n":"Arcane Denial","mv":2,"tags":"protect","tip":"Cantrips; the opponent's 2 cards are a fair price at instant speed"},
+      {"n":"Negate","mv":2,"tags":"protect"},
+      {"n":"Daze","mv":2,"tags":"protect","tip":"FREE — protect Toxrill the turn you tap out"},
+      {"n":"Swan Song","mv":1,"tags":"protect"},
+      {"n":"An Offer You Can't Refuse","mv":1,"tags":"protect"}
+    ]},
+    {"title":"Card advantage","desc":"Win the draw race while the melt does its work","cards":[
+      {"n":"Rhystic Study","mv":3,"tags":"value","tip":"Game Changer #2 — the classic tax"},
+      {"n":"Mystic Remora","mv":1,"tags":"value","tip":"Turn 1–4 powerhouse; let it go when the upkeep gets pricey"},
+      {"n":"Baleful Strix","mv":2,"tags":"value protect","tip":"Cantrip deathtooth wall"},
+      {"n":"Night's Whisper","mv":2,"tags":"value"},
+      {"n":"Brainstorm","mv":1,"tags":"value"},
+      {"n":"Grazilaxx, Illithid Scholar","mv":3,"tags":"value","tip":"Draw when your attackers aren't blocked (Slugs!); bounce your stuff to save it"},
+      {"n":"Fact or Fiction","mv":4,"new":true,"tags":"value steal","tip":"Instant draw that also stocks graveyards for Primordial"},
+      {"n":"Dig Through Time","mv":8,"new":true,"tags":"value","tip":"Delve: usually UU for the two best of seven — control mirrors end here"}
+    ]},
+    {"title":"Drain wincons","desc":"Mana-hungry finishers — Black Market pays the bill","cards":[
+      {"n":"Gray Merchant of Asphodel","mv":5,"tags":"drain","tip":"Devotion drain — BB costs across the deck add up fast"},
+      {"n":"Exsanguinate","mv":"X+2","tags":"drain"},
+      {"n":"Torment of Hailfire","mv":"X+2","tags":"drain","tip":"X=10 with a Black Market bank ends the table"},
+      {"n":"Charix, the Raging Isle","mv":4,"tags":"protect","tip":"0/17 wall that holds the fort; late-game beater with mana pumped in"}
+    ]},
+    {"title":"Their stuff, your board","desc":"Shop in the graveyards you filled","cards":[
+      {"n":"Sepulchral Primordial","mv":7,"tags":"steal","tip":"Reanimate the best creature from EACH opponent's yard"},
+      {"n":"Puppeteer Clique","mv":5,"tags":"steal","tip":"Borrow theirs with haste — twice (persist)"},
+      {"n":"Inevitable Betrayal","mv":"3*","tags":"steal","tip":"Suspend 3: steal from a LIBRARY. Note: proliferate adds time counters — it delays this, don't"}
+    ]},
+    {"title":"Ramp & utility","desc":"Getting to 7 mana on time, keeping Toxrill alive after","cards":[
+      {"n":"Arcane Signet","mv":2},
+      {"n":"Dimir Signet","mv":2},
+      {"n":"Talisman of Dominance","mv":2},
+      {"n":"Fellwar Stone","mv":2},
+      {"n":"Mind Stone","mv":2},
+      {"n":"Thought Vessel","mv":2},
+      {"n":"Wayfarer's Bauble","mv":1},
+      {"n":"Skyclave Relic","mv":3},
+      {"n":"Solemn Simulacrum","mv":4,"tags":"value"},
+      {"n":"Midnight Clock","mv":3,"new":true,"tags":"value","tip":"Rock now, free new hand at 12 o'clock — perfect control curve"},
+      {"n":"Dark Ritual","mv":1,"tip":"Toxrill a turn early"},
+      {"n":"Lightning Greaves","mv":2,"tags":"protect"},
+      {"n":"Swiftfoot Boots","mv":2,"tags":"protect"},
+      {"n":"Whispersilk Cloak","mv":3,"tags":"protect","tip":"Shroud — even from your own targeting"},
+      {"n":"Pithing Needle","mv":1,"tags":"protect","tip":"Name the scariest activated ability at the table"},
+      {"n":"Malakir Rebirth","name":"Malakir Rebirth // Malakir Mire","mv":1,"tags":"protect","tip":"1-mana Toxrill insurance that's a land when you don't need it"}
+    ]}
+  ]
+}
+</script>
+<script src="../viewer.js?v=20260711b"></script>
+</body>
+</html>
