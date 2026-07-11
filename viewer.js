@@ -61,6 +61,7 @@
   document.body.innerHTML = `
     <button id="viewToggle"></button>
     <button id="draftToggle">☑ Sleeve check</button>
+    <a class="backlink" href="../index.html">← All decks</a>
     <h1>${esc(data.name)}</h1>
     <div class="sub">${esc(data.sub)}${data.revnote ? `<span class="revnote"> · ${esc(data.revnote)}</span>` : ""}</div>
     <div class="key">
