@@ -47,7 +47,8 @@
     const tags = c.tags ? ` data-k="${esc(c.tags)}"` : "";
     const tip = c.tip ? ` data-tip="${esc(c.tip)}"` : "";
     const mv = c.mv != null ? `<span class="mv">${esc(c.mv)}</span>` : "";
-    return `<span class="${cls}"${nm}${tags}${tip}>${esc(c.n)}${mv}</span>`;
+    const cnt = c.count > 1 ? `${c.count}× ` : "";
+    return `<span class="${cls}"${nm}${tags}${tip}>${cnt}${esc(c.n)}${mv}</span>`;
   };
 
   const groupHtml = (g, extraClass = "") => `
@@ -59,6 +60,7 @@
 
   document.body.innerHTML = `
     <button id="viewToggle"></button>
+    <button id="draftToggle">☑ Sleeve check</button>
     <h1>${esc(data.name)}</h1>
     <div class="sub">${esc(data.sub)}${data.revnote ? `<span class="revnote"> · ${esc(data.revnote)}</span>` : ""}</div>
     <div class="key">
@@ -81,9 +83,18 @@
       </aside>
       <main class="groups">
         ${data.groups.map((g) => groupHtml(g)).join("")}
+        ${data.lands ? `
+        <section class="group">
+          <h3>${esc(data.lands.title)}</h3>
+          <div class="desc">${esc(data.lands.desc || "")}</div>
+          <details><summary>Show the full mana base (${data.lands.cards.reduce((s, c) => s + (c.count || 1), 0)} lands)</summary>
+            <div class="chips">${data.lands.cards.map(chipHtml).join("")}</div>
+          </details>
+        </section>` : ""}
         ${data.pulled ? groupHtml(data.pulled, "pulled") : ""}
       </main>
     </div>
+    <div id="checklist"></div>
     <div class="tip" id="tip"></div>
     <div class="touchbar" id="touchbar"></div>
     <div id="overlay"><div id="cardBox"></div></div>`;
@@ -200,7 +211,89 @@
       <div class="manacounts">${txt}<span class="manahint"> — colored symbols in casting costs: what this deck needs its lands to produce</span></div>`;
     document.querySelector(".groups").prepend(sec);
   }
-  prefetchTypes().then(renderMana);
+  const prefetchPromise = prefetchTypes();
+  prefetchPromise.then(renderMana);
+
+  /* ---------- sleeve-check view ----------
+   * A completeness checklist for physically assembling the deck:
+   * grouped by card type (from typeMap), alphabetical within, checkbox
+   * state persisted in localStorage per deck. ?sleeve=1 opens directly. */
+  function fullDeckItems() {
+    const items = []; const seen = new Set();
+    const take = (c) => {
+      if (c.name === null) return;
+      const nm = c.name || c.n;
+      if (seen.has(nm)) return;
+      seen.add(nm);
+      items.push({ n: c.n, name: nm, count: c.count || 1, cmdr: !!c.cmdr });
+    };
+    data.groups.forEach((g) => g.cards.forEach(take));
+    if (data.lands) data.lands.cards.forEach(take);
+    return items;
+  }
+  function bucketOf(item) {
+    if (item.cmdr) return "Commander";
+    const t = ((typeMap[item.name] || {}).t || "").split("//")[0];
+    for (const b of ["Creature", "Planeswalker", "Battle", "Instant", "Sorcery", "Enchantment", "Artifact", "Land"])
+      if (t.includes(b)) return b;
+    return "Other";
+  }
+  function buildChecklist() {
+    const wrap = document.getElementById("checklist");
+    const items = fullDeckItems();
+    const key = "sleeved:" + (data.slug || "deck");
+    let state = {};
+    try { state = JSON.parse(localStorage.getItem(key) || "{}"); } catch (e) {}
+    const order = ["Commander", "Creature", "Planeswalker", "Battle", "Instant", "Sorcery", "Enchantment", "Artifact", "Land", "Other"];
+    const buckets = {};
+    items.forEach((it) => { const b = bucketOf(it); (buckets[b] = buckets[b] || []).push(it); });
+    Object.values(buckets).forEach((a) => a.sort((x, y) => x.n.localeCompare(y.n)));
+    const total = items.reduce((s, i) => s + i.count, 0);
+    wrap.innerHTML = `<h2>Sleeve check</h2>
+      <div class="clprog" id="clprog"></div>
+      <button id="clreset">Reset checklist</button>
+      ${order.filter((b) => buckets[b]).map((b) => {
+        const n = buckets[b].reduce((s, i) => s + i.count, 0);
+        return `<div class="clsec"><h3>${b} <span class="mv">${n}</span></h3><div class="rows">${
+          buckets[b].map((it) =>
+            `<label class="clrow${state[it.name] ? " done" : ""}" data-cl="${esc(it.name)}">
+               <input type="checkbox" ${state[it.name] ? "checked" : ""}>
+               <span class="clcount">${it.count > 1 ? it.count + "×" : ""}</span>
+               <span>${esc(it.n)}</span></label>`).join("")
+        }</div></div>`;
+      }).join("")}`;
+    const prog = () => {
+      const done = items.filter((i) => state[i.name]).reduce((s, i) => s + i.count, 0);
+      document.getElementById("clprog").textContent = `${done} / ${total} cards sleeved`;
+    };
+    prog();
+    wrap.querySelectorAll(".clrow").forEach((r) => r.addEventListener("click", (e) => {
+      e.preventDefault();
+      const nm = r.dataset.cl;
+      state[nm] = !state[nm]; if (!state[nm]) delete state[nm];
+      r.classList.toggle("done", !!state[nm]);
+      r.querySelector("input").checked = !!state[nm];
+      localStorage.setItem(key, JSON.stringify(state));
+      prog();
+    }));
+    document.getElementById("clreset").addEventListener("click", () => {
+      localStorage.setItem(key, "{}"); buildChecklist();
+    });
+  }
+  const draftBtn = document.getElementById("draftToggle");
+  let draftBuilt = false;
+  function setDraft(on) {
+    document.body.classList.toggle("draft", on);
+    draftBtn.textContent = on ? "← Back to map" : "☑ Sleeve check";
+    if (on && !draftBuilt) prefetchPromise.then(() => { buildChecklist(); draftBuilt = true; });
+    try {
+      const u = new URL(location.href);
+      on ? u.searchParams.set("sleeve", "1") : u.searchParams.delete("sleeve");
+      history.replaceState(null, "", u);
+    } catch (e) {}
+  }
+  draftBtn.addEventListener("click", () => setDraft(!document.body.classList.contains("draft")));
+  try { if (new URL(location.href).searchParams.get("sleeve") === "1") setDraft(true); } catch (e) {}
 
   /* hover/tap info box content: what it IS · role · which clusters */
   function infoHtml(c) {

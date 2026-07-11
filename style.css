@@ -69,6 +69,28 @@ body.filtering .chip.lit{opacity:1;border-color:var(--gold)}
 .manacounts{font-size:12px}
 .manacounts .manahint{color:var(--dim);font-size:11px}
 .group.mana{grid-column:1 / -1}
+/* land list expander */
+.group details summary{cursor:pointer;color:var(--u);font-size:12.5px;margin:2px 0 8px}
+/* sleeve-check view */
+#draftToggle{position:absolute;top:64px;right:24px;background:var(--panel2);color:var(--text);border:1px solid #303a52;border-radius:8px;padding:6px 12px;font-size:12.5px;cursor:pointer}
+#draftToggle:hover{border-color:var(--gold)}
+#checklist{display:none;max-width:1000px}
+body.draft .layout,body.draft .key,body.draft #viewToggle,body.draft .group.mana{display:none}
+body.draft #checklist{display:block}
+#checklist h2{font-size:17px;margin:6px 0 2px}
+.clprog{color:var(--gold);font-size:14px;margin:6px 0}
+#clreset{background:none;border:1px solid #303a52;color:var(--dim);border-radius:7px;padding:4px 10px;font-size:12px;cursor:pointer;margin-bottom:8px}
+#clreset:hover{border-color:var(--red);color:var(--red)}
+.clsec h3{font-size:14px;margin:16px 0 7px;color:var(--dim);text-transform:uppercase;letter-spacing:.05em}
+.clsec .rows{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:4px}
+.clrow{display:flex;gap:9px;align-items:center;padding:8px 10px;background:var(--panel);border:1px solid #2a3346;border-radius:8px;cursor:pointer;font-size:13px}
+.clrow input{pointer-events:none;accent-color:var(--green)}
+.clrow.done{opacity:.45}
+.clrow.done span:last-child{text-decoration:line-through}
+.clcount{color:var(--dim);min-width:24px;text-align:right}
+@media (max-width:760px){
+  #draftToggle{position:static;display:inline-block;margin:0 0 10px 8px}
+}
 /* modal: role + related chips */
 .relLbl{display:block;color:var(--gold);font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;margin:12px 0 5px}
 .roletip{font-size:12.5px;color:var(--text)}

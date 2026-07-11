@@ -92,6 +92,21 @@ colors (dark-bg tuned: W #E8DFB8, U #4AA3DF, B #9B7FB8, R #E05C4B,
 G #4FBF78) — a separate encoding domain from the cluster palette; the two
 never mix meanings.
 
+## Full mana base + sleeve check (required per deck)
+
+- **No opaque "Lands ×N" chips.** Every deck JSON carries a `lands`
+  section (`{n, count?, tip?}` — `count` for basics) listing the complete
+  mana base, rendered as a collapsed expander in the map so it informs
+  without adding resting noise. Utility lands with synergy stay in their
+  synergy groups; the lands desc says so. Groups + lands MUST sum to
+  exactly the deck's card count — verify programmatically on regeneration.
+- **Sleeve-check view** (`☑` button, or `?sleeve=1`): a physical-assembly
+  checklist — sections by card type (derived from the Scryfall prefetch,
+  never hand-maintained), alphabetical within, quantity shown, checkbox
+  per line, progress counter, reset button. Check state persists in
+  localStorage per deck slug. Layout is list-density, not chip-density:
+  its job is verification, not exploration.
+
 ## Interaction budget (keep it actionable, not busy)
 
 - Any state reachable in ≤2 taps; any state escapable by tapping empty
