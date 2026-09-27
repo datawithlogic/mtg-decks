@@ -73,6 +73,8 @@
         ? "<b style='color:var(--text)'>tap card</b> = light up synergies · <b style='color:var(--text)'>tap again</b> = image &amp; text · <b style='color:var(--text)'>tap cluster</b> = deep-dive"
         : "<b style='color:var(--text)'>hover</b> = light up synergies · <b style='color:var(--text)'>click card</b> = image &amp; text · <b style='color:var(--text)'>click cluster</b> = deep-dive"}</span>
     </div>
+    <div id="finderwrap"><input id="finder" type="search" autocomplete="off"
+      placeholder="\ud83d\udd0d Drew a card? Type its name \u2014 tap the lit chip for role + playbook"></div>
     <div class="layout">
       <aside class="legend">
         <h2>Synergy clusters</h2>
@@ -83,6 +85,13 @@
         ${data.hint ? `<div class="hint">${esc(data.hint)}</div>` : ""}
       </aside>
       <main class="groups">
+        ${data.gameplan ? `
+        <section class="group pilot" id="pilotcard">
+          <h3>How to pilot this deck</h3>
+          ${[["Game plan","plan"],["Keep a hand with","mull"],["Early game","early"],["Mid game","mid"],["How you win","win"],["Play around","fear"]]
+            .filter(([,k]) => data.gameplan[k])
+            .map(([lbl,k]) => `<div class="prow"><span class="plbl">${lbl}</span><span class="ptxt">${esc(data.gameplan[k])}</span></div>`).join("")}
+        </section>` : ""}
         ${data.groups.map((g) => groupHtml(g)).join("")}
         ${data.lands ? `
         <section class="group">
@@ -104,6 +113,14 @@
   const tip = document.getElementById("tip");
   const touchbar = document.getElementById("touchbar");
   const chips = [...document.querySelectorAll(".chip")];
+  /* raw card objects by exact name — carries optional `guide` (playbook) */
+  const cardData = {};
+  data.groups.forEach((g) => g.cards.forEach((c) => {
+    if (c.name !== null) cardData[c.name || c.n] = c;
+  }));
+  if (data.lands) data.lands.cards.forEach((c) => {
+    if (c.name !== null) cardData[c.name || c.n] = c;
+  });
   const detail = document.getElementById("clusterDetail");
   let pinned = null;      // pinned cluster key
   let selected = null;    // touch: currently selected chip
@@ -215,7 +232,8 @@
       ${data.manaNote ? `<div class="desc">${esc(data.manaNote)}</div>` : ""}
       <div class="manabar">${bar}</div>
       <div class="manacounts">${txt}<span class="manahint"> — colored symbols in casting costs: what this deck needs its lands to produce</span></div>`;
-    document.querySelector(".groups").prepend(sec);
+    const pc = document.getElementById("pilotcard");
+    if (pc) pc.after(sec); else document.querySelector(".groups").prepend(sec);
   }
   const prefetchPromise = prefetchTypes();
   prefetchPromise.then(renderMana);
@@ -310,8 +328,10 @@
   function infoHtml(c) {
     const t = typeMap[c.dataset.name];
     const badges = c.dataset.k ? c.dataset.k.split(" ").map((k) => badge(k)).join(" ") : "";
+    const hasGuide = (cardData[c.dataset.name] || {}).guide;
     return `${t ? `<div class="tiptype">${esc(t.t)}${t.m ? " · " + esc(t.m) : ""}</div>` : ""}` +
       `${c.dataset.tip ? `<div>${esc(c.dataset.tip)}</div>` : ""}` +
+      `${hasGuide ? `<div class="pbhint">\u25b6 playbook inside \u2014 open the card for when/what to get</div>` : ""}` +
       `${badges ? `<div class="tbbadges">${badges}</div>` : ""}`;
   }
 
@@ -459,6 +479,15 @@
         srcChip.dataset.k.split(" ").map((k) => badge(k, `data-cluster="${esc(k)}"`)).join(" ")
       }</div>`;
     }
+    /* playbook: in-game decision guide (tutors, modal cards, imprint) */
+    const gd = (cardData[name] || {}).guide;
+    if (gd && gd.length) {
+      extra += `<span class="relLbl">Playbook \u2014 in-game guide</span><div class="pbook">${
+        gd.map((p) => `<div class="pbrow"><span class="pbwhen">${esc(p.when)}</span>${
+          p.get ? ` \u2192 <span class="chip pbget" data-rel="${esc(p.get)}">${esc(p.get)}</span>` : ""
+        }${p.why ? `<span class="pbwhy">${esc(p.why)}</span>` : ""}</div>`).join("")
+      }</div>`;
+    }
     const rel = relatedTo(srcChip);
     if (rel.length) {
       extra += `<span class="relLbl">Related in this deck</span><div class="chips rel">${
@@ -476,6 +505,29 @@
 
   overlay.addEventListener("click", (e) => { if (e.target === overlay) closeCard(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeCard(); });
+
+  /* ---------- card finder (in-game: "I just drew this") ---------- */
+  const finder = document.getElementById("finder");
+  finder.addEventListener("input", () => {
+    const q = finder.value.trim().toLowerCase();
+    if (q.length < 2) { pinned ? light([pinned]) : clearLight(); return; }
+    document.body.classList.add("filtering");
+    let first = null;
+    chips.forEach((c) => {
+      const hit = c.textContent.toLowerCase().includes(q);
+      c.classList.toggle("lit", hit);
+      c.style.borderColor = hit ? "var(--gold)" : "";
+      c.style.background = "";
+      if (hit && !first) first = c;
+    });
+    if (first) first.scrollIntoView({ block: "center", behavior: "smooth" });
+  });
+  finder.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      const lit = chips.find((c) => c.classList.contains("lit") && c.dataset.name);
+      if (lit) openCard(lit.dataset.name);
+    }
+  });
 
   /* ---------- builder / share view toggle ---------- */
   const toggleBtn = document.getElementById("viewToggle");

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alania Otter Storm — Deck Map</title>
-<link rel="stylesheet" href="../style.css?v=20260710j">
+<link rel="stylesheet" href="../style.css?v=20260927b">
 </head>
 <body>
 <script type="application/json" id="deck-data">
@@ -15,6 +15,7 @@
   "accentLabel": "Otter (feeds Alania / Three Tree City)",
   "manaNote": "Blue-hungry deck — about 2 blue symbols for every red. Get Islands and blue duals on board first; most red costs need just one Mountain. The big exception: Niv-Mizzet, Parun wants UUURRR, so save your dual lands for the turn he comes down.",
   "hint": "Blue left-edge = Otter. Alania copies your first instant, first sorcery, AND first Otter spell each turn — an opponent draws per copy, which Narset caps.",
+  "gameplan": {"plan": "Chain cheap instants, sorceries, and Otters — Alania copies the first of each every turn. Build cast-trigger payoffs, then one big chained turn ends the game.","mull": "2–3 lands with blue, a cantrip or two, and one payoff (a pinger or cheap Otter). Ship hands with no blue sources or nothing that costs less than 3.","early": "Land, cantrips, one cheap engine piece (Kitsa, Coruscation Mage, Stormcatch Mentor). Save the free counterspells — they exist for Alania's tap-out turn.","mid": "Land Alania and protect her. Chain 2–3 spells a turn, bank Storm-Kiln treasures. Copying is OPTIONAL per trigger — skip it when handing an opponent a card isn't worth it (Narset caps the leak).","win": "Niv-Mizzet + Curiosity draw-ping loop · Aetherflux lasers after a storm turn · Muddle-as-Stormsplitter myriad swing · pinger attrition (4+ damage to everyone per spell).","fear": "Board wipes eat your pingers — and Blasphemous Act kills Alania too. Rebuild fast with Treasure Cruise. Hold Fierce Guardianship whenever you're tapped out with her on board."},
   "clusters": [
     {"k":"double","label":"Trigger multiplication","blurb":"Veyran + Throne double Alania; Staff adds copies",
      "how":"Alania's copy is a TRIGGERED ability. Veyran doubles triggered abilities caused by casting instants/sorceries; Roaming Throne (naming Otter) doubles Alania's too. Doublers stack additively: base + Veyran + Throne = 3 triggers. Twinning Staff then upgrades each copy event: 1 copy becomes 2.",
@@ -70,7 +71,7 @@
       {"n":"Stormsplitter","mv":4,"otter":true,"tags":"myriad","tip":"Token copy of itself per instant/sorcery; haste"},
       {"n":"Valley Floodcaller","mv":3,"otter":true,"tags":"untap","tip":"Untaps your Otters + pumps per noncreature spell; flash enabler"},
       {"n":"Kitsa, Otterball Elite","mv":2,"otter":true,"tags":"untap double","tip":"Tap: loot. Tap+2: copy instant/sorcery (needs power 4+)"},
-      {"n":"Muddle, the Ever-Changing","mv":4,"otter":true,"tags":"myriad","tip":"Becomes any nonlegendary creature you control + myriad, per instant/sorcery"},
+      {"n":"Muddle, the Ever-Changing","mv":4,"otter":true,"tags":"myriad","tip":"Becomes any nonlegendary creature you control + myriad, per instant/sorcery","guide":[{"when": "Win line", "get": "Stormsplitter", "why": "Myriad copies attack everyone; every spell multiplies them"}, {"when": "Economy", "get": "Storm-Kiln Artist", "why": "Treasures while it attacks"}, {"when": "Attrition", "get": "Guttersnipe", "why": "More reach on the pinger plan"}]},
       {"n":"Stormcatch Mentor","mv":2,"otter":true,"tags":"bigturn","tip":"Haste, prowess; your instants/sorceries cost {1} less — discounts the whole chain"},
       {"n":"Bria, Riptide Rogue","mv":4,"otter":true,"tags":"ping","tip":"Prowess for the team + unblockable enabler"},
       {"n":"Ledger Shredder","mv":2,"tags":"gy","tip":"Connive per 2nd spell each turn — fills yard"},
@@ -109,7 +110,7 @@
     {"title":"Big turns & copy artillery","desc":"Mana bursts + mass-copy effects = the storm finish","cards":[
       {"n":"Thousand-Year Storm","mv":6,"tags":"bigturn","tip":"Every spell echoes for the rest of the chain"},
       {"n":"Primal Amulet","name":"Primal Amulet // Primal Wellspring","mv":4,"tags":"bigturn","tip":"Cost reducer → flips to double-mana + copy land"},
-      {"n":"Isochron Scepter","mv":2,"tags":"scepter","tip":"Imprint Narset's Reversal / Pongify / Swan Song"},
+      {"n":"Isochron Scepter","mv":2,"tags":"scepter","tip":"Imprint Narset's Reversal / Pongify / Swan Song","guide":[{"when": "Default imprint", "get": "Narset's Reversal", "why": "Protect a spell or copy your bomb, every turn — and each activation is a cast (triggers Alania)"}, {"when": "Want a counter wall", "get": "Mana Drain", "why": "2 MV, legal imprint, mana profit"}, {"when": "Creature problems", "get": "Pongify", "why": "Repeatable 1-mana removal"}, {"when": "Just need fuel", "get": "Brainstorm", "why": "A guaranteed cast every turn for the trigger web"}]},
       {"n":"Jeska's Will","mv":3,"tags":"bigturn"},
       {"n":"Mana Geyser","mv":5,"tags":"bigturn"},
       {"n":"Twincast","mv":2,"tags":"double","tip":"Copy anything on the stack — including opponents'"},
@@ -131,7 +132,7 @@
       {"n":"Arcane Signet","mv":2},
       {"n":"Izzet Signet","mv":2},
       {"n":"Thought Vessel","mv":2,"tip":"No max hand size matters with Niv/Cruise"},
-      {"n":"Mystical Tutor","mv":1,"tags":"niv","tip":"Instant-speed tutor for Rift / Cruise / the right answer"},
+      {"n":"Mystical Tutor","mv":1,"tags":"niv","tip":"Instant-speed tutor for Rift / Cruise / the right answer","guide":[{"when": "Going off (TYS / Aetherflux out)", "get": "Jeska's Will", "why": "Burst mana keeps the chain alive"}, {"when": "Board getting scary", "get": "Cyclonic Rift", "why": "One-sided reset at instant speed"}, {"when": "Out of gas", "get": "Treasure Cruise", "why": "Usually one mana: draw three"}, {"when": "Need a wipe", "get": "Blasphemous Act", "why": "Near-free with a full table"}, {"when": "Remember", "get": null, "why": "It goes to the TOP of your library — line up a draw or loot to actually take it this turn"}]},
       {"n":"Three Tree City","tags":"myriad","tip":"Big color-fixed burst for the chosen type (Otter/Wizard)"}
     ]}
   ],
@@ -151,6 +152,6 @@
   ]}
 }
 </script>
-<script src="../viewer.js?v=20260710j"></script>
+<script src="../viewer.js?v=20260927b"></script>
 </body>
 </html>

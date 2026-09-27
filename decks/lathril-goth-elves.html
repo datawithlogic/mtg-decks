@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Goth Elves — Deck Map</title>
-<link rel="stylesheet" href="../style.css?v=20260711b">
+<link rel="stylesheet" href="../style.css?v=20260927b">
 </head>
 <body>
 <script type="application/json" id="deck-data">
@@ -16,6 +16,7 @@
   "accentLabel": "Elf (counts for Lathril, lords, Priest, Shaman…)",
   "manaNote": "Forests first — the deck is overwhelmingly green, and your mana elves are green too. Black is a small but real need (Lathril, Shaman of the Pack, removal): two black sources by turn 4 is plenty. Gilt-Leaf Palace and Undergrowth Stadium enter untapped basically always here.",
   "hint": "Blue left-edge = Elf. Two ways to win: go wide and Craterhoof, or tap ten Elves to Lathril's drain — and the untap artifacts let her do it more than once per turn.",
+  "gameplan": {"plan": "Flood the board with elves, snowball mana (Priest, Archdruid), then either one overrun swing or tap ten elves to Lathril's drain — the untap toys let her do it twice.","mull": "2–3 lands, 1–2 one-mana dorks, and a payoff (lord, draw engine, or Lathril on curve). All-dork hands fold to a single wipe.","early": "Dorks, then Lathril or lords. From turn 4 on, keep Heroic Intervention / Golgari Charm mana available whenever you can.","mid": "Refill with Beast Whisperer or Shamanic Revelation, sneak Lathril through (menace) — every hit mints more elves. Morcant makes each wave shrink their boards.","win": "Craterhoof or Overwhelming Stampede · Lathril tap-ten + Staff/Mantle untaps = drain the table without attacking · Shaman of the Pack recursion loops.","fear": "Board wipes are THE loss condition. Never overextend past what one protection spell can save — hold some elves in hand and let Skemfar Avenger insure the rest."},
   "clusters": [
     {"k":"mana","label":"Elfball mana","blurb":"elves that tap for more elves",
      "how":"Priest of Titania, Elvish Archdruid, Circle of Dreams Druid, and Wirewood Channeler tap for mana equal to your ELF COUNT — they scale as the board grows. Marwyn grows with each elf that enters; Selvala with anything big; Elvish Guidance turns one land into a Gaea's Cradle.",
@@ -92,7 +93,7 @@
       {"n":"Selvala, Heart of the Wilds","mv":3,"otter":true,"tags":"mana refill","tip":"Draws off big ETBs; taps for huge mana post-lords"},
       {"n":"Quirion Ranger","mv":1,"otter":true,"tags":"untap mana","tip":"Free untap every turn — Lathril or Priest"},
       {"n":"Elvish Guidance","mv":3,"tags":"mana","tip":"Enchanted land taps for +G per elf"},
-      {"n":"Elvish Harbinger","mv":3,"otter":true,"tags":"mana refill","tip":"Tutors any Elf to the top; taps for any color"}
+      {"n":"Elvish Harbinger","mv":3,"otter":true,"tags":"mana refill","tip":"Tutors any Elf to the top; taps for any color","guide":[{"when": "Need mana", "get": "Priest of Titania", "why": "Fastest route to a huge turn"}, {"when": "Board is wide — need the kill", "get": "Shaman of the Pack", "why": "ETB drain equal to your elf count"}, {"when": "Wipe incoming", "get": "Ezuri, Renegade Leader", "why": "Regeneration carries the board through"}, {"when": "Remember", "get": null, "why": "Goes to the TOP — Realmwalker casts it from there; otherwise line up a draw"}]}
     ]},
     {"title":"Lord stack","desc":"Anthems that multiply every body","cards":[
       {"n":"Dwynen, Gilt-Leaf Daen","mv":4,"otter":true,"tags":"lords drain","tip":"Lord + life per attacking elf"},
@@ -124,7 +125,7 @@
       {"n":"Beast Whisperer","mv":4,"otter":true,"tags":"refill","tip":"Draw per creature cast — the deck's best engine"},
       {"n":"Shamanic Revelation","mv":5,"tags":"refill","tip":"Draw per creature; ferocious life bonus"},
       {"n":"Bounty of Skemfar","mv":3,"tags":"refill","tip":"Land + elf to hand off the top 6"},
-      {"n":"Harald, King of Skemfar","mv":3,"otter":true,"tags":"refill","tip":"Menace body + dig 5 for elves/Tyvar"},
+      {"n":"Harald, King of Skemfar","mv":3,"otter":true,"tags":"refill","tip":"Menace body + dig 5 for elves/Tyvar","guide":[{"when": "Early game", "get": "Priest of Titania", "why": "Mana first, payoffs later"}, {"when": "Setting up the drain", "get": "Tyvar Kell", "why": "Elves tap for B — funds Lathril's tap-ten"}, {"when": "Late, board already wide", "get": "Shaman of the Pack", "why": "The dig that ends games"}]},
       {"n":"Last March of the Ents","mv":8,"tags":"refill overrun","tip":"Uncounterable: draw per toughness, dump hand into play"},
       {"n":"Elvish Visionary","mv":2,"otter":true,"tags":"refill"},
       {"n":"Realm Seekers","mv":6,"otter":true,"tags":"refill mana","tip":"Huge counters pile; pays out land drops"},
@@ -140,7 +141,7 @@
       {"n":"Deadly Rollick","mv":4,"new":true,"tags":"protect","tip":"FREE exile removal with Lathril out — from James's binder"},
       {"n":"Casualties of War","mv":6,"tags":"protect","tip":"Answer everything at once"},
       {"n":"Reclamation Sage","mv":3,"otter":true,"tags":"protect","tip":"Removal ON an elf — theme and function overlap"},
-      {"n":"Archdruid's Charm","mv":3,"tags":"protect mana","tip":"Tutor elf/land / counter-ish fight / counter removal"},
+      {"n":"Archdruid's Charm","mv":3,"tags":"protect mana","tip":"Tutor elf/land / counter-ish fight / counter removal","guide":[{"when": "Ready to close", "get": "Craterhoof Behemoth", "why": "Mode 1 fetches any creature to HAND"}, {"when": "Missing land drops", "get": null, "why": "Mode 1 puts a land straight onto the battlefield tapped"}, {"when": "Combat math problem", "get": null, "why": "Counter mode: grow your elf and it deals its damage to their creature"}]},
       {"n":"Roaming Throne","mv":4,"tags":"untap swarm","tip":"Name Elf: doubles Lathril's tokens AND her drain; ward 2"},
       {"n":"Ezuri, Renegade Leader","mv":3,"otter":true,"tags":"protect overrun","tip":"Regenerate elves for G; overrun mana sink"},
       {"n":"Swiftfoot Boots","mv":2,"tags":"protect","tip":"Lathril swings (and taps) the turn she lands"}
@@ -167,6 +168,6 @@
   ]}
 }
 </script>
-<script src="../viewer.js?v=20260711b"></script>
+<script src="../viewer.js?v=20260927b"></script>
 </body>
 </html>

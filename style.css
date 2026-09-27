@@ -126,3 +126,24 @@ body.share .sub .revnote{display:none}
   #cardBox img{width:100%;max-width:300px}
   .tip{display:none !important}
 }
+
+/* playbook (in-game guide) */
+.pbhint{color:var(--gold);font-size:11px;margin-top:3px}
+.pbook{margin-top:2px}
+.pbrow{padding:5px 0;border-bottom:1px solid #232b3d;font-size:12.5px}
+.pbrow:last-child{border-bottom:none}
+.pbwhen{color:var(--gold)}
+.pbwhy{display:block;color:var(--dim);font-size:11.5px;margin-top:2px}
+.pbget{cursor:pointer}
+.pbget:hover{border-color:var(--gold)}
+
+/* pilot panel + card finder (in-game orientation) */
+.group.pilot{grid-column:1 / -1;border-left:4px solid var(--gold)}
+.prow{display:flex;gap:10px;margin:7px 0;font-size:13px}
+.plbl{flex:0 0 112px;color:var(--gold);font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;padding-top:2px}
+.ptxt{flex:1}
+#finderwrap{margin:0 0 14px}
+#finder{width:100%;max-width:460px;background:var(--panel2);border:2px solid #2b3449;border-radius:8px;padding:9px 12px;color:var(--text);font-size:13px;outline:none}
+#finder:focus{border-color:var(--gold)}
+body.draft #finderwrap{display:none}
+@media (max-width:760px){ .prow{flex-direction:column;gap:2px} .plbl{flex:none} }

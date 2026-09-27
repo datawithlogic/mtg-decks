@@ -34,6 +34,10 @@ from it. Shape:
   wincons, ramp), each card as `{n, mv, tags, tip, ...flags}`; `tags` link
   cards to clusters and drive the relationship highlighting
 - `pulled` — the current revision's cuts (builder view only)
+- `gameplan` + per-card `guide` — the pilot layer: a "how to pilot this
+  deck" panel (mulligan rule, turn arc, win routes) and per-card
+  in-game playbooks (what to tutor for and when). The site's primary
+  job is being useful AT THE TABLE — these carry that.
 
 Adding a deck = adding one JSON file + one index entry. No code changes.
 

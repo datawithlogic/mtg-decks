@@ -3,6 +3,16 @@
 Authoritative reference for how deck-map colors and borders are chosen.
 Applied mechanically per deck — colors are never re-discussed. viewer.js implements this.
 
+## Purpose (governs every UX call below)
+
+Deck maps are an IN-GAME pilot's reference — for a friend playing an
+unfamiliar deck off the deckbox QR, or James returning to a deck after
+a year away. Not a deckbuilding tool: clusters explain the machine as
+built; the playbook layer says what to do with it mid-game. Every
+future feature is judged by "does this help someone AT THE TABLE,
+mid-game, on a phone?" Builder view + sleeve check serve the
+building/assembly side and stay secondary.
+
 ## Cluster color palette — derivation & rules
 
 Base: **Okabe-Ito palette** (Color Universal Design; the accepted standard
@@ -108,6 +118,28 @@ never mix meanings.
   per line, progress counter, reset button. Check state persists in
   localStorage per deck slug. Layout is list-density, not chip-density:
   its job is verification, not exploration.
+
+## Pilot layer (added 2026-09-27 — the mission-central features)
+
+Three features exist specifically for the at-the-table user:
+1. **Pilot panel** (`gameplan`, required): first card on the page —
+   Game plan / Keep a hand with / Early / Mid / How you win / Play
+   around. Gold left-edge, full-width, phone rows stack. Second-person
+   table voice; a friend should be shuffle-ready in 15 seconds.
+2. **Card finder**: search input above the layout; 2+ chars lights
+   matching chips gold (reusing the dim/lit channel), scrolls first
+   match into view, Enter opens the modal. Answers "I just drew this."
+3. **Playbook** (below): per-card in-game decisions.
+
+## Playbook layer (added 2026-09-27)
+
+Tutors, imprint, and modal cards carry a `guide` (see CLAUDE.md data
+model): WHEN → GET → WHY rows in the card modal, with `get` chips
+tappable through to that card. This answers the IN-GAME question
+("what's my ideal tutor target right now") that synergy highlighting —
+a DECKBUILDING view — was never going to answer. Hover/touch info box
+shows a gold "▶ playbook inside" hint when a card has one. `when`
+phrasing uses standards/card-taxonomy.md vocabulary.
 
 ## Interaction budget (keep it actionable, not busy)
 
