@@ -4,21 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alania Otter Storm — Deck Map</title>
-<link rel="stylesheet" href="../style.css?v=20260927b">
+<link rel="stylesheet" href="../style.css?v=20261110">
 </head>
 <body>
 <script type="application/json" id="deck-data">
 {
   "name": "Alania, Divergent Storm — Otter Spellslinger",
   "slug": "alania-otter-storm",
-  "sub": "100 cards · 37 lands · avg MV ~2.8 · nominal Bracket 4 (~5 Game Changers)",
+  "sub": "100 cards · 36 lands + 1 MDFC · avg MV ~2.8 · nominal Bracket 4 (~5 Game Changers)",
+  "revnote": "v3 (accepted 2026-11-10, build in progress): 6 swaps, no Otters cut — Otters 11→12. +Harmonic Prodigy (doubles Alania/pingers), +Daring Waverider, +Brain Freeze (storm finisher), +Frantic Search, +Cavern of Souls (Otter), +Sink into Stupor MDFC for an Island",
   "accentLabel": "Otter (feeds Alania / Three Tree City)",
-  "manaNote": "Blue-hungry deck — about 2 blue symbols for every red. Get Islands and blue duals on board first; most red costs need just one Mountain. The big exception: Niv-Mizzet, Parun wants UUURRR, so save your dual lands for the turn he comes down.",
-  "hint": "Blue left-edge = Otter. Alania copies your first instant, first sorcery, AND first Otter spell each turn — an opponent draws per copy, which Narset caps.",
-  "gameplan": {"plan": "Chain cheap instants, sorceries, and Otters — Alania copies the first of each every turn. Build cast-trigger payoffs, then one big chained turn ends the game.","mull": "2–3 lands with blue, a cantrip or two, and one payoff (a pinger or cheap Otter). Ship hands with no blue sources or nothing that costs less than 3.","early": "Land, cantrips, one cheap engine piece (Kitsa, Coruscation Mage, Stormcatch Mentor). Save the free counterspells — they exist for Alania's tap-out turn.","mid": "Land Alania and protect her. Chain 2–3 spells a turn, bank Storm-Kiln treasures. Copying is OPTIONAL per trigger — skip it when handing an opponent a card isn't worth it (Narset caps the leak).","win": "Niv-Mizzet + Curiosity draw-ping loop · Aetherflux lasers after a storm turn · Muddle-as-Stormsplitter myriad swing · pinger attrition (4+ damage to everyone per spell).","fear": "Board wipes eat your pingers — and Blasphemous Act kills Alania too. Rebuild fast with Treasure Cruise. Hold Fierce Guardianship whenever you're tapped out with her on board."},
+  "manaNote": "Blue-hungry deck — about 2 blue symbols for every red. Get Islands and blue duals on board first; most red costs need just one Mountain. The big exception: Niv-Mizzet, Parun wants UUURRR, so save your dual lands for the turn he comes down. Cavern of Souls only makes colored mana for Otter creatures (colorless otherwise), and Sink into Stupor can be played as an extra Island when you're short on lands.",
+  "hint": "Blue left-edge = Otter. Alania copies your first instant, first sorcery, AND first Otter spell each turn — an opponent draws per copy, which Narset caps. Harmonic Prodigy on board makes her trigger one extra time.",
+  "gameplan": {"plan": "Chain cheap instants, sorceries, and Otters — Alania copies the first of each every turn. Build cast-trigger payoffs, then one big chained turn ends the game.","mull": "2–3 lands with blue, a cantrip or two, and one payoff (a pinger or cheap Otter). Ship hands with no blue sources or nothing that costs less than 3.","early": "Land, cantrips, one cheap engine piece (Kitsa, Coruscation Mage, Stormcatch Mentor, Harmonic Prodigy). Save the free counterspells — they exist for Alania's tap-out turn.","mid": "Land Alania and protect her. Chain 2–3 spells a turn, bank Storm-Kiln treasures. Copying is OPTIONAL per trigger — skip it when handing an opponent a card isn't worth it (Narset caps the leak).","win": "Niv-Mizzet + Curiosity draw-ping loop · Aetherflux lasers after a storm turn · Muddle-as-Stormsplitter myriad swing · Brain Freeze late in a storm turn to mill a player out · pinger attrition (3 damage to everyone per spell, 6 with Harmonic Prodigy).","fear": "Board wipes eat your pingers — and Blasphemous Act kills Alania too. Rebuild fast with Treasure Cruise. Hold Fierce Guardianship whenever you're tapped out with her on board."},
   "clusters": [
-    {"k":"double","label":"Trigger multiplication","blurb":"Veyran + Throne double Alania; Staff adds copies",
-     "how":"Alania's copy is a TRIGGERED ability. Veyran doubles triggered abilities caused by casting instants/sorceries; Roaming Throne (naming Otter) doubles Alania's too. Doublers stack additively: base + Veyran + Throne = 3 triggers. Twinning Staff then upgrades each copy event: 1 copy becomes 2.",
+    {"k":"double","label":"Trigger multiplication","blurb":"Veyran + Throne + Prodigy multiply Alania; Staff adds copies",
+     "how":"Alania's copy is a TRIGGERED ability. Veyran doubles triggered abilities caused by casting instants/sorceries; Roaming Throne (naming Otter) doubles Alania's too, and Harmonic Prodigy adds one more because Alania is a Wizard (Prodigy also doubles Guttersnipe, Storm-Kiln, Archmage, Coruscation Mage, Niv). Doublers stack additively: base + Veyran + Throne + Prodigy = 4 triggers. Twinning Staff then upgrades each copy event: 1 copy becomes 2.",
      "ex":"Alania + Veyran + Staff out. You cast Ponder → 2 Alania triggers → each makes 2 copies → you resolve 5 Ponders. Two opponents drew a card; you dug 15.",
      "why":"Multiplicative engines: each piece looks modest alone — evaluate adds by what they multiply, not what they add."},
     {"k":"mitigate","label":"Drawback mitigation","blurb":"Narset caps the cards Alania hands out",
@@ -26,7 +27,7 @@
      "ex":"Storm turn with Narset out: 6 copy triggers, opponents still see only 1 card each. Without her, that's 6 free cards distributed to your enemies.",
      "why":"Play drawback commanders only if the mitigation card is independently strong — Narset is a house against greedy draw decks anyway."},
     {"k":"niv","label":"Niv-Mizzet engine","blurb":"Curiosity turns Niv into a draw-kill loop",
-     "how":"Niv: whenever YOU DRAW, he pings any target. Curiosity: when he damages an opponent, you draw. Attach → every ping draws, every draw pings: the loop only stops when you choose (or run out of library). Cast-a-spell also draws off Niv, so every cantrip becomes ping+draw+ping…",
+     "how":"Niv: whenever YOU DRAW, he pings any target. Curiosity: when he damages an opponent, you draw. Attach → every ping draws, every draw pings: the loop only stops when you choose (or run out of library). Cast-a-spell also draws off Niv, so every cantrip becomes ping+draw+ping… Niv is a Wizard: with Harmonic Prodigy out each draw pings twice.",
      "ex":"Niv + Curiosity, opponent at 30: point pings at their face, draw 30 cards, they're dead. Pointed at multiple players, the loop chain-kills the table.",
      "why":"A wincon that lives OUTSIDE the command zone: killing Alania doesn't stop it. Redundancy across zones = resilience."},
     {"k":"untap","label":"Floodcaller untap loop","blurb":"every spell untaps Kitsa for repeat copies",
@@ -38,19 +39,19 @@
      "ex":"3 opponents: Muddle-as-Stormsplitter attacks → 2 myriad tokens attack the others → cast Blow Off Steam mid-combat → each Stormsplitter spawns another. Hasty 1/4s hitting everyone at once.",
      "why":"Combat as a spellslinger wincon diversifies your threat profile — counterspells don't stop an attack step."},
     {"k":"ping","label":"Pinger storm","blurb":"each spell in a chain drains the table",
-     "how":"Guttersnipe (2), Electrostatic Field (1), Coruscation Mage (1) hit EACH opponent per qualifying cast = 4/spell to the table. KEY RULE: these trigger on CAST — Alania's copies are NOT cast, so they don't retrigger pingers. Magecraft cards (Archmage, Storm-Kiln) count casts AND copies.",
-     "ex":"All three pingers + a 6-spell turn = 24 to each opponent before any copies. Copies add Storm-Kiln treasures and Archmage draws on top.",
+     "how":"Guttersnipe (2) and Coruscation Mage (1) hit EACH opponent per qualifying cast = 3/spell to the table. Harmonic Prodigy doubles both (Shaman + Wizard) → 6/spell. KEY RULE: these trigger on CAST — Alania's copies are NOT cast, so they don't retrigger pingers. Magecraft cards (Archmage, Storm-Kiln) count casts AND copies.",
+     "ex":"Guttersnipe + Coruscation Mage + Harmonic Prodigy and a 6-spell turn = 36 to each opponent before any copies. Copies add Storm-Kiln treasures and Archmage draws on top.",
      "why":"Read triggers precisely: 'whenever you cast' ≠ 'magecraft'. Deck evaluation lives in these details."},
     {"k":"bigturn","label":"Storm turn","blurb":"ritual mana + TYS/Amulet into a chained finish",
-     "how":"Thousand-Year Storm copies every instant/sorcery once per prior spell that turn (1st ×1, 2nd ×2, 3rd ×3…). Fuel it with Jeska's Will / Mana Geyser burst mana and Mentor/Amulet discounts. Aetherflux gains 1 life per spell YOU cast — after ~15 casts, 50-life lasers start firing.",
-     "ex":"TYS in play: Jeska's Will → Geyser (10R) → chain 6 cantrips = ~21 resolutions, ~21 Storm-Kiln treasures, Aetherflux +21 life → laser two players.",
+     "how":"Thousand-Year Storm copies every instant/sorcery once per prior spell that turn (1st ×1, 2nd ×2, 3rd ×3…). Fuel it with Jeska's Will / Mana Geyser burst mana and Mentor/Amulet discounts. Aetherflux gains 1 life per spell YOU cast — after ~15 casts, 50-life lasers start firing. Brain Freeze is the closer: cast it LAST — storm copies it once per spell already cast, each milling 3.",
+     "ex":"TYS in play: Jeska's Will → Geyser (10R) → chain 6 cantrips = ~21 resolutions, ~21 Storm-Kiln treasures, Aetherflux +21 life → laser two players. Or end the chain with Brain Freeze: storm 9 = 30 cards milled from one opponent.",
      "why":"Storm decks count 'spells castable this turn', not cards in hand — mana bursts and cost reducers ARE card advantage here."},
     {"k":"scepter","label":"Scepter package","blurb":"imprint a 2-drop instant, recast every turn",
      "how":"Isochron Scepter exiles an instant ≤2 MV; pay 2 + tap to cast the copy every turn — it IS a cast, so it triggers Alania, pingers, magecraft, everything. Best imprints: Narset's Reversal (protect/copy), Swan Song, Pongify, Brainstorm. Ojer Pakpatiq gives hand-cast instants rebound = a free recast next upkeep.",
      "ex":"Scepter w/ Narset's Reversal: every turn, bounce-counter a spell or duplicate your own bomb — while triggering Alania for a copy of the Reversal itself.",
      "why":"Repeatable cheap casts are the most reliable fuel source — one card that casts every turn beats a one-shot draw spell."},
     {"k":"gy","label":"Graveyard dividends","blurb":"looting fills the yard; Cruise cashes it out",
-     "how":"Faithless Looting, Ledger Shredder connive, Artist's Talent, and 14 cheap instants/sorceries naturally stuff the graveyard. Treasure Cruise delve exiles 7 of those to draw 3 for one mana. Harnesser/Pathmaker impulse-exile add velocity without card loss.",
+     "how":"Faithless Looting, Frantic Search, Ledger Shredder connive, Artist's Talent, and a pile of cheap instants/sorceries naturally stuff the graveyard. Treasure Cruise delve exiles 7 of those to draw 3 for one mana; Daring Waverider recasts one (MV 4 or less) for free. Harnesser/Pathmaker impulse-exile add velocity without card loss.",
      "ex":"Turn 6: yard has 8 spells → Cruise for {U}, draw 3, keep chaining. Archmage saw the cast too — draw 4 total.",
      "why":"Fuel-vs-payoff balance: refill effects prevent the classic spellslinger stall (board full of pingers, empty hand)."}
   ],
@@ -64,7 +65,7 @@
     ]},
     {"title":"Cast-trigger payoffs","desc":"Reward every noncreature/instant/sorcery cast — the deck's engine room","cards":[
       {"n":"Guttersnipe","mv":3,"tags":"ping niv","tip":"2 dmg to each opponent per instant/sorcery"},
-      {"n":"Electrostatic Field","mv":2,"tags":"ping niv","tip":"1 dmg each opponent per instant/sorcery; wall"},
+      {"n":"Harmonic Prodigy","mv":2,"tags":"double ping niv","new":true,"tip":"Wizard and Shaman triggers fire twice — Alania, Guttersnipe, Storm-Kiln, Archmage, Niv. Fragile 1/1: kill-on-sight target","guide":[{"when":"Alania on board","get":"Alania, Divergent Storm","why":"Her copy trigger fires an extra time — one more copy of your first instant, sorcery and Otter spell (and one more card for an opponent; Narset caps it)"},{"when":"Pinger plan","get":"Guttersnipe","why":"2 → 4 damage to each opponent per instant/sorcery; Coruscation Mage goes 1 → 2"},{"when":"Storm turn","get":"Storm-Kiln Artist","why":"2 Treasures per cast or copy — the chain pays for itself"},{"when":"Out of cards","get":"Archmage Emeritus","why":"Draw 2 per cast or copy"},{"when":"Niv-Mizzet out","get":"Niv-Mizzet, Parun","why":"Every draw pings twice — the Curiosity loop kills twice as fast"},{"when":"Casting a big Otter","get":"Daring Waverider","why":"ETB fires twice: recast TWO spells from your graveyard"}]},
       {"n":"Coruscation Mage","mv":2,"otter":true,"tags":"ping niv","tip":"1 dmg each opponent per noncreature spell; Offspring 2"},
       {"n":"Archmage Emeritus","mv":4,"tags":"gy","tip":"Magecraft: draw on every cast OR copy"},
       {"n":"Storm-Kiln Artist","mv":4,"tags":"myriad bigturn","tip":"Magecraft: Treasure per cast/copy — pays for the next spell"},
@@ -85,7 +86,7 @@
       {"n":"Ponder","mv":1,"tags":"untap ping"},
       {"n":"Preordain","mv":1,"tags":"untap ping"},
       {"n":"Faithless Looting","mv":1,"tags":"gy","tip":"Fills yard for Cruise; flashback = 2 casts"},
-      {"n":"Pearl of Wisdom","mv":3,"tags":"ping","tip":"1U draw 2 with an Otter out"},
+      {"n":"Frantic Search","mv":3,"tags":"gy bigturn","new":true,"tip":"Draw 2, discard 2, untap 3 lands — free (or better) mid-chain; stocks the yard for Cruise/Waverider"},
       {"n":"Otterball Antics","mv":2,"otter":true,"tags":"ping","tip":"Otter token; counts as Otter spell for Alania"},
       {"n":"Treasure Cruise","mv":8,"tags":"gy","tip":"Delve: often 1-2 mana draw 3 by midgame"},
       {"n":"Wan Shi Tong, Librarian","mv":"2+X","tags":"gy niv","tip":"Draw half X; hoses opponent tutors"},
@@ -104,6 +105,7 @@
       {"n":"Abrade","mv":2,"tags":"ping","tip":"Kill a creature or artifact, instant speed"},
       {"n":"Pongify","mv":1,"tags":"ping scepter","tip":"1-mana creature answer; Scepter-legal"},
       {"n":"Cyclonic Rift","mv":2,"tags":"bigturn","tip":"One-sided reset; GC"},
+      {"n":"Sink into Stupor","name":"Sink into Stupor // Soporific Springs","mv":3,"tags":"bigturn","new":true,"tip":"Bounce a spell (soft counter) or an opponent's nonland permanent — OR play the back as an Island (pay 3 life for untapped)","guide":[{"when":"3 or fewer lands, no land in hand","get":null,"why":"Play it as Soporific Springs — making land drops beats holding an answer"},{"when":"Lands are fine","get":null,"why":"Keep it as interaction: bounce a counterspell aimed at your key spell, or a hate piece / blocker before your storm turn"}]},
       {"n":"Blasphemous Act","mv":9,"tags":"ping","tip":"Board reset — note Alania (3/5) dies too; hold her or protect"},
       {"n":"Propaganda","mv":3,"tip":"Pillow fort while the engine assembles"}
     ]},
@@ -113,8 +115,8 @@
       {"n":"Isochron Scepter","mv":2,"tags":"scepter","tip":"Imprint Narset's Reversal / Pongify / Swan Song","guide":[{"when": "Default imprint", "get": "Narset's Reversal", "why": "Protect a spell or copy your bomb, every turn — and each activation is a cast (triggers Alania)"}, {"when": "Want a counter wall", "get": "Mana Drain", "why": "2 MV, legal imprint, mana profit"}, {"when": "Creature problems", "get": "Pongify", "why": "Repeatable 1-mana removal"}, {"when": "Just need fuel", "get": "Brainstorm", "why": "A guaranteed cast every turn for the trigger web"}]},
       {"n":"Jeska's Will","mv":3,"tags":"bigturn"},
       {"n":"Mana Geyser","mv":5,"tags":"bigturn"},
-      {"n":"Twincast","mv":2,"tags":"double","tip":"Copy anything on the stack — including opponents'"},
-      {"n":"Season of Weaving","mv":6,"tags":"bigturn","tip":"Pawprint modes: draw / clone / mass bounce"},
+      {"n":"Brain Freeze","mv":2,"tags":"bigturn","new":true,"tip":"Storm finisher: cast it LAST in a chain — mills 3 per spell cast before it. Point at one opponent, or yourself to fuel Cruise"},
+      {"n":"Daring Waverider","mv":6,"otter":true,"tags":"gy bigturn","new":true,"tip":"Otter: ETB casts an instant/sorcery (MV 4 or less) from your graveyard free — that's a cast, so the whole engine triggers","guide":[{"when":"Mid storm turn, want to finish","get":"Brain Freeze","why":"Storm counts every spell already cast this turn — a second Brain Freeze late in the chain"},{"when":"Need mana to keep chaining","get":"Jeska's Will","why":"Burst mana plus impulse cards"},{"when":"Problem permanent on board","get":"Chaos Warp","why":"Answers anything; Abrade or Pongify for a creature"},{"when":"Low on cards","get":"Frantic Search","why":"Draw 2 and untap 3 lands — refuel and nets mana"},{"when":"Remember","get":null,"why":"Free cast = no overload (Rift hits one thing) and X = 0; the spell is exiled after. With Harmonic Prodigy the ETB fires twice; if Alania copies Waverider, the token's ETB recasts another"}]},
       {"n":"Ojer Pakpatiq, Deepest Epoch","name":"Ojer Pakpatiq, Deepest Epoch // Temple of Cyclical Time","mv":4,"tags":"scepter","tip":"Hand-cast instants rebound = free second cast"},
       {"n":"Alania's Pathmaker","mv":4,"otter":true,"tags":"gy","tip":"Impulse card on ETB"},
       {"n":"Thundertrap Trainer","mv":2,"otter":true,"tags":"untap","tip":"Dig 4 on ETB; Offspring 4"},
@@ -125,7 +127,7 @@
       {"n":"Curiosity","mv":1,"tags":"niv","tip":"On Niv: ping→draw→ping… table-kill. Also fine on Guttersnipe"},
       {"n":"Aetherflux Reservoir","mv":4,"tags":"bigturn ping","tip":"50-life laser after a storm turn"},
       {"n":"Stormsplitter + Muddle","name":null,"tags":"myriad","tip":"Copy army alpha-strike (see Muddle cluster)"},
-      {"n":"Pinger attrition","name":null,"tags":"ping","tip":"Guttersnipe + Field + Coruscation ticking 4/turn-cycle each"}
+      {"n":"Pinger attrition","name":null,"tags":"ping","tip":"Guttersnipe + Coruscation: 3 per spell to each opponent, 6 with Harmonic Prodigy"}
     ]},
     {"title":"Ramp & mana","desc":"Rocks + Storm-Kiln treasures; Stormcatch Mentor's discount (in payoffs) compounds in chains","cards":[
       {"n":"Sol Ring","mv":1},
@@ -136,22 +138,30 @@
       {"n":"Three Tree City","tags":"myriad","tip":"Big color-fixed burst for the chosen type (Otter/Wizard)"}
     ]}
   ],
-  "lands": {"title":"Lands ×37","desc":"17 Island · 9 Mountain · 11 duals/utility (Three Tree City shown under Ramp for its synergy)","cards":[
+  "lands": {"title":"Lands ×36","desc":"16 Island · 9 Mountain · 11 duals/utility (Three Tree City shown under Ramp for its synergy) · + Sink into Stupor MDFC (in Interaction) as a 37th land","cards":[
     {"n":"Mystic Sanctuary","tags":"gy","tip":"Enters untapped with 3+ Islands: put an instant/sorcery from your graveyard on top — Rift or a counterspell, again"},
     {"n":"Cascade Bluffs","tip":"Filters into UU / RR / UR — feeds Niv-Mizzet's steep cost"},
     {"n":"Command Tower"},
-    {"n":"Desolate Lighthouse","tip":"Repeatable looting — fills the yard for Treasure Cruise"},
+    {"n":"Cavern of Souls","new":true,"tip":"Name Otter: your Otters can't be countered (colored mana only for Otters; colorless otherwise)","guide":[{"when":"As it enters","get":null,"why":"Name Otter — protects Alania plus your 12 Otter creatures"},{"when":"Counterspell-heavy table","get":"Alania, Divergent Storm","why":"Hold Cavern mana for her recast — she resolves no matter what"},{"when":"Casting anything else","get":null,"why":"Tap it for colorless only; it can't help Niv's UUURRR"}]},
     {"n":"Frostboil Snarl"},
     {"n":"Lilypad Village","tip":"Surveil 2 on Otter turns"},
     {"n":"Reliquary Tower","tip":"Keep the whole Niv/Cruise haul"},
     {"n":"Stormcarved Coast"},
     {"n":"Sulfur Falls"},
     {"n":"Training Center"},
-    {"n":"Island","count":17},
+    {"n":"Island","count":16},
     {"n":"Mountain","count":9}
+  ]},
+  "pulled": {"title":"Pulled in v3","desc":"No Otters cut — every OUT is a non-Otter","cards":[
+    {"n":"Electrostatic Field","mv":2,"tags":"ping","tip":"→ Harmonic Prodigy (doubles Alania + both pingers)"},
+    {"n":"Season of Weaving","mv":6,"tags":"bigturn","tip":"→ Daring Waverider (Otter; free graveyard recast)"},
+    {"n":"Twincast","mv":2,"tags":"double","tip":"→ Brain Freeze (storm finisher)"},
+    {"n":"Pearl of Wisdom","mv":3,"tags":"ping","tip":"→ Frantic Search"},
+    {"n":"Desolate Lighthouse","tip":"→ Cavern of Souls (uncounterable Otters)"},
+    {"n":"Island","tip":"1 of 17 → Sink into Stupor // Soporific Springs (MDFC)"}
   ]}
 }
 </script>
-<script src="../viewer.js?v=20260927b"></script>
+<script src="../viewer.js?v=20261110"></script>
 </body>
 </html>
