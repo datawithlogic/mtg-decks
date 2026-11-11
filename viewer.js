@@ -44,11 +44,12 @@
     const cls = ["chip", c.cmdr ? "cmdr" : "", c.otter ? "otter" : "", c.new ? "new" : ""]
       .filter(Boolean).join(" ");
     const nm = c.name === null ? "" : ` data-name="${esc(c.name || c.n)}"`;
+    const pr = c.print ? ` data-print="${esc(c.print)}"` : "";
     const tags = c.tags ? ` data-k="${esc(c.tags)}"` : "";
     const tip = c.tip ? ` data-tip="${esc(c.tip)}"` : "";
     const mv = c.mv != null ? `<span class="mv">${esc(c.mv)}</span>` : "";
     const cnt = c.count > 1 ? `${c.count}× ` : "";
-    return `<span class="${cls}"${nm}${tags}${tip}>${cnt}${esc(c.n)}${mv}</span>`;
+    return `<span class="${cls}"${nm}${pr}${tags}${tip}>${cnt}${esc(c.n)}${mv}</span>`;
   };
 
   const groupHtml = (g, extraClass = "") => `
@@ -453,12 +454,16 @@
     cardBox.innerHTML = '<div class="loading">Fetching from Scryfall…</div>';
     let body;
     try {
-      if (!cache[name]) {
-        const r = await fetch("https://api.scryfall.com/cards/named?fuzzy=" + encodeURIComponent(name));
+      /* optional `print` ("set/collector") shows James's actual printing, e.g. a Secret Lair */
+      const pr = srcChip && srcChip.dataset.print;
+      const ck = pr ? name + "@" + pr : name;
+      if (!cache[ck]) {
+        const r = await fetch(pr ? "https://api.scryfall.com/cards/" + pr
+          : "https://api.scryfall.com/cards/named?fuzzy=" + encodeURIComponent(name));
         if (!r.ok) throw new Error("not found");
-        cache[name] = await r.json();
+        cache[ck] = await r.json();
       }
-      const c = cache[name];
+      const c = cache[ck];
       const face = c.card_faces && !c.image_uris ? c.card_faces[0] : c;
       const img = (face.image_uris || c.image_uris || {}).normal;
       const oracle = c.card_faces
