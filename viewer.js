@@ -102,6 +102,19 @@
           </details>
         </section>` : ""}
         ${data.pulled ? groupHtml(data.pulled, "pulled") : ""}
+        ${data.wishlist && data.wishlist.length ? `
+        <section class="group wish">
+          <h3>Wish list</h3>
+          <div class="desc">Upgrades this deck wants that aren't owned yet (or whose copies live in another deck).</div>
+          <details><summary>Show ${data.wishlist.length} wanted cards · ~$${Math.round(data.wishlist.reduce((s, w) => s + (parseFloat(w.price) || 0), 0))} total</summary>
+            ${data.wishlist.map((w) => `<div class="wrow">
+              <button class="wishcard" data-wish="${esc(w.name || w.n)}">${esc(w.n)}</button>
+              <span class="wrep">${w.replaces ? "for " + esc(w.replaces) : ""}</span>
+              <span class="wprice">${w.price ? "$" + esc(w.price) : ""}</span>
+              <div class="wwhy">${esc(w.why || "")}${w.status ? ` · <i>${esc(w.status)}</i>` : ""}</div>
+            </div>`).join("")}
+          </details>
+        </section>` : ""}
       </main>
     </div>
     <div id="checklist"></div>
@@ -322,6 +335,7 @@
     } catch (e) {}
   }
   draftBtn.addEventListener("click", () => setDraft(!document.body.classList.contains("draft")));
+  document.querySelectorAll(".wishcard").forEach((b) => b.addEventListener("click", () => openCard(b.dataset.wish)));
   try { if (new URL(location.href).searchParams.get("sleeve") === "1") setDraft(true); } catch (e) {}
 
   /* hover/tap info box content: what it IS · role · which clusters */

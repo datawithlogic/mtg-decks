@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galadriel Elves — Deck Map</title>
+<link rel="stylesheet" href="../style.css?v=20261111">
+</head>
+<body>
+<script type="application/json" id="deck-data">
+{
+ "name": "Galadriel, Elven-Queen — Simic Elves & the Ring",
+ "slug": "galadriel-elves",
+ "sub": "100 cards · 35 lands · avg MV ~3.2 · Bracket 3 (1 Game Changer: The One Ring) · no infinite combos",
+ "revnote": "v1 · built from James's Galadriel box + library · 2026-11-10",
+ "accentLabel": "Makes the Ring tempt you (levels up your Ring-bearer)",
+ "hint": "Blue left-edge = makes the Ring tempt you. Tap Galadriel (the gold chip) first: her vote happens on every one of your turns.",
+ "manaNote": "This is a green deck with a blue splash. Get a Forest down first: most Elves cost G or GG, Circle of Dreams Druid needs GGG, and Genesis Wave GGG plus X. Have blue by turn 3 or 4 for Galadriel ({2}{G}{U}) and the counterspells (Counterspell is UU). Basics are 16 Forest / 8 Island, and the duals, Command Tower, Path of Ancestry and Paradise Druid make either color.",
+ "gameplan": {
+  "plan": "You rule Lothlórien. Fill the board with Elves, and on every turn an Elf enters before combat, Galadriel calls a council vote: guidance draws you a card, dominion makes the Ring tempt you and grows your Ring-bearer, Legolas Greenleaf. Win with a pumped Elf army or a Ring-tempted Legolas who drains the table.",
+  "mull": "Keep 3+ lands with a green source and a 1- or 2-mana Elf dork (or Sol Ring/Arcane Signet). Ideal: Forest, Island, Llanowar Elves or Elvish Mystic, then Galadriel on turn 3. Send back hands with no green source, or no dork and nothing to cast before turn 4.",
+  "early": "Dorks first, then Galadriel on turn 3 off a dork. THE VOTE: at the beginning of combat on each of YOUR turns, if another Elf entered the battlefield under your control this turn, every player votes for dominion or guidance, you first, then each opponent in turn order. Dominion: the Ring tempts you, then your Ring-bearer gets a +1/+1 counter. Guidance: you draw a card. A TIE GOES TO GUIDANCE, so dominion needs a strict majority (3 of 4 votes in a 4-player game). Play an Elf in your first main phase every turn (tokens count); an Elf that enters after combat starts misses that turn's vote. HOW TO VOTE: want a card? Vote guidance; a tie or one ally gets it. Want the Ring? Vote dominion and keep the ask small (\"one counter on a 2/2\"). With Erestor of the Council out, every opponent who votes the same as you gets a Treasure, so say that before they vote. Both results help you, so don't spend goodwill fighting for one.",
+  "mid": "THE RING: each time it tempts you, choose a Ring-bearer (one at a time), and your Ring emblem gains its next level for the rest of the game. 1: the bearer is legendary and can't be blocked by creatures with greater power. 2: when it attacks, draw a card, then discard. 3: any creature that blocks it is sacrificed at end of combat. 4: when it deals combat damage to a player, each opponent loses 3 life. Make Legolas Greenleaf the bearer: he already can't be blocked by power 2 or less, so at level 1 a 2-power Legolas can't be blocked at all. Equip Whispersilk Cloak once counters grow him. Elrond, Lord of Rivendell (the second creature entering each turn), Inherited Envelope and The Ring Goes South tempt you too. Meanwhile go wide: Warmaster, Promenade, Brigade, Arwen, and Erestor drawing on every vote.",
+  "win": "Elf alpha strike: go wide, then Ezuri (+3/+3 and trample, repeatable), Overwhelming Stampede, Warmaster's {5}{G}{G} (+2/+2 and deathtouch) or Song of Eärendil III (flying for the team); Ohran Frostfang gives attackers deathtouch · Ring-bearer drain: Legolas at Ring level 4, where every hit draws a card and drains each opponent for 3 · Genesis Wave with a big X off Priest/Archdruid mana to refill for the next swing. None of these need Galadriel alive.",
+  "fear": "Board wipes: hold Heroic Intervention, Ezuri regenerates Elves from destroy effects, and The One Ring protects YOU, not your board. Fliers and big blockers: Strix Serenade, Reality Shift, Curse of the Swine, and Song of Eärendil III gives you flying. Cheap removal on your lords: Asceticism gives your team hexproof. Other Elf decks: their Elves boost your Priest of Titania, but Raise the Palisade naming Elf won't clear them."
+ },
+ "clusters": [
+  {
+   "k": "vote",
+   "label": "Council of the Wise",
+   "blurb": "Galadriel's vote: a card or the Ring, every turn",
+   "how": "Will of the council: at the beginning of combat on your turn, if another Elf entered the battlefield under your control this turn, each player votes for dominion or guidance, starting with you. If dominion gets more votes, the Ring tempts you, then your Ring-bearer gets a +1/+1 counter. If guidance gets more votes OR the vote is tied, you draw a card. Votes are cast out loud in turn order, so yours sets the agenda. Erestor of the Council triggers whenever players finish ANY vote: each opponent who voted the same as you creates a Treasure, you scry 1 for each opponent who voted differently, then you draw a card. Plea for Power is a second council vote (extra turn, or draw three on a tie).",
+   "ex": "Turn 4: cast Elvish Archdruid in your first main phase. Beginning of combat: you vote guidance, one opponent joins you, two vote dominion. It's 2–2, and a tie goes to guidance, so you draw. Erestor then gives your ally a Treasure, scries you 2 (two dissenters), and draws you a second card. Elrond, Master of Healing turns that scry 2 into two +1/+1 counters.",
+   "why": "In this vote every result helps you, so the table feels consulted and you get value either way. Push for dominion only when the Ring payoff is real; otherwise take guidance, which you get on a tie anyway."
+  },
+  {
+   "k": "flow",
+   "label": "Mirror of Galadriel",
+   "blurb": "see the top, cast from the top, draw on every hit",
+   "how": "Eladamri and Elven Chorus let you look at the top card of your library any time and cast creature spells from there. Herald's Horn (named Elf) pulls an Elf off the top each upkeep, and Momir Vig puts the creature you need on top. Card draw comes from casting Elves (Vanquisher's Banner), creatures dealing combat damage to players (Legolas, Oakhame Adversary, Ohran Frostfang, Enduring Curiosity), and big digs (Lead the Stampede, Cantankerous Keepers, Titan of Littjara naming Elf, Rishkar's Expertise). The One Ring and Palantír of Orthanc draw on their own every turn.",
+   "ex": "Eladamri is out and you cast Momir Vig. Next turn you cast Paradise Druid, a green creature spell: Momir searches up Ezuri and puts him on top, and you cast Ezuri straight off the top through Eladamri.",
+   "why": "Elf decks run out of cards before they run out of mana. Use draw that scales with what the deck already does (casting Elves, creatures connecting) so the hand refills while you build the board."
+  },
+  {
+   "k": "ring",
+   "label": "The Ring tempts you",
+   "blurb": "four permanent levels for one chosen Ring-bearer",
+   "how": "Each time the Ring tempts you, you get The Ring emblem if you don't have one, it gains its next ability, and you must choose a creature you control to become or remain your Ring-bearer (only one at a time; you may switch each time). The levels last the whole game: 1) your Ring-bearer is legendary and can't be blocked by creatures with greater power. 2) Whenever it attacks, draw a card, then discard a card. 3) Whenever it becomes blocked by a creature, that creature's controller sacrifices it at end of combat. 4) Whenever it deals combat damage to a player, each opponent loses 3 life. Tempt sources: Galadriel's dominion, Elrond, Lord of Rivendell (the second time his trigger resolves in a turn), Inherited Envelope, The Ring Goes South.",
+   "ex": "Legolas Greenleaf is a 2/2 that can't be blocked by creatures with power 2 or less. At Ring level 1 he also can't be blocked by creatures with greater power, so nothing can block him. Each dominion vote adds a +1/+1 counter: at 4/4, creatures with power 3 or 4 can block him again, so equip Whispersilk Cloak (can't be blocked) and keep swinging. At level 4, every hit draws a card and drains each opponent for 3.",
+   "why": "Like Frodo, the Ring needs one bearer and a fellowship to protect him: several tempt sources, one ideal bearer, and protection for that bearer. A few tempt cards with no plan for the bearer would just be theme tax."
+  },
+  {
+   "k": "wide",
+   "label": "Host of the Galadhrim",
+   "blurb": "tokens, lords and counters: every body bigger",
+   "how": "Elf Warrior tokens come from Elvish Warmaster (once each turn when other Elves enter), Elvish Promenade and Elven Ambush (one per Elf you control), Galadhrim Brigade's squad copies, Galadhrim Ambush, Freyalise's +2 (an Elf Druid that taps for G), and Windswift Slice's excess damage. Lords stack: Elvish Archdruid and every Galadhrim Brigade give other Elves +1/+1, and Vanquisher's Banner gives Elves +1/+1. Arwen, Weaver of Hope makes each other creature enter with extra +1/+1 counters equal to her toughness, and Elrond, Master of Healing hands out counters every time you scry. Every Elf token that enters also turns on Galadriel's vote.",
+   "ex": "Five Elves out. Cast Elvish Promenade in your first main phase: five 1/1 Elf Warriors, and Warmaster adds a sixth. With Archdruid and Brigade out they're all 3/3s, and Galadriel's vote fires at combat.",
+   "why": "Go-wide decks want redundancy, many token makers and many anthems, so losing one piece to removal doesn't stop the plan."
+  },
+  {
+   "k": "scry",
+   "label": "Elrond's foresight",
+   "blurb": "every creature that enters scries, and every scry pays",
+   "how": "Elrond, Lord of Rivendell scries 1 whenever he or another creature you control enters (tokens too), and the second time that resolves each turn, the Ring tempts you. More scry: Erestor (1 per opponent who voted against you), Path of Ancestry (its mana spent on an Elf spell, since Galadriel is an Elf), Rivendell ({1}{U}, tap: scry 2 while you control a legendary creature), Palantír of Orthanc (scry 2 each end step), Song of Eärendil chapter I, and Elvish Mariner when it attacks. Payoffs: Elrond, Master of Healing puts a +1/+1 counter on each of up to X target creatures, and Elvish Mariner taps up to X target nonland permanents, where X is the number of cards you looked at.",
+   "ex": "Elrond, Lord of Rivendell, Master of Healing and Mariner are out. Cast Llanowar Elves: scry 1, so one creature gets a counter and Mariner taps one potential blocker. Warmaster's token enters: scry 1 again for another counter and tap, and the Ring tempts you because it's Elrond's second resolution this turn.",
+   "why": "Small repeatable triggers add up once a card turns them into a resource. Scry alone is filtering; with Master of Healing it's a team pump and with Mariner it taps down blockers."
+  },
+  {
+   "k": "mana",
+   "label": "Lórien's bounty",
+   "blurb": "Elves that tap for mana, and the sinks that spend it",
+   "how": "Twelve Elves ramp. Priest of Titania (G for each Elf on the battlefield, anyone's), Elvish Archdruid (G for each Elf you control), Circle of Dreams Druid (G for each creature you control) and Marwyn (G equal to her power, which grows with each Elf) scale with the board. Jaheira gives every token \"{T}: Add {G}\", Rishkar does the same for every creature with a counter, and Elven Chorus lets every creature tap for any color. Creatures can't tap for mana the turn they arrive. Sinks: Genesis Wave, Ezuri's +3/+3 (repeatable), Warmaster's +2/+2, Galadhrim Brigade's squad, Curse of the Swine, Restless Vinestalk.",
+   "ex": "Turn 5 with six Elves: Priest taps for 6 and Archdruid for 6. That's 12 mana on top of your lands, enough to activate Ezuri twice (+6/+6 and trample on every Elf) and attack.",
+   "why": "When the ramp is also the tribe, it costs nothing extra: every dork is mana, a body for your lords, and a vote trigger. Big mana needs places to spend it, or it's wasted."
+  },
+  {
+   "k": "alpha",
+   "label": "Ride of the Elves",
+   "blurb": "the one swing that ends the game",
+   "how": "Finishing pumps: Ezuri ({2}{G}{G}{G}: Elves +3/+3 and trample until end of turn, stacks), Overwhelming Stampede (team +X/+X and trample, X = your greatest power), Elvish Warmaster ({5}{G}{G}: Elves +2/+2 and deathtouch), Song of Eärendil III (a flying counter on each of your creatures without flying). Ohran Frostfang gives your attackers deathtouch, Secret Tunnel makes two creatures that share a type unblockable, and Elvish Mariner taps blockers. Draw-on-damage (Ohran, Enduring Curiosity, Oakhame Adversary) refills your hand even when the swing isn't lethal.",
+   "ex": "Eight Elves out and Priest taps for 8: activate Ezuri (+3/+3, trample), then cast Overwhelming Stampede. Your biggest creature is now 7 power, so the whole team gets another +7/+7.",
+   "why": "Wide decks win with one overwhelming turn, not lots of small attacks. Hold the pump until the swing is lethal or close to it, so opponents can't plan around it."
+  },
+  {
+   "k": "wards",
+   "label": "Elven wards",
+   "blurb": "protection and answers that keep the host alive",
+   "how": "Heroic Intervention gives your permanents hexproof and indestructible until end of turn (it stops destroy effects and targeted removal, not exile, bounce or -X/-X). Asceticism gives your creatures hexproof and {1}{G} regeneration. Ezuri regenerates another Elf for {G}. Casting The One Ring gives YOU protection from everything until your next turn. Galadhrim Ambush prevents all combat damage from non-Elf creatures that turn. Answers: Counterspell, Arcane Denial, Strix Serenade and Mystic Confluence on the stack; Reality Shift, Resculpt and Curse of the Swine exile; Lignify, Petty Theft, the fight spells, Reclamation Sage and Freyalise's −2 handle the rest; Raise the Palisade naming Elf bounces every non-Elf creature.",
+   "ex": "An opponent casts a destroy-all-creatures wipe. In response, cast Heroic Intervention: your Elves survive, everyone else's board is gone, and you swing next turn.",
+   "why": "One wipe can wipe out a go-wide deck. Keep one protection spell or counter in hand before you commit your last Elves to the board."
+  }
+ ],
+ "groups": [
+  {
+   "title": "Command zone",
+   "desc": "The Lady of Lórien. Her vote happens every turn an Elf enters before combat.",
+   "cards": [
+    {
+     "n": "Galadriel, Elven-Queen",
+     "mv": 4,
+     "tags": "vote ring",
+     "tip": "Beginning of combat on your turn, if another Elf entered under your control this turn: everyone votes. Dominion = the Ring tempts you + a +1/+1 counter on your Ring-bearer. Guidance or a tie = you draw.",
+     "cmdr": true,
+     "otter": true,
+     "guide": [
+      {
+       "when": "Every turn, before combat",
+       "get": null,
+       "why": "Get an Elf onto the battlefield in your FIRST main phase (or upkeep, with an instant like Elven Ambush). Tokens count. An Elf that enters after combat starts is too late for this turn's vote."
+      },
+      {
+       "when": "You want a card (default, or no good bearer out)",
+       "get": null,
+       "why": "Vote guidance. A tie already goes to guidance, so in a 4-player game you only need one opponent with you. Most opponents prefer you drawing to you growing an attacker."
+      },
+      {
+       "when": "Legolas is out and you want the Ring to level up",
+       "get": "Legolas Greenleaf",
+       "why": "Vote dominion and keep the pitch small: \"it's one counter on a 2/2.\" Dominion needs a strict majority: 3 of 4 votes in a 4-player game, 2 of 3 in a 3-player game. If they refuse, you still draw, so asking costs nothing."
+      },
+      {
+       "when": "Erestor is on the battlefield",
+       "get": "Erestor of the Council",
+       "why": "Say it before anyone votes: every opponent who votes the same as you gets a Treasure. Opponents who vote against you give you scry 1 each, and you draw a card either way."
+      },
+      {
+       "when": "The Ring is already at level 4",
+       "get": null,
+       "why": "Dominion still grows your bearer by a counter, but a card (guidance) is usually worth more now."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Lórien's bounty: ramp",
+   "desc": "Elves that tap for mana, plus a few rocks. Each Elf is also a body for your lords and a vote trigger.",
+   "cards": [
+    {
+     "n": "Llanowar Elves",
+     "mv": 1,
+     "tags": "mana",
+     "tip": "Turn-1 Elf. {T}: Add {G}. Puts a 3-drop out on turn 2 and Galadriel on turn 3.",
+     "new": true
+    },
+    {
+     "n": "Elvish Mystic",
+     "mv": 1,
+     "tags": "mana",
+     "tip": "Turn-1 Elf. {T}: Add {G}. Same job as Llanowar Elves."
+    },
+    {
+     "n": "Arbor Elf",
+     "mv": 1,
+     "tags": "mana",
+     "tip": "{T}: Untap target Forest. Works as a dork as long as you have a Forest (16 basics, and Wood Elves fetches more)."
+    },
+    {
+     "n": "Paradise Druid",
+     "mv": 2,
+     "tags": "mana",
+     "tip": "{T}: any color. Hexproof while untapped. Your safest early blue source for Galadriel."
+    },
+    {
+     "n": "Priest of Titania",
+     "mv": 2,
+     "tags": "mana wide",
+     "tip": "{T}: G for each Elf on the battlefield, everyone's Elves included. Mid-game it taps for 5+."
+    },
+    {
+     "n": "Elvish Archdruid",
+     "mv": 3,
+     "tags": "mana wide",
+     "tip": "Other Elves you control get +1/+1, and {T}: G for each Elf you control. A lord and a mana battery.",
+     "new": true
+    },
+    {
+     "n": "Circle of Dreams Druid",
+     "mv": 3,
+     "tags": "mana wide",
+     "tip": "Costs {G}{G}{G}. {T}: G for each creature you control, non-Elves and tokens included."
+    },
+    {
+     "n": "Marwyn, the Nurturer",
+     "mv": 3,
+     "tags": "mana wide",
+     "tip": "Gets a +1/+1 counter whenever another Elf enters; {T}: G equal to her power. Late game she's 6+ mana."
+    },
+    {
+     "n": "Wood Elves",
+     "mv": 3,
+     "tags": "mana",
+     "tip": "Enters: search for a Forest and put it onto the battlefield (untapped). An Elf and a land drop."
+    },
+    {
+     "n": "Tireless Provisioner",
+     "mv": 3,
+     "tags": "mana",
+     "tip": "Each land you play: make a Treasure (any color of mana) or a Food (3 life). Take Treasure for blue."
+    },
+    {
+     "n": "Rishkar, Peema Renegade",
+     "mv": 3,
+     "tags": "mana wide",
+     "tip": "Enters: +1/+1 counter on up to two creatures. Every creature you control with a counter taps for G, so Arwen's and Elrond's counters become mana.",
+     "new": true
+    },
+    {
+     "n": "Jaheira, Friend of the Forest",
+     "mv": 3,
+     "tags": "mana wide",
+     "tip": "Tokens you control have \"{T}: Add {G}\". Every Elf Warrior token is a mana dork from your next turn on."
+    },
+    {
+     "n": "Sol Ring",
+     "mv": 1,
+     "tags": "mana",
+     "tip": "{T}: Add {C}{C}. On turn 1, it can put Galadriel out on turn 2 if your lands make G and U."
+    },
+    {
+     "n": "Arcane Signet",
+     "mv": 2,
+     "tags": "mana",
+     "tip": "{T}: G or U."
+    },
+    {
+     "n": "Inherited Envelope",
+     "mv": 3,
+     "tags": "mana ring",
+     "tip": "Enters: the Ring tempts you. {T}: any color. A mana rock that levels up the Ring.",
+     "otter": true
+    },
+    {
+     "n": "Growth Spiral",
+     "mv": 2,
+     "tags": "mana flow",
+     "tip": "Instant: draw a card, and you may put a land from your hand onto the battlefield. Cast it at the end of an opponent's turn."
+    }
+   ]
+  },
+  {
+   "title": "The White Council: vote & arrival engine",
+   "desc": "These turn every Elf that enters into more value: votes, scry, counters, tokens.",
+   "cards": [
+    {
+     "n": "Erestor of the Council",
+     "mv": 3,
+     "tags": "vote scry",
+     "tip": "Whenever players finish ANY vote: opponents who voted with you each get a Treasure, you scry 1 per opponent who voted against you, then you draw. With Galadriel, that's two cards a turn."
+    },
+    {
+     "n": "Elrond, Lord of Rivendell",
+     "mv": 3,
+     "tags": "ring scry",
+     "tip": "Whenever he or another creature you control enters: scry 1. The second time this resolves in a turn, the Ring tempts you. Two creatures entering in a turn (an Elf + Warmaster's token) = a tempt.",
+     "otter": true
+    },
+    {
+     "n": "Elrond, Master of Healing",
+     "mv": 4,
+     "tags": "scry wide",
+     "tip": "Whenever you scry: a +1/+1 counter on each of up to X target creatures (X = cards looked at). Draws you a card when an opponent targets one of your creatures that has a counter."
+    },
+    {
+     "n": "Elvish Mariner",
+     "mv": 3,
+     "tags": "scry alpha",
+     "tip": "Scry 1 when it attacks. Whenever you scry: tap up to X target nonland permanents. Scry on your turn and you tap down blockers."
+    },
+    {
+     "n": "Arwen, Weaver of Hope",
+     "mv": 3,
+     "tags": "wide",
+     "tip": "Each other creature you control enters with extra +1/+1 counters equal to Arwen's toughness (1, more if she gets counters). Tokens arrive as 2/2s, and the counters turn on Rishkar."
+    },
+    {
+     "n": "Elvish Warmaster",
+     "mv": 2,
+     "tags": "wide alpha",
+     "tip": "Once each turn, when one or more other Elves enter: make a 1/1 Elf Warrior (a second creature for Elrond's tempt). {5}{G}{G}: Elves get +2/+2 and deathtouch until end of turn."
+    },
+    {
+     "n": "Plea for Power",
+     "mv": 4,
+     "tags": "vote flow",
+     "tip": "Will of the council: time (take an extra turn) or knowledge (draw three). A tie means knowledge. Erestor triggers on it too.",
+     "guide": [
+      {
+       "when": "Default",
+       "get": null,
+       "why": "Vote time. Most tables vote knowledge or tie it, so you usually draw three cards for 4 mana, plus a card from Erestor."
+      },
+      {
+       "when": "An extra turn would win (lethal next combat)",
+       "get": null,
+       "why": "Don't say so out loud. Opponents who see lethal coming will vote knowledge."
+      },
+      {
+       "when": "Erestor is out",
+       "get": "Erestor of the Council",
+       "why": "Remind the table that anyone who votes with you gets a Treasure. That can swing a 3-player vote to time."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "The Ring-bearer",
+   "desc": "The deck's one sub-theme: tempt the Ring and turn Legolas into a clock. Ring levels never go away.",
+   "cards": [
+    {
+     "n": "Legolas Greenleaf",
+     "mv": 3,
+     "tags": "ring alpha",
+     "tip": "2/2, reach. Can't be blocked by creatures with power 2 or less. Gets a +1/+1 counter whenever another legendary creature you control enters (11 others here); draws when he deals combat damage to a player. Your intended Ring-bearer.",
+     "guide": [
+      {
+       "when": "Choosing a Ring-bearer, Legolas is out",
+       "get": "Legolas Greenleaf",
+       "why": "Always him. Ring level 1 adds \"can't be blocked by creatures with greater power\", so a 2-power Legolas is unblockable. Every counter raises his power, which lets creatures with power from 3 up to his power block him."
+      },
+      {
+       "when": "Legolas has 3+ power and blockers fit the window",
+       "get": "Whispersilk Cloak",
+       "why": "Equip it ({2}): can't be blocked and shroud. Now every hit draws, and at level 4 drains each opponent for 3."
+      },
+      {
+       "when": "No Cloak yet but you need him through",
+       "get": "Secret Tunnel",
+       "why": "{4}, tap: Legolas and another Elf can't be blocked this turn."
+      },
+      {
+       "when": "Legolas isn't out yet",
+       "get": null,
+       "why": "Pick something that attacks safely: Oakhame Adversary (deathtouch), Galadriel (4/5), or whatever has the Cloak. Move the Ring to Legolas the next time it tempts you."
+      },
+      {
+       "when": "Ring level 3 reached",
+       "get": null,
+       "why": "Anything that blocks your Ring-bearer is sacrificed at end of combat, so opponents will rarely block it."
+      }
+     ]
+    },
+    {
+     "n": "Whispersilk Cloak",
+     "mv": 3,
+     "tags": "ring wards",
+     "tip": "Equip {2}: can't be blocked and shroud. On your Ring-bearer, every hit draws a card (Legolas) and drains 3 at Ring level 4."
+    },
+    {
+     "n": "The Ring Goes South",
+     "mv": 4,
+     "tags": "ring mana",
+     "tip": "The Ring tempts you, then put lands onto the battlefield tapped: one for each legendary creature you control. With 3 legends out, that's a tempt + 3 lands.",
+     "new": true,
+     "otter": true
+    },
+    {
+     "n": "The One Ring",
+     "mv": 4,
+     "tags": "flow wards",
+     "tip": "Indestructible. If you cast it: you have protection from everything until your next turn. {T}: add a burden counter, then draw a card per burden counter. You lose 1 life per counter each upkeep. The deck's only Game Changer.",
+     "guide": [
+      {
+       "when": "When to cast it",
+       "get": null,
+       "why": "The turn you expect to be attacked or burned out. Protection from everything protects YOU, the player: no damage to you and you can't be targeted. It does NOT protect your creatures or other permanents."
+      },
+      {
+       "when": "Only when cast",
+       "get": null,
+       "why": "If it enters any other way (Genesis Wave, for example), you don't get the protection."
+      },
+      {
+       "when": "Every turn after",
+       "get": null,
+       "why": "Tap it: 1 card, then 2, then 3. The burden counters stay and cost you 1 life each per upkeep whether you tap or not, so draw hard early and turn the cards into a win."
+      },
+      {
+       "when": "Your life is getting low",
+       "get": null,
+       "why": "Stop counting on it for value. Use the cards you've drawn to close the game or stabilise."
+      }
+     ]
+    },
+    {
+     "n": "Secret Tunnel",
+     "mv": 0,
+     "tags": "ring alpha",
+     "tip": "Land: {T}: Add {C}. It can't be blocked itself. {4}, {T}: two creatures you control that share a creature type can't be blocked this turn. Your Ring-bearer plus your biggest Elf.",
+     "new": true
+    }
+   ]
+  },
+  {
+   "title": "Mirror of Galadriel: card flow",
+   "desc": "Look at the top, cast from the top, and draw on Elves cast and on combat hits.",
+   "cards": [
+    {
+     "n": "Eladamri, Korvecdal",
+     "mv": 3,
+     "tags": "flow",
+     "tip": "Look at the top card any time, and you can cast creature spells from the top. {G}, {T}, tap two untapped creatures (your turn only): reveal a creature from hand or the top and put it onto the battlefield.",
+     "new": true
+    },
+    {
+     "n": "Elven Chorus",
+     "mv": 4,
+     "tags": "flow mana",
+     "tip": "Look at the top card any time and cast creatures from the top. Your creatures have \"{T}: Add one mana of any color.\""
+    },
+    {
+     "n": "Momir Vig, Simic Visionary",
+     "mv": 5,
+     "tags": "flow",
+     "tip": "Cast a green creature spell: you may search for a creature and put it on top. Cast a blue creature spell: reveal the top card, and if it's a creature, put it in your hand.",
+     "new": true,
+     "guide": [
+      {
+       "when": "Cast a green-and-blue creature (Galadriel, Erestor, Elrond, Master of Healing)",
+       "get": null,
+       "why": "Both triggers go on the stack. Order them so the green search resolves first: it puts a creature on top, then the blue trigger reveals it and puts it in your hand. A real tutor."
+      },
+      {
+       "when": "Need mana",
+       "get": "Priest of Titania",
+       "why": "Or Elvish Archdruid. Scales with every Elf you have."
+      },
+      {
+       "when": "Need card flow",
+       "get": "Erestor of the Council",
+       "why": "Two cards a turn with Galadriel's vote."
+      },
+      {
+       "when": "Ready to swing for the win",
+       "get": "Ezuri, Renegade Leader",
+       "why": "Or Ohran Frostfang for deathtouch attackers that draw."
+      },
+      {
+       "when": "Running the Ring plan",
+       "get": "Legolas Greenleaf",
+       "why": "Or Elrond, Lord of Rivendell for a repeatable tempt."
+      },
+      {
+       "when": "Eladamri or Elven Chorus is out",
+       "get": "Eladamri, Korvecdal",
+       "why": "You can cast the creature you stacked straight from the top. No blue trigger needed."
+      }
+     ]
+    },
+    {
+     "n": "Herald's Horn",
+     "mv": 3,
+     "tags": "flow",
+     "tip": "Name Elf. Elf spells cost {1} less, and each upkeep, if the top card is an Elf, you may put it into your hand."
+    },
+    {
+     "n": "Vanquisher's Banner",
+     "mv": 5,
+     "tags": "flow wide",
+     "tip": "Name Elf. Elves get +1/+1, and every Elf spell you cast draws a card.",
+     "new": true
+    },
+    {
+     "n": "Lead the Stampede",
+     "mv": 3,
+     "tags": "flow",
+     "tip": "Look at the top five, take every creature card among them. Usually 1–3 creatures.",
+     "new": true
+    },
+    {
+     "n": "Cantankerous Keepers",
+     "mv": 6,
+     "tags": "flow",
+     "tip": "Costs {1} less for each Elf you control. Enters: mill four, put every Elf card among them into your hand.",
+     "new": true
+    },
+    {
+     "n": "Titan of Littjara",
+     "mv": 6,
+     "tags": "flow alpha",
+     "tip": "Name Elf as it enters. When it enters or attacks, you may draw a card for each other Elf you control, then discard one. Often 4+ cards."
+    },
+    {
+     "n": "Palantír of Orthanc",
+     "mv": 3,
+     "tags": "flow scry",
+     "tip": "Each end step: scry 2, then an opponent chooses: you draw a card, or you mill X (growing each turn) and they lose life equal to the milled cards' total mana value."
+    },
+    {
+     "n": "Song of Eärendil",
+     "mv": 5,
+     "tags": "flow scry alpha",
+     "tip": "Saga. I: scry 2, draw two. II: a Treasure and a 2/2 flying Bird. III: a flying counter on each of your creatures without flying. Chapter III is your turn to swing with everything."
+    },
+    {
+     "n": "Rishkar's Expertise",
+     "mv": 6,
+     "tags": "flow",
+     "tip": "Draw cards equal to your greatest power, then cast a spell with mana value 5 or less from your hand for free.",
+     "guide": [
+      {
+       "when": "Before casting",
+       "get": null,
+       "why": "Grow your biggest creature first: Galadriel is 4 power, Titan of Littjara 6, and a fully pumped Marwyn or lord-boosted Elf often more. Draw is based on power when it resolves."
+      },
+      {
+       "when": "Free spell: build the engine",
+       "get": "Vanquisher's Banner",
+       "why": "Or Momir Vig. A 5-mana engine for free."
+      },
+      {
+       "when": "Free spell: next turn's swing",
+       "get": "Ohran Frostfang",
+       "why": "Deathtouch attackers that each draw on a hit."
+      },
+      {
+       "when": "Free spell: more Elves",
+       "get": "Freyalise, Llanowar's Fury",
+       "why": "Or Elvish Promenade for a burst of tokens."
+      }
+     ]
+    },
+    {
+     "n": "Oakhame Adversary",
+     "mv": 4,
+     "tags": "flow alpha",
+     "tip": "Costs {2} less if an opponent controls a green permanent. Deathtouch; draws a card when it deals combat damage to a player.",
+     "new": true
+    },
+    {
+     "n": "Enduring Curiosity",
+     "mv": 4,
+     "tags": "flow alpha",
+     "tip": "Flash. Whenever a creature you control deals combat damage to a player, draw a card. When it dies, it comes back as an enchantment, so the draw keeps going.",
+     "new": true
+    }
+   ]
+  },
+  {
+   "title": "Host of the Galadhrim: go wide & finish",
+   "desc": "Token bursts, lords and the pump effects that turn a wide board into lethal.",
+   "cards": [
+    {
+     "n": "Galadhrim Brigade",
+     "mv": 3,
+     "tags": "wide",
+     "tip": "Other Elves get +1/+1. Squad {1}{G}: pay it extra times when you cast it for that many token copies, and each copy is another lord. 7 mana = three Brigades."
+    },
+    {
+     "n": "Elvish Promenade",
+     "mv": 4,
+     "tags": "wide",
+     "tip": "Sorcery: one 1/1 Elf Warrior per Elf you control. Doubles your board; cast it in your first main phase to trigger Galadriel's vote."
+    },
+    {
+     "n": "Elven Ambush",
+     "mv": 4,
+     "tags": "wide wards",
+     "tip": "Instant: one 1/1 Elf Warrior per Elf you control. Cast it at the end of an opponent's turn, as surprise blockers, or in your upkeep to guarantee Galadriel's vote."
+    },
+    {
+     "n": "Freyalise, Llanowar's Fury",
+     "mv": 5,
+     "tags": "wide mana flow",
+     "tip": "Planeswalker. +2: a 1/1 Elf Druid with \"{T}: Add {G}.\" −2: destroy an artifact or enchantment. −6: draw a card per green creature you control.",
+     "guide": [
+      {
+       "when": "Default (cast in your first main phase)",
+       "get": null,
+       "why": "+2: the Elf Druid token is an Elf entering, so Galadriel votes this turn. Free mana from next turn."
+      },
+      {
+       "when": "An artifact or enchantment is a problem",
+       "get": null,
+       "why": "−2: destroy it. Use this for a lock piece or a big threat, not a mana rock."
+      },
+      {
+       "when": "Loyalty 6+ and lots of green creatures",
+       "get": null,
+       "why": "−6: draw a card per green creature you control. With 8+ creatures, this refills your hand."
+      }
+     ]
+    },
+    {
+     "n": "Ezuri, Renegade Leader",
+     "mv": 3,
+     "tags": "alpha wards mana",
+     "tip": "{G}: regenerate another target Elf (saves it from destroy effects and combat). {2}{G}{G}{G}: Elves you control get +3/+3 and trample until end of turn. Stack it with Priest or Archdruid mana."
+    },
+    {
+     "n": "Overwhelming Stampede",
+     "mv": 5,
+     "tags": "alpha",
+     "tip": "Your creatures gain trample and +X/+X, X = the greatest power among them. Pump with lords or Ezuri first, then cast it right before attacking."
+    },
+    {
+     "n": "Ohran Frostfang",
+     "mv": 5,
+     "tags": "alpha flow",
+     "tip": "Your attacking creatures have deathtouch, and each creature that deals combat damage to a player draws you a card. Nobody wants to block a 1/1 deathtouch Elf.",
+     "new": true
+    },
+    {
+     "n": "Genesis Wave",
+     "mv": 3,
+     "tags": "mana alpha",
+     "tip": "Reveal the top X cards; put any permanents with mana value X or less onto the battlefield. The rest go to your graveyard.",
+     "guide": [
+      {
+       "when": "6 mana (X = 3)",
+       "get": null,
+       "why": "Hits all your dorks, lords and most of the Elf engine (nearly everything here costs 3 or less) plus any lands. A solid refill after a wipe."
+      },
+      {
+       "when": "8 mana (X = 5)",
+       "get": null,
+       "why": "Adds the 4-drops (Elrond, Master of Healing, Elven Chorus, Oakhame Adversary, Enduring Curiosity, and The One Ring, without its protection since it wasn't cast) and the 5s: Freyalise, Momir Vig, Ohran Frostfang, Vanquisher's Banner, Asceticism, Song of Eärendil."
+      },
+      {
+       "when": "9+ mana (X = 6+)",
+       "get": "Titan of Littjara",
+       "why": "Picks up Titan and Cantankerous Keepers too. Lands (mana value 0) always come in."
+      },
+      {
+       "when": "Your library is small",
+       "get": null,
+       "why": "Everything not put onto the battlefield goes to the graveyard and this deck can't get it back. Don't wave X = 20 with 25 cards left."
+      },
+      {
+       "when": "Big-mana turn (Priest, Archdruid, Circle)",
+       "get": "Priest of Titania",
+       "why": "Make X as large as you can before combat. New Elves turn on Galadriel's vote, and Warmaster and Elrond trigger off them."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Answers: removal, counters, wipes",
+   "desc": "Simic answers are soft (counters, bounce, exile-with-a-token, fights), so there are a lot of them.",
+   "cards": [
+    {
+     "n": "Counterspell",
+     "mv": 2,
+     "tags": "wards",
+     "tip": "{U}{U}: counter target spell. Save it for wipes and game-winning spells."
+    },
+    {
+     "n": "Arcane Denial",
+     "mv": 2,
+     "tags": "wards",
+     "tip": "Counter target spell. Its controller may draw up to two cards next upkeep, and you draw one.",
+     "new": true
+    },
+    {
+     "n": "Strix Serenade",
+     "mv": 1,
+     "tags": "wards",
+     "tip": "{U}: counter an artifact, creature or planeswalker spell. They get a 2/2 flying Bird.",
+     "new": true
+    },
+    {
+     "n": "Mystic Confluence",
+     "mv": 5,
+     "tags": "wards flow",
+     "tip": "Choose three, repeats allowed: counter unless they pay {3}; return target creature to its owner's hand; draw a card.",
+     "guide": [
+      {
+       "when": "An opponent casts a wipe or a bomb",
+       "get": null,
+       "why": "Counter-unless-{3} once if they're tapped out, twice or three times if they have mana up. Fill the rest with draw."
+      },
+      {
+       "when": "End of the turn before yours, nothing to counter",
+       "get": null,
+       "why": "Draw three. Never let 5 open mana go to waste."
+      },
+      {
+       "when": "A blocker or stolen creature is in the way",
+       "get": null,
+       "why": "Bounce it + draw two. You can also bounce your own creature to save it from exile or theft."
+      }
+     ]
+    },
+    {
+     "n": "Reality Shift",
+     "mv": 2,
+     "tags": "wards",
+     "tip": "Exile target creature. Its controller manifests the top card of their library (a face-down 2/2).",
+     "new": true
+    },
+    {
+     "n": "Resculpt",
+     "mv": 2,
+     "tags": "wards",
+     "tip": "Exile target artifact or creature. Its controller gets a 4/4 Elemental. Answers a commander or a big artifact.",
+     "new": true
+    },
+    {
+     "n": "Lignify",
+     "mv": 2,
+     "tags": "wards",
+     "tip": "Aura: enchanted creature becomes a 0/4 Treefolk with no abilities. It stays on the battlefield, so a commander can't simply be recast from the command zone."
+    },
+    {
+     "n": "Windswift Slice",
+     "mv": 3,
+     "tags": "wards wide",
+     "tip": "Your creature deals damage equal to its power to a creature you don't control. Excess damage becomes 1/1 Elf Warriors, so cast it precombat for a Galadriel vote."
+    },
+    {
+     "n": "Inscription of Abundance",
+     "mv": 2,
+     "tags": "wards wide",
+     "tip": "Choose one (kicked {2}{G}: any number): two +1/+1 counters on a creature; a player gains life equal to their greatest power; your creature fights one you don't control.",
+     "guide": [
+      {
+       "when": "2 mana, need removal",
+       "get": null,
+       "why": "Fight mode with your biggest creature or Oakhame Adversary (deathtouch kills anything it fights)."
+      },
+      {
+       "when": "5 mana (kicked)",
+       "get": null,
+       "why": "Choose all three. Modes happen in printed order: the +2 counters land BEFORE the fight, then you gain life equal to your greatest power."
+      },
+      {
+       "when": "Instant-speed trick",
+       "get": null,
+       "why": "Two +1/+1 counters to win a combat or save a creature from damage-based removal."
+      }
+     ]
+    },
+    {
+     "n": "Brazen Borrower // Petty Theft",
+     "mv": 3,
+     "tags": "wards",
+     "tip": "Petty Theft ({1}{U} instant): return target nonland permanent an opponent controls to its owner's hand. Later, cast Brazen Borrower from exile: a flash flyer that can only block flyers.",
+     "new": true,
+     "guide": [
+      {
+       "when": "Default",
+       "get": null,
+       "why": "Cast Petty Theft first (adventure): bounce a token (it's gone), a commander (they pay tax again), or an aura or equipment. The card goes to exile, and you cast Borrower from there later."
+      },
+      {
+       "when": "End of an opponent's turn",
+       "get": null,
+       "why": "Flash in the Borrower itself as a 3-mana flyer for your next attack."
+      }
+     ]
+    },
+    {
+     "n": "Reclamation Sage",
+     "mv": 3,
+     "tags": "wards",
+     "tip": "Elf. Enters: you may destroy target artifact or enchantment. Counts toward the vote."
+    },
+    {
+     "n": "Curse of the Swine",
+     "mv": 2,
+     "tags": "wards",
+     "tip": "{X}{U}{U}: exile X target creatures. Each controller gets a 2/2 Boar per creature exiled.",
+     "new": true,
+     "guide": [
+      {
+       "when": "3 mana (X = 1)",
+       "get": null,
+       "why": "Spot exile for one problem creature. Exile gets around indestructible and regeneration."
+      },
+      {
+       "when": "Late game, lots of mana",
+       "get": null,
+       "why": "X = every blocker and threat across the table. Their 2/2 Boars won't stop a pumped Elf army."
+      },
+      {
+       "when": "Before your alpha strike",
+       "get": "Ezuri, Renegade Leader",
+       "why": "Exile the big blockers, then pump and swing."
+      }
+     ]
+    },
+    {
+     "n": "Raise the Palisade",
+     "mv": 5,
+     "tags": "wards",
+     "tip": "Choose a creature type. Return all creatures that aren't of that type to their owners' hands.",
+     "guide": [
+      {
+       "when": "Default",
+       "get": null,
+       "why": "Name Elf. Every non-Elf creature on the table bounces, and tokens are gone for good. Cast it in your first main phase, then attack into empty boards."
+      },
+      {
+       "when": "What of yours bounces when you name Elf",
+       "get": "Ohran Frostfang",
+       "why": "Ohran, Enduring Curiosity, Brazen Borrower and Bird tokens. Titan of Littjara stays if it named Elf as it entered."
+      },
+      {
+       "when": "An opponent's board is mostly Elves too",
+       "get": null,
+       "why": "Naming Elf won't clear them. Hold it for a turn when the non-Elf threats are the problem."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "The Lady's protection",
+   "desc": "Keep one of these in hand before you put your whole army on the table.",
+   "cards": [
+    {
+     "n": "Heroic Intervention",
+     "mv": 2,
+     "tags": "wards",
+     "tip": "Instant: your permanents gain hexproof and indestructible until end of turn. The answer to destroy-wipes and targeted removal (not exile, bounce or -X/-X)."
+    },
+    {
+     "n": "Asceticism",
+     "mv": 5,
+     "tags": "wards",
+     "tip": "Your creatures have hexproof. {1}{G}: regenerate target creature."
+    },
+    {
+     "n": "Galadhrim Ambush",
+     "mv": 4,
+     "tags": "wards wide",
+     "tip": "Instant: X 1/1 Elf Warriors (X = number of attacking creatures), and all combat damage from non-Elf creatures is prevented this turn.",
+     "guide": [
+      {
+       "when": "An opponent attacks with non-Elves",
+       "get": null,
+       "why": "Cast it during their combat: X counts THEIR attackers, so you get that many 1/1 blockers and none of their non-Elf creatures deal combat damage. A Fog that leaves you an army."
+      },
+      {
+       "when": "During your own alpha strike",
+       "get": null,
+       "why": "After attackers are declared: tokens for each attacker, and their non-Elf blockers deal no damage, so your Elves survive combat."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lands": {
+  "title": "Lands ×34",
+  "desc": "16 Forest · 8 Island · 10 nonbasic. Secret Tunnel sits in the Ring-bearer group (counts toward 35 lands).",
+  "cards": [
+   {
+    "n": "Command Tower",
+    "tip": "G or U",
+    "new": true
+   },
+   {
+    "n": "Exotic Orchard",
+    "tip": "Any color an opponent's land could make. Usually G or U.",
+    "new": true
+   },
+   {
+    "n": "Hinterland Harbor",
+    "tip": "Untapped if you control a Forest or Island"
+   },
+   {
+    "n": "Path of Ancestry",
+    "tip": "Enters tapped. G or U; scry 1 when its mana casts an Elf",
+    "new": true
+   },
+   {
+    "n": "Rejuvenating Springs",
+    "tip": "Untapped in multiplayer (2+ opponents)"
+   },
+   {
+    "n": "Restless Vinestalk",
+    "tip": "Enters tapped. {3}{G}{U}: becomes a 5/5 trampler; mana sink"
+   },
+   {
+    "n": "Rivendell",
+    "tip": "U. Untapped with a legendary creature out (Galadriel). {1}{U}, tap: scry 2",
+    "new": true
+   },
+   {
+    "n": "Tranquil Thicket",
+    "tip": "Enters tapped. Cycling {G} when you have enough lands"
+   },
+   {
+    "n": "Vineglimmer Snarl",
+    "tip": "Untapped if you reveal a Forest or Island from hand"
+   },
+   {
+    "n": "Yavimaya Coast",
+    "tip": "C, or G/U for 1 damage",
+    "new": true
+   },
+   {
+    "n": "Forest",
+    "count": 16,
+    "tip": "Arbor Elf untaps these; Wood Elves fetches them"
+   },
+   {
+    "n": "Island",
+    "count": 8
+   }
+  ]
+ },
+ "pulled": {
+  "title": "Cut from the Galadriel box (46)",
+  "desc": "v1 · take these out of the box · scry and symmetric-council filler, rocks replaced by Elf dorks, Staff of Domination out (infinite-mana risk)",
+  "cards": [
+   {
+    "n": "Arwen Undómiel",
+    "mv": 2,
+    "tip": "Scry→counter payoff; slow 6-mana activated scry, weak body"
+   },
+   {
+    "n": "Body Double",
+    "mv": 5,
+    "tip": "Graveyard clone with no self-mill to make it reliable"
+   },
+   {
+    "n": "Borne Upon a Wind",
+    "mv": 2,
+    "tip": "Cantrip flash enabler; no instant-speed plan"
+   },
+   {
+    "n": "Celeborn the Wise",
+    "mv": 4,
+    "tip": "Scry-pump theme tax; 4 mana for a combat-only buff"
+   },
+   {
+    "n": "Chance-Met Elves",
+    "mv": 3,
+    "tip": "Scry counter-grower; 3-mana vanilla otherwise"
+   },
+   {
+    "n": "Citanul Stalwart",
+    "mv": 1,
+    "tip": "Dork that taps a second creature; worse than real dorks"
+   },
+   {
+    "n": "Commander's Sphere",
+    "mv": 3,
+    "tip": "3-mana rock; Elf dorks replace rocks"
+   },
+   {
+    "n": "Cultivate",
+    "mv": 3,
+    "tip": "Land ramp too slow next to 12 Elf dorks"
+   },
+   {
+    "n": "Círdan the Shipwright",
+    "mv": 5,
+    "tip": "Symmetric draw for everyone, 5 mana (both copies out)",
+    "count": 2
+   },
+   {
+    "n": "Deathbloom Gardener",
+    "mv": 3,
+    "tip": "3-mana dork; cheaper dorks preferred"
+   },
+   {
+    "n": "Devastation Tide",
+    "mv": 5,
+    "tip": "Mass bounce hits our own board; Raise the Palisade is one-sided"
+   },
+   {
+    "n": "Elrond of the White Council",
+    "mv": 5,
+    "tip": "Opponents pick what you steal; 5 mana, low impact"
+   },
+   {
+    "n": "Elven Farsight",
+    "mv": 1,
+    "tip": "Sorcery scry 3; low-impact selection"
+   },
+   {
+    "n": "Elvish Piper",
+    "mv": 4,
+    "tip": "Cheat-in effect with no big creatures to cheat"
+   },
+   {
+    "n": "Galadhrim Guide",
+    "mv": 4,
+    "tip": "4-mana scry 2; precon filler"
+   },
+   {
+    "n": "Galadriel, Gift-Giver",
+    "mv": 5,
+    "tip": "5-mana Treasure/counter value; below rate"
+   },
+   {
+    "n": "Gandalf, Westward Voyager",
+    "mv": 5,
+    "tip": "Needs mana value 5+ spells; few in the list"
+   },
+   {
+    "n": "Grey Havens Navigator",
+    "mv": 3,
+    "tip": "3-mana flash scry 1; filler"
+   },
+   {
+    "n": "Hurkyl's Recall",
+    "mv": 2,
+    "tip": "Narrow artifact bounce"
+   },
+   {
+    "n": "Legolas, Counter of Kills",
+    "mv": 4,
+    "tip": "Scry-untap theme tax; slow grower"
+   },
+   {
+    "n": "Legolas, Master Archer",
+    "mv": 3,
+    "tip": "Needs targeting spells the deck doesn't run"
+   },
+   {
+    "n": "Llanowar Stalker",
+    "mv": 1,
+    "tip": "1-mana near-vanilla Elf"
+   },
+   {
+    "n": "Lonely Sandbar",
+    "mv": 0,
+    "tip": "Tapped mono-blue cycler; better duals available"
+   },
+   {
+    "n": "Lothlórien Blade",
+    "mv": 3,
+    "tip": "Expensive equipment for marginal removal"
+   },
+   {
+    "n": "Lothlórien Lookout",
+    "mv": 2,
+    "tip": "Attack-scry 2-drop; filler"
+   },
+   {
+    "n": "Mind Stone",
+    "mv": 2,
+    "tip": "Colorless rock; dorks preferred"
+   },
+   {
+    "n": "Mirkwood Elk",
+    "mv": 6,
+    "tip": "6-mana recursion; too slow"
+   },
+   {
+    "n": "Mirkwood Trapper",
+    "mv": 3,
+    "tip": "Politics body with no impact on the plan"
+   },
+   {
+    "n": "Mirror of Galadriel",
+    "mv": 2,
+    "tip": "Expensive repeatable draw; better engines in the list"
+   },
+   {
+    "n": "Nimrodel Watcher",
+    "mv": 2,
+    "tip": "Scry-evasion 2-drop; filler"
+   },
+   {
+    "n": "Phial of Galadriel",
+    "mv": 3,
+    "tip": "3-mana rock; Elves cover ramp"
+   },
+   {
+    "n": "Press the Enemy",
+    "mv": 4,
+    "tip": "4-mana bounce with few free-cast targets"
+   },
+   {
+    "n": "Realm Seekers",
+    "mv": 6,
+    "tip": "6-mana land tutor; slow"
+   },
+   {
+    "n": "Reliquary Tower",
+    "mv": 0,
+    "tip": "Colorless land; hand size isn't a constraint"
+   },
+   {
+    "n": "Skyshroud Claim",
+    "mv": 4,
+    "tip": "Land ramp redundant with dorks"
+   },
+   {
+    "n": "Staff of Domination",
+    "mv": 3,
+    "tip": "Infinite mana with Priest/Circle/Archdruid/Marwyn: out for Bracket 3"
+   },
+   {
+    "n": "Storm of Saruman",
+    "mv": 6,
+    "tip": "6-mana spell copier; the deck is creature-based"
+   },
+   {
+    "n": "Sylvan Offering",
+    "mv": 1,
+    "tip": "Gives an opponent the same army"
+   },
+   {
+    "n": "Talisman of Curiosity",
+    "mv": 2,
+    "tip": "2-mana rock; dorks preferred"
+   },
+   {
+    "n": "Thought Vessel",
+    "mv": 2,
+    "tip": "Colorless rock; dorks preferred"
+   },
+   {
+    "n": "Thran Dynamo",
+    "mv": 4,
+    "tip": "4-mana colorless rock; dorks preferred"
+   },
+   {
+    "n": "Timberwatch Elf",
+    "mv": 3,
+    "tip": "Single-target pump; Ezuri and Stampede do it better"
+   },
+   {
+    "n": "Trap the Trespassers",
+    "mv": 3,
+    "tip": "Opponents steer the stun votes; unreliable"
+   },
+   {
+    "n": "Vitalize",
+    "mv": 1,
+    "tip": "Untap-all; only cute with dorks, dead otherwise"
+   },
+   {
+    "n": "Wayfarer's Bauble",
+    "mv": 1,
+    "tip": "Slow land ramp; dorks preferred"
+   }
+  ]
+ },
+ "wishlist": [
+  {
+   "n": "Beast Whisperer",
+   "name": "Beast Whisperer",
+   "replaces": "Plea for Power",
+   "why": "Draws a card on every creature cast: the best elf draw engine",
+   "price": "9.66",
+   "status": "OWNED, but your copies are in garfield-odie, lathril-goth-elves: buy another or move one"
+  },
+  {
+   "n": "Craterhoof Behemoth",
+   "name": "Craterhoof Behemoth",
+   "replaces": "Overwhelming Stampede",
+   "why": "Haste, trample and +X/+X off a wide board: the elf finisher (not a Game Changer)",
+   "price": "25.37",
+   "status": "OWNED, but your copies are in garfield-odie, lathril-goth-elves: buy another or move one"
+  },
+  {
+   "n": "Rapid Hybridization",
+   "name": "Rapid Hybridization",
+   "replaces": "Inscription of Abundance",
+   "why": "1-mana instant hard removal",
+   "price": "1.09",
+   "status": "OWNED, but your copies are in quandrix-unlimited: buy another or move one"
+  },
+  {
+   "n": "Pongify",
+   "name": "Pongify",
+   "replaces": "Resculpt",
+   "why": "Second 1-mana creature removal; leaves a 3/3 instead of a 4/4",
+   "price": "1.55",
+   "status": "OWNED, but your copies are in alania-otter-storm, aloy-machines: buy another or move one"
+  },
+  {
+   "n": "Beast Within",
+   "name": "Beast Within",
+   "replaces": "Windswift Slice",
+   "why": "Instant answer to any permanent",
+   "price": "0.46",
+   "status": "OWNED, but your copies are in garfield-odie, quandrix-unlimited: buy another or move one"
+  },
+  {
+   "n": "Kenrith's Transformation",
+   "name": "Kenrith's Transformation",
+   "replaces": "Lignify",
+   "why": "Same neutralize effect plus it draws a card",
+   "price": "1.09"
+  },
+  {
+   "n": "Leaf-Crowned Visionary",
+   "name": "Leaf-Crowned Visionary",
+   "replaces": "Oakhame Adversary",
+   "why": "Elf lord plus pay {G} to draw on each Elf cast",
+   "price": "5.67",
+   "status": "OWNED, but your copies are in lathril-goth-elves: buy another or move one"
+  },
+  {
+   "n": "Elvish Harbinger",
+   "name": "Elvish Harbinger",
+   "replaces": "Elvish Mariner",
+   "why": "Elf tutor-to-top plus any-color dork",
+   "price": "6.07",
+   "status": "OWNED, but your copies are in lathril-goth-elves: buy another or move one"
+  },
+  {
+   "n": "Heritage Druid",
+   "name": "Heritage Druid",
+   "replaces": "The Ring Goes South",
+   "why": "Explosive elf mana turns",
+   "price": "3.42"
+  },
+  {
+   "n": "Guardian Project",
+   "name": "Guardian Project",
+   "replaces": "Herald's Horn",
+   "why": "Draws on each nontoken creature ETB (all singletons)",
+   "price": "5.05",
+   "status": "OWNED, but your copies are in garfield-odie, lathril-goth-elves: buy another or move one"
+  },
+  {
+   "n": "Galadriel of Lothlórien",
+   "name": "Galadriel of Lothlórien",
+   "replaces": "Plea for Power / flex",
+   "why": "LotR Elf: scry 3 each tempt and lands off scry; pure flavor upgrade at a low price",
+   "price": "0.34"
+  },
+  {
+   "n": "Breeding Pool",
+   "name": "Breeding Pool",
+   "replaces": "Restless Vinestalk",
+   "why": "Untapped dual (Forest Island, fetchable by Wood Elves)",
+   "price": "5.34",
+   "status": "OWNED, but your copies are in quandrix-unlimited: buy another or move one"
+  },
+  {
+   "n": "Flooded Grove",
+   "name": "Flooded Grove",
+   "replaces": "Exotic Orchard",
+   "why": "Simic filter land",
+   "price": "0.36",
+   "status": "OWNED, but your copies are in aloy-machines, quandrix-unlimited: buy another or move one"
+  },
+  {
+   "n": "Shamanic Revelation",
+   "name": "Shamanic Revelation",
+   "replaces": "Rishkar's Expertise",
+   "why": "Draw one card per creature; also The One Ring's backup if James drops to 0 GCs",
+   "price": "1.68",
+   "status": "OWNED, but your copies are in lathril-goth-elves: buy another or move one"
+  },
+  {
+   "n": "Return of the Wildspeaker",
+   "name": "Return of the Wildspeaker",
+   "replaces": "Elven Ambush",
+   "why": "Instant draw-X or +3/+3 to the team",
+   "price": "2.84"
+  },
+  {
+   "n": "Chord of Calling",
+   "name": "Chord of Calling",
+   "replaces": "Galadhrim Ambush",
+   "why": "Instant convoke creature tutor (the target is Warmaster or Arwen)",
+   "price": "7.37"
+  },
+  {
+   "n": "Fyndhorn Elves",
+   "name": "Fyndhorn Elves",
+   "replaces": "Tireless Provisioner",
+   "why": "Fourth 1-mana dork",
+   "price": "1.55",
+   "status": "OWNED, but your copies are in lathril-goth-elves: buy another or move one"
+  }
+ ]
+}
+</script>
+<script src="../viewer.js?v=20261111"></script>
+</body>
+</html>
