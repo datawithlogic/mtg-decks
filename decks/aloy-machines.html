@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aloy Machines — Deck Map</title>
+<link rel="stylesheet" href="../style.css?v=20261110">
+</head>
+<body>
+<script type="application/json" id="deck-data">
+{
+ "name": "Aloy, Savior of Meridian — Simic Machines",
+ "slug": "aloy-machines",
+ "sub": "100 cards · 37 lands · Simic big artifacts + discover · Bracket 3 (1 Game Changer) · no infinite combos",
+ "accentLabel": "Attacker for Aloy (artifact creature or Vehicle: attacking with it triggers discover)",
+ "hint": "Blue left-edge = an artifact creature that can trigger Aloy when it attacks. Tap Aloy (the gold chip) first if you've never played this deck.",
+ "manaNote": "Blue is the main color: Whir of Invention needs UUU, and Counterspell, Urza, Torrential Gearhulk, Synth Infiltrator, and Whirler Rogue all want UU. Green is the second color for Aloy, Farseek, Cultivate, and Oviya (Ezuri's Predation's GGG comes late). Basics are 9 Island / 8 Forest. Your mana rocks are the engine: they also pay improvise (Whir, Kappa, Synth), shrink Metalwork Colossus and Thought Monitor, and tap for {U} with Urza, so play them early.",
+ "gameplan": {
+  "plan": "You land huge artifact creatures (\"machines\") early by cheating or discounting them, then attack every turn. Aloy's trigger turns each attack into a free spell. You win by beating down with machines: one hit from Blightsteel (\"Horus\", infect) kills a player.",
+  "mull": "Keep 3+ lands with a mana rock or two, or a hand that casts Aloy on turn 4. A hand of only 7+ mana machines and no rocks or cheat cards goes back.",
+  "early": "Turns 1–3: rocks (Sol Ring, Signet, Talisman, Ornithopter), Farseek, and a cheap artifact attacker (Smuggler's Copter, Steel Overseer, Iron Spider, Foundry Inspector). Aloy comes down turn 4–5. HOW ALOY WORKS: whenever one or more artifact creatures you control attack, you discover X, where X is the greatest power among those attackers. Discover X: exile cards from the top of your library until you hit a nonland card with mana value X or less, then cast it for free or put it into your hand. Aloy herself is not an artifact, so she never triggers it.",
+  "mid": "WHO TO ATTACK WITH: your biggest artifact creature sets X, so attack with it whenever it can survive or connect. You get one trigger per combat no matter how many artifacts attack, so you don't have to send small ones into bad blocks. A safe 1/1 Thopter still gets you discover 1. Pump BEFORE attacking (Steel Overseer, Iron Spider, Secluded Starforge, Tezzeret's 0). Get a big machine out early: cheat it in (Master Transmuter, Oviya, Whir of Invention), make it cheap (Metalwork Colossus, Ancient Stone Idol, improvise), or play Traxos (4-mana 7/7). Give it haste with Lightning Greaves or Swiftfoot Boots so it swings the turn it lands.",
+  "win": "Blightsteel (\"Horus\") connects once: 11 infect = dead. Genji Glove doubles it · Ancient Stone Idol, Metalwork Colossus, Triplicate Titan, Kappa Cannoneer (unblockable each time an artifact enters), Wurmcoil just beat down · Myr Battlesphere deals extra damage with its Myr · Get through with Whirler Rogue, Rogue's Passage, Oviya's trample, and fliers.",
+  "fear": "Mass bounce and exile (they beat indestructible and death triggers) · Artifact wipes (Vandalblast, Bane of Progress) · Steal effects on your best machine · Blightsteel can only be answered by exile, bounce, or theft, so watch for those. Keep a counter up (Counterspell, Three Steps Ahead) once your big machine is out. Lightning Greaves gives SHROUD: you can't target that creature either, so move it off before equipping or using Tezzeret on it."
+ },
+ "clusters": [
+  {
+   "k": "discover",
+   "label": "Aloy's discover",
+   "blurb": "every attack is a free spell",
+   "how": "Aloy: whenever one or more artifact creatures you control attack, discover X, where X is the greatest power among them. You exile cards from the top until you hit a nonland card with mana value X or less, then cast it free or put it in your hand; the rest go to the bottom. One trigger per combat, not per attacker. Aloy isn't an artifact. Vehicles (Smuggler's Copter) and Mishra's Foundry count once they're animated. Genji Glove's extra combat gives a second trigger. Hidden Cataract is a land with its own discover 4. Free-cast catches: an X spell (Whir, Curse of the Swine, Stonecoil) cast free has X = 0, Cyclonic Rift can't be overloaded when cast free, and Three Steps Ahead still needs its spree costs paid. Put those in your hand instead.",
+   "ex": "Traxos (7/7) attacks with Tarrian's Soulcleaver on: discover 7. You flip Meteor Golem, cast it free, and destroy an opponent's best permanent. (Without the Soulcleaver, casting that artifact spell would also untap Traxos, since artifacts are historic.)",
+   "why": "A commander that turns attacks into card advantage rewards a few big, sticky attackers over many small ones. The bigger the attacker, the better the free spell."
+  },
+  {
+   "k": "machines",
+   "label": "Big machines",
+   "blurb": "the threats and the kill",
+   "how": "Your finishers are large artifact creatures: Ancient Stone Idol 12/12 trample (leaves a 6/12 when it dies), Blightsteel 11/11 infect, trample, indestructible (shuffles back into your library instead of going to the graveyard), Metalwork Colossus 10/10, Triplicate Titan 9/9 flying, vigilance, trample (leaves three 3/3 Golems), Traxos 7/7 trample, Myr Battlesphere, Wurmcoil Engine, Kappa Cannoneer. Each one is also a huge discover number for Aloy.",
+   "ex": "Blightsteel attacks: Aloy discovers 11 (almost any card in the deck, cast free), and if it connects that player has 11 poison and is out.",
+   "why": "Machines win without Aloy too. Several of them leave something behind or come back (Idol, Titan, Wurmcoil, Metalwork), so one removal spell doesn't end your plan."
+  },
+  {
+   "k": "rocks",
+   "label": "Artifact mana",
+   "blurb": "rocks are the engine, not just ramp",
+   "how": "Sol Ring, Signet, Talisman, Fellwar, Thought Vessel, Thran Dynamo, Midnight Clock, Ornithopter, and the artifact lands make mana, and each artifact also helps cast things: improvise (Whir of Invention, Kappa Cannoneer, Synth Infiltrator) lets you tap an artifact to pay {1}, Metalwork Colossus costs {1} less per mana value of your noncreature artifacts, Thought Monitor costs {1} less per artifact, and Urza lets you tap any artifact for {U}.",
+   "ex": "Turn 4 with Sol Ring, Signet, Thran Dynamo, and Lightning Greaves on the table (total MV 9): Metalwork Colossus costs {2}. Cast it, equip Greaves for {0}, and attack.",
+   "why": "In artifact decks, rocks count twice: mana now and cost reduction later. Play them early even when you don't need the mana yet."
+  },
+  {
+   "k": "connect",
+   "label": "Haste & evasion",
+   "blurb": "get the machine swinging and through",
+   "how": "Lightning Greaves (haste + shroud, equip {0}) and Swiftfoot Boots (haste + hexproof) let a new machine attack the turn it lands. Whirler Rogue (tap two artifacts: target creature can't be blocked), Rogue's Passage, Kappa Cannoneer (can't be blocked the turn an artifact enters), and Oviya (your attackers have trample) make sure it connects. Bident of Thassa, Thopter Spy Network, and Smuggler's Copter draw cards when you attack or connect.",
+   "ex": "Oviya puts Ancient Stone Idol into play; you move Greaves onto it for {0} and attack. Discover 12, and Oviya gives it trample through chump blockers.",
+   "why": "A big creature that can't attack this turn, or gets chump-blocked forever, doesn't win. Haste and evasion turn size into damage."
+  },
+  {
+   "k": "copy",
+   "label": "Copies & re-use",
+   "blurb": "get a second enter-the-battlefield effect",
+   "how": "Phyrexian Metamorph copies any artifact or creature (and it's still an artifact). Synth Infiltrator copies any creature (and it becomes an artifact creature). Three Steps Ahead's {3} mode makes a token copy of an artifact or creature you control. Master Transmuter bounces an artifact you control and puts one from your hand into play, so Meteor Golem, Duplicant, Solemn, and Myr Battlesphere can enter again.",
+   "ex": "Meteor Golem is out. Master Transmuter: pay {U}, tap, return Meteor Golem to your hand as the cost, then put that same Golem back: destroy another nonland permanent. Tezzeret's 0 untaps Transmuter to do it again.",
+   "why": "Enters-the-battlefield effects get better each time you re-use them. Copying an opponent's best non-artifact creature also turns it into an artifact attacker for Aloy."
+  },
+  {
+   "k": "grow",
+   "label": "Grow & untap",
+   "blurb": "pump power before combat",
+   "how": "Steel Overseer and Iron Spider put a +1/+1 counter on each of your artifact creatures. Secluded Starforge taps X artifacts for +X/+0 (sorcery speed). Tezzeret's 0 untaps an artifact or creature and gives an artifact creature a counter. Kiora's −1 untaps any permanent. Tarrian's Soulcleaver gives vigilance and grows when artifacts or creatures die. Myr Battlesphere taps Myr for +X/+0. Traxos only untaps when you cast a historic spell (artifact, legendary, or Saga).",
+   "ex": "Myr Battlesphere attacks. Order your triggers so Battlesphere's resolves first: tap four Myr, it's now 8 power, then Aloy's trigger resolves for discover 8.",
+   "why": "Aloy reads power when her trigger resolves, so every point of pump before that is a better free spell. Untap effects let one engine piece (Transmuter, Dynamo, Traxos) work twice."
+  },
+  {
+   "k": "cheat",
+   "label": "Cheat & discount",
+   "blurb": "big machines on turn 4–5",
+   "how": "Cheat: Master Transmuter ({U}, tap, return an artifact: put an artifact from hand into play), Oviya ({G}, tap: put a creature or Vehicle from hand into play, two +1/+1 counters if it's an artifact), Whir of Invention (tutor an artifact straight into play, at instant speed). Both Transmuter and Oviya use {T}, so they need a turn before they work. Discount: Foundry Inspector (artifacts cost {1} less), Urza (artifacts tap for {U}), Ancient Stone Idol ({1} less per attacking creature, and it has flash), Metalwork Colossus. Tutor: Expedition Map, Tezzeret's −3, Karn's −2.",
+   "ex": "Turn 4 Oviya. Turn 5: {G}, tap Oviya: Blightsteel enters as a 13/13. Lightning Greaves on it, attack.",
+   "why": "Cheat effects skip the cost of your biggest cards, so a hand with Blightsteel isn't a dead hand. Keep cheat pieces and big threats in balance."
+  },
+  {
+   "k": "protect",
+   "label": "Protection & answers",
+   "blurb": "keep the machine alive, stop theirs",
+   "how": "Padeem gives your artifacts hexproof (and draws a card at upkeep if you control the highest-MV artifact). Swiftfoot Boots, Lightning Greaves, Tamiyo's Safekeeping (hexproof + indestructible), and Kappa's ward 4 stop spot removal. Counterspell, Arcane Denial, An Offer You Can't Refuse, and Three Steps Ahead stop wipes. Pongify, Reality Shift, Resculpt, Meteor Golem, and Duplicant answer threats; Cyclonic Rift, Ezuri's Predation, and Curse of the Swine are your wipes.",
+   "ex": "Opponent casts a board wipe. With {1}{U}{U} up, cast Three Steps Ahead with the counter mode, keep your board, and keep attacking.",
+   "why": "Once your machine is out, protecting it is worth more than adding a second threat. Hold one counter after you commit your big turn."
+  }
+ ],
+ "groups": [
+  {
+   "title": "Command zone",
+   "desc": "Aloy: attack with artifacts, get free spells",
+   "cards": [
+    {
+     "n": "Aloy, Savior of Meridian",
+     "mv": 5,
+     "tags": "discover",
+     "tip": "3/5 vigilance, reach. Whenever your artifact creatures attack, discover X (X = greatest power among them). She is NOT an artifact. PlayStation Secret Lair art.",
+     "cmdr": true,
+     "guide": [
+      {
+       "when": "Choosing attackers (default)",
+       "get": null,
+       "why": "Your biggest artifact creature sets X, and you get one trigger per combat. Attack with the biggest one that can survive or connect. Smaller artifacts can stay home: you don't need them for the trigger."
+      },
+      {
+       "when": "Only small artifacts out",
+       "get": null,
+       "why": "A 1/1 Thopter attacking safely still gets discover 1 (Sol Ring, Pongify, Expedition Map, Tamiyo's Safekeeping). It's free value; attack the player with no flying blockers."
+      },
+      {
+       "when": "No artifact creature to attack with",
+       "get": null,
+       "why": "Crew Smuggler's Copter (crew 1, don't use Aloy: crewing taps her), animate Mishra's Foundry for {2}, or Karn's +1 to turn a rock into a creature. Aloy attacking alone gets nothing."
+      },
+      {
+       "when": "Before combat",
+       "get": "Steel Overseer",
+       "why": "Pump first: Steel Overseer or Iron Spider (+1/+1 counter on every artifact creature), Secluded Starforge, or Tezzeret's 0. X is read when the trigger resolves."
+      },
+      {
+       "when": "Myr Battlesphere attacks",
+       "get": "Myr Battlesphere",
+       "why": "Put Battlesphere's trigger on the stack above Aloy's so it resolves first: tap X Myr, it gets +X/+0, then Aloy discovers the higher number."
+      },
+      {
+       "when": "Discover hits an X spell or Rift",
+       "get": null,
+       "why": "Put Whir of Invention, Curse of the Swine, Stonecoil Serpent, or Cyclonic Rift into your hand: cast free, X is 0 and Rift can't be overloaded."
+      },
+      {
+       "when": "Want two triggers a turn",
+       "get": "Genji Glove",
+       "why": "Genji Glove's extra combat gives a second attack, so a second discover."
+      },
+      {
+       "when": "Should Aloy attack?",
+       "get": null,
+       "why": "Only into an open board. She has vigilance, but she's a 3/5 with reach and is often your best blocker against fliers. She never triggers herself."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Machines",
+   "desc": "Big artifact creatures: discover engines and wincons (blue edge = triggers Aloy)",
+   "cards": [
+    {
+     "n": "Blightsteel Colossus",
+     "mv": 12,
+     "tags": "machines discover",
+     "tip": "\"Horus\" (PlayStation Secret Lair). 11/11 trample, infect, indestructible: one hit kills. If it would go to a graveyard it shuffles back into your library. Discover 11. Cheat it with Oviya, Master Transmuter, or Whir.",
+     "otter": true
+    },
+    {
+     "n": "Ancient Stone Idol",
+     "mv": 10,
+     "tags": "machines cheat discover",
+     "tip": "12/12 trample, flash, costs {1} less per attacking creature: cast it in combat after attacking. Dies into a 6/12 trample token. Discover 12.",
+     "otter": true
+    },
+    {
+     "n": "Metalwork Colossus",
+     "mv": 11,
+     "tags": "machines rocks discover",
+     "tip": "10/10. Costs {1} less per mana value of your noncreature artifacts, often almost free. Sacrifice two artifacts: return it from graveyard to hand. Discover 10.",
+     "otter": true
+    },
+    {
+     "n": "Triplicate Titan",
+     "mv": 9,
+     "tags": "machines discover",
+     "tip": "9/9 flying, vigilance, trample. Dies into three 3/3 Golems (flying, vigilance, trample). Discover 9.",
+     "otter": true
+    },
+    {
+     "n": "Myr Battlesphere",
+     "mv": 7,
+     "tags": "machines grow discover",
+     "tip": "Enters with four 1/1 Myr. When it attacks, tap X Myr: +X/+0 and X damage to the defending player. Resolve that before Aloy's trigger for a bigger discover.",
+     "otter": true
+    },
+    {
+     "n": "Meteor Golem",
+     "mv": 7,
+     "tags": "machines copy protect discover",
+     "tip": "\"Thunderjaw\" (PlayStation Secret Lair). Enters: destroy target nonland permanent an opponent controls. A 3/3 (discover 3), so it's here as removal you can re-use: Master Transmuter, copies, Oviya.",
+     "otter": true
+    },
+    {
+     "n": "Wurmcoil Engine",
+     "mv": 6,
+     "tags": "machines discover",
+     "tip": "6/6 deathtouch, lifelink. Dies into two 3/3 Wurms. Survives wipes. Discover 6.",
+     "otter": true
+    },
+    {
+     "n": "Kappa Cannoneer",
+     "mv": 6,
+     "tags": "machines connect rocks discover",
+     "tip": "Improvise, ward 4. Each time it or another artifact enters: +1/+1 counter and can't be blocked this turn. Enters as 5/5 and grows.",
+     "otter": true
+    },
+    {
+     "n": "Duplicant",
+     "mv": 6,
+     "tags": "machines copy protect discover",
+     "tip": "Enters: exile target nontoken creature. It takes that creature's power and toughness, so its discover X = the exiled creature's power.",
+     "otter": true,
+     "guide": [
+      {
+       "when": "Which creature to exile",
+       "get": null,
+       "why": "The biggest threat at the table, ideally the one with the highest power: Duplicant becomes that size and discovers that much."
+      },
+      {
+       "when": "Want to do it again",
+       "get": "Master Transmuter",
+       "why": "Transmuter returns Duplicant to hand and puts it back for a new exile. Phyrexian Metamorph or Three Steps Ahead copies also get a new imprint trigger."
+      }
+     ]
+    },
+    {
+     "n": "Torrential Gearhulk",
+     "mv": 6,
+     "tags": "machines copy protect discover",
+     "tip": "Flash. Enters: cast an instant from your graveyard for free (then exile it). 5/6, discover 5.",
+     "otter": true,
+     "guide": [
+      {
+       "when": "Opponent casts a key spell or wipe",
+       "get": "Counterspell",
+       "why": "Flash Gearhulk in response and recast Counterspell or Arcane Denial from your graveyard against it."
+      },
+      {
+       "when": "Your machine is targeted",
+       "get": "Tamiyo's Safekeeping",
+       "why": "Flash it in and recast Safekeeping: hexproof + indestructible until end of turn."
+      },
+      {
+       "when": "Need card advantage",
+       "get": "Fact or Fiction",
+       "why": "At the end of the turn before yours, recast Fact or Fiction or Thirst for Knowledge."
+      },
+      {
+       "when": "Need removal",
+       "get": "Resculpt",
+       "why": "Recast Resculpt, Pongify, or Reality Shift. Cyclonic Rift cast this way is single-target only (no overload)."
+      },
+      {
+       "when": "Avoid",
+       "get": null,
+       "why": "Whir of Invention and Curse of the Swine cast free have X = 0. Three Steps Ahead still needs its spree costs paid."
+      }
+     ]
+    },
+    {
+     "n": "Traxos, Scourge of Kroog",
+     "mv": 4,
+     "tags": "machines grow discover",
+     "tip": "4-mana 7/7 trample. Enters tapped and doesn't untap normally; it untaps whenever you cast a historic spell (artifact, legendary, Saga). With Tarrian's Soulcleaver (vigilance) it stays untapped after attacking. Discover 7.",
+     "otter": true
+    },
+    {
+     "n": "Stonecoil Serpent",
+     "mv": 0,
+     "tags": "machines discover",
+     "tip": "X-cost: enters with X +1/+1 counters. Reach, trample, protection from multicolored. A late mana sink. If discover finds it, put it in your hand (free = X 0, it dies).",
+     "otter": true
+    },
+    {
+     "n": "Smuggler's Copter",
+     "mv": 2,
+     "tags": "connect discover",
+     "tip": "Vehicle 3/3 flier, crew 1. Crewed, it's an artifact creature: attacking triggers discover 3, and it loots. Crew with a Thopter or Myr, not Aloy.",
+     "otter": true
+    }
+   ]
+  },
+  {
+   "title": "Copy effects",
+   "desc": "Become the best machine on the table",
+   "cards": [
+    {
+     "n": "Phyrexian Metamorph",
+     "mv": 4,
+     "tags": "copy discover",
+     "tip": "Enters as a copy of any artifact or creature, and it's still an artifact. {U/P}: pay 2 life instead of {U}.",
+     "otter": true,
+     "guide": [
+      {
+       "when": "Opponent's permanent needs answering",
+       "get": "Meteor Golem",
+       "why": "Copy Meteor Golem: a second destroy."
+      },
+      {
+       "when": "Going for the kill",
+       "get": "Blightsteel Colossus",
+       "why": "Copy Blightsteel: a second 11/11 infect attacker (Padeem's hexproof covers both)."
+      },
+      {
+       "when": "Opponent has a better creature",
+       "get": null,
+       "why": "Copy it: your copy is an artifact, so it triggers Aloy when it attacks."
+      },
+      {
+       "when": "Want a wide board",
+       "get": "Myr Battlesphere",
+       "why": "Copy Battlesphere for four more Myr, or Wurmcoil for a wipe-proof body."
+      },
+      {
+       "when": "Need mana",
+       "get": null,
+       "why": "It can copy a noncreature artifact too: Thran Dynamo is three more mana."
+      }
+     ]
+    },
+    {
+     "n": "Synth Infiltrator",
+     "mv": 5,
+     "tags": "copy rocks discover",
+     "tip": "Improvise. Enters as a copy of any creature, and it becomes an artifact creature too.",
+     "otter": true,
+     "guide": [
+      {
+       "when": "Default",
+       "get": "Meteor Golem",
+       "why": "Copy Meteor Golem (destroy something) or Duplicant (exile a creature)."
+      },
+      {
+       "when": "Opponent's biggest creature",
+       "get": null,
+       "why": "Copy it: yours becomes an artifact creature, so a big copy is a big discover."
+      },
+      {
+       "when": "Closing the game",
+       "get": "Blightsteel Colossus",
+       "why": "Copy Blightsteel or Triplicate Titan."
+      }
+     ]
+    },
+    {
+     "n": "Three Steps Ahead",
+     "mv": 1,
+     "tags": "copy protect",
+     "tip": "Instant, spree: {U} plus any of {1}{U} counter target spell · {3} token copy of your artifact or creature · {2} draw two, discard one.",
+     "guide": [
+      {
+       "when": "They try to wipe or remove your machine",
+       "get": null,
+       "why": "Counter mode ({U}+{1}{U} = 3 mana). Default use once your big machine is out."
+      },
+      {
+       "when": "Spare mana at end of turn",
+       "get": "Meteor Golem",
+       "why": "Copy mode ({U}+{3}): token copy of Meteor Golem (destroy), Duplicant (exile), or Myr Battlesphere (four more Myr)."
+      },
+      {
+       "when": "Going for the kill",
+       "get": "Blightsteel Colossus",
+       "why": "Copy Blightsteel: the token is another 11/11 infect attacker."
+      },
+      {
+       "when": "Nothing to counter or copy",
+       "get": null,
+       "why": "Draw mode ({U}+{2}). With 7 mana you can choose all three modes."
+      },
+      {
+       "when": "Found by discover",
+       "get": null,
+       "why": "Casting it free skips only {U}; you still pay each mode you pick. Usually put it in your hand."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Cheat & tutor",
+   "desc": "Get the machine onto the battlefield without paying for it",
+   "cards": [
+    {
+     "n": "Foundry Inspector",
+     "mv": 3,
+     "tags": "cheat discover",
+     "tip": "Artifact spells you cast cost {1} less. 3/2, so an early discover 3.",
+     "otter": true
+    },
+    {
+     "n": "Master Transmuter",
+     "mv": 4,
+     "tags": "cheat copy discover",
+     "tip": "{U}, {T}, return an artifact you control to hand: put an artifact card from your hand onto the battlefield. Needs a turn first (tap ability).",
+     "otter": true,
+     "guide": [
+      {
+       "when": "Big machine in hand",
+       "get": "Blightsteel Colossus",
+       "why": "Return a cheap rock (Sol Ring, which you replay for {1}) and put in Blightsteel, Ancient Stone Idol, Triplicate Titan, or Metalwork Colossus."
+      },
+      {
+       "when": "Meteor Golem is out",
+       "get": "Meteor Golem",
+       "why": "Return Golem as the cost, then put that same Golem back: destroy another nonland permanent. Once per untap."
+      },
+      {
+       "when": "Need it twice this turn",
+       "get": "Tezzeret, Cruel Captain",
+       "why": "Tezzeret's 0 or Kiora's −1 untaps Transmuter for a second activation."
+      },
+      {
+       "when": "Your artifact is targeted by removal",
+       "get": null,
+       "why": "In response, return it as the cost and put it right back: it's a new object, so the removal fizzles."
+      },
+      {
+       "when": "Re-use other enter effects",
+       "get": "Duplicant",
+       "why": "Duplicant (new exile), Myr Battlesphere (four more Myr), Thought Monitor (draw two), Solemn Simulacrum (another land), Torrential Gearhulk (recast an instant, at instant speed)."
+      }
+     ]
+    },
+    {
+     "n": "Oviya, Automech Artisan",
+     "mv": 4,
+     "tags": "cheat connect",
+     "tip": "Creatures attacking your opponents have trample. {G}, {T}: put a creature or Vehicle from hand onto the battlefield; artifacts get two +1/+1 counters. Needs a turn first.",
+     "guide": [
+      {
+       "when": "Default",
+       "get": "Blightsteel Colossus",
+       "why": "Blightsteel enters as a 13/13 infect trampler. Then Lightning Greaves or Swiftfoot Boots for haste."
+      },
+      {
+       "when": "No Blightsteel",
+       "get": "Ancient Stone Idol",
+       "why": "Next best: Ancient Stone Idol (14/14), Metalwork Colossus, Triplicate Titan, Myr Battlesphere."
+      },
+      {
+       "when": "Need removal",
+       "get": "Meteor Golem",
+       "why": "Meteor Golem enters as a 5/5 and destroys a permanent."
+      },
+      {
+       "when": "Small hand",
+       "get": null,
+       "why": "Smuggler's Copter counts (Vehicle): it enters as a 5/5 flier."
+      }
+     ]
+    },
+    {
+     "n": "Urza, Lord High Artificer",
+     "mv": 4,
+     "tags": "cheat rocks",
+     "tip": "Enters with a Construct token that gets +1/+1 per artifact you control (an artifact creature, so a growing Aloy attacker). Tap an artifact: add {U}. {5}: shuffle, play the top card free.",
+     "guide": [
+      {
+       "when": "Lots of artifacts out",
+       "get": null,
+       "why": "Attack with the Construct token: with 8 artifacts it's 8/8, so discover 8."
+      },
+      {
+       "when": "Spare mana late",
+       "get": null,
+       "why": "Dump it into {5}: shuffle and play the top card free. Rocks tapping for {U} pay for it."
+      }
+     ]
+    },
+    {
+     "n": "Karn, the Great Creator",
+     "mv": 4,
+     "tags": "cheat grow",
+     "tip": "Opponents' artifacts can't use activated abilities (their rocks and equip stop). +1: a noncreature artifact becomes a creature with P/T = its mana value. −2: get an artifact you own from face-up exile.",
+     "guide": [
+      {
+       "when": "No artifact attacker for Aloy",
+       "get": "Genji Glove",
+       "why": "+1 on Genji Glove (5/5), Thran Dynamo, Mystic Forge, or Bident (4/4): it's been on the battlefield, so it attacks right away for discover 4–5."
+      },
+      {
+       "when": "Your machine was exiled",
+       "get": null,
+       "why": "−2 gets it back if it's face up in exile (Swords to Plowshares and most exile removal)."
+      },
+      {
+       "when": "Using Mystic Forge",
+       "get": "Mystic Forge",
+       "why": "Mystic Forge exiles cards face up: −2 grabs any artifact it exiled."
+      },
+      {
+       "when": "Opponent runs artifacts",
+       "get": null,
+       "why": "Just having Karn out shuts off their mana rocks and equipment. Protect him."
+      }
+     ]
+    },
+    {
+     "n": "Tezzeret, Cruel Captain",
+     "mv": 3,
+     "tags": "cheat grow",
+     "tip": "Gains loyalty whenever an artifact you control enters. 0: untap an artifact or creature (artifact creatures also get +1/+1). −3: tutor an artifact with MV 1 or less. −7: emblem, three counters on an artifact each combat.",
+     "guide": [
+      {
+       "when": "Traxos is tapped",
+       "get": "Traxos, Scourge of Kroog",
+       "why": "0: untap Traxos and give it a counter (8/8), so it can attack."
+      },
+      {
+       "when": "Second cheat this turn",
+       "get": "Master Transmuter",
+       "why": "0 untaps Master Transmuter after its first use."
+      },
+      {
+       "when": "Need more mana",
+       "get": "Thran Dynamo",
+       "why": "0 untaps Thran Dynamo for three more mana."
+      },
+      {
+       "when": "Early, short on mana",
+       "get": "Sol Ring",
+       "why": "−3 for Sol Ring."
+      },
+      {
+       "when": "Traxos without vigilance",
+       "get": "Tarrian's Soulcleaver",
+       "why": "−3 for Tarrian's Soulcleaver."
+      },
+      {
+       "when": "Need a land drop",
+       "get": "Seat of the Synod",
+       "why": "−3 can fetch an artifact land (MV 0): Seat of the Synod, Treasure Vault, Tanglepool Bridge, or Power Depot."
+      },
+      {
+       "when": "Late, lots of mana",
+       "get": "Stonecoil Serpent",
+       "why": "−3 for Stonecoil Serpent as an X mana sink."
+      },
+      {
+       "when": "Loyalty reaches 7",
+       "get": null,
+       "why": "−7 emblem: three +1/+1 counters on an artifact at each combat, and a noncreature one becomes a 0/0 creature (so it's a 3/3)."
+      }
+     ]
+    },
+    {
+     "n": "Whir of Invention",
+     "mv": 3,
+     "tags": "cheat rocks",
+     "tip": "Instant, {X}{U}{U}{U}, improvise: put an artifact with MV X or less from your library onto the battlefield.",
+     "guide": [
+      {
+       "when": "Turn 4–5, building up",
+       "get": "Master Transmuter",
+       "why": "X=4: Master Transmuter, so every big machine in your hand can be cheated in."
+      },
+      {
+       "when": "Opponent's permanent must go",
+       "get": "Meteor Golem",
+       "why": "X=7: Meteor Golem, at instant speed. Improvise lets your rocks help pay."
+      },
+      {
+       "when": "Opponent's creature must go",
+       "get": "Duplicant",
+       "why": "X=6: Duplicant exiles it."
+      },
+      {
+       "when": "Opponent casts a key spell, Counterspell in graveyard",
+       "get": "Torrential Gearhulk",
+       "why": "X=6 in response: Gearhulk recasts Counterspell for free."
+      },
+      {
+       "when": "Big machine has no haste",
+       "get": "Lightning Greaves",
+       "why": "X=2: Lightning Greaves or Swiftfoot Boots."
+      },
+      {
+       "when": "Expecting a wipe",
+       "get": "Wurmcoil Engine",
+       "why": "X=6 at end of turn: Wurmcoil Engine, which leaves two Wurms behind."
+      },
+      {
+       "when": "Big attacker already out",
+       "get": "Genji Glove",
+       "why": "X=5: Genji Glove for a second combat (and a second discover)."
+      },
+      {
+       "when": "Need card draw",
+       "get": "Mystic Forge",
+       "why": "X=4: Mystic Forge."
+      },
+      {
+       "when": "Found by discover",
+       "get": null,
+       "why": "Cast free, X is 0: put it in your hand instead."
+      }
+     ]
+    },
+    {
+     "n": "Expedition Map",
+     "mv": 1,
+     "tags": "cheat",
+     "tip": "{2}, {T}, sacrifice: search for any land, put it in your hand. PlayStation Secret Lair art.",
+     "guide": [
+      {
+       "when": "Missing a color or land drop",
+       "get": "Command Tower",
+       "why": "Command Tower, Hinterland Harbor, or Tangled Islet."
+      },
+      {
+       "when": "Big machine died",
+       "get": "Buried Ruin",
+       "why": "Buried Ruin returns an artifact card from your graveyard to hand."
+      },
+      {
+       "when": "Machine can't get through",
+       "get": "Rogue's Passage",
+       "why": "Rogue's Passage: {4}, {T}: unblockable."
+      },
+      {
+       "when": "Flooding or grinding",
+       "get": "Hidden Cataract",
+       "why": "Hidden Cataract: sacrifice it for discover 4."
+      },
+      {
+       "when": "Lots of artifacts, need power",
+       "get": "Secluded Starforge",
+       "why": "Secluded Starforge: tap X artifacts for +X/+0, or make Robots."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Machine support",
+   "desc": "Pump, protection, evasion",
+   "cards": [
+    {
+     "n": "Padeem, Consul of Innovation",
+     "mv": 4,
+     "tags": "protect",
+     "tip": "Your artifacts have hexproof. Upkeep: draw a card if you control the highest-MV artifact on the battlefield (tie counts)."
+    },
+    {
+     "n": "Whirler Rogue",
+     "mv": 4,
+     "tags": "connect",
+     "tip": "Enters with two 1/1 flying Thopters (artifact attackers, discover 1). Tap two artifacts: target creature can't be blocked this turn."
+    },
+    {
+     "n": "Steel Overseer",
+     "mv": 2,
+     "tags": "grow discover",
+     "tip": "{T}: +1/+1 counter on each artifact creature you control. Use before combat.",
+     "otter": true
+    },
+    {
+     "n": "Iron Spider, Stark Upgrade",
+     "mv": 3,
+     "tags": "grow discover",
+     "tip": "Vigilance. {T}: +1/+1 counter on each artifact creature and Vehicle. {2}, remove two counters: draw a card.",
+     "otter": true
+    },
+    {
+     "n": "Lightning Greaves",
+     "mv": 2,
+     "tags": "connect protect",
+     "tip": "Haste and SHROUD, equip {0}. Shroud blocks your own targeting too (equips, Tezzeret, Oviya counters): move it off first."
+    },
+    {
+     "n": "Swiftfoot Boots",
+     "mv": 2,
+     "tags": "connect protect",
+     "tip": "Haste and hexproof (you can still target it), equip {1}. Better on anything you'll pump."
+    },
+    {
+     "n": "Tarrian's Soulcleaver",
+     "mv": 1,
+     "tags": "grow",
+     "tip": "\"Regalla's Wrath\" (PlayStation Secret Lair). Vigilance; +1/+1 counter whenever another artifact or creature dies. Best on Traxos, which then never gets tapped by attacking."
+    },
+    {
+     "n": "Genji Glove",
+     "mv": 5,
+     "tags": "grow connect discover",
+     "tip": "Equip {3}: double strike. On the first combat it untaps the creature and you get an extra combat, so Aloy triggers twice. Blightsteel with it deals 22 infect.",
+     "guide": [
+      {
+       "when": "Blightsteel is out",
+       "get": "Blightsteel Colossus",
+       "why": "Equip Blightsteel: two combats means two chances to connect (one hit is lethal), and two discover 11s."
+      },
+      {
+       "when": "Default",
+       "get": null,
+       "why": "Your biggest evasive artifact creature: two attacks = two discovers. Traxos or Triplicate Titan are great."
+      },
+      {
+       "when": "No creature to equip",
+       "get": "Karn, the Great Creator",
+       "why": "Karn's +1 makes the Glove itself a 5/5 creature attacker."
+      }
+     ]
+    },
+    {
+     "n": "Tamiyo's Safekeeping",
+     "mv": 1,
+     "tags": "protect",
+     "tip": "Instant {G}: a permanent you control gains hexproof and indestructible until end of turn, gain 2. Doesn't stop exile wipes or bounce wipes."
+    }
+   ]
+  },
+  {
+   "title": "Ramp",
+   "desc": "Rocks first: they also pay improvise and discounts",
+   "cards": [
+    {
+     "n": "Sol Ring",
+     "mv": 1,
+     "tags": "rocks",
+     "tip": "{T}: {C}{C}. Turn 1 play."
+    },
+    {
+     "n": "Arcane Signet",
+     "mv": 2,
+     "tags": "rocks",
+     "tip": "{T}: {G} or {U}."
+    },
+    {
+     "n": "Talisman of Curiosity",
+     "mv": 2,
+     "tags": "rocks",
+     "tip": "{T}: {C}, or {G}/{U} for 1 damage."
+    },
+    {
+     "n": "Fellwar Stone",
+     "mv": 2,
+     "tags": "rocks",
+     "tip": "{T}: any color an opponent's land could make."
+    },
+    {
+     "n": "Thought Vessel",
+     "mv": 2,
+     "tags": "rocks",
+     "tip": "{T}: {C}. No maximum hand size."
+    },
+    {
+     "n": "Thran Dynamo",
+     "mv": 4,
+     "tags": "rocks",
+     "tip": "{T}: {C}{C}{C}. 4 MV toward Metalwork. Untap it with Tezzeret or Kiora."
+    },
+    {
+     "n": "Midnight Clock",
+     "mv": 3,
+     "tags": "rocks",
+     "tip": "{T}: {U}. Gets an hour counter each upkeep (or {2}{U}); at 12 you shuffle hand and graveyard into your library and draw seven. PlayStation Secret Lair art."
+    },
+    {
+     "n": "Ornithopter of Paradise",
+     "mv": 2,
+     "tags": "rocks",
+     "tip": "0/2 flying artifact creature: {T}: any color. Power 0, so don't attack with it for Aloy."
+    },
+    {
+     "n": "Solemn Simulacrum",
+     "mv": 4,
+     "tags": "rocks",
+     "tip": "Enters: basic land onto the battlefield tapped. Dies: draw a card. Good to re-use with Master Transmuter."
+    },
+    {
+     "n": "Farseek",
+     "mv": 2,
+     "tags": "rocks",
+     "tip": "Puts an Island card (basic or Tangled Islet) onto the battlefield tapped. PlayStation Secret Lair art."
+    },
+    {
+     "n": "Cultivate",
+     "mv": 3,
+     "tags": "rocks",
+     "tip": "Two basics: one onto the battlefield tapped, one to hand."
+    }
+   ]
+  },
+  {
+   "title": "Card advantage",
+   "desc": "Refuel between attacks",
+   "cards": [
+    {
+     "n": "Growth Spiral",
+     "mv": 2,
+     "tags": "rocks",
+     "tip": "Instant: draw a card, put a land from hand onto the battlefield. PlayStation Secret Lair art."
+    },
+    {
+     "n": "Thought Monitor",
+     "mv": 7,
+     "tags": "rocks",
+     "tip": "Affinity for artifacts: often {U} or {1}{U}. 2/2 flier, enters: draw two."
+    },
+    {
+     "n": "Mystic Forge",
+     "mv": 4,
+     "tags": "rocks cheat",
+     "tip": "Look at the top card any time; cast artifact and colorless spells from the top. {T}, pay 1 life: exile the top card (face up, so Karn's −2 can grab artifacts)."
+    },
+    {
+     "n": "Adaptive Omnitool",
+     "mv": 2,
+     "tags": "connect",
+     "tip": "Equip {3}: +1/+1 per artifact you control. When it attacks: look at top six, take an artifact. Makes any artifact creature a big Aloy attacker."
+    },
+    {
+     "n": "Kiora, Behemoth Beckoner",
+     "mv": 3,
+     "tags": "grow",
+     "tip": "Draw whenever a creature with power 4+ enters (most machines). −1: untap a permanent (Traxos, Master Transmuter, Thran Dynamo)."
+    },
+    {
+     "n": "Bident of Thassa",
+     "mv": 4,
+     "tags": "connect",
+     "tip": "Draw when a creature of yours deals combat damage to a player. {1}{U}, {T}: opponents' creatures must attack this turn."
+    },
+    {
+     "n": "Thopter Spy Network",
+     "mv": 4,
+     "tags": "connect",
+     "tip": "Upkeep: a 1/1 flying Thopter if you control an artifact. Draw when your artifact creatures deal combat damage to a player."
+    },
+    {
+     "n": "Fact or Fiction",
+     "mv": 4,
+     "tip": "Instant: reveal five, an opponent splits them into two piles, you take one. Take the pile with the machine or the answer you need."
+    },
+    {
+     "n": "Thirst for Knowledge",
+     "mv": 3,
+     "tip": "Instant: draw three, then discard an artifact or two cards. A spare machine is an easy discard (Buried Ruin can get it back)."
+    }
+   ]
+  },
+  {
+   "title": "Removal + counters",
+   "desc": "Answer threats and protect your turn",
+   "cards": [
+    {
+     "n": "Resculpt",
+     "mv": 2,
+     "tags": "protect",
+     "tip": "Instant: exile an artifact or creature; its controller gets a 4/4."
+    },
+    {
+     "n": "Pongify",
+     "mv": 1,
+     "tags": "protect",
+     "tip": "Instant: destroy a creature; its controller gets a 3/3 Ape."
+    },
+    {
+     "n": "Reality Shift",
+     "mv": 2,
+     "tags": "protect",
+     "tip": "Instant: exile a creature; its controller manifests a 2/2."
+    },
+    {
+     "n": "Counterspell",
+     "mv": 2,
+     "tags": "protect",
+     "tip": "Counter target spell."
+    },
+    {
+     "n": "Arcane Denial",
+     "mv": 2,
+     "tags": "protect",
+     "tip": "Counter target spell; its controller draws up to two next upkeep, you draw one."
+    },
+    {
+     "n": "An Offer You Can't Refuse",
+     "mv": 1,
+     "tags": "protect",
+     "tip": "Counter a noncreature spell; its controller gets two Treasures. Save it for wipes and big spells."
+    }
+   ]
+  },
+  {
+   "title": "Board wipes",
+   "desc": "One-sided where possible",
+   "cards": [
+    {
+     "n": "Cyclonic Rift",
+     "mv": 2,
+     "tags": "protect",
+     "tip": "Game Changer. Instant {1}{U}: bounce one nonland permanent you don't control. Overload {6}{U}: bounce ALL of them.",
+     "guide": [
+      {
+       "when": "Default: overload",
+       "get": null,
+       "why": "{6}{U} at the end of the turn of the player before you. Their boards go back to hand, you untap and attack into an empty table."
+      },
+      {
+       "when": "Something blocks or threatens you now",
+       "get": null,
+       "why": "{1}{U}: bounce one blocker, an Aura or equipment, a token (it's gone for good), or a commander (tax goes up)."
+      },
+      {
+       "when": "Opponent stole your machine",
+       "get": null,
+       "why": "Bounce it: it returns to YOUR hand, since you own it."
+      },
+      {
+       "when": "Found by discover or recast by Gearhulk",
+       "get": null,
+       "why": "Cast free it can't be overloaded. Take it to your hand if you want the overload later."
+      }
+     ]
+    },
+    {
+     "n": "Ezuri's Predation",
+     "mv": 8,
+     "tags": "protect",
+     "tip": "Sorcery: for each creature opponents control you get a 4/4 that fights one of them. One-sided. Great to hit with a discover 8+ (cast free)."
+    },
+    {
+     "n": "Curse of the Swine",
+     "mv": 2,
+     "tags": "protect",
+     "tip": "Sorcery {X}{U}{U}: exile X creatures, each controller gets 2/2 Boars. Cast free (discover), X is 0: put it in your hand.",
+     "guide": [
+      {
+       "when": "Default",
+       "get": null,
+       "why": "Exile the biggest threats or anything with death or recursion value. You choose targets, so it's one-sided."
+      },
+      {
+       "when": "Many blockers in the way",
+       "get": null,
+       "why": "Late game with lots of mana, exile every blocker in front of your machine; Boars are 2/2s your machines trample over."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lands": {
+  "title": "Lands ×37",
+  "desc": "9 Island · 8 Forest · 20 nonbasic. Four artifact lands help improvise and Urza.",
+  "cards": [
+   {
+    "n": "Command Tower"
+   },
+   {
+    "n": "Exotic Orchard",
+    "tip": "Any color an opponent's land could make"
+   },
+   {
+    "n": "Path of Ancestry",
+    "tip": "Enters tapped"
+   },
+   {
+    "n": "Hinterland Harbor",
+    "tip": "Untapped with a Forest or Island"
+   },
+   {
+    "n": "Yavimaya Coast",
+    "tip": "Painland"
+   },
+   {
+    "n": "Rejuvenating Springs",
+    "tip": "Untapped in multiplayer"
+   },
+   {
+    "n": "Flooded Grove",
+    "tip": "Filter: G/U into GG, GU, or UU"
+   },
+   {
+    "n": "Vineglimmer Snarl",
+    "tip": "Reveal a Forest or Island to enter untapped"
+   },
+   {
+    "n": "Seat of the Synod",
+    "tip": "Artifact land: improvise, affinity, Urza"
+   },
+   {
+    "n": "Tanglepool Bridge",
+    "tip": "Indestructible artifact land, enters tapped"
+   },
+   {
+    "n": "Power Depot",
+    "tip": "Artifact land, enters tapped. Colored mana only for artifacts"
+   },
+   {
+    "n": "Treasure Vault",
+    "tip": "Artifact land. Late: {X}{X}, sacrifice: X Treasures"
+   },
+   {
+    "n": "Spire of Industry",
+    "tip": "Any color for 1 life if you control an artifact"
+   },
+   {
+    "n": "Buried Ruin",
+    "tip": "{2}, sacrifice: return an artifact card from graveyard to hand"
+   },
+   {
+    "n": "Rogue's Passage",
+    "tip": "{4}, {T}: a creature can't be blocked"
+   },
+   {
+    "n": "Hidden Cataract",
+    "tip": "Enters tapped. {4}{U}, sacrifice: discover 4 (sorcery speed)"
+   },
+   {
+    "n": "Mishra's Foundry",
+    "tip": "{2}: becomes a 2/2 artifact creature, so it can attack to trigger Aloy"
+   },
+   {
+    "n": "Secluded Starforge",
+    "tip": "{2}, {T}, tap X artifacts: +X/+0 before combat. {5}: 2/2 Robot"
+   },
+   {
+    "n": "Myriad Landscape",
+    "tip": "Sacrifice: two basics of one type"
+   },
+   {
+    "n": "Tangled Islet",
+    "tip": "Forest Island, enters tapped. Farseek can fetch it"
+   },
+   {
+    "n": "Island",
+    "count": 9
+   },
+   {
+    "n": "Forest",
+    "count": 8
+   }
+  ]
+ }
+}
+</script>
+<script src="../viewer.js?v=20261110"></script>
+</body>
+</html>

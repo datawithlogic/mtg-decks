@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garfield &amp; Odie — Deck Map</title>
+<link rel="stylesheet" href="../style.css?v=20261110">
+</head>
+<body>
+<script type="application/json" id="deck-data">
+{
+ "name": "Garfield & Odie",
+ "slug": "garfield-odie",
+ "sub": "Rin and Seri, Inseparable (Naya Cats & Dogs) · 100 cards · 36 lands · avg MV ~2.7 · Bracket 3 (1 Game Changer) · no infinite combos",
+ "accentLabel": "Triggers Rin and Seri when you cast it (a Cat, a Dog, or a changeling, which counts as both)",
+ "hint": "Blue left edge = casting this card makes tokens while Rin and Seri is out. Tap the gold commander chip first if you've never played this deck. Changelings light up in both the Cat and the Dog colors.",
+ "manaNote": "White is the main color (Jazal, Skyclave Apparition and Austere Command want WW, and most of the removal is white), green comes next and powers the turn-1 dorks, the land ramp and Craterhoof's GGG. Red is a light splash, but Rin and Seri needs R, G and W both to cast and to activate, so get all three on the board by turn 4. Basics are 5 Plains / 5 Forest / 3 Mountain; use Farseek and Windswept Heath to fetch a dual that covers your missing color.",
+ "gameplan": {
+  "plan": "You cast lots of cheap Cats, Dogs and changelings. While Rin and Seri is on the battlefield, every Cat spell you cast makes a 1/1 white Dog token, every Dog spell makes a 1/1 green Cat token, and a changeling (it's every creature type) counts as both, so it makes one of each. Build a wide board fast, refill with the draw engines, then win with one big pumped attack or Impact Tremors pings.",
+  "mull": "Keep 3+ lands, or 2 lands plus a dork or Sol Ring, with a green source and one or two cheap creatures. Send back hands with no green and no ramp, or hands full of 4–5 drops.",
+  "early": "Turns 1–2: a mana dork or rock and a 1–2 mana Cat. Turn 3–4: Rin and Seri. HOW THE TRIGGERS WORK: they fire when you CAST the spell, so you get the token even if the spell is countered. Rin has to be on the battlefield already: casting Rin doesn't trigger itself. Tokens that get created or copied are not cast, so they don't trigger anything. Non-creature changelings count too: Firdoch Core, Crib Swap and Formless Genesis each make a Cat AND a Dog.",
+  "mid": "Aim for two trigger spells a turn: each one is two or three bodies. Beast Whisperer, Vanquisher's Banner, Guardian Project, Mentor of the Meek and Idol of Oblivion turn those casts into cards. RIN'S TAP ABILITY: pay {R}{G}{W} and tap Rin to deal damage to any target equal to the number of Dogs you control, and you gain life equal to the number of Cats you control. Rin is a Dog and a Cat, and changelings count as both. It has no timing limit, so the usual play is the end step of the player before you: kill a creature or hit a player, gain the life, and Rin untaps for your turn. Rin can't tap the turn she arrives unless she wears Lightning Greaves (haste).",
+  "win": "Alpha strike: go wide, then Jazal Goldmane's pump (repeatable), Craterhoof Behemoth, or Akroma's Will (double strike) on a board pumped by Door of Destinies, Spider-Ham, Intangible Virtue and Shared Animosity · Impact Tremors: every creature and token that enters pings each opponent for 1 · Rin's tap ability as repeatable reach · Earthquake to finish a low-life table after Rin's life gain has put you ahead.",
+  "fear": "Board wipes, which kill your whole token army: hold Flawless Maneuver (free while Rin is out), Boros Charm or Akroma's Will. Removal on Rin shuts off the token engine, so put Lightning Greaves on her. Fliers, since your army is mostly on the ground. Instant tricks on your big attack: Kutzil stops opponents casting spells on your turn, and Orim's Chant stops one player."
+ },
+ "clusters": [
+  {
+   "k": "cat",
+   "label": "Cat spells → Dog tokens",
+   "blurb": "each Cat you cast makes a 1/1 Dog",
+   "how": "Rin and Seri: 'Whenever you cast a Cat spell, create a 1/1 white Dog creature token.' It counts the spell's type line, so a changeling (every creature type) is a Cat spell too. Arahbo gives other Cats +1/+1 and makes a 1/1 Cat token each time a NONTOKEN Cat enters (Rin's tokens don't count for that part). Door of Destinies and Vanquisher's Banner are set to Cat because most of the deck's spells are Cats. Rin itself is a Cat, so Secluded Courtyard's colored mana can pay for Rin's ability.",
+   "ex": "Rin and Arahbo are out. You cast Prideful Parent: Rin makes a Dog (cast trigger), Parent makes a Cat token when it enters, and Arahbo makes another Cat token. One 3-mana spell, four bodies.",
+   "why": "A cast trigger turns every creature into two bodies. Cheap spells matter more than strong ones here: two 2-drops is four bodies, one 4-drop is two."
+  },
+  {
+   "k": "wide",
+   "label": "Alpha strike",
+   "blurb": "turn a wide board into lethal",
+   "how": "Jazal Goldmane: {3}{W}{W}: attacking creatures you control get +X/+X, where X is the number of attackers. There's no once-per-turn limit, so with 10 mana you can pump twice. Craterhoof Behemoth (haste) gives everything trample and +X/+X, where X is your creature count. Akroma's Will gives flying, vigilance and double strike. Shared Animosity gives each attacker +1/+0 for each other attacker that shares a creature type with it; Rin and every changeling share a type with everyone. Anthems (Spider-Ham, Intangible Virtue, Patchwork Banner, Door of Destinies, Arahbo) make 1/1 tokens real threats.",
+   "ex": "You attack with 8 creatures, including Jazal. After blocks, pay {3}{W}{W}: every attacker gets +8/+8. Akroma's Will on top gives double strike, which is usually enough to kill two players.",
+   "why": "Go-wide decks win in one turn, not over several. Hold the finisher until the board is wide enough to kill, and protect that turn (Kutzil, Orim's Chant, Flawless Maneuver)."
+  },
+  {
+   "k": "drain",
+   "label": "Token drain",
+   "blurb": "every body that enters pings the table",
+   "how": "Impact Tremors deals 1 damage to each opponent whenever a creature you control enters, tokens included. A Cat or Dog creature spell with Rin out is 2 entries (the creature plus its token); a creature changeling is 3. Renewed Solidarity (named Dog) copies each Dog token that entered this turn at your end step, and each copy is another entry. Idol of Oblivion draws a card on any turn you created a token, and can later become a 10/10 for {8}.",
+   "ex": "Impact Tremors and Renewed Solidarity (Dog) are out. You cast two Cats this turn: 2 creatures + 2 Dog tokens = 4 pings. At your end step the 2 Dogs are copied: 2 more. Each opponent takes 6 without attacking.",
+   "why": "A second win route that doesn't need combat. It keeps working through Fog effects, blockers and fliers."
+  },
+  {
+   "k": "dog",
+   "label": "Dog spells → Cat tokens",
+   "blurb": "each Dog you cast makes a 1/1 Cat",
+   "how": "Rin and Seri: 'Whenever you cast a Dog spell, create a 1/1 green Cat creature token.' There are only 4 real Dogs (Mowu, both Ainoks, Scrapwork Mutt), so most of your Cat tokens come from changelings, which make BOTH tokens. Renewed Solidarity and Three Tree City are set to Dog because Rin makes far more Dog tokens than Cat tokens, and Dogs are what Rin's tap ability counts for damage.",
+   "ex": "Rin is out. You cast Ainok Wayfarer: Rin makes a Cat, Wayfarer mills three and you take a land (or it gets a +1/+1 counter). Next you cast Gangly Stompling: it's a changeling, so you get a Cat AND a Dog.",
+   "why": "When a tribe is thin, flexible cards (changelings) cover both halves of the engine. Count changelings as half of each tribe when you count your trigger density."
+  },
+  {
+   "k": "draw",
+   "label": "Refuel",
+   "blurb": "turn casts into cards",
+   "how": "Going wide empties your hand fast. Beast Whisperer draws on every creature spell. Vanquisher's Banner (Cat) draws on each Cat creature spell, changelings included. Guardian Project draws when a nontoken creature with a new name enters. Mentor of the Meek lets you pay {1} to draw whenever a creature with power 2 or less enters, Rin's 1/1 tokens included (watch out: anthems can push tokens above power 2). Kutzil draws when your pumped creatures connect. Hunter's Insight draws cards equal to one creature's combat damage.",
+   "ex": "Beast Whisperer and Mentor of the Meek are out. You cast Helpful Hunter: Whisperer draws 1, Hunter draws 1, and you pay {1} twice with Mentor (Hunter + its Dog token). 4 cards for 4 mana, plus two bodies.",
+   "why": "Fuel vs. payoff: a token deck runs out of cards before it runs out of payoffs. Draw engines that trigger on what you're already doing (casting creatures) cost no extra effort."
+  },
+  {
+   "k": "shield",
+   "label": "Protect the big turn",
+   "blurb": "keep the board alive and the engine on",
+   "how": "Flawless Maneuver gives your creatures indestructible and is free if you control a commander. Boros Charm can give all your permanents indestructible. Akroma's Will's second mode gives lifelink, indestructible and protection from every color. Lightning Greaves gives Rin shroud and haste (equip {0}). Kutzil stops opponents casting spells during your turn; Orim's Chant stops one player casting spells this turn (kicked: no creature can attack this turn). Mirri lets only one creature attack you each combat while she's tapped. Fog prevents all combat damage for a turn.",
+   "ex": "An opponent casts a board wipe. With Rin out, you cast Flawless Maneuver for free: your 12 creatures survive, and you attack into their empty board next turn.",
+   "why": "A wide board is one wipe from nothing. Keep one protection piece up before you commit everything, and use your cheap or free ones first."
+  },
+  {
+   "k": "ping",
+   "label": "Rin's tap ability",
+   "blurb": "damage = Dogs, life = Cats",
+   "how": "{R}{G}{W}, {T}: Rin and Seri deals damage to any target equal to the number of Dogs you control, and you gain life equal to the number of Cats you control. Rin counts as both. Changelings (including Formless Genesis tokens) count as both. It works at instant speed, but Rin needs haste (Lightning Greaves) to use it the turn she enters. Renewed Solidarity (Dog) adds more Dogs every turn.",
+   "ex": "You control Rin, 5 Dog tokens, 2 Cat tokens and Gangly Stompling. At the end of the turn before yours, pay {R}{G}{W}: 7 damage (Rin + 5 Dogs + Stompling) to their best creature or to a player, and you gain 4 (Rin + 2 Cats + Stompling).",
+   "why": "A commander that is also repeatable removal keeps you in the game when your attack isn't ready. Use it every turn cycle you can afford it."
+  },
+  {
+   "k": "answers",
+   "label": "Answers",
+   "blurb": "spot removal and resets",
+   "how": "Swords to Plowshares and Path to Exile exile a creature for {W}. Beast Within, Generous Gift and Stroke of Midnight destroy a permanent and leave the controller a token. Chaos Warp shuffles any permanent away. Skyclave Apparition exiles a nonland, nontoken permanent with mana value 4 or less. Crib Swap exiles a creature and, as a changeling, also makes you a Cat and a Dog. Chomping Changeling destroys an artifact or enchantment. Earthquake and Austere Command are the resets.",
+   "ex": "An opponent lands a big flier you can't block. Crib Swap it at the end of their turn: it's gone, they get a 1/1, and Rin gives you a Cat and a Dog.",
+   "why": "Save the cheap exile for real threats. The 'destroy anything' spells (Beast Within, Generous Gift, Chaos Warp) are for what white removal can't touch: enchantments, artifacts, lands."
+  }
+ ],
+ "groups": [
+  {
+   "title": "Command zone",
+   "desc": "The engine: Cat spells make Dogs, Dog spells make Cats",
+   "cards": [
+    {
+     "n": "Garfield and Odie (Rin and Seri)",
+     "mv": 4,
+     "tip": "Garfield SLD printing of Rin and Seri, Inseparable. Cast a Dog spell: make a 1/1 Cat. Cast a Cat spell: make a 1/1 Dog. Changelings make both. {R}{G}{W}, {T}: damage = your Dogs to any target, gain life = your Cats.",
+     "tags": "cat dog ping",
+     "name": "Rin and Seri, Inseparable",
+     "cmdr": true,
+     "guide": [
+      {
+       "when": "Before Rin is out",
+       "get": null,
+       "why": "Cast mana and cheap non-trigger spells first (dorks, rocks, removal). Save your Cats, Dogs and changelings for after Rin lands, when each one makes a token."
+      },
+      {
+       "when": "Rin just landed",
+       "get": "Lightning Greaves",
+       "why": "Equip Greaves ({0}) right away: shroud protects the engine, and haste lets you use the tap ability this turn."
+      },
+      {
+       "when": "Mana left at the end of the turn before yours",
+       "get": null,
+       "why": "Activate: damage equal to your Dogs, life equal to your Cats. Rin untaps for your turn, so it costs you nothing in combat."
+      },
+      {
+       "when": "Someone is building a scary creature",
+       "get": null,
+       "why": "Ping it. Count your Dogs (Rin and changelings included) to see if it's enough."
+      },
+      {
+       "when": "An opponent is low",
+       "get": null,
+       "why": "Point the damage at their face. It's reach that doesn't care about blockers or Fogs."
+      },
+      {
+       "when": "Rin died",
+       "get": null,
+       "why": "Recast it ({2} more each time). The tokens stop until it's back, so hold trigger spells if you can recast it this turn or next."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Cat spells → each cast makes a Dog token",
+   "desc": "11 Cats. With Rin out, every one of these is a creature plus a 1/1 white Dog.",
+   "cards": [
+    {
+     "n": "Kutzil, Malamet Exemplar",
+     "mv": 3,
+     "tip": "Cat: casting it makes a Dog. Opponents can't cast spells during your turn. Draws when your pumped creatures (power above their base power, e.g. from anthems) hit a player.",
+     "tags": "cat shield draw",
+     "otter": true
+    },
+    {
+     "n": "Arahbo, the First Fang",
+     "mv": 3,
+     "tip": "Cat: casting it makes a Dog. Other Cats +1/+1. Each time Arahbo or another NONTOKEN Cat enters, make a 1/1 Cat. Changelings are Cats, so they trigger it too.",
+     "tags": "cat wide",
+     "otter": true
+    },
+    {
+     "n": "Jazal Goldmane",
+     "mv": 4,
+     "tip": "Cat: casting it makes a Dog. First strike. {3}{W}{W}: attackers get +X/+X (X = number of attackers). Repeatable: pump twice with enough mana.",
+     "tags": "cat wide",
+     "otter": true,
+     "guide": [
+      {
+       "when": "When to activate",
+       "get": null,
+       "why": "After blockers are declared, so opponents block before they see the pump. X is the number of attackers when it resolves."
+      },
+      {
+       "when": "Enough mana for two activations",
+       "get": null,
+       "why": "Do it twice. Each one adds +X/+X again."
+      },
+      {
+       "when": "Opponents have instant removal",
+       "get": "Kutzil, Malamet Exemplar",
+       "why": "With Kutzil out, opponents can't cast spells on your turn, so they can't kill Jazal in response."
+      }
+     ]
+    },
+    {
+     "n": "Mirri, Weatherlight Duelist",
+     "mv": 3,
+     "tip": "Cat: casting it makes a Dog. First strike. When Mirri attacks, each opponent can block with only one creature. While she's tapped, only one creature can attack you each combat.",
+     "tags": "cat wide shield",
+     "otter": true
+    },
+    {
+     "n": "Helpful Hunter",
+     "mv": 2,
+     "tip": "Cat: casting it makes a Dog. Draws a card when it enters.",
+     "tags": "cat draw",
+     "otter": true
+    },
+    {
+     "n": "Prideful Parent",
+     "mv": 3,
+     "tip": "Cat: casting it makes a Dog. Vigilance. Makes a 1/1 Cat token when it enters (and Arahbo adds another).",
+     "tags": "cat",
+     "otter": true
+    },
+    {
+     "n": "Skyknight Squire",
+     "mv": 2,
+     "tip": "Cat: casting it makes a Dog. Gets a +1/+1 counter whenever another creature you control enters; with 3+ counters it flies. Tokens count, so it flies fast.",
+     "tags": "cat",
+     "otter": true
+    },
+    {
+     "n": "Wild Nacatl",
+     "mv": 1,
+     "tip": "Cat: casting it makes a Dog. 1-drop that grows with a Mountain and a Plains (Sacred Foundry counts as both).",
+     "tags": "cat",
+     "otter": true
+    },
+    {
+     "n": "Kraven's Cats",
+     "mv": 2,
+     "tip": "Cat: casting it makes a Dog. {2}{G}: +2/+2 once per turn. Mostly a cheap trigger body.",
+     "tags": "cat",
+     "otter": true
+    },
+    {
+     "n": "Masked Meower",
+     "mv": 1,
+     "tip": "Cat: casting it makes a Dog. Haste. Discard a card and sacrifice it: draw a card (swap a dead land for a fresh card).",
+     "tags": "cat draw",
+     "otter": true
+    },
+    {
+     "n": "Alms Collector",
+     "mv": 4,
+     "tip": "Cat with FLASH: cast it on an opponent's turn for a surprise Dog (and an Idol of Oblivion draw that turn). If an opponent would draw 2+ cards, instead you each draw 1.",
+     "tags": "cat draw",
+     "otter": true
+    }
+   ]
+  },
+  {
+   "title": "Dog spells → each cast makes a Cat token",
+   "desc": "4 real Dogs. With Rin out, every one of these is a creature plus a 1/1 green Cat.",
+   "cards": [
+    {
+     "n": "Mowu, Loyal Companion",
+     "mv": 4,
+     "tip": "Dog: casting it makes a Cat. Vigilance, trample; gets one extra +1/+1 counter whenever counters are put on it.",
+     "tags": "dog wide",
+     "otter": true
+    },
+    {
+     "n": "Ainok Bond-Kin",
+     "mv": 2,
+     "tip": "Dog: casting it makes a Cat. Your creatures with a +1/+1 counter have first strike (Skyknight Squire, Mowu, Ainok Wayfarer). Outlast {1}{W} at sorcery speed.",
+     "tags": "dog",
+     "otter": true
+    },
+    {
+     "n": "Ainok Wayfarer",
+     "mv": 2,
+     "tip": "Dog: casting it makes a Cat. Enters: mill 3, then either take a land from among them or put a +1/+1 counter on it.",
+     "tags": "dog",
+     "otter": true,
+     "guide": [
+      {
+       "when": "Under 5 lands, or no land in hand",
+       "get": null,
+       "why": "Take the land."
+      },
+      {
+       "when": "Plenty of lands",
+       "get": null,
+       "why": "Take the counter. Milled lands still help: they grow Formless Genesis."
+      },
+      {
+       "when": "Formless Genesis is in hand or graveyard",
+       "get": "Formless Genesis",
+       "why": "Milled lands make its token bigger, so leave them in the graveyard when you're flooded."
+      }
+     ]
+    },
+    {
+     "n": "Scrapwork Mutt",
+     "mv": 2,
+     "tip": "Dog (colorless artifact): casting it makes a Cat. Enters: you may discard a card to draw one. Unearth {1}{R} is NOT a cast, so it doesn't trigger Rin.",
+     "tags": "dog draw",
+     "otter": true
+    }
+   ]
+  },
+  {
+   "title": "Changelings → each cast makes a Cat AND a Dog",
+   "desc": "Changeling = every creature type, so these trigger both halves of Rin. The three non-creature ones count too.",
+   "cards": [
+    {
+     "n": "Feisty Spikeling",
+     "mv": 2,
+     "tip": "Changeling: casting it makes a Cat and a Dog. First strike during your turn.",
+     "tags": "cat dog",
+     "otter": true
+    },
+    {
+     "n": "Gangly Stompling",
+     "mv": 3,
+     "tip": "Changeling: casting it makes a Cat and a Dog. Trample.",
+     "tags": "cat dog wide",
+     "otter": true
+    },
+    {
+     "n": "Chomping Changeling",
+     "mv": 3,
+     "tip": "Changeling: casting it makes a Cat and a Dog. Enters: destroy up to one artifact or enchantment.",
+     "tags": "cat dog answers",
+     "otter": true
+    },
+    {
+     "n": "Barkform Harvester",
+     "mv": 3,
+     "tip": "Changeling (colorless artifact): casting it makes a Cat and a Dog. Reach. {2}: put a card from your graveyard on the bottom of your library.",
+     "tags": "cat dog",
+     "otter": true
+    },
+    {
+     "n": "Rooftop Percher",
+     "mv": 5,
+     "tip": "Changeling (colorless): casting it makes a Cat and a Dog. Flying. Enters: exile up to two cards from graveyards and gain 3 life.",
+     "tags": "cat dog",
+     "otter": true
+    },
+    {
+     "n": "Firdoch Core",
+     "mv": 3,
+     "tip": "Changeling mana rock: casting it makes a Cat and a Dog. Taps for any color. {4}: becomes a 4/4 until end of turn.",
+     "tags": "cat dog",
+     "otter": true
+    },
+    {
+     "n": "Crib Swap",
+     "mv": 3,
+     "tip": "Changeling INSTANT: casting it makes a Cat and a Dog. Exile target creature; its controller gets a 1/1 changeling.",
+     "tags": "cat dog answers",
+     "otter": true
+    },
+    {
+     "n": "Formless Genesis",
+     "mv": 3,
+     "tip": "Changeling sorcery: casting it makes a Cat and a Dog. Makes an X/X deathtouch changeling token, X = lands in your graveyard. Retrace: cast it again from the graveyard by discarding a land, and that recast triggers Rin again.",
+     "tags": "cat dog ping",
+     "otter": true,
+     "guide": [
+      {
+       "when": "First cast with few lands in the graveyard",
+       "get": null,
+       "why": "Fine to cast it small. The point is the Cat + Dog from Rin; the token grows on later recasts."
+      },
+      {
+       "when": "Extra lands in hand late",
+       "get": null,
+       "why": "Retrace it: pay {2}{G} and discard a land. The discarded land is in the graveyard before it resolves, so it counts toward X."
+      },
+      {
+       "when": "Renewed Solidarity (Dog) is out",
+       "get": "Renewed Solidarity",
+       "why": "The token is a changeling, so it's a Dog: Solidarity copies the big deathtouch token at your end step."
+      },
+      {
+       "when": "Want more lands in the graveyard",
+       "get": "Ainok Wayfarer",
+       "why": "Wayfarer mills 3; Windswept Heath and Fabled Passage also put themselves in the graveyard."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Payoffs & finishers",
+   "desc": "Anthems, drain and the closers",
+   "cards": [
+    {
+     "n": "Spider-Ham, Peter Porker",
+     "mv": 2,
+     "tip": "Other Cats and Dogs you control get +1/+1, so it pumps BOTH kinds of Rin token (and changelings). Makes a Food when it enters.",
+     "tags": "wide"
+    },
+    {
+     "n": "Door of Destinies",
+     "mv": 4,
+     "tip": "Choose a type as it enters. Each spell of that type you cast adds a charge counter; creatures of that type get +1/+1 per counter.",
+     "tags": "wide cat",
+     "guide": [
+      {
+       "when": "Default: name Cat",
+       "get": null,
+       "why": "About 19 of your spells are Cats (11 Cats + 8 changelings) versus 12 Dogs, so the counters pile up faster. Your nontoken Cats, Arahbo and Prideful Parent's Cat tokens and every changeling get the bonus."
+      },
+      {
+       "when": "Your board is already mostly Dog tokens",
+       "get": null,
+       "why": "Name Dog instead only if you're about to attack with a pile of Dogs and few Cats are left in your hand."
+      }
+     ]
+    },
+    {
+     "n": "Renewed Solidarity",
+     "mv": 3,
+     "tip": "Choose a type. Those creatures get +1/+0. At your end step, copy each token of that type that entered this turn. Copies aren't cast, so they don't trigger Rin.",
+     "tags": "drain ping wide",
+     "guide": [
+      {
+       "when": "Default: name Dog",
+       "get": null,
+       "why": "Rin makes a Dog for every Cat spell, which is most of the deck, so you copy the most tokens. More Dogs also means more damage from Rin's tap ability."
+      },
+      {
+       "when": "Formless Genesis tokens",
+       "get": "Formless Genesis",
+       "why": "Its X/X token is a changeling, so it's a Dog and gets copied too."
+      },
+      {
+       "when": "Impact Tremors is out",
+       "get": "Impact Tremors",
+       "why": "Each copy entering pings each opponent for 1."
+      },
+      {
+       "when": "Tokens made on opponents' turns",
+       "get": null,
+       "why": "They don't get copied: it only copies tokens that entered during your turn."
+      }
+     ]
+    },
+    {
+     "n": "Shared Animosity",
+     "mv": 3,
+     "tip": "Each attacker gets +1/+0 for each other attacker that shares a creature type with it. Rin and changelings share with everyone.",
+     "tags": "wide"
+    },
+    {
+     "n": "Intangible Virtue",
+     "mv": 2,
+     "tip": "Your tokens get +1/+1 and vigilance: attack with them and still have blockers.",
+     "tags": "wide"
+    },
+    {
+     "n": "Impact Tremors",
+     "mv": 2,
+     "tip": "1 damage to each opponent whenever a creature you control enters. A Cat or Dog creature spell with Rin out = 2 pings; a creature changeling = 3.",
+     "tags": "drain"
+    },
+    {
+     "n": "Craterhoof Behemoth",
+     "mv": 8,
+     "tip": "Haste. Enters: your creatures gain trample and +X/+X, X = number of creatures you control. Cast it when the board is wide and you have 8 mana.",
+     "tags": "wide"
+    },
+    {
+     "n": "Maddening Hex",
+     "mv": 3,
+     "tip": "Garfield SLD art. Curse on an opponent: each noncreature spell they cast deals d6 damage to them, then the Hex jumps to a random other opponent.",
+     "tags": "drain"
+    }
+   ]
+  },
+  {
+   "title": "Ramp & type-choice lands",
+   "desc": "10 ramp pieces (plus Firdoch Core above), and the lands that ask you to name a type",
+   "cards": [
+    {
+     "n": "Sol Ring",
+     "mv": 1,
+     "tip": "Garfield SLD art. {T}: add {C}{C}."
+    },
+    {
+     "n": "Arcane Signet",
+     "mv": 2,
+     "tip": "Taps for R, G or W."
+    },
+    {
+     "n": "Fellwar Stone",
+     "mv": 2,
+     "tip": "Taps for a color an opponent's land could make."
+    },
+    {
+     "n": "Patchwork Banner",
+     "mv": 3,
+     "tip": "Choose a type: those creatures get +1/+1. Taps for any color.",
+     "tags": "wide",
+     "guide": [
+      {
+       "when": "Default: name Cat",
+       "get": null,
+       "why": "Most of your nontoken creatures are Cats, Arahbo and Prideful Parent make Cat tokens, and every changeling is a Cat."
+      },
+      {
+       "when": "Board is mostly Dog tokens and Door of Destinies already covers Cats",
+       "get": "Door of Destinies",
+       "why": "Name Dog, so both token types get an anthem."
+      }
+     ]
+    },
+    {
+     "n": "Llanowar Elves",
+     "mv": 1,
+     "tip": "Turn-1 dork: taps for G."
+    },
+    {
+     "n": "Avacyn's Pilgrim",
+     "mv": 1,
+     "tip": "Turn-1 dork: taps for W."
+    },
+    {
+     "n": "Farseek",
+     "mv": 2,
+     "tip": "Puts a Plains or Mountain card onto the battlefield tapped, and dual types count: it can find Sacred Foundry, Stomping Ground, Temple Garden or Canopy Vista.",
+     "guide": [
+      {
+       "when": "Missing red",
+       "get": "Stomping Ground",
+       "why": "Stomping Ground or Sacred Foundry gives red plus a second color."
+      },
+      {
+       "when": "Missing white",
+       "get": "Sacred Foundry",
+       "why": "Sacred Foundry, Temple Garden or Canopy Vista."
+      },
+      {
+       "when": "Colors fine",
+       "get": null,
+       "why": "Grab the dual that covers whichever color you have fewest sources of; leave the basics in the deck for Rampant Growth and Cultivate."
+      }
+     ]
+    },
+    {
+     "n": "Rampant Growth",
+     "mv": 2,
+     "tip": "Basic land onto the battlefield tapped.",
+     "guide": [
+      {
+       "when": "Which basic",
+       "get": null,
+       "why": "Fetch the color you're missing for Rin ({R}{G}{W}). Usually Mountain, since there are only 3."
+      }
+     ]
+    },
+    {
+     "n": "Cultivate",
+     "mv": 3,
+     "tip": "Two basics: one onto the battlefield tapped, one to hand.",
+     "guide": [
+      {
+       "when": "Which basics",
+       "get": null,
+       "why": "Put the missing color onto the battlefield (often Mountain) and take a Plains for hand: white is the deck's heaviest color."
+      }
+     ]
+    },
+    {
+     "n": "Three Tree City",
+     "mv": 0,
+     "tip": "Land. Choose a type as it enters. {2}, {T}: add mana of one color equal to your creatures of that type.",
+     "tags": "ping",
+     "guide": [
+      {
+       "when": "Default: name Dog",
+       "get": null,
+       "why": "Rin makes a Dog token for every Cat spell, so Dogs are usually your biggest group. Rin and changelings count too."
+      },
+      {
+       "when": "Early, before Rin and with mostly Cats in hand",
+       "get": null,
+       "why": "Name Cat if you play it on turn 1–2 and your hand is all Cats: your board will be nontoken Cats for a while."
+      },
+      {
+       "when": "Late game",
+       "get": "Craterhoof Behemoth",
+       "why": "It can make a lot of one color: green for Craterhoof's GGG, or white for Jazal's pump."
+      }
+     ]
+    },
+    {
+     "n": "Secluded Courtyard",
+     "mv": 0,
+     "tip": "Land. Choose a type. {T}: {C}, or any color but only for creature spells of that type or abilities of creatures of that type.",
+     "tags": "cat",
+     "guide": [
+      {
+       "when": "Default: name Cat",
+       "get": null,
+       "why": "Most creature spells are Cats, changelings count, and Rin is a Cat, so its colored mana also pays Rin's tap ability."
+      }
+     ]
+    },
+    {
+     "n": "Path of Ancestry",
+     "mv": 0,
+     "tip": "Land, enters tapped. Taps for R, G or W; scry 1 when that mana casts a creature that shares a type with Rin (any Cat, Dog or changeling)."
+    }
+   ]
+  },
+  {
+   "title": "Card draw",
+   "desc": "Engines that turn your casts and tokens into cards",
+   "cards": [
+    {
+     "n": "Vanquisher's Banner",
+     "mv": 5,
+     "tip": "Choose a type: those creatures get +1/+1, and you draw whenever you cast a creature spell of that type.",
+     "tags": "draw wide cat",
+     "guide": [
+      {
+       "when": "Default: name Cat",
+       "get": null,
+       "why": "11 Cat creatures plus 5 creature changelings draw you a card. Only 4 Dogs would."
+      }
+     ]
+    },
+    {
+     "n": "Guardian Project",
+     "mv": 4,
+     "tip": "Draw whenever a NONTOKEN creature with a new name enters (not a copy of one on your board or in your graveyard).",
+     "tags": "draw"
+    },
+    {
+     "n": "Beast Whisperer",
+     "mv": 4,
+     "tip": "Draw a card whenever you cast a creature spell.",
+     "tags": "draw"
+    },
+    {
+     "n": "Mentor of the Meek",
+     "mv": 3,
+     "tip": "Whenever another creature with power 2 or less enters, pay {1} to draw. Rin's 1/1 tokens count (unless anthems push them above 2 power).",
+     "tags": "draw drain"
+    },
+    {
+     "n": "Idol of Oblivion",
+     "mv": 2,
+     "tip": "{T}: draw, only on a turn you created a token. Rin tokens and Smothering Tithe Treasures both count. Late: {8}, sacrifice: a 10/10.",
+     "tags": "draw drain"
+    },
+    {
+     "n": "Esper Sentinel",
+     "mv": 1,
+     "tip": "Opponents' first noncreature spell each turn draws you a card unless they pay {X} (X = its power).",
+     "tags": "draw"
+    },
+    {
+     "n": "Smothering Tithe",
+     "mv": 4,
+     "tip": "Game Changer. Whenever an opponent draws, they pay {2} or you get a Treasure. Treasures are tokens, so they turn on Idol of Oblivion on their turns.",
+     "tags": "draw"
+    },
+    {
+     "n": "Hunter's Insight",
+     "mv": 3,
+     "tip": "Garfield SLD art. Instant: pick one of your creatures; when it deals combat damage to a player this turn, draw that many cards.",
+     "tags": "draw wide",
+     "guide": [
+      {
+       "when": "When to cast",
+       "get": null,
+       "why": "After blockers are declared, on your biggest unblocked creature."
+      },
+      {
+       "when": "Jazal is pumping or Door of Destinies is high",
+       "get": "Jazal Goldmane",
+       "why": "Cast it on a pumped attacker: an 8-power hit draws 8."
+      },
+      {
+       "when": "Double strike",
+       "get": "Boros Charm",
+       "why": "Double strike means two combat damage hits, so it draws twice."
+      },
+      {
+       "when": "Everything is getting blocked",
+       "get": "Rogue's Passage",
+       "why": "Make the target unblockable with Rogue's Passage ({4}, {T})."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Removal & board wipes",
+   "desc": "7 spot removal (+ Crib Swap, Chomping Changeling and Rin above) and 2 resets",
+   "cards": [
+    {
+     "n": "Swords to Plowshares",
+     "mv": 1,
+     "tip": "Garfield SLD art. Instant: exile a creature; its controller gains life equal to its power.",
+     "tags": "answers"
+    },
+    {
+     "n": "Path to Exile",
+     "mv": 1,
+     "tip": "Instant: exile a creature; its controller may fetch a basic land.",
+     "tags": "answers"
+    },
+    {
+     "n": "Beast Within",
+     "mv": 3,
+     "tip": "Garfield SLD \"I Hate Mondays\". Instant: destroy any permanent; its controller gets a 3/3 Beast.",
+     "tags": "answers"
+    },
+    {
+     "n": "Generous Gift",
+     "mv": 3,
+     "tip": "Instant: destroy any permanent; its controller gets a 3/3 Elephant.",
+     "tags": "answers"
+    },
+    {
+     "n": "Chaos Warp",
+     "mv": 3,
+     "tip": "Instant: the owner shuffles any permanent into their library, then reveals the top card and puts it onto the battlefield if it's a permanent.",
+     "tags": "answers",
+     "guide": [
+      {
+       "when": "A problem your other removal can't handle",
+       "get": null,
+       "why": "Indestructible creatures, enchantments, lands, commanders: Chaos Warp handles any permanent. It still targets, so it can't hit hexproof."
+      },
+      {
+       "when": "Regular creature threat",
+       "get": "Swords to Plowshares",
+       "why": "Use the 1-mana exile first and save Chaos Warp."
+      }
+     ]
+    },
+    {
+     "n": "Stroke of Midnight",
+     "mv": 3,
+     "tip": "Instant: destroy a nonland permanent; its controller gets a 1/1 Human.",
+     "tags": "answers"
+    },
+    {
+     "n": "Skyclave Apparition",
+     "mv": 3,
+     "tip": "Enters: exile a nonland, nontoken permanent you don't control with mana value 4 or less. If it leaves, the owner gets an X/X Illusion.",
+     "tags": "answers"
+    },
+    {
+     "n": "Earthquake",
+     "mv": 1,
+     "tip": "Garfield SLD art. X damage to each creature without flying and each player. It kills your own 1/1 tokens too.",
+     "tags": "answers ping",
+     "guide": [
+      {
+       "when": "Finisher",
+       "get": null,
+       "why": "When opponents are low and Rin's life gain has put you ahead, make X equal to the lowest opponent's life (or more). It hits you too."
+      },
+      {
+       "when": "Protect your board first",
+       "get": "Akroma's Will",
+       "why": "Akroma's Will's first mode gives your creatures flying (Earthquake skips fliers); the second mode gives protection from all colors, so a red spell can't damage them."
+      },
+      {
+       "when": "Behind on board",
+       "get": null,
+       "why": "A small X (2–3) clears tokens and small creatures, including yours. Only do it if theirs are worse than yours."
+      }
+     ]
+    },
+    {
+     "n": "Austere Command",
+     "mv": 6,
+     "tip": "Choose two: destroy all artifacts / all enchantments / all creatures MV 3 or less / all creatures MV 4 or more.",
+     "tags": "answers",
+     "guide": [
+      {
+       "when": "Opponents have big creatures, you're wide",
+       "get": null,
+       "why": "Creatures MV 4 or more + artifacts or enchantments (whichever hurts them more). Your tokens are MV 0 and most of your Cats cost 3 or less, so they survive. Rin (MV 4) and Jazal die, though."
+      },
+      {
+       "when": "Artifact/enchantment-heavy opponents",
+       "get": null,
+       "why": "Artifacts + enchantments: no creature dies. You lose your banners, Door and anthems, so count what you lose."
+      },
+      {
+       "when": "Never pick 'MV 3 or less' if you have tokens",
+       "get": null,
+       "why": "Tokens have mana value 0, so that mode kills your entire token army."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Protection",
+   "desc": "Keep the board and Rin alive through the big turn",
+   "cards": [
+    {
+     "n": "Flawless Maneuver",
+     "mv": 3,
+     "tip": "Instant: your creatures gain indestructible. FREE if you control a commander (Rin on the battlefield).",
+     "tags": "shield"
+    },
+    {
+     "n": "Akroma's Will",
+     "mv": 4,
+     "tip": "Instant: choose one; if you control a commander, choose BOTH. Mode 1: flying, vigilance, double strike. Mode 2: lifelink, indestructible, protection from each color.",
+     "tags": "shield wide",
+     "guide": [
+      {
+       "when": "Rin is on the battlefield",
+       "get": null,
+       "why": "Choose both: double strike, flying, indestructible, lifelink and protection from colors on your whole attack. Usually wins the game."
+      },
+      {
+       "when": "No Rin, going for lethal",
+       "get": null,
+       "why": "Mode 1: flying gets past ground blockers, double strike doubles the damage."
+      },
+      {
+       "when": "No Rin, opponent casts a wipe or removal",
+       "get": null,
+       "why": "Mode 2: indestructible plus protection from every color saves the board."
+      },
+      {
+       "when": "Before an Earthquake",
+       "get": "Earthquake",
+       "why": "Either mode keeps your creatures alive through it: flying dodges it, protection from colors stops the red damage."
+      }
+     ]
+    },
+    {
+     "n": "Boros Charm",
+     "mv": 2,
+     "tip": "Instant, choose one: 4 damage to a player or planeswalker / your permanents gain indestructible / one creature gains double strike.",
+     "tags": "shield wide",
+     "guide": [
+      {
+       "when": "Opponent casts a destroy wipe",
+       "get": null,
+       "why": "Indestructible for all your permanents. Doesn't stop exile or -X/-X."
+      },
+      {
+       "when": "Big unblocked attacker",
+       "get": "Hunter's Insight",
+       "why": "Double strike. With Hunter's Insight on the same creature, you draw twice."
+      },
+      {
+       "when": "Opponent at 4 or less",
+       "get": null,
+       "why": "4 to the face."
+      }
+     ]
+    },
+    {
+     "n": "Lightning Greaves",
+     "mv": 2,
+     "tip": "Equip {0}: haste and shroud. Put it on Rin: protected from targeted removal, and she can tap the turn she enters.",
+     "tags": "shield ping",
+     "guide": [
+      {
+       "when": "Default",
+       "get": "Rin and Seri, Inseparable",
+       "why": "Keep it on Rin. Shroud also stops your own targeted spells on her (Akroma's Will and Flawless Maneuver don't target, so they're fine)."
+      },
+      {
+       "when": "Big-turn haste",
+       "get": null,
+       "why": "Moving it costs {0}, so on your attack turn you can shift it to a creature you just cast so it can attack too, then move it back to Rin after combat. Rin is exposed while it's off her."
+      }
+     ]
+    },
+    {
+     "n": "Orim's Chant",
+     "mv": 1,
+     "tip": "Garfield SLD \"Talk to the Paw\". Instant: target player can't cast spells this turn. Kicker {W}: also, creatures can't attack this turn.",
+     "tags": "shield",
+     "guide": [
+      {
+       "when": "Your alpha turn",
+       "get": null,
+       "why": "Cast it in your upkeep on the opponent most likely to have an answer. Kutzil does this for all opponents on your turn."
+      },
+      {
+       "when": "A huge attack is coming at you",
+       "get": null,
+       "why": "Kick it on their turn, before attacks: no creature can attack this turn."
+      },
+      {
+       "when": "Someone is about to combo or cast a wipe",
+       "get": null,
+       "why": "Unkicked, in their upkeep: they can't cast spells this turn."
+      }
+     ]
+    },
+    {
+     "n": "Fog",
+     "mv": 1,
+     "tip": "Garfield SLD art. Instant: prevent all combat damage this turn. Buys a turn against a big swing back.",
+     "tags": "shield"
+    }
+   ]
+  }
+ ],
+ "lands": {
+  "title": "Lands ×36",
+  "desc": "5 Plains · 5 Forest · 3 Mountain · 23 nonbasic. Three Tree City, Secluded Courtyard and Path of Ancestry are in the Ramp group above.",
+  "cards": [
+   {
+    "n": "Command Tower"
+   },
+   {
+    "n": "Exotic Orchard",
+    "tip": "Taps for a color an opponent's land could make"
+   },
+   {
+    "n": "Windswept Heath",
+    "tip": "Fetches any Forest or Plains card: basics, or Stomping Ground, Sacred Foundry, Temple Garden, Canopy Vista",
+    "guide": [
+     {
+      "when": "Missing red",
+      "get": "Stomping Ground",
+      "why": "Stomping Ground or Sacred Foundry: red plus a second color (pay 2 life for untapped)."
+     },
+     {
+      "when": "Colors fine",
+      "get": null,
+      "why": "Get a basic and save life. It also puts a land in your graveyard for Formless Genesis."
+     }
+    ]
+   },
+   {
+    "n": "Fabled Passage",
+    "tip": "Fetches a basic; untapped if you have 4+ lands"
+   },
+   {
+    "n": "Rogue's Passage",
+    "tip": "{4}, {T}: a creature can't be blocked this turn. Great with Hunter's Insight"
+   },
+   {
+    "n": "Stomping Ground",
+    "tip": "R/G; pay 2 life to have it enter untapped"
+   },
+   {
+    "n": "Sacred Foundry",
+    "tip": "R/W; pay 2 life to have it enter untapped"
+   },
+   {
+    "n": "Temple Garden",
+    "tip": "G/W; pay 2 life to have it enter untapped"
+   },
+   {
+    "n": "Clifftop Retreat"
+   },
+   {
+    "n": "Rootbound Crag"
+   },
+   {
+    "n": "Sunpetal Grove"
+   },
+   {
+    "n": "Canopy Vista",
+    "tip": "Untapped once you control two basics"
+   },
+   {
+    "n": "Battlefield Forge",
+    "tip": "R/W for 1 damage, or {C} for free"
+   },
+   {
+    "n": "Brushland",
+    "tip": "G/W for 1 damage, or {C} for free"
+   },
+   {
+    "n": "Furycalm Snarl",
+    "tip": "Untapped if you reveal a Mountain or Plains"
+   },
+   {
+    "n": "Fortified Village",
+    "tip": "Untapped if you reveal a Forest or Plains"
+   },
+   {
+    "n": "Rockfall Vale",
+    "tip": "Untapped with two other lands"
+   },
+   {
+    "n": "Spectator Seating",
+    "tip": "Untapped in multiplayer"
+   },
+   {
+    "n": "Hushwood Verge",
+    "tip": "Always G; W once you have a Forest or Plains"
+   },
+   {
+    "n": "Sunbillow Verge",
+    "tip": "Always W; R once you have a Mountain or Plains"
+   },
+   {
+    "n": "Plains",
+    "count": 5
+   },
+   {
+    "n": "Forest",
+    "count": 5
+   },
+   {
+    "n": "Mountain",
+    "count": 3
+   }
+  ]
+ }
+}
+</script>
+<script src="../viewer.js?v=20261110"></script>
+</body>
+</html>
