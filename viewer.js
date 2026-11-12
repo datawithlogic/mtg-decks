@@ -185,7 +185,7 @@
   const typeMap = {};
   async function prefetchTypes() {
     const names = [...new Set(chips.map((c) => c.dataset.name).filter(Boolean))];
-    const key = "deckTypes:" + (data.slug || location.pathname);
+    const key = "deckTypes2:" + (data.slug || location.pathname);
     try {
       const s = JSON.parse(localStorage.getItem(key) || "null");
       /* cache must be fresh AND cover every card currently in the deck —
@@ -202,7 +202,8 @@
           body: JSON.stringify({ identifiers: names.slice(i, i + 75).map((n) => ({ name: n.split(" // ")[0] })) })
         }).then((r) => r.json());
         (r.data || []).forEach((c) => {
-          const entry = { t: c.type_line, m: c.mana_cost || (c.card_faces ? c.card_faces[0].mana_cost : "") };
+          const entry = { t: c.type_line, m: c.mana_cost || (c.card_faces ? c.card_faces[0].mana_cost : ""),
+            c: c.colors || (c.card_faces && c.card_faces[0].colors) || [], ci: c.color_identity || [] };
           lookup[c.name] = entry;
           (c.card_faces || []).forEach((f) => { lookup[f.name] = entry; });
         });
@@ -276,6 +277,29 @@
       if (t.includes(b)) return b;
     return "Other";
   }
+  /* card-color tint for sleeve rows: one band per color (multicolor = split
+   * cell), colorless = grey. Lands use their color identity (what they tap
+   * for). Letters (W/U/B/R/G/C) repeat the colors for colorblind use. */
+  const SLEEVE_RGB = { W: "232,223,184", U: "74,163,223", B: "155,127,184", R: "224,92,75", G: "79,191,120", C: "150,156,170" };
+  function cardColors(it) {
+    const e = typeMap[it.name] || {};
+    const isLand = (e.t || "").split("//")[0].includes("Land");
+    const cols = ((isLand ? e.ci : e.c) || []).filter((x) => SLEEVE_RGB[x]);
+    return "WUBRG".split("").filter((x) => cols.includes(x));
+  }
+  function rowColor(it) {
+    if (!typeMap[it.name]) return "";
+    const cols = cardColors(it);
+    const list = cols.length ? cols : ["C"];
+    const step = 100 / list.length;
+    const stops = list.map((x, i) => `rgba(${SLEEVE_RGB[x]},.30) ${(i * step).toFixed(2)}% ${((i + 1) * step).toFixed(2)}%`).join(",");
+    return `background:linear-gradient(90deg,${stops});border-color:rgba(${SLEEVE_RGB[list[0]]},.55)`;
+  }
+  function pipLetters(it) {
+    if (!typeMap[it.name]) return "";
+    const cols = cardColors(it);
+    return (cols.length ? cols : ["C"]).map((x) => `<b style="color:rgb(${SLEEVE_RGB[x]})">${x}</b>`).join("");
+  }
   function buildChecklist() {
     const wrap = document.getElementById("checklist");
     const items = fullDeckItems();
@@ -294,10 +318,11 @@
         const n = buckets[b].reduce((s, i) => s + i.count, 0);
         return `<div class="clsec"><h3>${b} <span class="mv">${n}</span></h3><div class="rows">${
           buckets[b].map((it) =>
-            `<label class="clrow${state[it.name] ? " done" : ""}" data-cl="${esc(it.name)}">
+            `<label class="clrow${state[it.name] ? " done" : ""}" data-cl="${esc(it.name)}" style="${rowColor(it)}">
                <input type="checkbox" ${state[it.name] ? "checked" : ""}>
                <span class="clcount">${it.count > 1 ? it.count + "×" : ""}</span>
                <span class="clname">${esc(it.n)}</span>
+               <span class="clpips">${pipLetters(it)}</span>
                <button class="cleye" data-eye="${esc(it.name)}" title="Show card">🔍</button></label>`).join("")
         }</div></div>`;
       }).join("")}`;
