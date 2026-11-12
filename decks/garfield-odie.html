@@ -20,7 +20,7 @@
   "mull": "Keep 3+ lands, or 2 lands plus a dork or Sol Ring, with a green source and one or two cheap creatures. Send back hands with no green and no ramp, or hands full of 4–5 drops.",
   "early": "Turns 1–2: a mana dork or rock and a 1–2 mana Cat. Turn 3–4: Rin and Seri. HOW THE TRIGGERS WORK: they fire when you CAST the spell, so you get the token even if the spell is countered. Rin has to be on the battlefield already: casting Rin doesn't trigger itself. Tokens that get created or copied are not cast, so they don't trigger anything. Non-creature changelings count too: Firdoch Core, Crib Swap and Formless Genesis each make a Cat AND a Dog.",
   "mid": "Aim for two trigger spells a turn: each one is two or three bodies. Beast Whisperer, Vanquisher's Banner, Guardian Project, Mentor of the Meek and Idol of Oblivion turn those casts into cards. RIN'S TAP ABILITY: pay {R}{G}{W} and tap Rin to deal damage to any target equal to the number of Dogs you control, and you gain life equal to the number of Cats you control. Rin is a Dog and a Cat, and changelings count as both. It has no timing limit, so the usual play is the end step of the player before you: kill a creature or hit a player, gain the life, and Rin untaps for your turn. Rin can't tap the turn she arrives unless she wears Lightning Greaves (haste).",
-  "win": "Alpha strike: go wide, then Jazal Goldmane's pump (repeatable), Craterhoof Behemoth, or Akroma's Will (double strike) on a board pumped by Door of Destinies, Spider-Ham, Intangible Virtue and Shared Animosity · Impact Tremors: every creature and token that enters pings each opponent for 1 · Rin's tap ability as repeatable reach · Earthquake to finish a low-life table after Rin's life gain has put you ahead.",
+  "win": "Alpha strike: go wide, then Jazal Goldmane's pump (repeatable), Craterhoof Behemoth, or Akroma's Will (double strike) on a board pumped by Door of Destinies, Spider-Ham and Shared Animosity · Impact Tremors: every creature and token that enters pings each opponent for 1 · Rin's tap ability as repeatable reach · Earthquake to finish a low-life table after Rin's life gain has put you ahead.",
   "fear": "Board wipes, which kill your whole token army: hold Flawless Maneuver (free while Rin is out), Boros Charm or Akroma's Will. Removal on Rin shuts off the token engine, so put Lightning Greaves on her. Fliers, since your army is mostly on the ground. Instant tricks on your big attack: Kutzil stops opponents casting spells on your turn, and Orim's Chant stops one player."
  },
  "clusters": [
@@ -36,7 +36,7 @@
    "k": "wide",
    "label": "Alpha strike",
    "blurb": "turn a wide board into lethal",
-   "how": "Jazal Goldmane: {3}{W}{W}: attacking creatures you control get +X/+X, where X is the number of attackers. There's no once-per-turn limit, so with 10 mana you can pump twice. Craterhoof Behemoth (haste) gives everything trample and +X/+X, where X is your creature count. Akroma's Will gives flying, vigilance and double strike. Shared Animosity gives each attacker +1/+0 for each other attacker that shares a creature type with it; Rin and every changeling share a type with everyone. Anthems (Spider-Ham, Intangible Virtue, Patchwork Banner, Door of Destinies, Arahbo) make 1/1 tokens real threats.",
+   "how": "Jazal Goldmane: {3}{W}{W}: attacking creatures you control get +X/+X, where X is the number of attackers. There's no once-per-turn limit, so with 10 mana you can pump twice. Craterhoof Behemoth (haste) gives everything trample and +X/+X, where X is your creature count. Akroma's Will gives flying, vigilance and double strike. Shared Animosity gives each attacker +1/+0 for each other attacker that shares a creature type with it; Rin and every changeling share a type with everyone. Anthems (Spider-Ham, Patchwork Banner, Door of Destinies, Arahbo) make 1/1 tokens real threats.",
    "ex": "You attack with 8 creatures, including Jazal. After blocks, pay {3}{W}{W}: every attacker gets +8/+8. Akroma's Will on top gives double strike, which is usually enough to kill two players.",
    "why": "Go-wide decks win in one turn, not over several. Hold the finisher until the board is wide enough to kill, and protect that turn (Kutzil, Orim's Chant, Flawless Maneuver)."
   },
@@ -435,9 +435,9 @@
      "tags": "wide"
     },
     {
-     "n": "Intangible Virtue",
-     "mv": 2,
-     "tip": "Your tokens get +1/+1 and vigilance: attack with them and still have blockers.",
+     "n": "Skullclamp",
+     "mv": 1,
+     "tip": "Equip {1} to a 1/1 Cat or Dog token: it dies and you draw 2. Turns Rin and Seri's tokens into cards.",
      "tags": "wide"
     },
     {
@@ -527,21 +527,14 @@
       {
        "when": "Colors fine",
        "get": null,
-       "why": "Grab the dual that covers whichever color you have fewest sources of; leave the basics in the deck for Rampant Growth and Cultivate."
+       "why": "Grab the dual that covers whichever color you have fewest sources of; leave the basics in the deck for Cultivate."
       }
      ]
     },
     {
-     "n": "Rampant Growth",
-     "mv": 2,
-     "tip": "Basic land onto the battlefield tapped.",
-     "guide": [
-      {
-       "when": "Which basic",
-       "get": null,
-       "why": "Fetch the color you're missing for Rin ({R}{G}{W}). Usually Mountain, since there are only 3."
-      }
-     ]
+     "n": "Nature's Lore",
+     "mv": 1,
+     "tip": "Fetch any Forest-typed land untapped (Temple Garden counts). Turn-2 ramp."
     },
     {
      "n": "Cultivate",
@@ -1068,13 +1061,6 @@
    "price": "0.34"
   },
   {
-   "n": "Skullclamp",
-   "name": "Skullclamp",
-   "replaces": "Intangible Virtue",
-   "why": "Equip a 1/1 Rin token, it dies, draw 2. The best draw engine for this deck. Check precons",
-   "price": "3.31"
-  },
-  {
    "n": "Herald's Horn",
    "name": "Herald's Horn",
    "replaces": "Scrapwork Mutt",
@@ -1115,13 +1101,6 @@
    "replaces": "Avacyn's Pilgrim",
    "why": "Dog that ramps a Plains when behind on lands, and triggers Rin. Check precons",
    "price": "0.54"
-  },
-  {
-   "n": "Nature's Lore",
-   "name": "Nature's Lore",
-   "replaces": "Rampant Growth",
-   "why": "Untapped land (fetches Forest-typed duals like Temple Garden / Stomping Ground). Check precons",
-   "price": "2.95"
   },
   {
    "n": "Coat of Arms",

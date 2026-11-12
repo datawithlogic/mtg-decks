@@ -69,7 +69,7 @@
    "k": "mana",
    "label": "Lórien's bounty",
    "blurb": "Elves that tap for mana, and the sinks that spend it",
-   "how": "Twelve Elves ramp. Priest of Titania (G for each Elf on the battlefield, anyone's), Elvish Archdruid (G for each Elf you control), Circle of Dreams Druid (G for each creature you control) and Marwyn (G equal to her power, which grows with each Elf) scale with the board. Jaheira gives every token \"{T}: Add {G}\", Rishkar does the same for every creature with a counter, and Elven Chorus lets every creature tap for any color. Creatures can't tap for mana the turn they arrive. Sinks: Genesis Wave, Ezuri's +3/+3 (repeatable), Warmaster's +2/+2, Galadhrim Brigade's squad, Curse of the Swine, Restless Vinestalk.",
+   "how": "Twelve Elves ramp. Priest of Titania (G for each Elf on the battlefield, anyone's), Elvish Archdruid (G for each Elf you control), Circle of Dreams Druid (G for each creature you control) and Marwyn (G equal to her power, which grows with each Elf) scale with the board. Jaheira gives every token \"{T}: Add {G}\", Rishkar does the same for every creature with a counter, and Elven Chorus lets every creature tap for any color. Creatures can't tap for mana the turn they arrive. Sinks: Genesis Wave, Ezuri's +3/+3 (repeatable), Warmaster's +2/+2, Galadhrim Brigade's squad, Curse of the Swine.",
    "ex": "Turn 5 with six Elves: Priest taps for 6 and Archdruid for 6. That's 12 mana on top of your lands, enough to activate Ezuri twice (+6/+6 and trample on every Elf) and attack.",
    "why": "When the ramp is also the tribe, it costs nothing extra: every dork is mana, a body for your lords, and a vote trigger. Big mana needs places to spend it, or it's wasted."
   },
@@ -747,27 +747,11 @@
      ]
     },
     {
-     "n": "Inscription of Abundance",
-     "mv": 2,
+     "n": "Rapid Hybridization",
+     "mv": 1,
+     "tip": "1-mana instant: destroy a creature; its controller gets a 3/3 Lizard. Clean answer at a cheap price.",
      "tags": "wards wide",
-     "tip": "Choose one (kicked {2}{G}: any number): two +1/+1 counters on a creature; a player gains life equal to their greatest power; your creature fights one you don't control.",
-     "guide": [
-      {
-       "when": "2 mana, need removal",
-       "get": null,
-       "why": "Fight mode with your biggest creature or Oakhame Adversary (deathtouch kills anything it fights)."
-      },
-      {
-       "when": "5 mana (kicked)",
-       "get": null,
-       "why": "Choose all three. Modes happen in printed order: the +2 counters land BEFORE the fight, then you gain life equal to your greatest power."
-      },
-      {
-       "when": "Instant-speed trick",
-       "get": null,
-       "why": "Two +1/+1 counters to win a combat or save a creature from damage-based removal."
-      }
-     ]
+     "new": true
     },
     {
      "n": "Brazen Borrower // Petty Theft",
@@ -890,8 +874,9 @@
     "new": true
    },
    {
-    "n": "Exotic Orchard",
-    "tip": "Any color an opponent's land could make. Usually G or U.",
+    "n": "Flooded Grove",
+    "mv": 0,
+    "tip": "Filter land: turns one mana into GG, GU or UU. Smooths double-pip turns.",
     "new": true
    },
    {
@@ -908,8 +893,10 @@
     "tip": "Untapped in multiplayer (2+ opponents)"
    },
    {
-    "n": "Restless Vinestalk",
-    "tip": "Enters tapped. {3}{G}{U}: becomes a 5/5 trampler; mana sink"
+    "n": "Breeding Pool",
+    "mv": 0,
+    "tip": "Untapped G/U dual (pay 2 life). It's a Forest Island, so Wood Elves can fetch it.",
+    "new": true
    },
    {
     "n": "Rivendell",
@@ -1179,6 +1166,21 @@
     "n": "Lignify",
     "mv": 2,
     "tip": "Lignify: moved out for Fierce Guardianship / Cyclonic Rift from the Toxrill deck (2026-11-10)"
+   },
+   {
+    "n": "Inscription of Abundance",
+    "mv": 2,
+    "tip": "Replaced by Rapid Hybridization (2026-11-11)."
+   },
+   {
+    "n": "Restless Vinestalk",
+    "mv": null,
+    "tip": "Replaced by Breeding Pool (2026-11-11)."
+   },
+   {
+    "n": "Exotic Orchard",
+    "mv": null,
+    "tip": "Replaced by Flooded Grove (2026-11-11)."
    }
   ]
  },
@@ -1198,14 +1200,6 @@
    "why": "Haste, trample and +X/+X off a wide board: the elf finisher (not a Game Changer)",
    "price": "25.37",
    "status": "OWNED, but your copies are in garfield-odie, lathril-goth-elves: buy another or move one"
-  },
-  {
-   "n": "Rapid Hybridization",
-   "name": "Rapid Hybridization",
-   "replaces": "Inscription of Abundance",
-   "why": "1-mana instant hard removal",
-   "price": "1.09",
-   "status": "OWNED, but your copies are in quandrix-unlimited: buy another or move one"
   },
   {
    "n": "Pongify",
@@ -1267,22 +1261,6 @@
    "replaces": "Plea for Power / flex",
    "why": "LotR Elf: scry 3 each tempt and lands off scry; pure flavor upgrade at a low price",
    "price": "0.34"
-  },
-  {
-   "n": "Breeding Pool",
-   "name": "Breeding Pool",
-   "replaces": "Restless Vinestalk",
-   "why": "Untapped dual (Forest Island, fetchable by Wood Elves)",
-   "price": "5.34",
-   "status": "OWNED, but your copies are in quandrix-unlimited: buy another or move one"
-  },
-  {
-   "n": "Flooded Grove",
-   "name": "Flooded Grove",
-   "replaces": "Exotic Orchard",
-   "why": "Simic filter land",
-   "price": "0.36",
-   "status": "OWNED, but your copies are in aloy-machines, quandrix-unlimited: buy another or move one"
   },
   {
    "n": "Shamanic Revelation",
