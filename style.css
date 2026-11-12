@@ -159,3 +159,7 @@ body.draft #finderwrap{display:none}
 .wrep{color:var(--dim)}
 .wprice{color:var(--gold);font-variant-numeric:tabular-nums}
 .wwhy{grid-column:1/-1;color:var(--dim)}
+.clval{font-size:10.5px;font-weight:700;border-radius:4px;padding:1px 5px;white-space:nowrap}
+.clval.hi{color:#1a1406;background:var(--gold)}
+.clval.bulk{color:var(--dim);border:1px dashed #4a5366;font-weight:500}
+.clkey{font-size:11.5px;color:var(--dim);margin:4px 0 8px}

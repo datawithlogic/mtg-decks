@@ -185,7 +185,7 @@
   const typeMap = {};
   async function prefetchTypes() {
     const names = [...new Set(chips.map((c) => c.dataset.name).filter(Boolean))];
-    const key = "deckTypes2:" + (data.slug || location.pathname);
+    const key = "deckTypes3:" + (data.slug || location.pathname);
     try {
       const s = JSON.parse(localStorage.getItem(key) || "null");
       /* cache must be fresh AND cover every card currently in the deck —
@@ -203,7 +203,8 @@
         }).then((r) => r.json());
         (r.data || []).forEach((c) => {
           const entry = { t: c.type_line, m: c.mana_cost || (c.card_faces ? c.card_faces[0].mana_cost : ""),
-            c: c.colors || (c.card_faces && c.card_faces[0].colors) || [], ci: c.color_identity || [] };
+            c: c.colors || (c.card_faces && c.card_faces[0].colors) || [], ci: c.color_identity || [],
+            p: parseFloat((c.prices || {}).usd || (c.prices || {}).usd_foil || (c.prices || {}).usd_etched || 0), r: c.edhrec_rank || null };
           lookup[c.name] = entry;
           (c.card_faces || []).forEach((f) => { lookup[f.name] = entry; });
         });
@@ -300,6 +301,16 @@
     const cols = cardColors(it);
     return (cols.length ? cols : ["C"]).map((x) => `<b style="color:rgb(${SLEEVE_RGB[x]})">${x}</b>`).join("");
   }
+  /* value tiers, same rules as James's collection sorting system:
+   * binder-tier = $10+; bulk = under $0.95 unless it's a staple (EDHREC rank <= 6000).
+   * Price is Scryfall's default printing, so treat it as an estimate. */
+  function valueBadge(it) {
+    const e = typeMap[it.name];
+    if (!e || it.name.match(/^(Plains|Island|Swamp|Mountain|Forest|Wastes)$/)) return "";
+    if (e.p >= 10) return `<span class="clval hi" title="Worth about $${e.p.toFixed(2)}: binder-tier, handle with care">$$</span>`;
+    if (e.p > 0 && e.p < 0.95 && !(e.r && e.r <= 6000)) return `<span class="clval bulk" title="About $${e.p.toFixed(2)}: bulk">bulk</span>`;
+    return "";
+  }
   function buildChecklist() {
     const wrap = document.getElementById("checklist");
     const items = fullDeckItems();
@@ -313,6 +324,7 @@
     const total = items.reduce((s, i) => s + i.count, 0);
     wrap.innerHTML = `<h2>Sleeve check</h2>
       <div class="clprog" id="clprog"></div>
+      <div class="clkey"><span class="clval hi">$$</span> worth $10+ &nbsp; <span class="clval bulk">bulk</span> under $0.95 (not a staple) &nbsp;·&nbsp; prices are estimates (default printing)</div>
       <button id="clreset">Reset checklist</button>
       ${order.filter((b) => buckets[b]).map((b) => {
         const n = buckets[b].reduce((s, i) => s + i.count, 0);
@@ -322,6 +334,7 @@
                <input type="checkbox" ${state[it.name] ? "checked" : ""}>
                <span class="clcount">${it.count > 1 ? it.count + "×" : ""}</span>
                <span class="clname">${esc(it.n)}</span>
+               ${valueBadge(it)}
                <span class="clpips">${pipLetters(it)}</span>
                <button class="cleye" data-eye="${esc(it.name)}" title="Show card">🔍</button></label>`).join("")
         }</div></div>`;
