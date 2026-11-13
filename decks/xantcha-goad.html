@@ -20,7 +20,7 @@
   "mull": "Keep 3+ lands with a mana rock or two, plus one goad piece or Xantcha on curve. Hands with no black source, or all finishers and no early plays, go back.",
   "early": "Rocks, then Xantcha on turn 3. XANTCHA ENTERS UNDER AN OPPONENT'S CONTROL: you pick who gets it. It's a 5/5 that must attack every combat and can never attack you. Then ANYONE (you too) can pay {3} at any time: Xantcha's holder loses 2 life and the payer draws a card. Default: give it to the leader or the highest-life player, since every {3} anyone spends comes out of their life total. Don't give it to someone with sacrifice outlets, flicker, or steal effects; they'll get real value from it.",
   "mid": "Land goad pieces: Kardur, Karazikar, Geode Rager, the Impetus auras. Opponents now spend their turns hitting each other while Kardur, Blood Artist, Syr Konrad, and Mayhem Devil ping on every death. With spare mana at the end of the turn before yours, pay {3} on Xantcha: a card plus 2 drain. Kill whatever threatens YOU; leave threats aimed at others alone.",
-  "win": "Bloodletter of Aclazotz doubles all life loss on your turn, so cast it, then Exsanguinate, Torment of Hailfire, or a pile of Xantcha activations · Revel in Riches (10 Treasures at upkeep = you win) · Bloodchief Ascension and the death-drain creatures wearing the table down · Gray Merchant for a big drain, and Balefire Dragon or Doom Whisperer when the boards are thin.",
+  "win": "Bloodletter of Aclazotz doubles all life loss on your turn, so cast it, then Exsanguinate, Torment of Hailfire, or a pile of Xantcha activations · Revel in Riches (10 Treasures at upkeep = you win) · Bloodchief Ascension and the death-drain creatures wearing the table down · Gray Merchant for a big drain, and Balefire Dragon when the boards are thin.",
   "fear": "Enchantment and artifact removal on your goad auras, and wipes that clear the boards you want fighting. Fliers and hexproof threats that ignore goad. A table that gangs up on you once they work out what's happening, so stay quiet and low-threat until the drain turn. Graveyard decks: Rakdos Charm exiles a graveyard."
  },
  "clusters": [
@@ -28,7 +28,7 @@
    "k": "goad",
    "label": "Goad engine",
    "blurb": "opponents must attack someone other than you",
-   "how": "A goaded creature must attack each combat, and must attack a player other than you if it can. Goad lasts until YOUR next turn, so it plays out on opponents' turns. Kardur and Disrupt Decorum goad every creature opponents control. Geode Rager goads a whole board on each of your land drops. Karazikar goads one creature per player you attack. Baeloth goads anything smaller than him. The Impetus auras and The Sound of Drums goad permanently while attached. Bothersome Quasit goads on each noncreature spell AND stops goaded creatures from blocking.",
+   "how": "A goaded creature must attack each combat, and must attack a player other than you if it can. Goad lasts until YOUR next turn, so it plays out on opponents' turns. Kardur and Disrupt Decorum goad every creature opponents control; Spectacular Showdown does it with double strike when overloaded. Geode Rager goads a whole board on each of your land drops. Karazikar goads one creature per player you attack. Baeloth goads anything smaller than him. The Impetus auras and The Sound of Drums goad permanently while attached. Bothersome Quasit goads on each noncreature spell AND stops goaded creatures from blocking.",
    "ex": "Turn 5: Disrupt Decorum with Quasit out. Nothing opponents control can block your attack this turn. Then on their turns, all of their creatures have to swing at each other.",
    "why": "Goad is removal that keeps working: the threat stays on the board but points at someone else, and opponents spend their life and creatures on each other instead of you."
   },
@@ -243,6 +243,30 @@
      "tags": "goad xantcha",
      "otter": true,
      "new": true
+    },
+    {
+     "n": "Spectacular Showdown",
+     "mv": 2,
+     "tags": "goad",
+     "new": true,
+     "tip": "2 mana: an opponent's creature gets a permanent double strike counter and is goaded. Overload for 7: every creature gets double strike and is goaded.",
+     "guide": [
+      {
+       "when": "One big opposing threat",
+       "get": null,
+       "why": "Cast it for 2 on their best creature: it swings at someone else with double strike. The counter stays after the goad ends, so pick a creature you can kill later or that Kardur/Baeloth will keep re-goading."
+      },
+      {
+       "when": "Full boards, table already hurting",
+       "get": null,
+       "why": "Overload for 7: everything gets double strike and must attack someone other than you. Best with Kardur, Blood Artist or Bloodletter out so the carnage drains them."
+      },
+      {
+       "when": "Careful",
+       "get": null,
+       "why": "After overload, opposing creatures keep double strike when they can attack you again. Don't overload into a board you can't survive next turn."
+      }
+     ]
     }
    ]
   },
@@ -372,13 +396,6 @@
      "mv": 7,
      "tip": "Flier: combat damage to a player also hits each of their creatures for that much. Wipes a board while hitting face.",
      "tags": "double"
-    },
-    {
-     "n": "Doom Whisperer",
-     "mv": 5,
-     "tags": "control",
-     "new": true,
-     "tip": "6/6 flying trample for 5. Pay 2 life to surveil 2 and dig for your finishers. Watch your life total."
     },
     {
      "n": "Gray Merchant of Asphodel",
@@ -974,7 +991,7 @@
   {
    "n": "Vengeful Ancestor",
    "name": "Vengeful Ancestor",
-   "replaces": "Doom Whisperer",
+   "replaces": "Spectacular Showdown",
    "why": "Flying goad on enter and attack. Owned, not found",
    "price": "$0.63",
    "status": "re-buy"
@@ -1022,7 +1039,7 @@
   {
    "n": "Rite of the Raging Storm",
    "name": "Rite of the Raging Storm",
-   "replaces": "Doom Whisperer or a flex slot",
+   "replaces": "Risk Factor or a flex slot",
    "why": "Each opponent gets a 5/1 trampler every upkeep that can't attack you. Pure Xantcha energy",
    "price": "$1.49",
    "status": "want"
