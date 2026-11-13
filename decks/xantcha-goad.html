@@ -7,8 +7,7 @@
 <link rel="stylesheet" href="../style.css?v=20261111">
 </head>
 <body>
-<script type="application/json" id="deck-data">
-{
+<script type="application/json" id="deck-data">{
  "name": "Xantcha, Sleeper Agent — Rakdos Goad & Drain",
  "slug": "xantcha-goad",
  "sub": "37 lands · avg MV ~3.3 · Bracket 3 (1 Game Changer) · no infinite combos",
@@ -20,8 +19,8 @@
   "plan": "You don't attack much. You make your opponents attack each other (goad), and every time a creature attacks, dies, or a player loses life, your cards drain the table and draw you cards. Close with one big drain turn (Bloodletter + Torment/Exsanguinate) or Revel in Riches.",
   "mull": "Keep 3+ lands with a mana rock or two, plus one goad piece or Xantcha on curve. Hands with no black source, or all finishers and no early plays, go back.",
   "early": "Rocks, then Xantcha on turn 3. XANTCHA ENTERS UNDER AN OPPONENT'S CONTROL: you pick who gets it. It's a 5/5 that must attack every combat and can never attack you. Then ANYONE (you too) can pay {3} at any time: Xantcha's holder loses 2 life and the payer draws a card. Default: give it to the leader or the highest-life player, since every {3} anyone spends comes out of their life total. Don't give it to someone with sacrifice outlets, flicker, or steal effects; they'll get real value from it.",
-  "mid": "Land goad pieces: Kardur, Karazikar, Vengeful Ancestor, the Impetus auras. Opponents now spend their turns hitting each other while Kardur, Blood Artist, Syr Konrad, and Mayhem Devil ping on every death. With spare mana at the end of the turn before yours, pay {3} on Xantcha: a card plus 2 drain. Kill whatever threatens YOU; leave threats aimed at others alone.",
-  "win": "Bloodletter of Aclazotz doubles all life loss on your turn, so cast it, then Exsanguinate, Torment of Hailfire, or a pile of Xantcha activations · Revel in Riches (10 Treasures at upkeep = you win) · Bloodchief Ascension and the death-drain creatures wearing the table down · Balefire Dragon or Rankle when the boards are thin.",
+  "mid": "Land goad pieces: Kardur, Karazikar, Geode Rager, the Impetus auras. Opponents now spend their turns hitting each other while Kardur, Blood Artist, Syr Konrad, and Mayhem Devil ping on every death. With spare mana at the end of the turn before yours, pay {3} on Xantcha: a card plus 2 drain. Kill whatever threatens YOU; leave threats aimed at others alone.",
+  "win": "Bloodletter of Aclazotz doubles all life loss on your turn, so cast it, then Exsanguinate, Torment of Hailfire, or a pile of Xantcha activations · Revel in Riches (10 Treasures at upkeep = you win) · Bloodchief Ascension and the death-drain creatures wearing the table down · Gray Merchant for a big drain, and Balefire Dragon or Doom Whisperer when the boards are thin.",
   "fear": "Enchantment and artifact removal on your goad auras, and wipes that clear the boards you want fighting. Fliers and hexproof threats that ignore goad. A table that gangs up on you once they work out what's happening, so stay quiet and low-threat until the drain turn. Graveyard decks: Rakdos Charm exiles a graveyard."
  },
  "clusters": [
@@ -29,7 +28,7 @@
    "k": "goad",
    "label": "Goad engine",
    "blurb": "opponents must attack someone other than you",
-   "how": "A goaded creature must attack each combat, and must attack a player other than you if it can. Goad lasts until YOUR next turn, so it plays out on opponents' turns. Kardur and Disrupt Decorum goad every creature opponents control. Geode Rager goads a whole board on each of your land drops. Karazikar goads one creature per player you attack. Vengeful Ancestor goads on entering and on attacking. Baeloth goads anything smaller than him. The Impetus auras and The Sound of Drums goad permanently while attached. Bothersome Quasit goads on each noncreature spell AND stops goaded creatures from blocking.",
+   "how": "A goaded creature must attack each combat, and must attack a player other than you if it can. Goad lasts until YOUR next turn, so it plays out on opponents' turns. Kardur and Disrupt Decorum goad every creature opponents control. Geode Rager goads a whole board on each of your land drops. Karazikar goads one creature per player you attack. Baeloth goads anything smaller than him. The Impetus auras and The Sound of Drums goad permanently while attached. Bothersome Quasit goads on each noncreature spell AND stops goaded creatures from blocking.",
    "ex": "Turn 5: Disrupt Decorum with Quasit out. Nothing opponents control can block your attack this turn. Then on their turns, all of their creatures have to swing at each other.",
    "why": "Goad is removal that keeps working: the threat stays on the board but points at someone else, and opponents spend their life and creatures on each other instead of you."
   },
@@ -61,7 +60,7 @@
    "k": "drain",
    "label": "Death drain",
    "blurb": "every attack and death costs them life",
-   "how": "Kardur: whenever ANY attacking creature dies, each opponent loses 1 and you gain 1. Blood Artist and Syr Konrad ping on every creature death. Mayhem Devil pings on every sacrifice, including Treasures. Vengeful Ancestor makes each goaded creature deal 1 damage to its own controller when it attacks. Parasitic Impetus drains 2 per attack. Morbid Opportunist and Valgavoth turn all this into cards, and Bloodthirsty Conqueror gains you life equal to everything they lose. Bloodchief Ascension (3 quest counters) and Painful Quandary punish them for every card hitting the graveyard and every spell they cast.",
+   "how": "Kardur: whenever ANY attacking creature dies, each opponent loses 1 and you gain 1. Blood Artist and Syr Konrad ping on every creature death. Mayhem Devil pings on every sacrifice, including Treasures. Parasitic Impetus drains 2 per attack. Morbid Opportunist and Valgavoth turn all this into cards, and Bloodthirsty Conqueror gains you life equal to everything they lose. Bloodchief Ascension (3 quest counters) punishes every card hitting their graveyard, and Massacre Wurm drains 2 per opposing creature death. Gray Merchant drains your devotion to black in one hit.",
    "ex": "Two opponents trade a few creatures in combat on their turn. With Kardur, Blood Artist, and Syr Konrad out, each death drains everyone 3. You didn't attack.",
    "why": "Drain engines get paid by opponents' actions as well as yours. The more the goad engine makes them fight, the faster the table's life totals drop."
   },
@@ -69,7 +68,7 @@
    "k": "control",
    "label": "Removal & resets",
    "blurb": "kill what points at you, leave the rest",
-   "how": "Cheap instant removal (Terminate, Infernal Grasp, Snuff Out for 4 life, Deadly Rollick, Bedevil) handles creatures, artifacts, and planeswalkers. Chaos Warp answers anything, including enchantments and indestructible threats. Feed the Swarm hits enchantments. Vandalblast overloaded wipes every opposing artifact. Blasphemous Act and Toxic Deluge reset the board when goad can't contain it.",
+   "how": "Cheap instant removal (Go for the Throat, Infernal Grasp, Snuff Out for 4 life, Deadly Rollick, Bedevil) handles creatures, artifacts, and planeswalkers. Chaos Warp answers anything, including enchantments and indestructible threats. Feed the Swarm hits enchantments. Vandalblast overloaded wipes every opposing artifact. Blasphemous Act and Toxic Deluge reset the board when goad can't contain it. Plaguecrafter is an edict on a body.",
    "ex": "An opponent's big flier is goaded, so it has to swing at someone else. Leave it alone. The indestructible Voltron commander that can still hit you gets Chaos Warp.",
    "why": "In a goad deck, removal is only for threats that goad can't redirect: fliers aimed at you, combo pieces, and the things that win without attacking."
   },
@@ -77,7 +76,7 @@
    "k": "treasure",
    "label": "Treasure & ramp",
    "blurb": "chaos pays you in mana",
-   "how": "Baeloth makes a Treasure when a goaded creature dies in combat. Shiny Impetus makes one each time the enchanted creature attacks. Revel in Riches makes one each time an opponent's creature dies, and you WIN at your upkeep if you control 10 or more. Professional Face-Breaker turns combat damage into Treasures and Treasures into cards. Big Score and Unexpected Windfall make two each. Rituals and rocks power out Bloodletter and the X spells.",
+   "how": "Baeloth makes a Treasure when a goaded creature dies in combat. Shiny Impetus makes one each time the enchanted creature attacks. Revel in Riches makes one each time an opponent's creature dies, and you WIN at your upkeep if you control 10 or more. Professional Face-Breaker turns combat damage into Treasures and Treasures into cards. Big Score makes two. Rituals and rocks power out Bloodletter and the X spells.",
    "ex": "Revel in Riches out, opponents trading creatures under Kardur's goad. Six creatures die, and you have six Treasures before your turn. Two more turns of that and you win at upkeep, or spend them all on Exsanguinate.",
    "why": "Treasures are mana you keep: bank them through a quiet turn, then spend them all on the turn that matters. Mayhem Devil also pings every time one is sacrificed."
   }
@@ -184,14 +183,6 @@
      ]
     },
     {
-     "n": "Vengeful Ancestor",
-     "mv": 4,
-     "tip": "Flier; goads on entering and attacking. Every goaded creature pings its own controller for 1 when it attacks.",
-     "tags": "goad drain",
-     "otter": true,
-     "new": true
-    },
-    {
      "n": "Bothersome Quasit",
      "mv": 3,
      "tip": "Goaded opposing creatures can't block; every noncreature spell you cast goads something.",
@@ -222,14 +213,6 @@
      "new": true
     },
     {
-     "n": "Grenzo, Havoc Raiser",
-     "mv": 2,
-     "tip": "Your creature connects: goad one of that player's creatures, or exile their top card and cast it.",
-     "tags": "goad",
-     "otter": true,
-     "new": true
-    },
-    {
      "n": "Shiny Impetus",
      "mv": 3,
      "tip": "Aura on an opponent's creature: +2/+2, goaded, and you get a Treasure each time it attacks.",
@@ -241,14 +224,6 @@
      "n": "Parasitic Impetus",
      "mv": 3,
      "tip": "Aura: +2/+2 and goaded; each attack, its controller loses 2 and you gain 2.",
-     "tags": "goad drain",
-     "otter": true,
-     "new": true
-    },
-    {
-     "n": "Ghoulish Impetus",
-     "mv": 3,
-     "tip": "Aura: +1/+1, deathtouch, goaded. When the creature dies, the aura returns at the next end step and you attach it to a new creature.",
      "tags": "goad drain",
      "otter": true,
      "new": true
@@ -336,11 +311,11 @@
      "new": true
     },
     {
-     "n": "Painful Quandary",
-     "mv": 5,
-     "tip": "Every spell an opponent casts: discard or lose 5. Grinds hands and life at once.",
-     "tags": "drain",
-     "new": true
+     "n": "Massacre Wurm",
+     "mv": 6,
+     "tags": "drain control",
+     "new": true,
+     "tip": "Their creatures get -2/-2 as it enters, and each opposing creature that dies costs its controller 2 life, now and for as long as the Wurm stays."
     }
    ]
   },
@@ -393,17 +368,24 @@
      "tags": "double drain copy"
     },
     {
-     "n": "Rankle, Master of Pranks",
-     "mv": 4,
-     "tip": "Hasty flier: on hit, choose any of: everyone discards, everyone loses 1 and draws, everyone sacrifices a creature.",
-     "tags": "drain double",
-     "new": true
-    },
-    {
      "n": "Balefire Dragon",
      "mv": 7,
      "tip": "Flier: combat damage to a player also hits each of their creatures for that much. Wipes a board while hitting face.",
      "tags": "double"
+    },
+    {
+     "n": "Doom Whisperer",
+     "mv": 5,
+     "tags": "control",
+     "new": true,
+     "tip": "6/6 flying trample for 5. Pay 2 life to surveil 2 and dig for your finishers. Watch your life total."
+    },
+    {
+     "n": "Gray Merchant of Asphodel",
+     "mv": 5,
+     "tags": "drain double",
+     "new": true,
+     "tip": "Each opponent loses life equal to your devotion to black (count the B symbols on your permanents), and you gain it. Doubles on your turn with Bloodletter out."
     }
    ]
   },
@@ -451,9 +433,9 @@
        "why": "Two half-size Bloodletters = 4x life loss on your turn. Not legendary, so both stay."
       },
       {
-       "when": "Want goad again",
-       "get": "Vengeful Ancestor",
-       "why": "Two copies: two enter goads, and each goaded attacker pings its controller twice."
+       "when": "Want a big drain again",
+       "get": "Gray Merchant of Asphodel",
+       "why": "Two copies: two enter-drains, and the token copy counts toward your devotion to black."
       },
       {
        "when": "Want drain",
@@ -484,13 +466,6 @@
    "title": "Removal & wipes",
    "desc": "Spot removal for whatever can still hit YOU; two resets",
    "cards": [
-    {
-     "n": "Terminate",
-     "mv": 2,
-     "tip": "Spot removal: destroy a creature; can't be regenerated.",
-     "tags": "control",
-     "new": true
-    },
     {
      "n": "Infernal Grasp",
      "mv": 2,
@@ -548,7 +523,7 @@
       },
       {
        "when": "Removal-heavy turn",
-       "get": "Terminate",
+       "get": "Go for the Throat",
        "why": "Use the cheaper creature removal first and save Chaos Warp for the permanents only it can hit."
       }
      ]
@@ -596,6 +571,20 @@
      "tip": "Board wipe: pay X life, all creatures get -X/-X. Pick X to spare your toughest creature.",
      "tags": "control",
      "new": true
+    },
+    {
+     "n": "Plaguecrafter",
+     "mv": 3,
+     "tags": "control drain",
+     "new": true,
+     "tip": "Each player sacrifices a creature or planeswalker (or discards). Feed it a spare token; every sacrifice also triggers Blood Artist and Syr Konrad."
+    },
+    {
+     "n": "Go for the Throat",
+     "mv": 2,
+     "tags": "control",
+     "new": true,
+     "tip": "2-mana instant: destroy any nonartifact creature."
     }
    ]
   },
@@ -704,7 +693,7 @@
       {
        "when": "Remember",
        "get": null,
-       "why": "Discard outlets (Big Score, Unexpected Windfall) can put it in the graveyard early so the flashback is ready."
+       "why": "Discard outlets (Big Score, Risk Factor's jump-start) can put it in the graveyard early so the flashback is ready."
       }
      ]
     },
@@ -728,18 +717,24 @@
      "new": true
     },
     {
-     "n": "Unexpected Windfall",
-     "mv": 4,
-     "tip": "Same as Big Score. The Treasures can pay for Xantcha activations right away.",
-     "tags": "treasure",
-     "new": true
-    },
-    {
      "n": "Professional Face-Breaker",
      "mv": 3,
      "tip": "Menace; your creatures connect: Treasure. Sacrifice a Treasure: impulse-draw your top card.",
      "tags": "treasure",
      "new": true
+    },
+    {
+     "n": "Risk Factor",
+     "mv": 3,
+     "tags": "drain",
+     "new": true,
+     "tip": "An opponent takes 4 or lets you draw three. Jump-start it from the graveyard for a second go (discard a card, which also fuels Increasing Ambition)."
+    },
+    {
+     "n": "Night's Whisper",
+     "mv": 2,
+     "new": true,
+     "tip": "Draw two for 2 mana and 2 life."
     }
    ]
   },
@@ -966,9 +961,90 @@
     "tip": "Pointless fixing in two colors"
    }
   ]
- }
-}
-</script>
+ },
+ "wishlist": [
+  {
+   "n": "Grenzo, Havoc Raiser",
+   "name": "Grenzo, Havoc Raiser",
+   "replaces": "Plaguecrafter",
+   "why": "Goad on every combat hit. You own one but couldn't find it",
+   "price": "$0.61",
+   "status": "re-buy"
+  },
+  {
+   "n": "Vengeful Ancestor",
+   "name": "Vengeful Ancestor",
+   "replaces": "Doom Whisperer",
+   "why": "Flying goad on enter and attack. Owned, not found",
+   "price": "$0.63",
+   "status": "re-buy"
+  },
+  {
+   "n": "Ghoulish Impetus",
+   "name": "Ghoulish Impetus",
+   "replaces": "Risk Factor",
+   "why": "Goad aura that draws when the creature dies. Owned, not found",
+   "price": "$0.51",
+   "status": "re-buy"
+  },
+  {
+   "n": "Terminate",
+   "name": "Terminate",
+   "replaces": "Go for the Throat",
+   "why": "Kills anything, artifacts included. Owned, not found",
+   "price": "$0.33",
+   "status": "re-buy"
+  },
+  {
+   "n": "Rankle, Master of Pranks",
+   "name": "Rankle, Master of Pranks",
+   "replaces": "Gray Merchant of Asphodel",
+   "why": "Evasive punisher. Owned, not found",
+   "price": "$2.72",
+   "status": "re-buy"
+  },
+  {
+   "n": "Unexpected Windfall",
+   "name": "Unexpected Windfall",
+   "replaces": "Night's Whisper",
+   "why": "Draw two plus two Treasures. Owned, not found",
+   "price": "$2.18",
+   "status": "re-buy"
+  },
+  {
+   "n": "Painful Quandary",
+   "name": "Painful Quandary",
+   "replaces": "Massacre Wurm",
+   "why": "Taxes every opposing spell 5 life or a card. Owned, not found",
+   "price": "$1.68",
+   "status": "re-buy"
+  },
+  {
+   "n": "Rite of the Raging Storm",
+   "name": "Rite of the Raging Storm",
+   "replaces": "Doom Whisperer or a flex slot",
+   "why": "Each opponent gets a 5/1 trampler every upkeep that can't attack you. Pure Xantcha energy",
+   "price": "$1.49",
+   "status": "want"
+  },
+  {
+   "n": "Bloodthirsty Blade",
+   "name": "Bloodthirsty Blade",
+   "replaces": "a flex slot",
+   "why": "Equipment that re-goads a creature every turn for 1 mana",
+   "price": "$0.42",
+   "status": "want"
+  },
+  {
+   "n": "Crown of Doom",
+   "name": "Crown of Doom",
+   "replaces": "a flex slot",
+   "why": "Attackers aimed at you get +2/+0, and you can pass the Crown to an opponent",
+   "price": "$2.55",
+   "status": "want"
+  }
+ ]
+}</script>
 <script src="../viewer.js?v=20261111"></script>
 </body>
 </html>
