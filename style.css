@@ -79,6 +79,16 @@ body.draft .layout,body.draft .key,body.draft #viewToggle,body.draft .group.mana
 body.draft #checklist{display:block}
 #checklist h2{font-size:17px;margin:6px 0 2px}
 .clprog{color:var(--gold);font-size:14px;margin:6px 0}
+.clbar{height:6px;background:var(--panel2);border-radius:3px;margin-top:5px;overflow:hidden;max-width:420px}
+#clbarfill{height:100%;width:0;background:var(--green);transition:width .3s}
+.clsec details > summary{cursor:pointer;list-style:none}
+.clsec details > summary::-webkit-details-marker{display:none}
+.cldone{margin-top:6px}
+.cldone > summary{font-size:12.5px;color:var(--green);padding:6px 2px}
+.cldone > summary::before,.clcomplete > summary h3::before{content:"▸ ";color:var(--dim)}
+.cldone[open] > summary::before,.clcomplete[open] > summary h3::before{content:"▾ "}
+.clcomplete > summary h3{color:var(--green)}
+.clsec .mv{font-weight:400;text-transform:none;letter-spacing:0}
 #clreset{background:none;border:1px solid #303a52;color:var(--dim);border-radius:7px;padding:4px 10px;font-size:12px;cursor:pointer;margin-bottom:8px}
 #clreset:hover{border-color:var(--red);color:var(--red)}
 .clsec h3{font-size:14px;margin:16px 0 7px;color:var(--dim);text-transform:uppercase;letter-spacing:.05em}

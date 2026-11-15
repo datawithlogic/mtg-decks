@@ -311,54 +311,84 @@
     if (e.p > 0 && e.p < 0.95 && !(e.r && e.r <= 6000)) return `<span class="clval bulk" title="About $${e.p.toFixed(2)}: bulk">bulk</span>`;
     return "";
   }
+  /* Sleeved cards sink: each section lists what's left first, then a folded
+   * "✓ N sleeved" group; a finished section collapses to one line. Re-sorting
+   * waits for a pause in tapping (RESORT_MS) so rows never jump under a finger
+   * mid-streak; the tapped row fades immediately. */
+  const RESORT_MS = 900;
   function buildChecklist() {
     const wrap = document.getElementById("checklist");
     const items = fullDeckItems();
     const key = "sleeved:" + (data.slug || "deck");
     let state = {};
     try { state = JSON.parse(localStorage.getItem(key) || "{}"); } catch (e) {}
+    const save = () => { try { localStorage.setItem(key, JSON.stringify(state)); } catch (e) {} };
     const order = ["Commander", "Creature", "Planeswalker", "Battle", "Instant", "Sorcery", "Enchantment", "Artifact", "Land", "Other"];
     const buckets = {};
     items.forEach((it) => { const b = bucketOf(it); (buckets[b] = buckets[b] || []).push(it); });
     Object.values(buckets).forEach((a) => a.sort((x, y) => x.n.localeCompare(y.n)));
     const total = items.reduce((s, i) => s + i.count, 0);
+    const sum = (a) => a.reduce((s, i) => s + i.count, 0);
+    const open = new Set();   // folded groups the viewer has expanded, kept across re-sorts
+    const row = (it) =>
+      `<label class="clrow${state[it.name] ? " done" : ""}" data-cl="${esc(it.name)}" style="${rowColor(it)}">
+         <input type="checkbox" ${state[it.name] ? "checked" : ""}>
+         <span class="clcount">${it.count > 1 ? it.count + "×" : ""}</span>
+         <span class="clname">${esc(it.n)}</span>
+         ${valueBadge(it)}
+         <span class="clpips">${pipLetters(it)}</span>
+         <button class="cleye" data-eye="${esc(it.name)}" title="Show card">🔍</button></label>`;
     wrap.innerHTML = `<h2>Sleeve check</h2>
-      <div class="clprog" id="clprog"></div>
+      <div class="clprog"><span id="clprog"></span><div class="clbar"><div id="clbarfill"></div></div></div>
       <div class="clkey"><span class="clval hi">$$</span> worth $10+ &nbsp; <span class="clval bulk">bulk</span> under $0.95 (not a staple) &nbsp;·&nbsp; prices are estimates (default printing)</div>
       <button id="clreset">Reset checklist</button>
-      ${order.filter((b) => buckets[b]).map((b) => {
-        const n = buckets[b].reduce((s, i) => s + i.count, 0);
-        return `<div class="clsec"><h3>${b} <span class="mv">${n}</span></h3><div class="rows">${
-          buckets[b].map((it) =>
-            `<label class="clrow${state[it.name] ? " done" : ""}" data-cl="${esc(it.name)}" style="${rowColor(it)}">
-               <input type="checkbox" ${state[it.name] ? "checked" : ""}>
-               <span class="clcount">${it.count > 1 ? it.count + "×" : ""}</span>
-               <span class="clname">${esc(it.n)}</span>
-               ${valueBadge(it)}
-               <span class="clpips">${pipLetters(it)}</span>
-               <button class="cleye" data-eye="${esc(it.name)}" title="Show card">🔍</button></label>`).join("")
-        }</div></div>`;
-      }).join("")}`;
+      <div id="clsecs"></div>`;
+    const secs = document.getElementById("clsecs");
+    function render() {
+      secs.innerHTML = order.filter((b) => buckets[b]).map((b) => {
+        const todo = buckets[b].filter((i) => !state[i.name]);
+        const done = buckets[b].filter((i) => state[i.name]);
+        const n = sum(buckets[b]);
+        if (!todo.length) {
+          return `<details class="clsec clcomplete" data-sec="${b}"${open.has(b) ? " open" : ""}>
+            <summary><h3>✓ ${b}: all ${n} sleeved</h3></summary><div class="rows">${done.map(row).join("")}</div></details>`;
+        }
+        return `<div class="clsec"><h3>${b} <span class="mv">${sum(todo)} left of ${n}</span></h3>
+          <div class="rows">${todo.map(row).join("")}</div>
+          ${done.length ? `<details class="cldone" data-sec="${b}"${open.has(b) ? " open" : ""}>
+            <summary>✓ ${sum(done)} sleeved</summary><div class="rows">${done.map(row).join("")}</div></details>` : ""}
+        </div>`;
+      }).join("");
+    }
     const prog = () => {
       const done = items.filter((i) => state[i.name]).reduce((s, i) => s + i.count, 0);
-      document.getElementById("clprog").textContent = `${done} / ${total} cards sleeved`;
+      document.getElementById("clprog").textContent = done === total ? `All ${total} cards sleeved ✓` : `${done} / ${total} cards sleeved · ${total - done} to go`;
+      document.getElementById("clbarfill").style.width = (100 * done / total).toFixed(1) + "%";
     };
-    prog();
-    wrap.querySelectorAll(".cleye").forEach((b) => b.addEventListener("click", (e) => {
-      e.preventDefault(); e.stopPropagation();
-      openCard(b.dataset.eye);
-    }));
-    wrap.querySelectorAll(".clrow").forEach((r) => r.addEventListener("click", (e) => {
+    render(); prog();
+    let timer = null;
+    // delegated handlers survive re-renders
+    secs.addEventListener("toggle", (e) => {
+      const d = e.target; if (!d.dataset || !d.dataset.sec) return;
+      d.open ? open.add(d.dataset.sec) : open.delete(d.dataset.sec);
+    }, true);
+    secs.addEventListener("click", (e) => {
+      const eye = e.target.closest(".cleye");
+      if (eye) { e.preventDefault(); e.stopPropagation(); openCard(eye.dataset.eye); return; }
+      const r = e.target.closest(".clrow");
+      if (!r) return;
       e.preventDefault();
       const nm = r.dataset.cl;
       state[nm] = !state[nm]; if (!state[nm]) delete state[nm];
       r.classList.toggle("done", !!state[nm]);
       r.querySelector("input").checked = !!state[nm];
-      localStorage.setItem(key, JSON.stringify(state));
-      prog();
-    }));
+      save(); prog();
+      clearTimeout(timer);
+      timer = setTimeout(render, RESORT_MS);
+    });
     document.getElementById("clreset").addEventListener("click", () => {
-      localStorage.setItem(key, "{}"); buildChecklist();
+      try { localStorage.setItem(key, "{}"); } catch (e) {}
+      buildChecklist();
     });
   }
   const draftBtn = document.getElementById("draftToggle");
