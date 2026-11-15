@@ -4,23 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quandrix Unlimited — Deck Map</title>
-<link rel="stylesheet" href="../style.css?v=20261111">
+<link rel="stylesheet" href="../style.css?v=20261115">
 </head>
 <body>
-<script type="application/json" id="deck-data">{
+<script type="application/json" id="deck-data">
+{
  "name": "Quandrix Unlimited — X Marks the Math",
  "slug": "quandrix-unlimited",
- "sub": "37 lands · v3 upgrade sweep of the Secrets of Strixhaven precon · Bracket 3 (1 Game Changer)",
- "revnote": "v3 (2026-11-10, accepted, build in progress): 14 swaps. Untapped G/U duals for slow lands, Birds/Farseek for scaling rocks, 3 counterspells + Cyclonic Rift + Heroic Intervention for soft interaction, Ouroboroid/Doubling Season/Walking Ballista/Nature's Rhythm for filler. GC 0 → 2.",
+ "sub": "37 lands · Secrets of Strixhaven precon, upgraded (v3 + 2026-11-15 review) · Bracket 3 (1 Game Changer)",
+ "revnote": "2026-11-15 post-con review: 8 swaps. Forgotten Ancient → Branching Evolution, Perplexing Test → Inspiring Call, Eureka Moment → Finale of Revelation, Open the Way → Mossborn Hydra (all owned), and four tapped lands → Breeding Pool, Flooded Grove, Dreamroot Cascade, Botanical Sanctum (buys). Still 1 Game Changer, Bracket 3, no infinite combos.",
  "hint": "Zimone discounts your FIRST X spell each turn by {1} per counter on her, then grows +2 for casting it. Every counter multiplier compounds the discount; Doubling Season doubles the lot. The deck is one big feedback loop.",
- "manaNote": "Demand is close to even between green and blue, green slightly ahead. Most costs here are mostly X (colorless), so TOTAL lands matter more than color. Play every land you draw; grab green first when you have the choice (the ramp spells cost G), then keep {U}{U} open for Counterspell once the board is worth protecting.",
+ "manaNote": "Demand is close to even between green and blue, green slightly ahead, but most costs are X, so total lands matter more than color: play every land you draw and grab green first (the ramp spells cost G). Play Botanical Sanctum in your first three land drops and save Dreamroot Cascade for drop three or later so both enter untapped; Flooded Grove makes Lifeblood Hydra's GGG or Commander's Insight's UUU. Once the board is worth protecting, keep {U}{U} open for Counterspell.",
  "gameplan": {
   "plan": "Cast one discounted X-spell per turn — Zimone grows every time, making the next one cheaper. Multiply +1/+1 counters, cash big X into hydras and card draw.",
   "mull": "3 lands, or 2 plus ramp. One X-spell in hand is plenty (they're blanks early); two or more, ship it.",
-  "early": "Ramp (Birds, Farseek, Rampant Growth), Zimone on 3, then a counter-multiplier: Hardened Scales, Ozolith, Kami, or Doubling Season on 5.",
+  "early": "Ramp (Birds, Farseek, Rampant Growth), Zimone on 3, then a counter multiplier: Hardened Scales, Ozolith, Kami, Branching Evolution, or Doubling Season on 5. Mossborn Hydra on 3 grows with every land drop.",
   "mid": "Hit the cadence every turn — biggest X you can. Instant-speed X (Pull from Tomorrow) or Alchemist's Refuge lets you hit it on opponents' turns too.",
-  "win": "Tanazir makes the team his size · Ouroboroid grows every creature each combat · Primo's fractal spiral doubles each combat · Biomass Mutation ends it (but SETS base power, turns Primo off) · Walking Ballista pings out the last points · Rogue's Passage + one giant hydra.",
-  "fear": "Wipes and removal on Zimone. Keep Fierce Guardianship (free while Zimone is out) or {U}{U} for Counterspell once the board is tall; Heroic Intervention covers destroy-wipes. Don't dump every X payoff into one board state."
+  "win": "Tanazir makes the team his size · Ouroboroid grows every creature each combat · Primo's fractal spiral doubles each combat · Biomass Mutation ends it (but SETS base power, turns Primo off) · Mossborn Hydra doubles on every land drop · Walking Ballista pings out the last points · Rogue's Passage + one giant hydra.",
+  "fear": "Wipes and removal on Zimone. Keep Fierce Guardianship (free while Zimone is out) or {U}{U} for Counterspell once the board is tall; Heroic Intervention or Inspiring Call cover destroy-wipes. Don't dump every X payoff into one board state."
  },
  "clusters": [
   {
@@ -35,8 +36,8 @@
    "k": "scale",
    "label": "Counter multiplication",
    "blurb": "replacement effects stack: +2 becomes +6",
-   "how": "Hardened Scales, Ozolith the Shattered Spire, Kami of Whispered Hopes, Benevolent Hydra, and Doubling Season are all REPLACEMENT effects that apply to the same counter event, one after another. The +1s add; Doubling Season doubles. You choose the order on your own permanents: add first, double last.",
-   "ex": "Zimone triggers for +2. Scales makes it 3, Ozolith 4, Kami 5, Benevolent Hydra 6, then Doubling Season makes it 12. Ouroboroid puts its power in counters on every creature each combat, and each of those events gets the same treatment.",
+   "how": "Hardened Scales, Ozolith the Shattered Spire, Kami of Whispered Hopes, Benevolent Hydra, Branching Evolution and Doubling Season are all REPLACEMENT effects that apply to the same counter event, one after another. The +1s add; Branching Evolution and Doubling Season double. You choose the order on your own permanents: add first, double last.",
+   "ex": "Zimone triggers for +2. Scales makes it 3, Ozolith 4, Kami 5, Benevolent Hydra 6, Doubling Season 12, Branching Evolution 24. Ouroboroid puts its power in counters on every creature each combat, and each of those events gets the same treatment.",
    "why": "Evaluate engine pieces by what they multiply: a 1-mana enchantment that upgrades every counter event in a 40-counter game is worth more than a big one-shot."
   },
   {
@@ -59,7 +60,7 @@
    "k": "payload",
    "label": "X payloads",
    "blurb": "hydras with riders — size plus card advantage",
-   "how": "Every X creature carries a rider so the mana buys more than stats: Goldvein leaves X Treasures when it dies, Lifeblood draws X, The Goose Mother banks Food for draws, Kinetic Ooze removes a permanent (and doubles counters at X≥10), Hangarback leaves Thopters, Walking Ballista turns counters into damage. Stonecoil's protection makes it the safest counter home. Never tutor them with Nature's Rhythm: they'd enter at X=0.",
+   "how": "Every X creature carries a rider so the mana buys more than stats: Goldvein leaves X Treasures when it dies, Lifeblood draws X, The Goose Mother banks Food for draws, Kinetic Ooze removes a permanent (and doubles counters at X≥10), Hangarback leaves Thopters, Walking Ballista turns counters into damage. Mossborn Hydra isn't an X spell, but it doubles on every land drop. Stonecoil's protection makes it the safest counter home. Never tutor them with Nature's Rhythm: they'd enter at X=0.",
    "ex": "Goldvein Hydra X=8 attacks with haste; if they kill it, you bank 8 Treasures — which pay for the next X spell and trigger the cadence again.",
    "why": "In big-mana decks, pick payoffs that convert size into CARDS when answered — that's how you lose a creature without losing a turn."
   },
@@ -67,7 +68,7 @@
    "k": "draw",
    "label": "X-draw refills",
    "blurb": "late-game mana becomes a fresh hand",
-   "how": "Pull from Tomorrow, Stroke of Genius, and Commander's Insight convert spare mana to cards at instant speed (all trigger the cadence cluster). Ingenious Prodigy and Lifeblood Hydra draw off their counters; Reliquary Tower and Study Hall keep the haul.",
+   "how": "Pull from Tomorrow, Stroke of Genius, and Commander's Insight convert spare mana to cards at instant speed; Finale of Revelation does it at sorcery speed and at X≥10 untaps five lands (all trigger the cadence cluster). Ingenious Prodigy and Lifeblood Hydra draw off their counters, Inspiring Call draws one per countered creature; Reliquary Tower and Study Hall keep the haul.",
    "ex": "End of an opponent's turn: Pull from Tomorrow X=9 — nine cards, cadence triggered on their turn, your own turn's first-X discount still unused.",
    "why": "Engine decks stall when the hand empties; X draw is the perfect refill because it scales with exactly the resource you've been hoarding."
   },
@@ -75,19 +76,18 @@
    "k": "protect",
    "label": "Engine protection",
    "blurb": "the counters live on permanents — guard them",
-   "how": "All the deck's value is stored in +1/+1 counters on the board, so wipes hurt double. Counterspell, Arcane Denial and Fierce Guardianship (free while Zimone is out) stop wipes on the stack; Heroic Intervention saves the whole board from destroy effects; Guardian Augmenter (flash) gives commanders hexproof; Silkguard and Tyvar's Stand save key creatures; Cyclonic Rift resets their board instead.",
-   "ex": "Opponent casts a wrath with your board at 40 counters: Fierce Guardianship for free. No Guardianship? Heroic Intervention in response and everything survives.",
+   "how": "All the deck's value is stored in +1/+1 counters on the board, so wipes hurt double. Counterspell, Arcane Denial and Fierce Guardianship (free while Zimone is out) stop wipes on the stack; Heroic Intervention and Inspiring Call save the board from destroy effects (Call also draws); Guardian Augmenter (flash) gives commanders hexproof; Silkguard and Tyvar's Stand save key creatures; Zimone's Hypothesis resets their board instead.",
+   "ex": "Opponent casts a wrath with your board at 40 counters: Fierce Guardianship for free. No Guardianship? Inspiring Call in response: everything with a counter survives and you draw a card for each.",
    "why": "Counter decks bank value on the battlefield rather than in hand — budget protection slots the way spellslinger decks budget counterspells."
   }
  ],
  "lands": {
   "title": "Lands ×37",
-  "desc": "7 Island · 6 Forest · 24 nonbasic. v3 swapped three slow/colorless lands for untapped G/U duals. Opal Palace, Study Hall, Alchemist's Refuge, Rogue's Passage shown in their synergy groups.",
+  "desc": "7 Island · 6 Forest · 24 nonbasic. The 2026-11-15 review swapped four tapped lands for untapped duals: only Path of Ancestry, Oran-Rief and Tangled Islet always enter tapped. Opal Palace, Study Hall, Alchemist's Refuge, Rogue's Passage shown in their synergy groups.",
   "cards": [
    {
-    "n": "Thornwood Falls",
-    "mv": 0,
-    "tip": "G/U tapland, gain 1 life.",
+    "n": "Breeding Pool",
+    "tip": "Untapped G/U if you pay 2 life. Forest Island type: Farseek and Three Visits can fetch it",
     "new": true
    },
    {
@@ -101,9 +101,8 @@
     "tip": "Fetch: grab the color you're missing"
    },
    {
-    "n": "Thriving Grove",
-    "mv": 0,
-    "tip": "Enters tapped; taps for G or your chosen color (pick blue).",
+    "n": "Flooded Grove",
+    "tip": "Filter land: turn one G or U into GG, GU or UU. Fixes Lifeblood Hydra (GGG) and Commander's Insight (UUU)",
     "new": true
    },
    {
@@ -120,12 +119,13 @@
     "n": "Path of Ancestry"
    },
    {
-    "n": "Rain-Slicked Copse"
+    "n": "Dreamroot Cascade",
+    "tip": "Untapped once you control two other lands. Hold it for land drop 3+",
+    "new": true
    },
    {
     "n": "Rejuvenating Springs",
-    "tip": "Untapped in any multiplayer game",
-    "new": true
+    "tip": "Untapped in any multiplayer game"
    },
    {
     "n": "Reliquary Tower",
@@ -138,7 +138,9 @@
     "n": "Tangled Islet"
    },
    {
-    "n": "Temple of Mystery"
+    "n": "Botanical Sanctum",
+    "tip": "Untapped only as one of your first three lands. Play it early",
+    "new": true
    },
    {
     "n": "Terramorphic Expanse"
@@ -151,8 +153,7 @@
    },
    {
     "n": "Waterlogged Grove",
-    "tip": "Untapped G/U for 1 life; flood late? Sac it for a card",
-    "new": true
+    "tip": "Untapped G/U for 1 life; flood late? Sac it for a card"
    },
    {
     "n": "Yavimaya Coast"
@@ -217,6 +218,11 @@
        "why": "ETB doubles a creature's counters; attacks make the team his size"
       },
       {
+       "when": "Early, want a threat (X=3)",
+       "get": "Mossborn Hydra",
+       "why": "Not an X creature, so it enters with its counter. Every land drop after that doubles it"
+      },
+      {
        "when": "Turn 2–3, need ramp (X=1)",
        "get": "Birds of Paradise",
        "why": "Cheap fix when the hand is all X spells and lands are short"
@@ -236,8 +242,7 @@
        "get": null,
        "why": "It has {X} in its cost: it IS your first X spell for Zimone's discount, Nev, Lattice Library, etc. Don't waste the cadence on a small X"
       }
-     ],
-     "new": true
+     ]
     },
     {
      "n": "Nev, the Practical Dean",
@@ -300,10 +305,28 @@
      "tip": "+1 per counter event on others; tap to move counters around"
     },
     {
-     "n": "Forgotten Ancient",
-     "mv": 4,
+     "n": "Branching Evolution",
+     "mv": 3,
      "tags": "scale",
-     "tip": "Counter per ANY spell cast; redistribute them each upkeep"
+     "tip": "Doubles every +1/+1 counter put on your creatures. A second doubler next to Doubling Season: apply the +1s first, then both doublers",
+     "guide": [
+      {
+       "when": "Ordering with the +1 effects",
+       "get": "Hardened Scales",
+       "why": "Apply Scales, Ozolith, Kami and Benevolent Hydra first, then Branching Evolution and Doubling Season last. Zimone's +2 with all of them out: (2+4)×2×2 = 24"
+      },
+      {
+       "when": "X creatures and hydras",
+       "get": "Walking Ballista",
+       "why": "'Enters with X counters' counts as putting counters on it, so it doubles: Ballista X=3 enters with 6"
+      },
+      {
+       "when": "What it doesn't do",
+       "get": "Doubling Season",
+       "why": "Only +1/+1 counters on creatures. No extra tokens, no other counter types: Doubling Season still does those. It's an enchantment, so Nature's Rhythm can't fetch it"
+      }
+     ],
+     "new": true
     },
     {
      "n": "Tanazir Quandrix",
@@ -344,7 +367,7 @@
       {
        "when": "Full stack (Ozolith, Kami, Benevolent Hydra too)",
        "get": null,
-       "why": "Apply every +1 effect first, Doubling Season LAST. Zimone's +2 becomes (2+4)×2 = 12"
+       "why": "Apply every +1 effect first, Doubling Season (and Branching Evolution) LAST. Zimone's +2 becomes (2+4)×2 = 12, or 24 with Branching Evolution too"
       },
       {
        "when": "X creatures",
@@ -361,15 +384,13 @@
        "get": null,
        "why": "It's an enchantment. Protect it like a commander: it's the deck's biggest multiplier"
       }
-     ],
-     "new": true
+     ]
     },
     {
      "n": "Ouroboroid",
      "mv": 4,
      "tags": "scale payload",
-     "tip": "Each of your combats: every creature you control gets counters equal to Ouroboroid's power. Grows itself too",
-     "new": true
+     "tip": "Each of your combats: every creature you control gets counters equal to Ouroboroid's power. Grows itself too"
     }
    ]
   },
@@ -447,7 +468,13 @@
      "n": "Walking Ballista",
      "mv": "XX",
      "tags": "payload scale",
-     "tip": "Counters become pings: kill dorks, finish players, or dump it all in response to removal",
+     "tip": "Counters become pings: kill dorks, finish players, or dump it all in response to removal"
+    },
+    {
+     "n": "Mossborn Hydra",
+     "mv": 3,
+     "tags": "payload scale",
+     "tip": "3-mana trample hydra: enters with a +1/+1 counter and doubles its counters on every land you play or fetch. Each doubling is a counter event, so every multiplier makes it bigger. Fabled Passage = two doublings",
      "new": true
     }
    ]
@@ -493,10 +520,33 @@
      "tip": "X cards +1 per commander recast — scales with your own casualties"
     },
     {
-     "n": "Eureka Moment",
-     "mv": 4,
-     "tags": "draw xmana",
-     "tip": "Draw 2, drop a land tapped"
+     "n": "Finale of Revelation",
+     "mv": "X+2",
+     "tags": "draw firstx",
+     "tip": "Sorcery: draw X. At X≥10 it also shuffles your graveyard into your library, untaps up to five lands and removes your maximum hand size for the game. Exiles itself",
+     "guide": [
+      {
+       "when": "X under 10",
+       "get": null,
+       "why": "Plain draw X. It still counts as your first X spell (Zimone, Owlin, Nev, Lattice Library). If you can wait, Pull from Tomorrow does the same at instant speed"
+      },
+      {
+       "when": "X = 10 or more",
+       "get": null,
+       "why": "Draw X, untap five lands and spend them on a second spell this turn. No hand-size limit afterwards, so no discarding the haul"
+      },
+      {
+       "when": "Owlin Spiralmancer or Unbound Flourishing out",
+       "get": "Owlin Spiralmancer",
+       "why": "The copy keeps the same X: draw X twice, and at X≥10 the copy untaps five more lands"
+      },
+      {
+       "when": "After it resolves",
+       "get": null,
+       "why": "It exiles itself: one use per game, so save it for a big X"
+      }
+     ],
+     "new": true
     },
     {
      "n": "Zimone, Quandrix Prodigy",
@@ -508,7 +558,7 @@
   },
   {
    "title": "Interaction",
-   "desc": "v3 added real counterspell backup and wipe protection. Hold up 2 mana once the board is worth protecting",
+   "desc": "Counterspells, removal and wipe protection. Hold up 2 mana once the board is worth protecting",
    "cards": [
     {
      "n": "Beast Within",
@@ -520,8 +570,7 @@
      "n": "Reality Shift",
      "mv": 2,
      "tip": "2-mana instant: exile a creature; its controller manifests the top card (a 2/2). Exile beats indestructible.",
-     "tags": "protect",
-     "new": true
+     "tags": "protect"
     },
     {
      "n": "Primal Might",
@@ -536,22 +585,28 @@
      "tip": "Exile X creatures — hits indestructible, beats death triggers"
     },
     {
-     "n": "Perplexing Test",
-     "mv": 5,
-     "tags": "protect",
-     "tip": "Bounce all tokens OR all nontokens — your Fractals dodge one mode",
+     "n": "Inspiring Call",
+     "mv": 3,
+     "tags": "protect draw",
+     "tip": "Instant: draw a card for each creature you control with a +1/+1 counter; those creatures gain indestructible until end of turn. Wipe protection and a refill in one card",
      "guide": [
       {
-       "when": "They went wide with tokens",
+       "when": "Opponent casts a destroy-wipe",
        "get": null,
-       "why": "Bounce all tokens. Your Fractals go too, so do it when you're behind on board"
+       "why": "Cast it in response: every creature with a counter survives AND you draw a card for each. Creatures without counters (Birds, plain tokens) still die"
       },
       {
-       "when": "Your board is mostly Fractals",
+       "when": "Exile, bounce or -X/-X wipe",
+       "get": "Counterspell",
+       "why": "Indestructible doesn't stop those, and neither does Heroic Intervention. Counter the wipe instead"
+      },
+      {
+       "when": "Nothing to protect against",
        "get": null,
-       "why": "Bounce all NONtoken creatures: your tokens stay, their real creatures go home"
+       "why": "End of an opponent's turn it's just instant draw: 3 mana, one card per creature with a counter"
       }
-     ]
+     ],
+     "new": true
     },
     {
      "n": "Quandrix Command",
@@ -644,15 +699,13 @@
      "n": "Counterspell",
      "mv": 2,
      "tags": "protect",
-     "tip": "Hard counter for anything that threatens the board",
-     "new": true
+     "tip": "Hard counter for anything that threatens the board"
     },
     {
      "n": "Arcane Denial",
      "mv": 2,
      "tags": "protect",
-     "tip": "2-mana hard counter; they get 2 cards, you get 1. Save it for game-changing spells",
-     "new": true
+     "tip": "2-mana hard counter; they get 2 cards, you get 1. Save it for game-changing spells"
     },
     {
      "n": "Fierce Guardianship",
@@ -675,8 +728,7 @@
        "get": null,
        "why": "It costs {2}{U} then. Recast Zimone first if you can"
       }
-     ],
-     "new": true
+     ]
     },
     {
      "n": "Zimone's Hypothesis",
@@ -688,8 +740,7 @@
      "n": "Heroic Intervention",
      "mv": 2,
      "tags": "protect",
-     "tip": "Instant: everything you control gets hexproof + indestructible. Answers destroy-wipes",
-     "new": true
+     "tip": "Instant: everything you control gets hexproof + indestructible. Answers destroy-wipes"
     }
    ]
   },
@@ -706,8 +757,7 @@
      "n": "Birds of Paradise",
      "mv": 1,
      "tags": "xmana",
-     "tip": "Turn-1 dork, any color. Flying chump-blocker in a pinch",
-     "new": true
+     "tip": "Turn-1 dork, any color. Flying chump-blocker in a pinch"
     },
     {
      "n": "Arcane Signet",
@@ -718,40 +768,49 @@
      "n": "Rampant Growth",
      "mv": 2,
      "tip": "2-mana ramp: a basic onto the battlefield tapped.",
-     "tags": "xmana",
-     "new": true
+     "tags": "xmana"
     },
     {
      "n": "Farseek",
      "mv": 2,
      "tags": "xmana",
-     "tip": "Fetches an Island- or Forest-typed land tapped",
+     "tip": "Fetches any Island-typed land tapped: Breeding Pool, Sodden Verdure, Turbulent Wilderness, Tangled Islet or a basic Island",
      "guide": [
+      {
+       "when": "Breeding Pool still in your library",
+       "get": "Breeding Pool",
+       "why": "Best target. It arrives tapped anyway, so don't pay the 2 life"
+      },
       {
        "when": "Pool already out",
        "get": null,
-       "why": "Basic Island. All three ramp sorceries grab real lands, not just basics"
+       "why": "Sodden Verdure or Turbulent Wilderness (both Forest Island), otherwise a basic Island"
       }
-     ],
-     "new": true
+     ]
     },
     {
      "n": "Three Visits",
      "mv": 2,
      "tags": "xmana",
-     "tip": "Fetch a Forest-typed land onto the battlefield untapped. Best ramp in the 99"
+     "tip": "Fetch a Forest-typed land onto the battlefield untapped. Best ramp in the 99",
+     "guide": [
+      {
+       "when": "Breeding Pool still in your library",
+       "get": "Breeding Pool",
+       "why": "Three Visits puts it in untapped if you pay 2 life: an extra G or U this turn"
+      },
+      {
+       "when": "Pool already out",
+       "get": null,
+       "why": "Sodden Verdure or Turbulent Wilderness (Forest Island) to keep both colors, or a basic Forest"
+      }
+     ]
     },
     {
      "n": "Animist's Awakening",
      "mv": "X+1",
      "tags": "xmana firstx",
      "tip": "Top-X lands to battlefield; spell mastery untaps them"
-    },
-    {
-     "n": "Open the Way",
-     "mv": "X+2",
-     "tags": "xmana firstx",
-     "tip": "Dig to X lands (X ≤ player count), battlefield tapped"
     },
     {
      "n": "Elementalist's Palette",
@@ -801,8 +860,7 @@
      "n": "Ouroboroid snowball",
      "name": null,
      "tags": "scale payload",
-     "tip": "Every combat the whole team grows by Ouroboroid's power. With Doubling Season it doubles",
-     "new": true
+     "tip": "Every combat the whole team grows by Ouroboroid's power. With Doubling Season it doubles"
     },
     {
      "n": "Biomass Mutation",
@@ -820,164 +878,120 @@
      "n": "Walking Ballista ping-out",
      "name": null,
      "tags": "payload scale",
-     "tip": "Big X Ballista with Doubling Season: counters become direct damage to finish players",
+     "tip": "Big X Ballista with Doubling Season: counters become direct damage to finish players"
+    },
+    {
+     "n": "Mossborn Hydra land drops",
+     "name": null,
+     "tags": "payload scale",
+     "tip": "Doubles on every land drop; with Doubling Season or Branching Evolution out each drop triples it. Trample gets it through",
      "new": true
     }
    ]
   }
  ],
  "pulled": {
-  "title": "Pulled in v3",
-  "desc": "Cut in the first upgrade sweep",
+  "title": "Pulled in the 2026-11-15 review",
+  "desc": "Precon filler and four tapped lands out. The four spell replacements are owned (library b26/b19); the four lands are buys",
   "cards": [
    {
-    "n": "Yavimaya Bloomsage",
-    "name": "Yavimaya Bloomsage // Channel",
-    "mv": 3,
-    "tags": "scale xmana",
-    "tip": "Counter per end step; Channel side untaps lands for a big X turn"
-   },
-   {
-    "n": "Altered Ego",
-    "mv": "X+4",
-    "tags": "payload",
-    "tip": "Uncounterable clone with X bonus counters"
-   },
-   {
-    "n": "Deekah, Fractal Theorist",
-    "mv": 5,
-    "tags": "fractal",
-    "tip": "Magecraft: Fractal sized by each instant/sorcery's mana value; unblockable enabler"
-   },
-   {
-    "n": "Zimone, All-Questioning",
-    "mv": 3,
-    "tags": "fractal",
-    "tip": "Prime number of lands at end step → Primo token sized to land count"
-   },
-   {
-    "n": "Striding Shotcaller",
-    "name": "Striding Shotcaller // Run the Play",
-    "mv": 2,
-    "tags": "fractal scale",
-    "tip": "Combat damage preps it; Run the Play: X counters on each of up to X creatures"
-   },
-   {
-    "n": "Quandrix Apprentice",
-    "mv": 2,
-    "tags": "draw xmana",
-    "tip": "Magecraft: dig 3 for a land per instant/sorcery"
-   },
-   {
-    "n": "Nexus Mentality",
+    "n": "Forgotten Ancient",
     "mv": 4,
-    "tags": "draw scale",
-    "tip": "Move ALL counters between permanents, or cash them out as cards"
+    "tip": "→ replaced by Branching Evolution (2026-11-15 review)"
    },
    {
-    "n": "Entrancing Melody",
+    "n": "Perplexing Test",
+    "mv": 5,
+    "tip": "→ replaced by Inspiring Call (2026-11-15 review)"
+   },
+   {
+    "n": "Eureka Moment",
+    "mv": 4,
+    "tip": "→ replaced by Finale of Revelation (2026-11-15 review)"
+   },
+   {
+    "n": "Open the Way",
     "mv": "X+2",
-    "tags": "payload",
-    "tip": "Steal a creature with MV X — permanently"
+    "tip": "→ replaced by Mossborn Hydra (2026-11-15 review)"
    },
    {
-    "n": "Astral Cornucopia",
-    "mv": "XXX",
-    "tags": "xmana scale",
-    "tip": "Charge-counter rock — proliferate and Ozolith grow it"
+    "n": "Thornwood Falls",
+    "tip": "→ replaced by Breeding Pool (2026-11-15 review)"
    },
    {
-    "n": "Mana Bloom",
-    "mv": "X+1",
-    "tags": "xmana",
-    "tip": "X charges, one mana per turn, returns to hand when empty"
+    "n": "Thriving Grove",
+    "tip": "→ replaced by Flooded Grove (2026-11-15 review)"
    },
    {
-    "n": "Paradox Gardens",
-    "tip": "Late-game surveil sink"
+    "n": "Rain-Slicked Copse",
+    "tip": "→ replaced by Dreamroot Cascade (2026-11-15 review)"
    },
    {
-    "n": "Quandrix Campus"
-   },
-   {
-    "n": "Temple of the False God",
-    "tip": "Weakest land in the deck — first cut in an upgrade pass"
-   },
-   {
-    "n": "Rapid Hybridization",
-    "mv": 1,
-    "tip": "Replaced by Reality Shift (2026-11-11)."
-   },
-   {
-    "n": "Breeding Pool",
-    "mv": null,
-    "tip": "Replaced by Thornwood Falls (2026-11-11)."
-   },
-   {
-    "n": "Flooded Grove",
-    "mv": null,
-    "tip": "Replaced by Thriving Grove (2026-11-11)."
-   },
-   {
-    "n": "Nature's Lore",
-    "mv": 2,
-    "tip": "Replaced by Rampant Growth (2026-11-11)."
+    "n": "Temple of Mystery",
+    "tip": "→ replaced by Botanical Sanctum (2026-11-15 review)"
    }
   ]
  },
  "wishlist": [
   {
-   "n": "Cyclonic Rift",
-   "replaces": "Zimone's Hypothesis",
-   "why": "Your b19 copy went to Galadriel after the Gary box went missing",
-   "price": "$38.41",
-   "status": "want",
-   "name": "Cyclonic Rift"
-  },
-  {
    "n": "Mystic Remora",
    "name": "Mystic Remora",
-   "replaces": "Commander's Insight",
-   "why": "Cheap draw engine",
-   "price": "11.93"
+   "replaces": "Zimone, Quandrix Prodigy",
+   "why": "Cheap draw engine. Goes in over the precon 2-drop rather than Commander's Insight, because Insight is an X spell that feeds the engine. Alania's copy stays with Alania",
+   "price": "12.39",
+   "status": "want"
   },
   {
-   "n": "Rhystic Study (GC)",
-   "name": "Rhystic Study",
-   "replaces": "Commander's Insight",
-   "why": "Draw engine; would be the 3rd GC (still Bracket 3)",
-   "price": "67.49"
-  },
-  {
-   "n": "Rapid Hybridization",
-   "name": "Rapid Hybridization",
-   "replaces": "Reality Shift",
-   "why": "1-mana instant removal (your copy moved to Galadriel). Buy a second copy to restore",
-   "price": "1.09"
-  },
-  {
-   "n": "Breeding Pool",
-   "name": "Breeding Pool",
-   "replaces": "Thornwood Falls",
-   "why": "Untapped Forest-Island dual (your copy moved to Galadriel). Buy a second copy to restore",
-   "price": "5.25"
-  },
-  {
-   "n": "Flooded Grove",
-   "name": "Flooded Grove",
-   "replaces": "Thriving Grove",
-   "why": "Simic filter land (your copy moved to Galadriel). Buy a second copy to restore",
-   "price": "0.37"
+   "n": "Kalonian Hydra",
+   "name": "Kalonian Hydra",
+   "replaces": "The Goose Mother",
+   "why": "Doubles counters on every creature you control each attack. With Branching Evolution or Doubling Season, one swing ends the game (finite: once per attack)",
+   "price": "6.36",
+   "status": "want"
   },
   {
    "n": "Nature's Lore",
    "name": "Nature's Lore",
    "replaces": "Rampant Growth",
-   "why": "Untapped Forest-type fetch (your copy moved to Garfield). Buy a second copy to restore",
-   "price": "2.53"
+   "why": "Untapped Forest fetch that can grab Breeding Pool (your copy moved to Garfield). Buy a second copy to restore",
+   "price": "1.13",
+   "status": "want"
+  },
+  {
+   "n": "Condescend",
+   "name": "Condescend",
+   "replaces": "Decisive Denial",
+   "why": "X counterspell: triggers the whole cadence package, Owlin copies it, scry 2",
+   "price": "0.56",
+   "status": "want"
+  },
+  {
+   "n": "Cyclonic Rift (GC)",
+   "name": "Cyclonic Rift",
+   "replaces": "Zimone's Hypothesis",
+   "why": "The one-sided wipe the deck lost to Galadriel (both b19 copies are taken: Galadriel and Aloy). Game Changer #2, still Bracket 3",
+   "price": "38.41",
+   "status": "want"
+  },
+  {
+   "n": "Rhystic Study (GC)",
+   "name": "Rhystic Study",
+   "replaces": "Commander's Insight",
+   "why": "Draw engine. Review: not worth it now for a secondary deck; Mystic Remora covers most of the job",
+   "price": "68.30",
+   "status": "hold"
+  },
+  {
+   "n": "Rapid Hybridization",
+   "name": "Rapid Hybridization",
+   "replaces": "Reality Shift",
+   "why": "1-mana removal (your copy moved to Galadriel). Review: a sideways move, Reality Shift exiles and does the same job",
+   "price": "1.10",
+   "status": "hold"
   }
  ]
-}</script>
-<script src="../viewer.js?v=20261111"></script>
+}
+</script>
+<script src="../viewer.js?v=20261115"></script>
 </body>
 </html>

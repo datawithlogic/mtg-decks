@@ -4,15 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Narset Jeskai Waymaster — Deck Map</title>
-<link rel="stylesheet" href="../style.css?v=20261111">
+<link rel="stylesheet" href="../style.css?v=20261115">
 </head>
 <body>
-<script type="application/json" id="deck-data">
-{
+<script type="application/json" id="deck-data">{
  "name": "Narset, Jeskai Waymaster — Velocity Jeskai",
  "slug": "narset-jeskai-waymaster",
- "sub": "37 lands · avg MV ~3.0 · Bracket 3 (3 Game Changers: Smothering Tithe, Fierce Guardianship, Jeska's Will)",
- "revnote": "v2 + v3 accepted · 2026-11-10 — vs. the physical deck: v2 rebuilt the mana base (45 → 37 lands) and added 8 engine spells; v3 swaps evasion/filler for Sol Ring, Smothering Tithe, free counters, real removal and Jeska's Will, and rebalances basics to 7 Island / 3 Plains / 2 Mountain",
+ "sub": "37 lands · avg MV ~2.8 · Bracket 3 (3 Game Changers: Smothering Tithe, Fierce Guardianship, Jeska's Will)",
+ "revnote": "2026-11-15 post-con review: 6 swaps. Seize the Day → Guttersnipe, Rite of Replication → Talrand, Sky Summoner, Velomachus Lorehold → Consider, Expressive Iteration → Mystic Remora (buy), Temple of Epiphany → Frostboil Snarl, Temple of Enlightenment → Port Town. Guttersnipe is find-or-buy (library b25/b31). Still 3 Game Changers, Bracket 3.",
  "manaNote": "Blue is still the main color, but white and red now matter almost as much (Time Wipe wants WW, Manaform Hellkite and Crackle want RRR-ish). Get all three colors by turn 3 so Narset comes down on curve — any dual beats a basic, and fetch the Triome when you can.",
  "hint": "Narset's deal: cast spells all turn, then at your end step pitch whatever's left and draw a card per spell you cast. Leftover cards aren't waste — the graveyard half of this deck picks them back up.",
  "gameplan": {
@@ -20,7 +19,7 @@
   "mull": "2+ lands and 2+ one-mana cantrips (Sol Ring counts as a land). Raw card power doesn't matter — Narset re-draws you every turn; velocity is the only keep criterion.",
   "early": "Rocks and cantrips, Narset on 3, start wheeling immediately. Smothering Tithe early pays you all game.",
   "mid": "Deploy ONE token payoff, then chain spells the same turn. Second-spell triggers (Shiko, Aligned Heart) fire on opponents' turns too — hold instants. With Narset on the battlefield, Fierce Guardianship is free and Jeska's Will gets both modes.",
-  "win": "Monk army (Boros Charm protects the swing) · Explosion or Crackle with Power to the face · a Lier turn that replays the whole graveyard.",
+  "win": "Monk army (Boros Charm protects the swing) · Guttersnipe burn (2 to each opponent per instant/sorcery) · Explosion or Crackle with Power to the face · a Lier turn that replays the whole graveyard.",
   "fear": "Token wipes reset your clock — hold Boros Charm or a counter when you're ahead. Don't pitch flashback fodder you can't reach until Lier is actually in play, and watch your library: Narset draws a lot."
  },
  "clusters": [
@@ -28,7 +27,7 @@
    "k": "wheel",
    "label": "End-step refuel",
    "blurb": "cast cheap, dump the rest, draw to match your tempo",
-   "how": "Narset's end-step trigger converts spell COUNT into a fresh hand: three cantrips = pitch and draw 3+. Discarding isn't a cost in this deck — Lier, Will of the Jeskai, and harmonize cards treat your graveyard as hand #2. Faithless Looting and Frantic Search feed the same engine mid-turn; Jeska's Will and Expressive Iteration exile cards you can cast this turn, and every one you cast adds to Narset's count. Archmage Emeritus draws on every instant/sorcery cast or copy.",
+   "how": "Narset's end-step trigger converts spell COUNT into a fresh hand: three cantrips = pitch and draw 3+. Discarding isn't a cost in this deck — Lier, Will of the Jeskai, and harmonize cards treat your graveyard as hand #2. Faithless Looting and Frantic Search feed the same engine mid-turn; Jeska's Will exiles cards you can cast this turn, and every one you cast adds to Narset's count. Mystic Remora draws off opponents' noncreature spells in the early turns. Archmage Emeritus draws on every instant/sorcery cast or copy.",
    "ex": "Turn 5: Preordain, Brainstorm, Path (3 spells) → end step, pitch 2 dead cards, draw 3. Every turn plays like this — the deck never runs dry.",
    "why": "Velocity decks measure spells per turn, not cards in hand. Cheap spells ARE the engine; expensive ones have to justify slowing it."
   },
@@ -44,15 +43,15 @@
    "k": "copy",
    "label": "Copy artillery",
    "blurb": "every good spell counts twice",
-   "how": "Flamehold Grappler copies your next spell; Rite of Replication (kicked = 5 copies); Expansion copies any cheap spell — even an opponent's; Narset's Reversal bounce-copies. Copies aren't cast (no Narset count), but magecraft cards — Storm-Kiln Artist, Archmage Emeritus — trigger on copies too.",
-   "ex": "Kicked Rite of Replication on Manaform Hellkite: five 4/4 dragon factories. Or copy an opponent's Explosion with Expansion, aimed back at them.",
+   "how": "Flamehold Grappler copies your next spell; Expansion copies any cheap spell — even an opponent's. Copies aren't cast (no Narset count), but magecraft cards — Storm-Kiln Artist, Archmage Emeritus — trigger on copies too.",
+   "ex": "Flamehold Grappler enters, then Crackle with Power at X=2: the copy keeps X, so that's 10 + 10 to one face for one card. Or copy an opponent's Explosion with Expansion, aimed back at them.",
    "why": "Copy effects scale with the best spell at the table, not just in your deck — flexibility is the payoff."
   },
   {
    "k": "tokens",
    "label": "Prowess army",
    "blurb": "spells become bodies, bodies become clocks",
-   "how": "Monastery Mentor mints a prowess Monk per noncreature spell; Aligned Heart mints them in batches; Elsha converts combat damage into MORE monks; Manaform Hellkite makes X/X hasty dragons sized by mana spent. Veyran doubles the instant/sorcery-cast triggers.",
+   "how": "Monastery Mentor mints a prowess Monk per noncreature spell; Aligned Heart mints them in batches; Elsha converts combat damage into MORE monks; Manaform Hellkite makes X/X hasty dragons sized by mana spent; Talrand makes a 2/2 flying Drake per instant/sorcery. Veyran doubles the instant/sorcery-cast triggers.",
    "ex": "Mentor + 4 spells in a turn = 4 Monks, each pumped by every subsequent spell. Two turns of that is a lethal board from nowhere.",
    "why": "Token-prowess is how spellslinger decks win WITHOUT a combo: the fair plan, and it comes free with spells you'd cast anyway."
   },
@@ -60,7 +59,7 @@
    "k": "gy",
    "label": "Graveyard second life",
    "blurb": "everything Narset pitches comes back",
-   "how": "Lier gives EVERY instant/sorcery in your graveyard flashback (and makes spells uncounterable). Diviner of Mist self-mills and free-casts ≤4MV from the yard on attack; Velomachus does it bigger; Will of the Jeskai mode 2 is a one-turn mass flashback; Winternight Stories harmonizes back.",
+   "how": "Lier gives EVERY instant/sorcery in your graveyard flashback (and makes spells uncounterable). Diviner of Mist self-mills and free-casts ≤4MV from the yard on attack; Will of the Jeskai mode 2 is a one-turn mass flashback; Winternight Stories harmonizes back.",
    "ex": "Narset pitched Time Wipe two turns ago. Lier lands: flashback Time Wipe, then flashback Ponder, then… your graveyard is a toolbox now.",
    "why": "Discard synergies convert a commander's 'cost' into selection — the deck chooses WHERE each card is useful from, hand or yard."
   },
@@ -76,8 +75,8 @@
    "k": "connect",
    "label": "Closing the game",
    "blurb": "turn the board and the burn into a kill",
-   "how": "Seize the Day untaps the team for a second combat — doubled Monk damage and doubled Elsha triggers. Boros Charm gives the team indestructible (or one creature double strike) for the alpha swing. Crackle with Power and Explosion are the reach when the board stalls: X damage straight to a player.",
-   "ex": "Elsha connects for 4 → 4 more Monks → Seize the Day → attack again with a bigger board. Opponent at 15 with blockers up? Crackle with Power at X=3 deals 15 to one face (5× X) and finishes it.",
+   "how": "Guttersnipe deals 2 damage to each opponent for every instant or sorcery you cast (4 with Veyran), a burn clock that ignores blockers. Boros Charm gives the team indestructible (or one creature double strike) for the alpha swing. Crackle with Power and Explosion are the reach when the board stalls: X damage straight to a player.",
+   "ex": "Guttersnipe out: Ponder, Brainstorm, Path, Consider = 8 damage to every opponent, and Narset still refills at end step. Opponent at 15 with blockers up? Crackle with Power at X=3 deals 15 to one face (5× X) and finishes it.",
    "why": "Token decks need one way to cash the board in and one way to win when the board can't attack — carry both."
   }
  ],
@@ -139,7 +138,6 @@
    },
    {
     "n": "Furycalm Snarl",
-    "new": true,
     "tip": "Untapped if you reveal a Mountain or Plains"
    },
    {
@@ -152,10 +150,14 @@
     "n": "Sulfur Falls"
    },
    {
-    "n": "Temple of Enlightenment"
+    "n": "Frostboil Snarl",
+    "new": true,
+    "tip": "Untapped U/R if you reveal an Island or Mountain card. Replaces a tapped Temple"
    },
    {
-    "n": "Temple of Epiphany"
+    "n": "Port Town",
+    "new": true,
+    "tip": "Untapped W/U if you reveal a Plains or Island card. Replaces a tapped Temple"
    },
    {
     "n": "Temple of Triumph"
@@ -169,95 +171,11 @@
    },
    {
     "n": "Plains",
-    "new": true,
     "count": 3
    },
    {
     "n": "Mountain",
-    "new": true,
     "count": 2
-   }
-  ]
- },
- "pulled": {
-  "title": "Pulled vs. the physical deck",
-  "desc": "v2 mana rebuild (45 → 37 lands) + v3 swaps",
-  "cards": [
-   {
-    "n": "Island",
-    "count": 11,
-    "tip": "18 → 7: v2 cut 8 placeholder basics, v3 shifted 3 to Plains/Mountain"
-   },
-   {
-    "n": "Irrigated Farmland",
-    "tip": "Tapped, and the cycling never matters here"
-   },
-   {
-    "n": "Adarkar Wastes",
-    "tip": "Weakest painland for this pip spread"
-   },
-   {
-    "n": "Mystic Speculation",
-    "mv": 1,
-    "tags": "wheel",
-    "tip": "Buyback cantrip — slow; Sol Ring is better in the slot"
-   },
-   {
-    "n": "Stillness in Motion",
-    "mv": 2,
-    "tags": "gy",
-    "tip": "Self-mill risks decking next to Narset's draws"
-   },
-   {
-    "n": "Aqueous Form",
-    "mv": 1,
-    "tags": "connect",
-    "tip": "Voltron filler — evasion isn't the plan"
-   },
-   {
-    "n": "Distortion Strike",
-    "mv": 1,
-    "tags": "connect",
-    "tip": "Evasion filler"
-   },
-   {
-    "n": "Slip Through Space",
-    "mv": 1,
-    "tags": "connect",
-    "tip": "Evasion filler"
-   },
-   {
-    "n": "New Way Forward",
-    "mv": 5,
-    "tags": "answers",
-    "tip": "Swingy but narrow — Chaos Warp answers anything"
-   },
-   {
-    "n": "Transforming Flourish",
-    "mv": 3,
-    "tags": "copy answers",
-    "tip": "Generous Gift is cleaner catch-all removal"
-   },
-   {
-    "n": "Sage of the Skies",
-    "mv": 3,
-    "tags": "flurry tokens",
-    "tip": "Archmage Emeritus draws more"
-   },
-   {
-    "n": "United Battlefront",
-    "mv": 4,
-    "tags": "answers",
-    "tip": "Slow dig; Expressive Iteration is cheaper velocity"
-   },
-   {
-    "n": "Skycloud Expanse",
-    "tip": "Pain-free but filter-only — Furycalm Snarl is a real dual"
-   },
-   {
-    "n": "Jeskai Revelation",
-    "mv": 7,
-    "tip": "7-mana instant; too slow for a velocity deck. Replaced by Borne Upon a Wind (2026-11-10)."
    }
   ]
  },
@@ -292,6 +210,30 @@
      "tip": "Targeted spells draw that many cards — every Path/Swords cantrips"
     },
     {
+     "n": "Mystic Remora",
+     "mv": 1,
+     "tags": "wheel",
+     "tip": "1-mana enchantment: whenever an opponent casts a noncreature spell, you draw unless they pay {4}. Cumulative upkeep {1}, so it costs more every turn: a cheap early engine you let go after a few turns",
+     "guide": [
+      {
+       "when": "Opening hand",
+       "get": null,
+       "why": "Cast it turn 1 or 2. Opponents' early rocks, removal and draw spells each draw you a card unless they pay 4, which they can't afford yet"
+      },
+      {
+       "when": "Your upkeep",
+       "get": null,
+       "why": "Pay {1}, then {2}, then {3}. Stop paying when the upkeep would cost you Narset on curve or a turn of cantrips. Two or three turns of draws is the normal haul"
+      },
+      {
+       "when": "Drawn late",
+       "get": null,
+       "why": "Weak as a late topdeck. Cast it anyway if you need one more spell for Narset's end-step count, or let Narset pitch it"
+      }
+     ],
+     "new": true
+    },
+    {
      "n": "Sensei's Divining Top",
      "mv": 1,
      "tags": "wheel",
@@ -300,14 +242,12 @@
     {
      "n": "Jeskai Ascendancy",
      "mv": 3,
-     "new": true,
      "tags": "wheel tokens",
      "tip": "Every noncreature cast: loot + untap team + pump — the deck's missing engine"
     },
     {
      "n": "Archmage Emeritus",
      "mv": 4,
-     "new": true,
      "tags": "wheel copy",
      "tip": "Draws a card on every instant/sorcery you cast OR copy"
     }
@@ -342,29 +282,6 @@
      "tip": "Draws off opponents' second spells and swarm attacks"
     },
     {
-     "n": "Rite of Replication",
-     "mv": 4,
-     "tags": "copy",
-     "tip": "Kicked: 5 copies of the best creature in play",
-     "guide": [
-      {
-       "when": "Kicked (9 mana)",
-       "get": "Manaform Hellkite",
-       "why": "Five dragon factories — or five Monastery Mentors"
-      },
-      {
-       "when": "Unkicked",
-       "get": "Monastery Mentor",
-       "why": "A second token engine"
-      },
-      {
-       "when": "Opponent's bomb",
-       "get": null,
-       "why": "You can copy THEIR best creature too"
-      }
-     ]
-    },
-    {
      "n": "Expansion // Explosion",
      "mv": 2,
      "tags": "copy",
@@ -387,12 +304,6 @@
        "why": "Explosion: X to a player's face and you draw X"
       }
      ]
-    },
-    {
-     "n": "Narset's Reversal",
-     "mv": 2,
-     "tags": "copy answers",
-     "tip": "Bounce-counter or duplicate your own bomb"
     }
    ]
   },
@@ -419,6 +330,13 @@
      "tip": "X/X hasty dragon per noncreature spell, sized by mana spent"
     },
     {
+     "n": "Talrand, Sky Summoner",
+     "mv": 4,
+     "tags": "tokens",
+     "tip": "A 2/2 flying Drake for every instant or sorcery you cast (two with Veyran). Flying bodies get past ground blockers that stop the Monks",
+     "new": true
+    },
+    {
      "n": "Storm-Kiln Artist",
      "mv": 4,
      "tags": "tokens copy",
@@ -427,28 +345,24 @@
     {
      "n": "Young Pyromancer",
      "mv": 2,
-     "new": true,
      "tags": "tokens",
      "tip": "1/1 per instant/sorcery — Mentor's cheaper cousin"
     },
     {
      "n": "Third Path Iconoclast",
      "mv": 2,
-     "new": true,
      "tags": "tokens",
      "tip": "Same, but counts ALL noncreature spells"
     },
     {
      "n": "Saheeli, Sublime Artificer",
      "mv": 3,
-     "new": true,
      "tags": "tokens",
      "tip": "Servo per noncreature cast on a hard-to-kill permanent type"
     },
     {
      "n": "Shark Typhoon",
      "mv": 6,
-     "new": true,
      "tags": "tokens answers",
      "tip": "Cycle for an X-shark at instant speed, or the enchantment takes over a game"
     }
@@ -479,6 +393,13 @@
      "tags": "wheel"
     },
     {
+     "n": "Consider",
+     "mv": 1,
+     "tags": "wheel gy",
+     "tip": "1-mana instant: surveil 1, then draw. Another cheap spell for Narset's count, and the surveil can bin a flashback target for Lier",
+     "new": true
+    },
+    {
      "n": "Faithless Looting",
      "mv": 1,
      "tags": "wheel gy",
@@ -497,28 +418,8 @@
      "tip": "Draw 3; harmonize it back from the yard later"
     },
     {
-     "n": "Expressive Iteration",
-     "mv": 2,
-     "new": true,
-     "tags": "wheel",
-     "tip": "Look at 3: one to hand, one you can play this turn — two spells for one",
-     "guide": [
-      {
-       "when": "Exile pile",
-       "get": null,
-       "why": "Exile the card you can cast RIGHT NOW (or a land if you haven't played one) — it's gone at end of turn"
-      },
-      {
-       "when": "Hand pile",
-       "get": null,
-       "why": "Keep the card you want next turn or an instant to hold up — Narset pitches the rest anyway"
-      }
-     ]
-    },
-    {
      "n": "Jeska's Will",
      "mv": 3,
-     "new": true,
      "tags": "wheel",
      "tip": "Burst ramp + impulse draw; both modes while Narset is on the battlefield",
      "guide": [
@@ -573,12 +474,6 @@
      "tip": "Attack: mill 4, free-cast a ≤4MV spell from the yard"
     },
     {
-     "n": "Velomachus Lorehold",
-     "mv": 7,
-     "tags": "gy",
-     "tip": "Attack: free-cast from the top 7 — hits Time Wipe, Revelation"
-    },
-    {
      "n": "Will of the Jeskai",
      "mv": 4,
      "tags": "gy wheel",
@@ -615,28 +510,24 @@
     {
      "n": "Fierce Guardianship",
      "mv": 3,
-     "new": true,
      "tags": "answers",
      "tip": "FREE counter for any noncreature spell while Narset is on the battlefield"
     },
     {
      "n": "Arcane Denial",
      "mv": 2,
-     "new": true,
      "tags": "answers",
      "tip": "2-mana hard counter; you draw one, they may draw two"
     },
     {
      "n": "Dovin's Veto",
      "mv": 2,
-     "new": true,
      "tags": "answers",
      "tip": "Can't-be-countered Negate — protects the big turn"
     },
     {
      "n": "Boros Charm",
      "mv": 2,
-     "new": true,
      "tags": "answers",
      "tip": "Indestructible team vs. wipes — token-army insurance (or 4 to the face)",
      "guide": [
@@ -718,13 +609,11 @@
      "n": "Borne Upon a Wind",
      "mv": 2,
      "tags": "answers tokens",
-     "tip": "2-mana cantrip: your spells get flash this turn. Counts as a spell for Narset's end-step draw.",
-     "new": true
+     "tip": "2-mana cantrip: your spells get flash this turn. Counts as a spell for Narset's end-step draw."
     },
     {
      "n": "Generous Gift",
      "mv": 3,
-     "new": true,
      "tags": "answers",
      "tip": "Instant: destroy ANY permanent; they get a 3/3 Elephant",
      "guide": [
@@ -753,7 +642,6 @@
     {
      "n": "Chaos Warp",
      "mv": 3,
-     "new": true,
      "tags": "answers",
      "tip": "Instant: shuffle away ANY permanent, even indestructible ones",
      "guide": [
@@ -773,25 +661,49 @@
        "why": "They reveal a top card and may get a free permanent — weaker vs. permanent-heavy decks; prefer Generous Gift when destroy works"
       }
      ]
+    },
+    {
+     "n": "Archmage's Charm",
+     "mv": 3,
+     "tags": "answers",
+     "new": true,
+     "tip": "UUU instant: counter a spell, draw two, or steal a 1-mana-value permanent. Hold it up; draw two at end of turn if nothing needs countering.",
+     "guide": [
+      {
+       "when": "Opponent casts a game-winning spell",
+       "get": null,
+       "why": "Counter mode."
+      },
+      {
+       "when": "Nothing to counter by their end step",
+       "get": null,
+       "why": "Draw two: it's never dead."
+      },
+      {
+       "when": "They have a Sol Ring, signet or 1-drop engine",
+       "get": null,
+       "why": "Steal mode: gain control of a permanent with mana value 1."
+      }
+     ]
     }
    ]
   },
   {
-   "title": "Closers & mobility",
-   "desc": "Cashing the board in",
+   "title": "Closers",
+   "desc": "Turning spells and the board into damage",
    "cards": [
-    {
-     "n": "Seize the Day",
-     "mv": 4,
-     "tags": "connect",
-     "tip": "Extra combat: doubled Monk damage, doubled Elsha triggers"
-    },
     {
      "n": "Crackle with Power",
      "mv": "X+2",
-     "new": true,
      "tags": "connect",
      "tip": "The clean closer: deals 5× X — X=3 is 15 to the face, and it hits up to X targets"
+    },
+    {
+     "n": "Guttersnipe",
+     "mv": 3,
+     "tags": "connect",
+     "tip": "2 damage to EACH opponent whenever you cast an instant or sorcery (4 with Veyran). A 4-spell turn deals 8 to every opponent with no combat. Copies don't trigger it, only casts",
+     "new": true
     }
    ]
   },
@@ -802,13 +714,11 @@
     {
      "n": "Sol Ring",
      "mv": 1,
-     "new": true,
      "tip": "Best turn-1 play in the deck — Narset on turn 2"
     },
     {
      "n": "Smothering Tithe",
      "mv": 4,
-     "new": true,
      "tip": "Treasure whenever an opponent draws and won't pay 2 — funds your big turns"
     },
     {
@@ -852,22 +762,78 @@
  ],
  "wishlist": [
   {
-   "n": "Mystic Remora",
-   "name": "Mystic Remora",
-   "replaces": "Expressive Iteration",
-   "why": "Cheap draw engine for a spell-dense deck",
-   "price": "11.93"
+   "n": "Stormcatch Mentor",
+   "name": "Stormcatch Mentor",
+   "replaces": "Flamehold Grappler",
+   "why": "2 mana, haste and prowess, and your instants and sorceries cost {1} less, so Narset counts more spells per turn",
+   "price": "0.34",
+   "status": "want"
+  },
+  {
+   "n": "Ledger Shredder",
+   "name": "Ledger Shredder",
+   "replaces": "Saheeli, Sublime Artificer",
+   "why": "Connives on ANY player's second spell each turn, so it shares the flurry axis with Shiko and Aligned Heart; loots and grows where Saheeli only makes 1/1 Servos",
+   "price": "8.63",
+   "status": "want"
+  },
+  {
+   "n": "Inspiring Vantage",
+   "name": "Inspiring Vantage",
+   "replaces": "Temple of Triumph",
+   "why": "Untapped R/W in the early turns; removes the last tapped Temple",
+   "price": "2.43",
+   "status": "want"
   },
   {
    "n": "Rhystic Study (GC)",
    "name": "Rhystic Study",
    "replaces": "a 3-mana draw spell",
-   "why": "Premier draw engine; GC #4 would make the deck Bracket 4",
-   "price": "67.49"
+   "why": "Premier draw engine, but Game Changer #4 would push the deck to Bracket 4; kept at Bracket 3",
+   "price": "68.30",
+   "status": "on hold (Bracket 3)"
   }
- ]
-}
-</script>
-<script src="../viewer.js?v=20261111"></script>
+ ],
+ "pulled": {
+  "title": "Pulled in the 2026-11-15 review",
+  "desc": "Combat and top-end cards out, spell-cast payoffs and untapped lands in",
+  "cards": [
+   {
+    "n": "Rite of Replication",
+    "mv": 4,
+    "tip": "→ replaced by Talrand, Sky Summoner (2026-11-15 review)"
+   },
+   {
+    "n": "Expressive Iteration",
+    "mv": 2,
+    "tip": "→ replaced by Mystic Remora (2026-11-15 review)"
+   },
+   {
+    "n": "Velomachus Lorehold",
+    "mv": 7,
+    "tip": "→ replaced by Consider (2026-11-15 review)"
+   },
+   {
+    "n": "Seize the Day",
+    "mv": 4,
+    "tip": "→ replaced by Guttersnipe (2026-11-15 review)"
+   },
+   {
+    "n": "Temple of Enlightenment",
+    "tip": "→ replaced by Port Town (2026-11-15 review)"
+   },
+   {
+    "n": "Temple of Epiphany",
+    "tip": "→ replaced by Frostboil Snarl (2026-11-15 review)"
+   },
+   {
+    "n": "Narset's Reversal",
+    "mv": 2,
+    "tip": "→ replaced by Archmage's Charm (2026-11-15: infinite with Expansion // Explosion; no-infinite rule)"
+   }
+  ]
+ }
+}</script>
+<script src="../viewer.js?v=20261115"></script>
 </body>
 </html>
