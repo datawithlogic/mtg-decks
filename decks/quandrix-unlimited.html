@@ -4,15 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quandrix Unlimited — Deck Map</title>
-<link rel="stylesheet" href="../style.css?v=20261115b">
+<link rel="stylesheet" href="../style.css?v=20261125a">
 </head>
 <body>
-<script type="application/json" id="deck-data">
-{
+<script type="application/json" id="deck-data">{
  "name": "Quandrix Unlimited — X Marks the Math",
  "slug": "quandrix-unlimited",
  "sub": "37 lands · Secrets of Strixhaven precon, upgraded (v3 + 2026-11-15 review) · Bracket 3 (1 Game Changer)",
- "revnote": "2026-11-15 post-con review: 8 swaps. Forgotten Ancient → Branching Evolution, Perplexing Test → Inspiring Call, Eureka Moment → Finale of Revelation, Open the Way → Mossborn Hydra (all owned), and four tapped lands → Breeding Pool, Flooded Grove, Dreamroot Cascade, Botanical Sanctum (buys). Still 1 Game Changer, Bracket 3, no infinite combos.",
+ "revnote": "2026-11-15 post-con review: 8 swaps. Forgotten Ancient → Branching Evolution, Perplexing Test → Inspiring Call, Eureka Moment → Finale of Revelation, Open the Way → Mossborn Hydra (all owned), and four tapped lands → Breeding Pool, Flooded Grove, Dreamroot Cascade, Botanical Sanctum (buys). Still 1 Game Changer, Bracket 3, no infinite combos. 2026-11-25 stretch swaps: Zimone's Hypothesis → Cyclonic Rift. 2026-11-25 stretch swaps: Zimone, Quandrix Prodigy → Mystic Remora, The Goose Mother → Kalonian Hydra, Rampant Growth → Nature's Lore, Decisive Denial → Condescend.",
  "hint": "Zimone discounts your FIRST X spell each turn by {1} per counter on her, then grows +2 for casting it. Every counter multiplier compounds the discount; Doubling Season doubles the lot. The deck is one big feedback loop.",
  "manaNote": "Demand is close to even between green and blue, green slightly ahead, but most costs are X, so total lands matter more than color: play every land you draw and grab green first (the ramp spells cost G). Play Botanical Sanctum in your first three land drops and save Dreamroot Cascade for drop three or later so both enter untapped; Flooded Grove makes Lifeblood Hydra's GGG or Commander's Insight's UUU. Once the board is worth protecting, keep {U}{U} open for Counterspell.",
  "gameplan": {
@@ -411,10 +410,11 @@
      "tip": "Cast trigger (uncounterable value): half X cards + half X life"
     },
     {
-     "n": "The Goose Mother",
-     "mv": "X+2",
-     "tags": "payload draw",
-     "tip": "Half X Food on ETB; sac Food on attack to draw"
+     "n": "Kalonian Hydra",
+     "tip": "Doubles counters on every creature you control each attack. With Branching Evolution or Doubling Season, one swing ends the game (finite: once per attack)",
+     "new": true,
+     "mv": 5,
+     "tags": "payload draw"
     },
     {
      "n": "Goldvein Hydra",
@@ -549,10 +549,11 @@
      "new": true
     },
     {
-     "n": "Zimone, Quandrix Prodigy",
-     "mv": 2,
-     "tags": "draw xmana",
-     "tip": "Tap: extra land drop; late: draw 2 at 8+ lands"
+     "n": "Mystic Remora",
+     "tip": "Cheap draw engine. Goes in over the precon 2-drop rather than Commander's Insight, because Insight is an X spell that feeds the engine. Alania's copy stays with Alania",
+     "new": true,
+     "mv": 1,
+     "tags": "draw xmana"
     }
    ]
   },
@@ -660,22 +661,11 @@
      ]
     },
     {
-     "n": "Decisive Denial",
-     "mv": 2,
-     "tags": "protect",
-     "tip": "Fight, OR counter a noncreature spell unless they pay {3}",
-     "guide": [
-      {
-       "when": "Opponent casts a wipe or removal",
-       "get": null,
-       "why": "Counter mode: noncreature spell, unless they pay {3}. Best when they've tapped out"
-      },
-      {
-       "when": "Their creature is the problem",
-       "get": null,
-       "why": "Fight mode: your biggest counter-laden creature fights theirs"
-      }
-     ]
+     "n": "Condescend",
+     "tip": "X counterspell: triggers the whole cadence package, Owlin copies it, scry 2",
+     "new": true,
+     "mv": 1,
+     "tags": "protect"
     },
     {
      "n": "Silkguard",
@@ -731,10 +721,11 @@
      ]
     },
     {
-     "n": "Zimone's Hypothesis",
-     "mv": 5,
-     "tags": "protect",
-     "tip": "Optionally add a +1/+1 counter to make your key creature's power odd or even, then bounce every creature with the other parity. One-sided board reset if you set it up."
+     "n": "Cyclonic Rift",
+     "tip": "The one-sided wipe the deck lost to Galadriel (both b19 copies are taken: Galadriel and Aloy). Game Changer #2, still Bracket 3",
+     "new": true,
+     "mv": 2,
+     "tags": "protect"
     },
     {
      "n": "Heroic Intervention",
@@ -765,9 +756,10 @@
      "tags": "xmana"
     },
     {
-     "n": "Rampant Growth",
+     "n": "Nature's Lore",
+     "tip": "Untapped Forest fetch that can grab Breeding Pool (your copy moved to Garfield). Buy a second copy to restore",
+     "new": true,
      "mv": 2,
-     "tip": "2-mana ramp: a basic onto the battlefield tapped.",
      "tags": "xmana"
     },
     {
@@ -929,50 +921,40 @@
    {
     "n": "Temple of Mystery",
     "tip": "→ replaced by Botanical Sanctum (2026-11-15 review)"
+   },
+   {
+    "n": "Zimone's Hypothesis",
+    "mv": 5,
+    "tags": "protect",
+    "tip": "Optionally add a +1/+1 counter to make your key creature's power odd or even, then bounce every creature with the other parity. One-sided board reset if you set it up."
+   },
+   {
+    "n": "Zimone, Quandrix Prodigy",
+    "mv": 2,
+    "tags": "draw xmana",
+    "tip": "Tap: extra land drop; late: draw 2 at 8+ lands"
+   },
+   {
+    "n": "The Goose Mother",
+    "mv": "X+2",
+    "tags": "payload draw",
+    "tip": "Half X Food on ETB; sac Food on attack to draw"
+   },
+   {
+    "n": "Rampant Growth",
+    "mv": 2,
+    "tip": "2-mana ramp: a basic onto the battlefield tapped.",
+    "tags": "xmana"
+   },
+   {
+    "n": "Decisive Denial",
+    "mv": 2,
+    "tags": "protect",
+    "tip": "Fight, OR counter a noncreature spell unless they pay {3}"
    }
   ]
  },
  "wishlist": [
-  {
-   "n": "Mystic Remora",
-   "name": "Mystic Remora",
-   "replaces": "Zimone, Quandrix Prodigy",
-   "why": "Cheap draw engine. Goes in over the precon 2-drop rather than Commander's Insight, because Insight is an X spell that feeds the engine. Alania's copy stays with Alania",
-   "price": "12.39",
-   "status": "want"
-  },
-  {
-   "n": "Kalonian Hydra",
-   "name": "Kalonian Hydra",
-   "replaces": "The Goose Mother",
-   "why": "Doubles counters on every creature you control each attack. With Branching Evolution or Doubling Season, one swing ends the game (finite: once per attack)",
-   "price": "6.36",
-   "status": "want"
-  },
-  {
-   "n": "Nature's Lore",
-   "name": "Nature's Lore",
-   "replaces": "Rampant Growth",
-   "why": "Untapped Forest fetch that can grab Breeding Pool (your copy moved to Garfield). Buy a second copy to restore",
-   "price": "1.13",
-   "status": "want"
-  },
-  {
-   "n": "Condescend",
-   "name": "Condescend",
-   "replaces": "Decisive Denial",
-   "why": "X counterspell: triggers the whole cadence package, Owlin copies it, scry 2",
-   "price": "0.56",
-   "status": "want"
-  },
-  {
-   "n": "Cyclonic Rift (GC)",
-   "name": "Cyclonic Rift",
-   "replaces": "Zimone's Hypothesis",
-   "why": "The one-sided wipe the deck lost to Galadriel (both b19 copies are taken: Galadriel and Aloy). Game Changer #2, still Bracket 3",
-   "price": "38.41",
-   "status": "want"
-  },
   {
    "n": "Rhystic Study (GC)",
    "name": "Rhystic Study",
@@ -990,8 +972,7 @@
    "status": "hold"
   }
  ]
-}
-</script>
-<script src="../viewer.js?v=20261115b"></script>
+}</script>
+<script src="../viewer.js?v=20261125a"></script>
 </body>
 </html>

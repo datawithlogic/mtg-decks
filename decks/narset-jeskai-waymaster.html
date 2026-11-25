@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Narset Jeskai Waymaster — Deck Map</title>
-<link rel="stylesheet" href="../style.css?v=20261115b">
+<link rel="stylesheet" href="../style.css?v=20261125a">
 </head>
 <body>
 <script type="application/json" id="deck-data">{
  "name": "Narset, Jeskai Waymaster — Velocity Jeskai",
  "slug": "narset-jeskai-waymaster",
  "sub": "37 lands · avg MV ~2.8 · Bracket 3 (3 Game Changers: Smothering Tithe, Fierce Guardianship, Jeska's Will)",
- "revnote": "2026-11-15 post-con review: 6 swaps. Seize the Day → Guttersnipe, Rite of Replication → Talrand, Sky Summoner, Velomachus Lorehold → Consider, Expressive Iteration → Mystic Remora (buy), Temple of Epiphany → Frostboil Snarl, Temple of Enlightenment → Port Town. Guttersnipe is find-or-buy (library b25/b31). Still 3 Game Changers, Bracket 3.",
+ "revnote": "2026-11-15 post-con review: 6 swaps. Seize the Day → Guttersnipe, Rite of Replication → Talrand, Sky Summoner, Velomachus Lorehold → Consider, Expressive Iteration → Mystic Remora (buy), Temple of Epiphany → Frostboil Snarl, Temple of Enlightenment → Port Town. Guttersnipe is find-or-buy (library b25/b31). Still 3 Game Changers, Bracket 3. 2026-11-25 stretch swaps: Flamehold Grappler → Stormcatch Mentor, Saheeli, Sublime Artificer → Ledger Shredder, Temple of Triumph → Inspiring Vantage.",
  "manaNote": "Blue is still the main color, but white and red now matter almost as much (Time Wipe wants WW, Manaform Hellkite and Crackle want RRR-ish). Get all three colors by turn 3 so Narset comes down on curve — any dual beats a basic, and fetch the Triome when you can.",
  "hint": "Narset's deal: cast spells all turn, then at your end step pitch whatever's left and draw a card per spell you cast. Leftover cards aren't waste — the graveyard half of this deck picks them back up.",
  "gameplan": {
@@ -160,7 +160,9 @@
     "tip": "Untapped W/U if you reveal a Plains or Island card. Replaces a tapped Temple"
    },
    {
-    "n": "Temple of Triumph"
+    "n": "Inspiring Vantage",
+    "tip": "Untapped R/W in the early turns; removes the last tapped Temple",
+    "new": true
    },
    {
     "n": "Training Center"
@@ -264,10 +266,11 @@
      "tip": "Flurry: your second spell each turn gets copied (or draw a card)"
     },
     {
-     "n": "Flamehold Grappler",
-     "mv": 3,
-     "tags": "copy",
-     "tip": "ETB: your next spell this turn is copied"
+     "n": "Stormcatch Mentor",
+     "tip": "2 mana, haste and prowess, and your instants and sorceries cost {1} less, so Narset counts more spells per turn. The library b10 copy is in Alania",
+     "new": true,
+     "mv": 2,
+     "tags": "copy"
     },
     {
      "n": "Aligned Heart",
@@ -355,10 +358,11 @@
      "tip": "Same, but counts ALL noncreature spells"
     },
     {
-     "n": "Saheeli, Sublime Artificer",
-     "mv": 3,
-     "tags": "tokens",
-     "tip": "Servo per noncreature cast on a hard-to-kill permanent type"
+     "n": "Ledger Shredder",
+     "tip": "Connives on ANY player's second spell each turn, so it shares the flurry axis with Shiko and Aligned Heart; loots and grows where Saheeli only makes 1/1 Servos. Alania's copy stays in Alania",
+     "new": true,
+     "mv": 2,
+     "tags": "tokens"
     },
     {
      "n": "Shark Typhoon",
@@ -762,30 +766,6 @@
  ],
  "wishlist": [
   {
-   "n": "Stormcatch Mentor",
-   "name": "Stormcatch Mentor",
-   "replaces": "Flamehold Grappler",
-   "why": "2 mana, haste and prowess, and your instants and sorceries cost {1} less, so Narset counts more spells per turn",
-   "price": "0.34",
-   "status": "want"
-  },
-  {
-   "n": "Ledger Shredder",
-   "name": "Ledger Shredder",
-   "replaces": "Saheeli, Sublime Artificer",
-   "why": "Connives on ANY player's second spell each turn, so it shares the flurry axis with Shiko and Aligned Heart; loots and grows where Saheeli only makes 1/1 Servos",
-   "price": "8.63",
-   "status": "want"
-  },
-  {
-   "n": "Inspiring Vantage",
-   "name": "Inspiring Vantage",
-   "replaces": "Temple of Triumph",
-   "why": "Untapped R/W in the early turns; removes the last tapped Temple",
-   "price": "2.43",
-   "status": "want"
-  },
-  {
    "n": "Rhystic Study (GC)",
    "name": "Rhystic Study",
    "replaces": "a 3-mana draw spell",
@@ -830,10 +810,25 @@
     "n": "Narset's Reversal",
     "mv": 2,
     "tip": "→ replaced by Archmage's Charm (2026-11-15: infinite with Expansion // Explosion; no-infinite rule)"
+   },
+   {
+    "n": "Flamehold Grappler",
+    "mv": 3,
+    "tags": "copy",
+    "tip": "ETB: your next spell this turn is copied"
+   },
+   {
+    "n": "Saheeli, Sublime Artificer",
+    "mv": 3,
+    "tags": "tokens",
+    "tip": "Servo per noncreature cast on a hard-to-kill permanent type"
+   },
+   {
+    "n": "Temple of Triumph"
    }
   ]
  }
 }</script>
-<script src="../viewer.js?v=20261115b"></script>
+<script src="../viewer.js?v=20261125a"></script>
 </body>
 </html>

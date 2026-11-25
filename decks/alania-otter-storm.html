@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alania Otter Storm — Deck Map</title>
-<link rel="stylesheet" href="../style.css?v=20261115b">
+<link rel="stylesheet" href="../style.css?v=20261125a">
 </head>
 <body>
 <script type="application/json" id="deck-data">{
  "name": "Alania, Divergent Storm — Otter Spellslinger",
  "slug": "alania-otter-storm",
  "sub": "36 lands + 1 MDFC · avg MV ~2.8 · Bracket 4 (5 Game Changers)",
- "revnote": "2026-11-15 post-con review: 7 swaps, no Otters cut (Otters 12→14). Narset's Reversal → Counterspell (removes all 3 infinite combos), Wan Shi Tong → Tolabow, Isochron Scepter → Lutri, Propaganda → Sapphire Medallion, Reliquary Tower → Steam Vents, Lilypad Village → Spirebluff Canal, 1 Island → Shivan Reef. Scepter cluster retired.",
+ "revnote": "2026-11-15 post-con review: 7 swaps, no Otters cut (Otters 12→14). Narset's Reversal → Counterspell (removes all 3 infinite combos), Wan Shi Tong → Tolabow, Isochron Scepter → Lutri, Propaganda → Sapphire Medallion, Reliquary Tower → Steam Vents, Lilypad Village → Spirebluff Canal, 1 Island → Shivan Reef. Scepter cluster retired. Added 2026-11-20: Blasphemous Act → Season of Weaving (owned, b6).",
  "accentLabel": "Otter (feeds Alania / Three Tree City)",
  "manaNote": "Blue-hungry deck: about 2 blue symbols for every red. Get Islands and blue duals on board first; most red costs need just one Mountain. The big exception is Niv-Mizzet, Parun (UUURRR): Steam Vents, Spirebluff Canal, Shivan Reef and the other duals make either color, so save them for his turn. Cavern of Souls only makes colored mana for Otter creatures (colorless otherwise), and Sink into Stupor can be played as an extra Island when you're short on lands.",
  "hint": "Blue left-edge = Otter. Alania copies your first instant, first sorcery, AND first Otter spell each turn — an opponent draws per copy, which Narset caps. Harmonic Prodigy on board makes her trigger one extra time.",
@@ -460,10 +460,28 @@
      ]
     },
     {
-     "n": "Blasphemous Act",
-     "mv": 9,
-     "tags": "ping",
-     "tip": "Board reset — note Alania (3/5) dies too; hold her or protect"
+     "n": "Season of Weaving",
+     "mv": 6,
+     "tags": "bigturn",
+     "new": true,
+     "tip": "Back in (James, 2026-11-20). Board reset that keeps your stuff: copy your best creature as a token, then bounce every nonland, nontoken permanent. Your cheap permanents come back as storm fuel",
+     "guide": [
+      {
+       "when": "Opponents are ahead on board",
+       "get": null,
+       "why": "2 paws: token copy of your best creature (Storm-Kiln Artist, Veyran, an Otter payoff), then 3 paws: bounce everything else. Tokens stay, so the copy is yours and everyone else replays from zero."
+      },
+      {
+       "when": "Board is fine, you need gas",
+       "get": null,
+       "why": "Draw five, or copy a creature twice and draw one. A big refill when there's nothing worth resetting."
+      },
+      {
+       "when": "Before a storm turn",
+       "get": null,
+       "why": "Bounce resets your own Signets, Medallion and cheap creatures to hand, and each one is a cast trigger when you replay it. Mind that Alania goes back to the command zone or hand too."
+      }
+     ]
     }
    ]
   },
@@ -690,9 +708,9 @@
        "why": "Draw 2 and untap 3 lands: refuels and nets mana"
       },
       {
-       "when": "Need a wipe",
-       "get": "Blasphemous Act",
-       "why": "Near-free with a full table"
+       "when": "Need a reset",
+       "get": "Season of Weaving",
+       "why": "Copy your best creature as a token, then bounce every nonland, nontoken permanent; tokens stay"
       },
       {
        "when": "Remember",
@@ -818,6 +836,12 @@
    {
     "n": "Island",
     "tip": "1 of 16 → replaced by Shivan Reef (2026-11-15 review)"
+   },
+   {
+    "n": "Blasphemous Act",
+    "mv": 9,
+    "tags": "ping",
+    "tip": "Board reset — note Alania (3/5) dies too; hold her or protect"
    }
   ]
  },
@@ -856,6 +880,6 @@
   }
  ]
 }</script>
-<script src="../viewer.js?v=20261115b"></script>
+<script src="../viewer.js?v=20261125a"></script>
 </body>
 </html>
